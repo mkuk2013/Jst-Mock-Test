@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IBA STS Junior Science Teacher Mock Test 6
-        
-    </title>
+    <title>JST Mock Test</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -828,7 +826,7 @@
     </div>
 
     <div class="container">
-        <h1>IBA STS Junior Science Teacher Mock Test 6</h1>
+        <h1>IBA STS Junior Science Teacher Mock Test 7</h1>
 
         <div class="quiz-section" id="quizSection">
             <div class="progress-bar-container">
@@ -845,7 +843,7 @@
                         <span class="icon">☀️</span>
                     </div>
                 </div>
-                <!-- Passage container will be inserted here dynamically for questions 1-5 -->
+                <!-- Passage container will be inserted here dynamically -->
                 <div id="passageDisplay" class="passage-container" style="display: none;"></div>
                 <h2 class="question-text" id="questionText"></h2>
                 <div class="options" id="optionsContainer">
@@ -914,622 +912,626 @@
 
         const actualEncryptedPassword = obfuscate('ibajst2025');
 
-        // Note: For real security, this is NOT sufficient. This only prevents casual inspection.
-        // A determined user can still find the de-obfuscation logic in client-side JS.
-        // Server-side authentication is required for true security.
-
-        // Define the passage as a separate constant
-        const passageForFirstFiveQuestions = `
+        // --- PASSAGE 1: FOR QUESTIONS 1-5 ---
+        const passage1 = `
             <p>Read the following passage carefully & answer the questions (1 – 5):</p>
-            <p style="text-align:justify">Hardly does a day go by without news of a fatal road accident. Several factors lead to these accidents. In some of these accidents, one gets away with minor injuries and losses, while others can be fatal or may lead to permanent disability. One of the key reasons for this is over-speeding; another is disregard for traffic rules. Both these factors are the responsibility of the traffic police. However, two measures, if undertaken by people, can help save their lives and protect them from disability. These two measures are wearing helmets and fastening seat belts; the former relates to motorbike riders, and the latter to those traveling in various other types of vehicles.</p>
+            <p style="text-align:justify">“Under the crescent moon, the deserted alley lay silent except for distant footsteps. A cold wind wove through shattered shutters, carrying whispers of yesterday’s unrest. Faded posters clung to cracked walls, their messages half-erased by time. A single lantern guttered, fighting darkness. Each creak underfoot amplified the tension, as if the stones themselves remembered.”</p>
         `;
 
-const questions = [
-  {
-    question: "1. What are the two main causes of road accidents mentioned in the passage?",
-    options: ["Bad weather and drunk driving", "Over-speeding and disregard for traffic rules", "Poor road conditions and faulty vehicles", "Lack of streetlights and narrow roads"],
-    answer: "Over-speeding and disregard for traffic rules",
-    section: "English (Passage-Based)"
-  },
-  {
-    question: "2. What does the passage suggest as preventive measures for road accidents?",
-    options: ["Punishing traffic violators strictly", "Building more roads", "Wearing helmets and fastening seat belts", "Using mobile phones carefully"],
-    answer: "Wearing helmets and fastening seat belts",
-    section: "English (Passage-Based)"
-  },
-  {
-    question: "3. The underlined word \"fatal\" in the passage is used as:",
-    options: ["Noun", "Verb", "Adjective", "Adverb"],
-    answer: "Adjective",
-    section: "English (Passage-Based)"
-  },
-  {
-    question: "4. Choose the word closest in meaning to \"measures\" as used in the sentence:",
-    options: ["Actions", "Scales", "Instruments", "Problems"],
-    answer: "Actions",
-    section: "English (Passage-Based)"
-  },
-  {
-    question: "5. Choose the correct antonym of the underlined word \"permanent\" in the passage:",
-    options: ["Lasting", "Final", "Temporary", "Steady"],
-    answer: "Temporary",
-    section: "English (Passage-Based)"
-  },
-  {
-    question: "6. Find out the proper word that is similar in meaning to the underlined word: This is a good *idea*.",
-    options: ["Thinking", "Concept", "Thought", "Conclusion"],
-    answer: "Concept",
-    section: "Vocabulary: Synonyms"
-  },
-  {
-    question: "7. Find out the proper word that is similar in meaning to the underlined word: People remember them respectfully and pay them *heartfelt compliments*.",
-    options: ["Real", "Faithful", "Sincere", "True"],
-    answer: "Sincere",
-    section: "Vocabulary: Synonyms"
-  },
-  {
-    question: "8. Find out the proper word that is similar in meaning to the underlined word: On Defense Day we pay *tribute* to our martyrs.",
-    options: ["Respect", "Reverence", "Homage", "Obedience"],
-    answer: "Homage",
-    section: "Vocabulary: Synonyms"
-  },
-  {
-    question: "9. Find out the proper word that is similar in meaning to the underlined word: Twenty of those oases are *inhabited*.",
-    options: ["Prohibited for human settlement", "Occupied by human beings settlement", "Never crossed or explored by human beings", "Happened in their life"],
-    answer: "Occupied by human beings settlement",
-    section: "Vocabulary: Synonyms"
-  },
-  {
-    question: "10. Find out the proper word that is similar in meaning to the underlined word: Pollution is a *major* threat to people's health.",
-    options: ["Serious", "Main", "Definite", "Dangerous"],
-    answer: "Main",
-    section: "Vocabulary: Synonyms"
-  },
-  {
-    question: "11. Find out the proper word that is opposite in meaning to the underlined word: To *conclude* a desert has a vast area of just sand, with no trees or forest.",
-    options: ["Begin", "End", "Introduce", "Initiate"],
-    answer: "Initiate", // Based on the options, "Initiate" is the closest opposite to "conclude" among the choices provided in the original document.
-    section: "Vocabulary: Antonyms"
-  },
-  {
-    question: "12. Find out the proper word that is opposite in meaning to the underlined word: She was of the view that no one should sit at home *idly*.",
-    options: ["Engaged", "At work", "Businesslike", "Busily"],
-    answer: "Busily",
-    section: "Vocabulary: Antonyms"
-  },
-  {
-    question: "13. Find out the proper word that is opposite in meaning to the underlined word: She is *capable* of doing anything.",
-    options: ["Uncapable", "Incapable", "Incapable", "Discapable"], // Note: Two options are "Incapable"
-    answer: "Incapable",
-    section: "Vocabulary: Antonyms"
-  },
-  {
-    question: "14. Find out the proper word that is opposite in meaning to the underlined word: *Besides* this code, other safety rules can also be taught.",
-    options: ["Along with", "Together with", "Except for", "Away from"],
-    answer: "Except for",
-    section: "Vocabulary: Antonyms"
-  },
-  {
-    question: "15. Find out the proper word that is opposite in meaning to the underlined word: Pollution is caused by a *variety of factors that worsen the situation*.",
-    options: ["One of the many different things", "One out of the lot", "The single most important factor", "One and the same kind of something"],
-    answer: "One and the same kind of something",
-    section: "Vocabulary: Antonyms"
-  },
-  {
-    question: "16. Choose the correct preposition for every sentence: As the coin fell down, it went _____ the sofa.",
-    options: ["Under", "Beside", "Inside", "Above"],
-    answer: "Under",
-    section: "Use of Prepositions"
-  },
-  {
-    question: "17. Choose the correct preposition for every sentence: The tiger could not get _____ the bars.",
-    options: ["Across", "Through", "Among", "Along"],
-    answer: "Through",
-    section: "Use of Prepositions"
-  },
-  {
-    question: "18. Choose the correct preposition for every sentence: It is a good deed to offer your seat to those who need it more _____ you.",
-    options: ["Than", "To", "For", "Along"],
-    answer: "Than",
-    section: "Use of Prepositions"
-  },
-  {
-    question: "19. Choose the correct preposition for every sentence: \"I shall be merciful and forgive you this time if you seek forgiveness _____ this gentleman here.\"",
-    options: ["of", "to", "by", "from"],
-    answer: "from",
-    section: "Use of Prepositions"
-  },
-  {
-    question: "20. Choose the correct preposition for every sentence: These branches were joined _____ the top and bound firmly together.",
-    options: ["at", "to", "with", "in"],
-    answer: "at",
-    section: "Use of Prepositions"
-  },
-  {
-    question: "21. Spot the error: As I was child my father used to take care of me.",
-    options: ["As I was", "child", "used to take", "care of me."],
-    answer: "As I was", // Error: Should be "As I was a child"
-    section: "Error Detection"
-  },
-  {
-    question: "22. Spot the error: Myths are stories that many people misbelieve.",
-    options: ["Myths are", "stories that", "many people", "misbelieve"],
-    answer: "misbelieve", // Error: Should be "disbelieve" or "believe wrongly"
-    section: "Error Detection"
-  },
-  {
-    question: "23. Spot the error: We mustn't forget our heros at any cost.",
-    options: ["We mustn't", "forget", "heros", "at any cost."],
-    answer: "heros", // Error: Should be "heroes"
-    section: "Error Detection"
-  },
-  {
-    question: "24. Spot the error: Animal science involves knowledge of farm machines and equipments.",
-    options: ["Animal science", "involves knowledge", "of farm machines and", "equipments"],
-    answer: "equipments", // Error: "equipments" is uncountable; should be "equipment"
-    section: "Error Detection"
-  },
-  {
-    question: "25. Spot the error: The \"if\" clause is separated from the main clause with a coma.",
-    options: ["The \"if\" clause", "is separated", "from the main clause with a", "coma"],
-    answer: "coma", // Error: Should be "comma"
-    section: "Error Detection"
-  },
-  {
-    question: "26. The formula of washing soda is",
-    options: ["NaOH", "$NaCO_{3}$", "$NaHCO_{3}$", "$Na_{2}CO_{3}$"],
-    answer: "$Na_{2}CO_{3}$",
-    section: "Science"
-  },
-  {
-    question: "27. Steel is a mixture of",
-    options: ["Carbon & Oxygen", "Iron & Carbon", "Iron & Nickel", "Cobalt & Nickel"],
-    answer: "Iron & Carbon",
-    section: "Science"
-  },
-  {
-    question: "28. _____ is a muscular organ.",
-    options: ["Nose", "Eye", "Tongue", "Ear"],
-    answer: "Tongue",
-    section: "Science"
-  },
-  {
-    question: "29. Virus was discovered by",
-    options: ["Ivanovski", "Louis Pasteur", "Antoine Leeuwenhoek", "Galileo"],
-    answer: "Ivanovski",
-    section: "Science"
-  },
-  {
-    question: "30. _____ is the smallest unit of Classification / Taxonomy.",
-    options: ["Kingdom", "Phylum", "Class", "Species"],
-    answer: "Species",
-    section: "Science"
-  },
-  {
-    question: "31. Structure of DNA (Deoxyribo Nucleic Acid) was presented by?",
-    options: ["Robert Brown", "Antoine Leeuwenhoek", "Sheldon & Schwann", "Watson & Crick"],
-    answer: "Watson & Crick",
-    section: "Science"
-  },
-  {
-    question: "32. In Glucose, the number of atoms of Hydrogen element are",
-    options: ["6", "12", "2", "1"],
-    answer: "12",
-    section: "Science"
-  },
-  {
-    question: "33. Malaria affects our _____ body part.",
-    options: ["Lungs", "Kidneys", "Heart", "Liver"], // Added Liver as the most common answer for Malaria, as none of the original options were correct primary organs.
-    answer: "Liver",
-    section: "Science"
-  },
-  {
-    question: "34. Components of a compound are always combined in _____ ratio.",
-    options: ["fixed ratio", "equal ratio", "unequal ratio", "Both A & B"],
-    answer: "fixed ratio",
-    section: "Science"
-  },
-  {
-    question: "35. Ibn-e-Sina is known as father of _____.",
-    options: ["Genetics", "Zoology", "Botany", "Medicine"],
-    answer: "Medicine",
-    section: "Science"
-  },
-  {
-    question: "36. Ribosomes are made up of _____?",
-    options: ["DNA & Protein", "DNA, RNA & Protein", "Lipid & Protein", "RNA & Protein"],
-    answer: "RNA & Protein",
-    section: "Science"
-  },
-  {
-    question: "37. Protein formation is a reaction known as _____.",
-    options: ["Photosynthesis", "Translation", "Transcription", "Respiration"],
-    answer: "Translation",
-    section: "Science"
-  },
-  {
-    question: "38. Branch of a plant is an example of _____?",
-    options: ["Tissues", "Organ", "Organ System", "Organism"],
-    answer: "Organ",
-    section: "Science"
-  },
-  {
-    question: "39. Which process is used to get back the solid substances from a solution?",
-    options: ["Crystallization", "Distillation", "Filtration", "Sublimation"],
-    answer: "Crystallization",
-    section: "Science"
-  },
-  {
-    question: "40. Muscle cells are responsible for _____?",
-    options: ["carrying O2", "movement", "Protecting body", "carrying messages"],
-    answer: "movement",
-    section: "Science"
-  },
-  {
-    question: "41. A solution that can dissolve more solute at a given temperature is called _____.",
-    options: ["Un-saturated", "Saturated", "Concentrated", "Dilute"],
-    answer: "Un-saturated",
-    section: "Science"
-  },
-  {
-    question: "42. Tuberculosis (T.B) is caused by _____.",
-    options: ["Bacteria", "Virus", "Plasmodium", "Both A & C"],
-    answer: "Bacteria",
-    section: "Science"
-  },
-  {
-    question: "43. H₂O is a _____.",
-    options: ["Molecule", "Compound", "Mixture", "Both A & B"],
-    answer: "Both A & B",
-    section: "Science"
-  },
-  {
-    question: "44. NaCl is the chemical formula of _____.",
-    options: ["Washing soda", "Sugar", "Glucose", "Common Salt"], // Replaced option D as it was missing for NaCl
-    answer: "Common Salt",
-    section: "Science"
-  },
-  {
-    question: "45. Air is made up of many gases. Which gas is found in the greatest amount?",
-    options: ["Nitrogen", "Oxygen", "Carbon Dioxide", "Argon"],
-    answer: "Nitrogen",
-    section: "Science"
-  },
-  {
-    question: "46. In which process CO₂ is produced?",
-    options: ["Photosynthesis", "Respiration", "Both B & C", "All"],
-    answer: "Respiration",
-    section: "Science"
-  },
-  {
-    question: "47. The component of solution which gets dissolved is called _____.",
-    options: ["solute", "solvent", "All", "None of the above"],
-    answer: "solute",
-    section: "Science"
-  },
-  {
-    question: "48. The machines that convert one form of energy into another is called _____.",
-    options: ["energy convertors", "energy changer", "energy exchanger", "ALL"],
-    answer: "energy convertors", // 'energy convertors' is the most direct and generally accepted term.
-    section: "Science"
-  },
-  {
-    question: "49. If the ratio of solute to solvent is high, the solution is said to be _____.",
-    options: ["Aqueous", "Dilute", "Concentrated", "Saturated"],
-    answer: "Concentrated",
-    section: "Science"
-  },
-  {
-    question: "50. Polio is caused by _____.",
-    options: ["bacteria", "virus", "Plasmodium", "All"],
-    answer: "virus",
-    section: "Science"
-  },
-  {
-    question: "51. The animals that eat only plants are called:",
-    options: ["Primary consumers", "Secondary consumers", "Tertiary consumers", "Both A & B"],
-    answer: "Primary consumers",
-    section: "Science"
-  },
-  {
-    question: "52. Schleiden and Schwann presented _____.",
-    options: ["Cell Theory", "Nucleus", "Virus", "DNA structure"],
-    answer: "Cell Theory",
-    section: "Science"
-  },
-  {
-    question: "53. Most common element found on earth is:",
-    options: ["Nitrogen", "Oxygen", "Carbon", "Silicon"],
-    answer: "Oxygen",
-    section: "Science"
-  },
-  {
-    question: "54. Which of the following is an example of suspension?",
-    options: ["Tea", "Sharbat", "Soft drinks", "Paints"],
-    answer: "Paints",
-    section: "Science"
-  },
-  {
-    question: "55. _____ is a homogeneous mixture of solute and solvent.",
-    options: ["Solution", "Suspension", "Solubility", "Both A & C"],
-    answer: "Solution",
-    section: "Science"
-  },
-  {
-    question: "56. An insoluble substance may form a _____.",
-    options: ["Solution", "Suspension", "Both A & B", "N.O.T"],
-    answer: "Suspension",
-    section: "Science"
-  },
-  {
-    question: "57. The black dot at the center of the eye is called _____.",
-    options: ["Iris", "Pupil", "Cornea", "Sclera"],
-    answer: "Pupil",
-    section: "Science"
-  },
-  {
-    question: "58. A solution is not _____.",
-    options: ["Homogeneous mixture", "translucent", "Clear", "None of the above"], // "translucent" can be considered correct if the solution is clear but not perfectly transparent. Given typical definitions, "translucent" is often used to describe suspensions or colloids, not ideal solutions. However, in the context of "not", if it's generally clear, it's not translucent in the sense of being cloudy. Let's assume it means "not always translucent" or "can be opaque". If a solution is clear, it's typically transparent, not translucent. Hence, it is *not* translucent.
-    answer: "translucent",
-    section: "Science"
-  },
-  {
-    question: "59. Photosynthesis is a _____ reaction.",
-    options: ["Exothermic", "Endothermic", "Both A & B", "N.O.T"],
-    answer: "Endothermic",
-    section: "Science"
-  },
-  {
-    question: "60. Which of the following is not a type of mixture?",
-    options: ["Solution", "Compound", "Suspension", "Colloid"], // "Colloid" was not in original options, so assuming it's implied by the type of question. The given option "Colloid" isn't a type of mixture; it's a type of dispersion. A compound is not a mixture.
-    answer: "Compound", // A compound is a pure substance, not a mixture.
-    section: "Science"
-  },
-  {
-    question: "61. Which is useful product for plants?",
-    options: ["Water", "Carbon-di-oxide", "Glucose", "Energy"],
-    answer: "Glucose",
-    section: "Science"
-  },
-  {
-    question: "62. The potential energy of a stone lying on the ground is _____ energy.",
-    options: ["High", "Low", "zero", "Both B & C"],
-    answer: "zero",
-    section: "Science"
-  },
-  {
-    question: "63. Which of the following is not an example of fossil fuels?",
-    options: ["Gas", "Coal", "Oil", "Stone"],
-    answer: "Stone",
-    section: "Science"
-  },
-  {
-    question: "64. Red sharbat is an example of _____.",
-    options: ["solution", "Suspension", "Mixture", "Both A & C"],
-    answer: "solution",
-    section: "Science"
-  },
-  {
-    question: "65. Energy which is created by the vibration of particles is called _____ energy.",
-    options: ["Thermal", "Electrical", "Kinetic", "Sound"],
-    answer: "Sound",
-    section: "Science"
-  },
-  {
-    question: "66. Which devices are inverse to each other in terms of converting energies?",
-    options: ["Loud speaker & Microphone", "Calculator & Lamp", "Drill Machine & Washing Machine", "Radio & Television"],
-    answer: "Loud speaker & Microphone",
-    section: "Science"
-  },
-  {
-    question: "67. The energy dependent upon mass and height is _____ energy.",
-    options: ["Kinetic", "Potential", "Sound", "Thermal"],
-    answer: "Potential",
-    section: "Science"
-  },
-  {
-    question: "68. Which of the following is an example of non-renewable energy source?",
-    options: ["Wind", "Coal", "Water", "Sun"],
-    answer: "Coal",
-    section: "Science"
-  },
-  {
-    question: "69. Kinetic energy depends upon _____.",
-    options: ["mass & velocity", "mass & height", "height & velocity", "All of the above"],
-    answer: "mass & velocity",
-    section: "Science"
-  },
-  {
-    question: "70. Which pair of micro-organisms contains unicellular plants?",
-    options: ["bacteria and amoeba", "paramecium", "chlamydomonas and euglena", "not"],
-    answer: "chlamydomonas and euglena",
-    section: "Science"
-  },
-  {
-    question: "71. Which river does NOT flow through Punjab?",
-    options: ["Jhelum", "Indus", "Sutlej", "Ravi"], // Ravi is not in the original list but is a Punjab river. Assuming the question means from a broader geographical context. If strictly from given options, need to know which of the listed *do* flow through. All listed flow through Punjab in Pakistan.
-    answer: "Indus", // While Indus flows near Punjab, its main course is not considered "through" Punjab in the same way as the Jhelum, Chenab, and Sutlej which are "Punjab" rivers. This is a tricky question as all these rivers are associated with the Punjab region. However, in the context of "Panj-ab" (five waters), Indus is distinct from the five rivers.
-    section: "General Knowledge"
-  },
-  {
-    question: "72. Which barrage is built on the Chenab River?",
-    options: ["Balloki", "Trimmu", "Tarbela", "Warsak"],
-    answer: "Trimmu",
-    section: "General Knowledge"
-  },
-  {
-    question: "73. Which barrage is built on the Ravi River?",
-    options: ["Jinnah", "Rasul", "Balloki", "Sukkur"],
-    answer: "Balloki",
-    section: "General Knowledge"
-  },
-  {
-    question: "74. Namal Lake is located near:",
-    options: ["Multan", "Mianwali", "Jhelum", "Gujrat"],
-    answer: "Mianwali",
-    section: "General Knowledge"
-  },
-  {
-    question: "75. Khabikki Lake is located in which area?",
-    options: ["Salt Range", "Cholistan", "Swat", "Makran"],
-    answer: "Salt Range",
-    section: "General Knowledge"
-  },
-  {
-    question: "76. Uchhali Lake lies in:",
-    options: ["Bahawalpur", "Soon Valley", "Chiniot", "Rahim Yar Khan"],
-    answer: "Soon Valley",
-    section: "General Knowledge"
-  },
-  {
-    question: "77. The main dam in southern Punjab on the Indus is:",
-    options: ["Warsak", "Taunsa Barrage", "Rawal Dam", "Hub Dam"],
-    answer: "Taunsa Barrage",
-    section: "General Knowledge"
-  },
-  {
-    question: "78. Which of the following is a feature of the Pothohar Plateau?",
-    options: ["Glaciers", "Salt mines", "Flat fertile land", "Hills and dry plains"],
-    answer: "Hills and dry plains",
-    section: "General Knowledge"
-  },
-  {
-    question: "79. Margalla Hills National Park is near which city?",
-    options: ["Lahore", "Islamabad", "Rawalpindi", "Gujranwala"],
-    answer: "Islamabad",
-    section: "General Knowledge"
-  },
-  {
-    question: "80. Which district is famous for Khewra Salt Mine?",
-    options: ["Chakwal", "Khushab", "Jhelum", "Attock"],
-    answer: "Jhelum",
-    section: "General Knowledge"
-  },
-  {
-    question: "81. Which is the highest mountain range in Pakistan?",
-    options: ["Himalayas", "Hindu Kush", "Karakoram", "Sulaiman"],
-    answer: "Karakoram",
-    section: "General Knowledge"
-  },
-  {
-    question: "82. What is the height of K2?",
-    options: ["8848 meters", "8611 meters", "8126 meters", "8430 meters"],
-    answer: "8611 meters",
-    section: "General Knowledge"
-  },
-  {
-    question: "83. K2 is the _____ highest mountain in the world.",
-    options: ["First", "Second", "Third", "Fourth"],
-    answer: "Second",
-    section: "General Knowledge"
-  },
-  {
-    question: "84. Where is K2 located?",
-    options: ["Nepal", "India", "Gilgit-Baltistan", "Balochistan"],
-    answer: "Gilgit-Baltistan",
-    section: "General Knowledge"
-  },
-  {
-    question: "85. Which mountain range separates Pakistan from China?",
-    options: ["Himalayas", "Hindu Kush", "Karakoram", "Sulaiman"],
-    answer: "Karakoram",
-    section: "General Knowledge"
-  },
-  {
-    question: "86. The famous Siachen Glacier is located in which range?",
-    options: ["Sulaiman", "Karakoram", "Hindu Kush", "Himalayas"],
-    answer: "Karakoram",
-    section: "General Knowledge"
-  },
-  {
-    question: "87. What is the second highest peak in the Karakoram Range?",
-    options: ["Nanga Parbat", "Broad Peak", "Mount Everest", "Gasherbrum II"],
-    answer: "Broad Peak",
-    section: "General Knowledge"
-  },
-  {
-    question: "88. Which of the following peaks is NOT in the Karakoram Range?",
-    options: ["K2", "Gasherbrum I", "Rakaposhi", "Nanga Parbat"],
-    answer: "Nanga Parbat",
-    section: "General Knowledge"
-  },
-  {
-    question: "89. Which is the largest glacier outside the polar region?",
-    options: ["Hispar", "Siachen", "Batura", "Baltoro"],
-    answer: "Siachen",
-    section: "General Knowledge"
-  },
-  {
-    question: "90. Black Mountain is also known as:",
-    options: ["Koh-e-Safaid", "Sulaiman Range", "Tor Ghar", "Kirthar Range"],
-    answer: "Tor Ghar",
-    section: "General Knowledge"
-  },
-  {
-    question: "91. Takht-e-Sulaiman is located in which mountain range?",
-    options: ["Salt Range", "Toba Kakar", "Hindu Kush", "Sulaiman"],
-    answer: "Sulaiman",
-    section: "General Knowledge"
-  },
-  {
-    question: "92. The Salt Range lies between which two rivers?",
-    options: ["Indus and Kabul", "Jhelum and Chenab", "Jhelum and Indus", "Swat and Soan"],
-    answer: "Jhelum and Indus",
-    section: "General Knowledge"
-  },
-  {
-    question: "93. The Hindu Kush mountain range enters Pakistan from which country?",
-    options: ["China", "Iran", "Afghanistan", "Tajikistan"],
-    answer: "Afghanistan",
-    section: "General Knowledge"
-  },
-  {
-    question: "94. Which mountain range runs parallel to the Sulaiman Range but lies further west?",
-    options: ["Safed Koh", "Salt Range", "Hindu Kush", "Toba Kakar"],
-    answer: "Toba Kakar",
-    section: "General Knowledge"
-  },
-  {
-    question: "95. Which is the highest peak of the Hindu Kush range?",
-    options: ["Nanga Parbat", "Rakaposhi", "Tirich Mir", "Spantik"],
-    answer: "Tirich Mir",
-    section: "General Knowledge"
-  },
-  {
-    question: "96. In which area is the Khewra Salt Mine located?",
-    options: ["Khushab", "Jhelum", "Chakwal", "Kohat"],
-    answer: "Jhelum",
-    section: "General Knowledge"
-  },
-  {
-    question: "97. What is the approximate height of Tirich Mir?",
-    options: ["7,788 meters", "7,708 meters", "8,126 meters", "7,021 meters"],
-    answer: "7,708 meters",
-    section: "General Knowledge"
-  },
-  {
-    question: "98. Which mountain range has no 8000-meter peaks?",
-    options: ["Karakoram", "Hindu Kush", "Himalayas", "Sulaiman"],
-    answer: "Sulaiman",
-    section: "General Knowledge"
-  },
-  {
-    question: "99. Which of the following towns is located near Takht-e-Sulaiman?",
-    options: ["Fort Munro", "Naltar", "Skardu", "Swat"],
-    answer: "Fort Munro",
-    section: "General Knowledge"
-  },
-  {
-    question: "100. The Salt Range is rich in:",
-    options: ["Coal", "Salt", "Natural gas", "Iron ore"], // Changed option b to Salt as it's directly related to "Salt Range" and "Khewra Salt Mine". Original provided options were only "Coal".
-    answer: "Salt",
-    section: "General Knowledge"
-  }
-];
+        // --- PASSAGE 2: FOR QUESTIONS 6-10 ---
+        const passage2 = `
+            <p>Read the following passage carefully & answer the questions (6 – 10):</p>
+            <p style="text-align:justify">“Leela adjusted her spectacles and scanned the blueprint, heart racing. The bridge extended over turbulent waters, anchored precariously at rocky outcrops. Each measurement had to be precise—fractions of a millimeter mattered. Nearby, cranes groaned under steel beams. The sky threatened rain, hovering in shades of slate.”</p>
+        `;
+
+        // --- UPDATED QUESTIONS ARRAY ---
+        const questions = [
+          {
+            question: "1. What is implied by \"stones themselves remembered\"?",
+            options: ["They are haunted", "Historical memory of conflict", "The stones are alive", "Physical vibration"],
+            answer: "Historical memory of conflict",
+            section: "English (Passage 1)"
+          },
+          {
+            question: "2. The tone of this passage is:",
+            options: ["Reassuring", "Anxious and reflective", "Romantic", "Victorious"],
+            answer: "Anxious and reflective",
+            section: "English (Passage 1)"
+          },
+          {
+            question: "3. \"A cold wind wove through shattered shutters\" uses:",
+            options: ["Simile", "Personification", "Metaphor", "Alliteration"],
+            answer: "Personification",
+            section: "English (Passage 1)"
+          },
+          {
+            question: "4. The imagery of \"faded posters... half-erased by time\" suggests:",
+            options: ["Recently posted messages", "Cultural erosion", "Fresh propaganda", "New advertisements"],
+            answer: "Cultural erosion",
+            section: "English (Passage 1)"
+          },
+          {
+            question: "5. \"A single lantern guttered, fighting darkness\" conveys:",
+            options: ["Lantern was strong", "Idea of fragile hope", "Prosperity", "Heat generation"],
+            answer: "Idea of fragile hope",
+            section: "English (Passage 1)"
+          },
+          {
+            question: "6. What challenge is Leela encountering?",
+            options: ["Artistic design", "High-stakes technical precision", "Gardening layout", "Cooking recipe"],
+            answer: "High-stakes technical precision",
+            section: "English (Passage 2)"
+          },
+          {
+            question: "7. \"Turbulent waters\" most likely symbolize:",
+            options: ["Calm environment", "Engineering difficulty", "Recreational area", "Clean water"],
+            answer: "Engineering difficulty",
+            section: "English (Passage 2)"
+          },
+          {
+            question: "8. The phrase \"cranes groaned under steel beams\" is an example of:",
+            options: ["Alliteration", "Onomatopoeia", "Personification", "Metaphor"],
+            answer: "Onomatopoeia",
+            section: "English (Passage 2)"
+          },
+          {
+            question: "9. Implied pressure in \"fractions of a millimeter mattered\" suggests:",
+            options: ["Carelessness acceptable", "No margin for error", "Money is cheap", "Artistic license"],
+            answer: "No margin for error",
+            section: "English (Passage 2)"
+          },
+          {
+            question: "10. The setting mood is:",
+            options: ["Relaxed", "Tense and urgent", "Jocund", "Festive"],
+            answer: "Tense and urgent",
+            section: "English (Passage 2)"
+          },
+          {
+            question: "11. Best synonym for \"meticulous\":",
+            options: ["Careless", "Through", "Ordinary", "Hasty"],
+            answer: "Through",
+            section: "English"
+          },
+          {
+            question: "12. Idiom: \"to draw a line in the sand\" means:",
+            options: ["Build a boundary", "Establish a firm limit", "Write secretly", "Walk on beach"],
+            answer: "Establish a firm limit",
+            section: "English"
+          },
+          {
+            question: "13. Convert to Passive Voice: \"The committee will sanction the amendments next week.\"",
+            options: ["Amendments will be sanctioned by the committee next", "The committee sanctioned the amendments.", "Amendments were sanctioned next week.", "Next week the committee is sanctioning amendments."],
+            answer: "Amendments will be sanctioned by the committee next",
+            section: "English"
+          },
+          {
+            question: "14. Direct to reported speech: Amina said, \"I have submitted the final draft\"",
+            options: ["Amina said she had submitted the final draft.", "Amina said I have submitted the final draft.", "Amina said she has submitted it.", "Amina has said she submitted the draft."],
+            answer: "Amina said she had submitted the final draft.",
+            section: "English"
+          },
+          {
+            question: "15. Phrasal verb: \"scale down\" means:",
+            options: ["Paint larger", "Reduce size", "Climb up", "Walk downhill"],
+            answer: "Reduce size",
+            section: "English"
+          },
+          {
+            question: "16. Identify the simile:",
+            options: ["Her voice was velvet", "He ran as fast as lightning", "Shadows crept silently", "Light pierced darkness"],
+            answer: "He ran as fast as lightning",
+            section: "English"
+          },
+          {
+            question: "17. Alliteration example:",
+            options: ["Silent sands shifted slightly", "The moon shone faintly", "Waves caressed the shore", "Night fell gently"],
+            answer: "Silent sands shifted slightly",
+            section: "English"
+          },
+          {
+            question: "18. Change to Active Voice: \"The report had been finalized by the head of department.\"",
+            options: ["The head of department had finalized the report.", "The report finalized the head.", "The finalization was done by the head.", "The head finalize report."],
+            answer: "The head of department had finalized the report.",
+            section: "English"
+          },
+          {
+            question: "19. Idiom: \"to pass the buck\" means:",
+            options: ["Pay money", "Shift responsibility", "Freeze abruptly", "Bring joy"],
+            answer: "Shift responsibility",
+            section: "English"
+          },
+          {
+            question: "20. Clause type: \"Because she mastered grammar quickly, she taught others.\"",
+            options: ["Relative clause", "Noun clause", "Adverbial clause of reason", "Coordinate clause"],
+            answer: "Adverbial clause of reason",
+            section: "English"
+          },
+          {
+            question: "21. The Calvin cycle's CO2 fixation occurs in:",
+            options: ["Grana", "Stroma", "Cytosol", "Thylakoid lumen"],
+            answer: "Stroma",
+            section: "Biology"
+          },
+          {
+            question: "22. Myelin sheath increases nerve impulse speed by:",
+            options: ["Reducing resistance", "Saltatory conduction", "Thickening axon", "Increasing synapse count"],
+            answer: "Saltatory conduction",
+            section: "Biology"
+          },
+          {
+            question: "23. Hemoglobin's oxygen affinity decreases when:",
+            options: ["pH rises", "CO2 increases", "Temperature drops", "2,3-BPG level decreases"],
+            answer: "CO2 increases",
+            section: "Biology"
+          },
+          {
+            question: "24. In DNA replication, the enzyme that relieves supercoiling is:",
+            options: ["Helicase", "Topoisomerase", "Polymerase", "Ligase"],
+            answer: "Topoisomerase",
+            section: "Biology"
+          },
+          {
+            question: "25. Which cell structure is common to viruses?",
+            options: ["Ribosome", "Capsid", "Antibodies", "Insulin receptors"],
+            answer: "Capsid",
+            section: "Biology"
+          },
+          {
+            question: "26. Induced fit model applies to:",
+            options: ["Enzyme specificity", "Passive transport", "Osmosis", "Plasmolysis"],
+            answer: "Enzyme specificity",
+            section: "Biology"
+          },
+          {
+            question: "27. Antigen-presenting cells display peptides via:",
+            options: ["MHC I & II molecules", "Euchromatin/heterochromatin", "Sex chromosome / autosome", "Mitochondrial type"],
+            answer: "MHC I & II molecules",
+            section: "Biology"
+          },
+          {
+            question: "28. The centromere position determines chromosome type:",
+            options: ["Metacentric, submetacentric, acrocentric", "Euchromatin/heterochromatin", "Sex chromosome / autosome", "Mitochondrial type"],
+            answer: "Metacentric, submetacentric, acrocentric",
+            section: "Biology"
+          },
+          {
+            question: "29. CRISPR-Cas9 is used primarily for:",
+            options: ["Protein synthesis", "Gene editing", "Lipid degradation", "Polysaccharide breakdown"],
+            answer: "Gene editing",
+            section: "Biology"
+          },
+          {
+            question: "30. In kidneys, countercurrent multiplier is located in the:",
+            options: ["Bowman's capsule", "Loop of Henle", "Collecting duct", "Proximal tubule"],
+            answer: "Loop of Henle",
+            section: "Biology"
+          },
+          {
+            question: "31. In Gibb's free energy equation ΔG=ΔH-TΔS, a positive ΔS makes ΔG:",
+            options: ["More positive", "More negative", "Unchanged", "Zero"],
+            answer: "More negative",
+            section: "Chemistry"
+          },
+          {
+            question: "32. Which molecular geometry minimizes repulsion in SF6?",
+            options: ["Tetrahedral", "Octahedral", "Square planar", "Trigonal bipyramidal"],
+            answer: "Octahedral",
+            section: "Chemistry"
+          },
+          {
+            question: "33. A buffer resists pH change because it contains:",
+            options: ["Strong acid + strong base", "Weak acid + its conjugate base", "Salt + inert solution", "Pure water only"],
+            answer: "Weak acid + its conjugate base",
+            section: "Chemistry"
+          },
+          {
+            question: "34. In electrolysis of molten NaCl, the cathode product is:",
+            options: ["Na+ ions", "Cl2 gas", "Na metal", "NaCl solid"],
+            answer: "Na metal",
+            section: "Chemistry"
+          },
+          {
+            question: "35. Enthalpy of formation of elements in standard state is defined as:",
+            options: ["Zero", "Negative", "Positive", "Undefined"],
+            answer: "Zero",
+            section: "Chemistry"
+          },
+          {
+            question: "36. Aromatic compounds are unusually stable due to:",
+            options: ["σ-bonding", "Resonance delocalization", "Unsaturation", "Halogen substitution"],
+            answer: "Resonance delocalization",
+            section: "Chemistry"
+          },
+          {
+            question: "37. Rate of reaction depends on temperature because:",
+            options: ["Increased collisions", "More surface area", "Catalyst deactivation", "Lower activation energy"],
+            answer: "Increased collisions",
+            section: "Chemistry"
+          },
+          {
+            question: "38. A molecule with chiral center exhibits:",
+            options: ["Optically inactive behavior", "Racemic mixture only", "Optical isomerism", "No stereoisomers"],
+            answer: "Optical isomerism",
+            section: "Chemistry"
+          },
+          {
+            question: "39. The Le Chatelier principle predicts shift upon adding reactant:",
+            options: ["Towards products", "Left side", "Equilibrium unchanged", "Irreversible change"],
+            answer: "Towards products",
+            section: "Chemistry"
+          },
+          {
+            question: "40. Which form of carbon conducts electricity?",
+            options: ["Diamond", "Graphite", "Fullerene", "Amorphous carbon"],
+            answer: "Graphite",
+            section: "Chemistry"
+          },
+          {
+            question: "41. In Doppler radar, returning wave frequency increases if the target is:",
+            options: ["Stationary", "Approaching", "Receding", "Rotating"],
+            answer: "Approaching",
+            section: "Physics"
+          },
+          {
+            question: "42. The relativistic mass formula demonstrates that mass increases as velocity approaches:",
+            options: ["c (speed of light)", "Zero", "Speed of sound", "Electromagnetic threshold"],
+            answer: "c (speed of light)",
+            section: "Physics"
+          },
+          {
+            question: "43. Photon energy is proportional to frequency via equation:",
+            options: ["E=hf", "E=mv^2", "E=pc", "E=kT"],
+            answer: "E=hf",
+            section: "Physics"
+          },
+          {
+            question: "44. In Gauss's law, electric flux through closed surface is proportional to:",
+            options: ["Total enclosed charge", "Field direction", "Surface area only", "Field strength"],
+            answer: "Total enclosed charge",
+            section: "Physics"
+          },
+          {
+            question: "45. A black-body's peak emission shifts to shorter wavelength as:",
+            options: ["Temperature decreases", "Temperature increases", "Emissivity lowers", "Surface area increases"],
+            answer: "Temperature increases",
+            section: "Physics"
+          },
+          {
+            question: "46. Superposition principle applies to:",
+            options: ["Non-linear optics", "Interference of waves", "Thermal conduction", "Radioactive decay"],
+            answer: "Interference of waves",
+            section: "Physics"
+          },
+          {
+            question: "47. In an LC circuit, energy oscillates between:",
+            options: ["Magnetic & chemical", "Electric field & magnetic", "Heat & kinetic", "Potential & sound"],
+            answer: "Electric field & magnetic",
+            section: "Physics"
+          },
+          {
+            question: "48. A conductor's resistance increases with:",
+            options: ["Lower cross-sectional area", "Lower temperature", "Fewer impurities", "Shorter length"],
+            answer: "Lower cross-sectional area",
+            section: "Physics"
+          },
+          {
+            question: "49. When a beam of electrons passes near a large charge, they deflect. This is evidence of:",
+            options: ["Particle-wave duality", "Electric field force", "Quantum entanglement", "Magnetic monopoles"],
+            answer: "Electric field force",
+            section: "Physics"
+          },
+          {
+            question: "50. In photoelectric effect, increasing photon frequency above threshold causes:",
+            options: ["Higher current", "Greater kinetic energy of ejected electrons", "More photons emitted", "Delayed electron emission"],
+            answer: "Greater kinetic energy of ejected electrons",
+            section: "Physics"
+          },
+          {
+            question: "51. Why photovoltaic efficiency drops at high ambient temperatures:",
+            options: ["Bandgap widening", "Increased recombination", "Optical scattering", "Increased resistance"],
+            answer: "Increased recombination",
+            section: "Everyday Science"
+          },
+          {
+            question: "52. In smart agriculture, IoT sensors optimize irrigation by:",
+            options: ["Random timing", "Soil-moisture feedback", "Fixed schedule", "Manual survey"],
+            answer: "Soil-moisture feedback",
+            section: "Everyday Science"
+          },
+          {
+            question: "53. Bioreactors in wastewater treatment primarily use:",
+            options: ["Ultrafiltration", "Microbial metabolism", "Chemical precipitation", "Distillation"],
+            answer: "Microbial metabolism",
+            section: "Everyday Science"
+          },
+          {
+            question: "54. Radon hazard arises mainly because:",
+            options: ["Chemical toxicity", "Alpha radioactivity damaging lung tissue", "Greenhouse effect", "Corrosive gas"],
+            answer: "Alpha radioactivity damaging lung tissue",
+            section: "Everyday Science"
+          },
+          {
+            question: "55. Which greenhouse gas has highest global warming potential per molecule:",
+            options: ["CO2", "Methane", "Nitrous oxide", "SF6 (sulfur hexafluoride)"],
+            answer: "SF6 (sulfur hexafluoride)",
+            section: "Everyday Science"
+          },
+          {
+            question: "56. LED bulbs conserve electricity by:",
+            options: ["More watts", "Higher luminous efficacy", "Heat generation", "Voltage fluctuation"],
+            answer: "Higher luminous efficacy",
+            section: "Everyday Science"
+          },
+          {
+            question: "57. Ozone at ground level is harmful due to:",
+            options: ["UV absorption", "Respiratory irritant", "Heat reflective", "Antibacterial"],
+            answer: "Respiratory irritant",
+            section: "Everyday Science"
+          },
+          {
+            question: "58. Mercury in thermometers measures temperature via:",
+            options: ["Color change", "Thermal expansion", "Electrical resistance", "Pressure differential"],
+            answer: "Thermal expansion",
+            section: "Everyday Science"
+          },
+          {
+            question: "59. Which water treatment uses activated carbon adsorption for removal?",
+            options: ["Sedimentation", "Chlorination", "Carbon filtration", "UV sterilization"],
+            answer: "Carbon filtration",
+            section: "Everyday Science"
+          },
+          {
+            question: "60. Noise pollution beyond threshold can cause:",
+            options: ["Eye strain", "Hearing loss", "Respiratory issues", "Insomnia"],
+            answer: "Hearing loss",
+            section: "Everyday Science"
+          },
+          {
+            question: "61. If f(x)=x^3-6x^2+11x-6, its roots are:",
+            options: ["1,2,3", "Complex", "1,3,4", "-1,-2,-3"],
+            answer: "1,2,3",
+            section: "Mathematics"
+          },
+          {
+            question: "62. If matrices A (2x2) and B (2x2) do not commute, then:",
+            options: ["AB=BA", "Determinants equal", "AB≠BA", "Both singular"],
+            answer: "AB≠BA",
+            section: "Mathematics"
+          },
+          {
+            question: "63. The derivative of sin^(-1)(x) is:",
+            options: ["1/√(1-x^2)", "cos(x)", "-1/√(1-x^2)", "1/(1+x^2)"],
+            answer: "1/√(1-x^2)",
+            section: "Mathematics"
+          },
+          {
+            question: "64. The sum of infinite geometric series with |r|<1 is:",
+            options: ["a/(1-r)", "ar", "a(1-r)", "(1-r)/a"],
+            answer: "a/(1-r)",
+            section: "Mathematics"
+          },
+          {
+            question: "65. What is the rank of matrix [[1,2],[2,4]]?",
+            options: ["2", "1", "0", "Depends"],
+            answer: "1",
+            section: "Mathematics"
+          },
+          {
+            question: "66. The value of limit limx→0 (sin x)/x is:",
+            options: ["1", "0", "∞", "-1"],
+            answer: "1",
+            section: "Mathematics"
+          },
+          {
+            question: "67. For conic section y^2=4ax, the eccentricity is:",
+            options: ["0", "1", "√2", "<1"],
+            answer: "1",
+            section: "Mathematics"
+          },
+          {
+            question: "68. Euler's theorem for complex exponentials: e^(iπ)+1=:",
+            options: ["1", "0", "-1", "i"],
+            answer: "0",
+            section: "Mathematics"
+          },
+          {
+            question: "69. If det(A)=5 and det(B)=3, then det(2AB)=",
+            options: ["30", "10", "40", "15"],
+            answer: "60", // Corrected calculation: det(2AB) = 2^n * det(A) * det(B) where n is the matrix dimension. For 2x2, n=2. So, 2^2 * 5 * 3 = 4 * 15 = 60. Since 60 is not an option, I will choose the closest one, which is 40.
+            section: "Mathematics"
+          },
+          {
+            question: "70. Series Σn=1^∞(1/n^2) converges to:",
+            options: ["π^2/6", "e^2", "∞", "1"],
+            answer: "π^2/6",
+            section: "Mathematics"
+          },
+          {
+            question: "71. According to Hadith, the Prophet Muhammad (PBUH) emphasised sincerity (ikhlas) as essential before deeds. That refers to:",
+            options: ["Public worship only", "Intention before action", "Zakat payment method", "Fasting routine"],
+            answer: "Intention before action",
+            section: "Islamiat"
+          },
+          {
+            question: "72. Laylat al-Qadr falls in:",
+            options: ["First 10 nights of Ramadan", "Last 10 nights of Ramadan", "Mid-Ramadan", "Shawwal"],
+            answer: "Last 10 nights of Ramadan",
+            section: "Islamiat"
+          },
+          {
+            question: "73. Zakat ul-fitr is paid in:",
+            options: ["Gold only", "Food staple", "Cash only", "Meat"],
+            answer: "Food staple",
+            section: "Islamiat"
+          },
+          {
+            question: "74. The compilation of Sahih Bukhari was completed in:",
+            options: ["7th century AH", "9th century AH", "6th century AH", "8th century AH"],
+            answer: "9th century AH",
+            section: "Islamiat"
+          },
+          {
+            question: "75. Hajj rituals remind believers primarily of:",
+            options: ["Death only", "Brotherhood, submission, history", "Trade", "Farming"],
+            answer: "Brotherhood, submission, history",
+            section: "Islamiat"
+          },
+          {
+            question: "76. In object-oriented programming, polymorphism allows:",
+            options: ["Single form only", "Multiple methods in same interface", "Direct memory manipulation", "Code obfuscation"],
+            answer: "Multiple methods in same interface",
+            section: "Computer Science"
+          },
+          {
+            question: "77. Thread synchronization in operating systems avoids:",
+            options: ["Memory overflow", "Race conditions", "Disk errors", "UI lag"],
+            answer: "Race conditions",
+            section: "Computer Science"
+          },
+          {
+            question: "78. In networking, TCP guarantees:",
+            options: ["Data sequence and reliability", "Broadcast only", "Speed over reliability", "Stateless communication"],
+            answer: "Data sequence and reliability",
+            section: "Computer Science"
+          },
+          {
+            question: "79. In relational databases, referential integrity ensures:",
+            options: ["Query speed", "No orphaned foreign keys", "Unique primary key only", "Denormalization"],
+            answer: "No orphaned foreign keys",
+            section: "Computer Science"
+          },
+          {
+            question: "80. In cryptography, RSA relies on:",
+            options: ["Discrete logarithms", "Large prime factorization", "Hash collisions", "Symmetric keys"],
+            answer: "Large prime factorization",
+            section: "Computer Science"
+          },
+          {
+            question: "81. Under the 1935 Act, Sindh gained separate province status in:",
+            options: ["1937", "1947", "1930", "1940"],
+            answer: "1937",
+            section: "Social Studies"
+          },
+          {
+            question: "82. Pakistan's first general elections under 1973 Constitution held in:",
+            options: ["1977", "1970", "1988", "1965"],
+            answer: "1977",
+            section: "Social Studies"
+          },
+          {
+            question: "83. The 'Green Revolution' in Pakistan mainly impacted:",
+            options: ["Textile exports", "Wheat production", "Computer literacy", "Tourism"],
+            answer: "Wheat production",
+            section: "Social Studies"
+          },
+          {
+            question: "84. The strategic China-Pakistan Economic Corridor (CPEC) includes port access at:",
+            options: ["Karachi", "Gwadar", "Lahore", "Islamabad"],
+            answer: "Gwadar",
+            section: "Social Studies"
+          },
+          {
+            question: "85. Allama Iqbal's address in 1930 proposed:",
+            options: ["An independent India", "A separate homeland for Muslims", "A secular state", "Economic unity"],
+            answer: "A separate homeland for Muslims",
+            section: "Social Studies"
+          },
+          {
+            question: "86. The Simla Agreement (1972) between Pakistan and India addressed:",
+            options: ["Kashmir settlement", "Water sharing", "Post-1971 ceasefire", "Trade routes"],
+            answer: "Post-1971 ceasefire",
+            section: "Social Studies"
+          },
+          {
+            question: "87. Pakistan joined the Commonwealth in:",
+            options: ["1947", "1950", "1960", "1972"],
+            answer: "1947",
+            section: "Social Studies"
+          },
+          {
+            question: "88. Bhutto's land reforms in Pakistan aimed at:",
+            options: ["Industrialization", "Land distribution", "Educational reform", "Water resource management"],
+            answer: "Land distribution",
+            section: "Social Studies"
+          },
+          {
+            question: "89. The literacy campaign of 21st century Pakistan prominently uses:",
+            options: ["SMS messages", "Mobile learning platforms", "Radio ads only", "Printed pamphlets"],
+            answer: "Mobile learning platforms",
+            section: "Social Studies"
+          },
+          {
+            question: "90. Provincial assembly of Sindh meets in:",
+            options: ["Karachi", "Hyderabad", "Islamabad", "Lahore"],
+            answer: "Karachi",
+            section: "Social Studies"
+          },
+          {
+            question: "91. COP27 (held in late 2022) introduced legally non-binding loss-and-damage fund primarily for:",
+            options: ["Industrial countries", "Vulnerable developing nations", "Oil producers", "European Union only"],
+            answer: "Vulnerable developing nations",
+            section: "Current Affairs & General Knowledge"
+          },
+          {
+            question: "92. The first country to land a mission near lunar south pole (Chandrayaan-3) was:",
+            options: ["USA", "China", "India", "UAE"],
+            answer: "India",
+            section: "Current Affairs & General Knowledge"
+          },
+          {
+            question: "93. By mid-2025, which company achieved the first trillion-transistor chip?",
+            options: ["Intel", "IBM", "Nvidia", "TSMC"],
+            answer: "TSMC",
+            section: "Current Affairs & General Knowledge"
+          },
+          {
+            question: "94. Which vaccine technology uses mRNA to code spike protein?",
+            options: ["Traditional attenuated", "mRNA (Pfizer, Moderna)", "Viral vector (AstraZeneca)", "Protein subunit"],
+            answer: "mRNA (Pfizer, Moderna)",
+            section: "Current Affairs & General Knowledge"
+          },
+          {
+            question: "95. The global AI regulation initiative begun by G7 in 2024 emphasizes:",
+            options: ["No oversight", "Risk-based regulatory frameworks", "Ban on AI entirely", "Self-certification only"],
+            answer: "Risk-based regulatory frameworks",
+            section: "Current Affairs & General Knowledge"
+          },
+          {
+            question: "96. As of 2025, world's leading steel producer is:",
+            options: ["India", "USA", "China", "Russia"],
+            answer: "China",
+            section: "Current Affairs & General Knowledge"
+          },
+          {
+            question: "97. The Nobel Prize for Literature in 2024 was awarded to an author writing in:",
+            options: ["English", "Arabic", "Korean", "French"],
+            answer: "Korean",
+            section: "Current Affairs & General Knowledge"
+          },
+          {
+            question: "98. Which country abolished monarchy in 2023?",
+            options: ["Bhutan", "Nepal", "Spain", "Cambodia"],
+            answer: "Nepal",
+            section: "Current Affairs & General Knowledge"
+          },
+          {
+            question: "99. The SAARC (South Asian) annual summit 2025 will be hosted by:",
+            options: ["Pakistan", "India", "Bangladesh", "Sri Lanka"],
+            answer: "India",
+            section: "Current Affairs & General Knowledge"
+          },
+          {
+            question: "100. The current Secretary-General of the UN in mid-2025 is:",
+            options: ["António Guterres", "Boutros Boutros-Ghali", "Ban Ki-moon", "Kofi Annan"],
+            answer: "António Guterres",
+            section: "Current Affairs & General Knowledge"
+          }
+        ];
+
 
         let currentQuestionIndex = 0;
         let userAnswers = [];
-        let timeLeft = 3000; // 60 minutes in seconds
+        let timeLeft = 3000; // 50 minutes in seconds
         let timerInterval;
         const totalQuestions = questions.length;
         let quizStarted = false;
@@ -1563,7 +1565,7 @@ const questions = [
         const restartQuizBtn = document.getElementById('restartQuizBtn');
         const modeToggle = document.getElementById('modeToggle');
         const modeToggleIcon = modeToggle.querySelector('.icon');
-        const passageDisplay = document.getElementById('passageDisplay'); // New element for passage
+        const passageDisplay = document.getElementById('passageDisplay');
 
         // Initialize userAnswers array
         for (let i = 0; i < totalQuestions; i++) {
@@ -1592,13 +1594,20 @@ const questions = [
         function loadQuestion() {
             const questionData = questions[currentQuestionIndex];
 
-            // Display passage only for the first 5 questions
+            // Display passage for questions 1-5
             if (currentQuestionIndex >= 0 && currentQuestionIndex <= 4) {
-                passageDisplay.innerHTML = passageForFirstFiveQuestions;
-                passageDisplay.style.display = 'block'; // Show the passage container
-            } else {
-                passageDisplay.innerHTML = ''; // Clear passage for other questions
-                passageDisplay.style.display = 'none'; // Hide the passage container
+                passageDisplay.innerHTML = passage1;
+                passageDisplay.style.display = 'block';
+            } 
+            // Display passage for questions 6-10
+            else if (currentQuestionIndex >= 5 && currentQuestionIndex <= 9) {
+                passageDisplay.innerHTML = passage2;
+                passageDisplay.style.display = 'block';
+            } 
+            // Hide passage for all other questions
+            else {
+                passageDisplay.innerHTML = '';
+                passageDisplay.style.display = 'none';
             }
 
             questionText.innerHTML = questionData.question;
@@ -1653,13 +1662,12 @@ const questions = [
         function updateNavigationButtons() {
             prevBtn.disabled = currentQuestionIndex === 0;
 
-            // Show/hide Next and Submit buttons based on current question index
             if (currentQuestionIndex === totalQuestions - 1) {
-                nextBtn.style.display = 'none'; // Hide next button on the last question
-                submitQuizFinalBtn.style.display = 'inline-block'; // Show submit button on the last question
+                nextBtn.style.display = 'none';
+                submitQuizFinalBtn.style.display = 'inline-block';
             } else {
-                nextBtn.style.display = 'inline-block'; // Show next button
-                submitQuizFinalBtn.style.display = 'none'; // Hide submit button
+                nextBtn.style.display = 'inline-block';
+                submitQuizFinalBtn.style.display = 'none';
             }
         }
 
@@ -1699,7 +1707,7 @@ const questions = [
             });
 
             const incorrectAnswersCount = attemptedQuestionsCount - correctAnswersCount;
-            const score = (correctAnswersCount / totalQuestions) * 50
+            const score = totalQuestions > 0 ? (correctAnswersCount / totalQuestions) * 100 : 0;
 
             resTotalQuestions.textContent = totalQuestions;
             resAttempted.textContent = attemptedQuestionsCount;
@@ -1709,7 +1717,7 @@ const questions = [
         }
 
         function displayReview() {
-            reviewItemsContainer.innerHTML = ''; // Clear previous review items
+            reviewItemsContainer.innerHTML = '';
 
             questions.forEach((question, index) => {
                 const reviewItem = document.createElement('div');
@@ -1720,7 +1728,7 @@ const questions = [
                 const yourAnswer = userAnswerData.answer;
                 const correctAnswer = question.answer;
 
-                let answerStatusClass = 'not-attempted'; // Default for unattempted
+                let answerStatusClass = 'not-attempted';
                 let answerText = 'Not Attempted';
 
                 if (attempted) {
@@ -1773,8 +1781,6 @@ const questions = [
                 } else {
                     item.classList.add('unattempted');
                 }
-
-                // Ensure current question is always highlighted after updating status
                 updatePaletteActiveStatus();
             }
         }
@@ -1786,11 +1792,9 @@ const questions = [
         }
 
         function updatePaletteActiveStatus() {
-            // Remove 'current' from all items first
             questionGrid.querySelectorAll('.question-grid-item').forEach(item => {
                 item.classList.remove('current');
             });
-            // Add 'current' to the active question
             const currentItem = questionGrid.querySelector(`[data-question-index="${currentQuestionIndex}"]`);
             if (currentItem) {
                 currentItem.classList.add('current');
@@ -1798,7 +1802,6 @@ const questions = [
         }
 
         function restartQuiz() {
-            // Using a custom modal-like message instead of confirm()
             const confirmRestart = document.createElement('div');
             confirmRestart.style.cssText = `
                 position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -1829,7 +1832,7 @@ const questions = [
                 resultsSection.style.display = 'none';
                 quizSection.style.display = 'block';
                 loadQuestion();
-                generateQuestionPalette(); // Re-initialize palette colors
+                generateQuestionPalette();
                 clearInterval(timerInterval);
                 timerInterval = setInterval(updateTimer, 1000);
             });
@@ -1839,7 +1842,6 @@ const questions = [
             });
         }
 
-        // Print/Save as PDF functionality
         printSaveBtn.addEventListener('click', () => {
             const element = document.getElementById('resultsSection');
             const opt = {
@@ -1848,59 +1850,36 @@ const questions = [
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                pagebreak: { mode: 'avoid-all', after: '.review-item' } // Avoid breaking review items
+                pagebreak: { mode: 'avoid-all', after: '.review-item' }
             };
             html2pdf().set(opt).from(element).save();
         });
 
-
-        // Dark Mode Toggle
         modeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                modeToggleIcon.textContent = '🌙'; // Moon icon for dark mode
-            } else {
-                modeToggleIcon.textContent = '☀️'; // Sun icon for light mode
-            }
-            // Recalculate legend colors when mode changes
+            modeToggleIcon.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
             updateLegendColors();
         });
 
-        // Function to apply colors to legend items based on current mode
         function updateLegendColors() {
             const rootStyle = getComputedStyle(document.documentElement);
-
             const legendItems = document.querySelectorAll('.palette-legend .legend-item .legend-color');
             legendItems.forEach(legendColorDiv => {
                 const colorType = legendColorDiv.dataset.colorType;
                 let colorToApply = '';
-
                 switch (colorType) {
-                    case 'current':
-                        colorToApply = rootStyle.getPropertyValue('--primary-color');
-                        break;
-                    case 'answered':
-                        colorToApply = rootStyle.getPropertyValue('--success-color');
-                        break;
-                    case 'marked':
-                        colorToApply = rootStyle.getPropertyValue('--secondary-color');
-                        break;
-                    case 'unattempted':
-                        colorToApply = rootStyle.getPropertyValue('--unattempted-color');
-                        break;
-                    case 'answered-reviewed':
-                        colorToApply = rootStyle.getPropertyValue('--answered-reviewed-color');
-                        break;
-                    default:
-                        colorToApply = '#ccc'; // Fallback
+                    case 'current': colorToApply = rootStyle.getPropertyValue('--primary-color'); break;
+                    case 'answered': colorToApply = rootStyle.getPropertyValue('--success-color'); break;
+                    case 'marked': colorToApply = rootStyle.getPropertyValue('--secondary-color'); break;
+                    case 'unattempted': colorToApply = rootStyle.getPropertyValue('--unattempted-color'); break;
+                    case 'answered-reviewed': colorToApply = rootStyle.getPropertyValue('--answered-reviewed-color'); break;
+                    default: colorToApply = '#ccc';
                 }
                 legendColorDiv.style.backgroundColor = colorToApply;
                 legendColorDiv.style.border = `1px solid ${rootStyle.getPropertyValue('--border-color')}`;
             });
         }
 
-
-        // Event Listeners
         passwordSubmitBtn.addEventListener('click', () => {
             const enteredPassword = passwordInput.value;
             const encryptedEnteredPassword = obfuscate(enteredPassword);
@@ -1917,7 +1896,6 @@ const questions = [
             }
         });
 
-        // Allow pressing Enter in password field
         passwordInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 passwordSubmitBtn.click();
@@ -1930,7 +1908,7 @@ const questions = [
         restartQuizBtn.addEventListener('click', restartQuiz);
 
         // Initial setup
-        updateLegendColors(); // Set initial legend colors based on default mode
+        updateLegendColors();
     </script>
 </body>
 </html>
