@@ -15,7 +15,6 @@
             --input-background: rgba(240, 240, 240, 0.8);
             --border-color: rgba(0, 0, 0, 0.1);
             --shadow-color: rgba(0, 0, 0, 0.1);
-
             /* Action & State Colors (Light Mode) */
             --primary-color: #4A90E2; /* For current, buttons */
             --primary-color-rgb: 74, 144, 226;
@@ -24,16 +23,13 @@
             --danger-color: #D0021B; /* For incorrect */
             --warning-color: #F8E71C; /* For warnings, restart */
             --text-on-warning: #333;
-
             /* Specific Palette/Legend Colors (Light Mode) */
             --unattempted-color: #E0E6EB; /* Clearly distinct light grey */
             --answered-reviewed-color: #9C27B0; /* Distinct purple */
-
             /* Progress Bar */
             --progress-bar-bg: #e0e0e0;
             --progress-bar-fill: var(--primary-color);
         }
-
         .dark-mode {
             /* Global Colors (Dark Mode) */
             --background-color: #2C3E50; /* Deep blue-grey */
@@ -42,7 +38,6 @@
             --input-background: rgba(50, 60, 70, 0.8); /* Darker input fields */
             --border-color: rgba(255, 255, 255, 0.1); /* Subtle white border */
             --shadow-color: rgba(0, 0, 0, 0.4);
-
             /* Action & State Colors (Dark Mode) */
             --primary-color: #4FC3F7; /* Brighter blue for current, buttons */
             --primary-color-rgb: 79, 195, 247;
@@ -51,22 +46,18 @@
             --danger-color: #FF5252; /* Bright red for incorrect */
             --warning-color: #FFC107; /* Amber for warnings, restart */
             --text-on-warning: #333;
-
             /* Specific Palette/Legend Colors (Dark Mode) */
             --unattempted-color: #B0BEC5; /* Light blue-grey, very visible */
             --answered-reviewed-color: #E040FB; /* Striking purple */
-
             /* Progress Bar */
             --progress-bar-bg: #4A6572;
             --progress-bar-fill: var(--primary-color);
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--background-color);
@@ -79,7 +70,6 @@
             transition: background 0.3s ease, color 0.3s ease;
             overflow-y: auto;
         }
-
         .container {
             background: var(--card-background);
             border-radius: 20px;
@@ -94,14 +84,12 @@
             position: relative;
             margin: 20px 0;
         }
-
         h1 {
             color: var(--text-color);
             margin-bottom: 25px;
             font-weight: 700;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
-
         .password-overlay {
             position: fixed;
             top: 0;
@@ -116,7 +104,6 @@
             flex-direction: column;
             padding: 20px;
         }
-
         .password-prompt {
             background: var(--card-background);
             border-radius: 15px;
@@ -128,7 +115,6 @@
             max-width: 500px;
             width: 100%;
         }
-
         .password-prompt input[type="password"] {
             width: calc(100% - 20px);
             padding: 12px;
@@ -141,12 +127,10 @@
             outline: none;
             transition: border-color 0.3s ease, background-color 0.3s ease;
         }
-
         .password-prompt input[type="password"]:focus {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
         }
-
         .btn {
             background-color: var(--primary-color);
             color: white;
@@ -159,7 +143,6 @@
             margin: 5px;
             font-weight: 600;
         }
-
         .btn:hover:not(:disabled) {
             background-color: color-mix(in srgb, var(--primary-color) 85%, black); /* Slightly darker */
             transform: translateY(-2px);
@@ -167,25 +150,21 @@
         .btn:active:not(:disabled) {
             transform: translateY(0);
         }
-
         .btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
             background-color: color-mix(in srgb, var(--primary-color) 60%, black);
         }
-
         .error-message {
             color: var(--danger-color);
             margin-top: 10px;
             font-size: 0.9rem;
             font-weight: 600;
         }
-
         .quiz-section {
             display: none;
             animation: fadeIn 0.8s ease-out;
         }
-
         .quiz-header {
             display: flex;
             justify-content: center; /* Center its content */
@@ -195,7 +174,6 @@
             border-bottom: 1px solid var(--border-color);
             position: relative;
         }
-
         .timer {
             font-size: 1.5rem;
             font-weight: 700;
@@ -214,7 +192,6 @@
             margin-right: 8px;
             font-size: 1.2em;
         }
-
         .progress-bar-container {
             width: 100%;
             height: 10px;
@@ -225,7 +202,6 @@
             border: 1px solid var(--border-color);
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
         }
-
         .progress-bar-fill {
             height: 100%;
             width: 0%;
@@ -233,12 +209,10 @@
             border-radius: 5px;
             transition: width 0.3s ease-in-out;
         }
-
         .question-container {
             text-align: left;
             margin-bottom: 30px;
         }
-
         .question-meta {
             display: flex;
             align-items: center;
@@ -246,21 +220,18 @@
             width: 100%;
             margin-bottom: 10px;
         }
-
         .question-number {
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 0;
         }
-
         .question-text {
             font-size: 1.2rem;
             margin-bottom: 20px;
             line-height: 1.6;
             font-weight: 400;
         }
-
         .options label {
             display: block;
             background: var(--input-background);
@@ -275,19 +246,16 @@
             align-items: center;
             position: relative;
         }
-
         .options label:hover {
             background: rgba(var(--primary-color-rgb), 0.1);
             border-color: var(--primary-color);
             box-shadow: 0 2px 8px rgba(var(--primary-color-rgb), 0.1);
         }
-
         .options input[type="radio"] {
             margin-right: 15px;
             transform: scale(1.2);
             accent-color: var(--primary-color);
         }
-
         .mark-for-review {
             display: flex;
             align-items: center;
@@ -300,20 +268,17 @@
             transform: scale(1.1);
             accent-color: var(--secondary-color);
         }
-
         .quiz-navigation {
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
             flex-wrap: wrap;
         }
-
         .quiz-navigation button {
             flex: 1;
             margin: 5px;
             min-width: 120px;
         }
-
         .submit-quiz-final-btn {
             background-color: var(--success-color);
             color: white;
@@ -328,13 +293,11 @@
             box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
             display: none; /* Hidden by default */
         }
-
         .submit-quiz-final-btn:hover {
             background-color: color-mix(in srgb, var(--success-color) 85%, black);
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
         }
-
         .submit-quiz-final-btn:active {
             transform: translateY(0);
             box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
@@ -346,82 +309,105 @@
             box-shadow: none;
         }
 
-
         .results-section {
             display: none;
             text-align: left;
             animation: fadeIn 0.8s ease-out;
         }
-
         .results-section h2 {
             text-align: center;
             margin-bottom: 25px;
             color: var(--primary-color);
             font-weight: 700;
         }
-
         .score-summary {
             margin-bottom: 30px; /* Add some space below summary */
+            background-color: var(--input-background);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
         }
         .score-summary p {
             font-size: 1.2rem;
             margin-bottom: 10px;
             font-weight: 400;
         }
-
         .score-summary strong {
             color: var(--primary-color);
             font-weight: 600;
         }
-
         .answer-review-panel {
             margin-top: 30px;
             border-top: 1px solid var(--border-color);
             padding-top: 20px;
         }
-
         .answer-review-panel h3 {
             margin-bottom: 20px;
             text-align: center;
             color: var(--primary-color);
             font-weight: 600;
         }
-
         .review-item {
             background: var(--input-background);
-            padding: 15px;
+            padding: 20px;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border: 1px solid var(--border-color);
+            page-break-inside: avoid; /* Prevent review items from breaking across pages */
+            box-shadow: 0 2px 5px var(--shadow-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-
+        .review-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
         .review-item p {
-            margin-bottom: 8px;
-            line-height: 1.5;
+            margin-bottom: 10px;
+            line-height: 1.6;
             font-weight: 400;
         }
-
         .review-item strong {
             font-weight: 600;
         }
-
         .review-item .correct-answer {
             color: var(--success-color);
+            font-weight: 700;
         }
-
         .review-item .your-answer {
             color: var(--danger-color);
+            font-weight: 600;
         }
-
         .review-item .your-answer.correct {
             color: var(--success-color);
+            font-weight: 700;
         }
         /* Style for Not Attempted in review */
         .review-item .your-answer.not-attempted {
-            color: var(--text-color); /* Default text color for clarity */
+            color: var(--text-color);
             font-style: italic;
+            opacity: 0.8;
         }
-
+        /* Status badges in review items */
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .status-badge.correct {
+            background: var(--success-color);
+            color: white;
+        }
+        .status-badge.incorrect {
+            background: var(--danger-color);
+            color: white;
+        }
+        .status-badge.not-attempted {
+            background: var(--unattempted-color);
+            color: var(--text-color);
+        }
 
         /* Positioned after score summary, before review panel */
         .results-actions { /* Renamed for clarity, combines top and bottom needs */
@@ -437,24 +423,19 @@
             margin: 5px;
         }
 
-
         .print-save-btn {
             background-color: var(--secondary-color);
         }
-
         .print-save-btn:hover:not(:disabled) {
             background-color: color-mix(in srgb, var(--secondary-color) 85%, black);
         }
-
         .restart-btn {
             background-color: var(--warning-color);
             color: var(--text-on-warning);
         }
-
         .restart-btn:hover:not(:disabled) {
             background-color: color-mix(in srgb, var(--warning-color) 85%, black);
         }
-
         .mode-toggle {
             background: var(--input-background);
             border: 1px solid var(--border-color);
@@ -470,13 +451,11 @@
             z-index: 50;
             flex-shrink: 0;
         }
-
         .mode-toggle .icon {
             font-size: 1.5rem;
             color: var(--text-color);
             transition: color 0.3s ease;
         }
-
         /* Question Palette */
         .question-palette-panel {
             width: 100%;
@@ -522,7 +501,6 @@
         .dark-mode .question-grid-item {
             color: var(--text-color); /* Ensure text is visible on dark unattempted */
         }
-
         .question-grid-item:hover {
             background-color: rgba(var(--primary-color-rgb), 0.15);
             border-color: var(--primary-color);
@@ -551,7 +529,6 @@
             color: white;
             border-color: var(--answered-reviewed-color);
         }
-
         /* Custom Scrollbar for horizontal palette */
         .question-grid::-webkit-scrollbar {
             height: 8px;
@@ -568,7 +545,6 @@
             background: color-mix(in srgb, var(--primary-color) 80%, black);
         }
 
-
         .palette-legend {
             margin-top: 20px;
             text-align: center;
@@ -584,7 +560,6 @@
             align-items: center;
             color: var(--text-color);
         }
-
         .legend-color {
             width: 20px;
             height: 20px;
@@ -596,57 +571,46 @@
             border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         /* Mobile adjustments */
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
                 margin: 10px;
             }
-
             h1 {
                 font-size: 1.8rem;
             }
-
             .password-prompt {
                 padding: 30px;
             }
-
             .password-prompt input[type="password"] {
                 font-size: 0.9rem;
             }
-
             .btn {
                 padding: 10px 15px;
                 font-size: 0.9rem;
             }
-
             .quiz-header {
                 flex-direction: column;
                 align-items: center;
                 padding-bottom: 15px;
                 margin-bottom: 20px;
             }
-
             .timer {
                 margin-top: 10px;
                 font-size: 1.3rem;
             }
-
             .question-meta {
                 flex-direction: column;
                 align-items: flex-start;
             }
-
             .question-number {
                 margin-bottom: 10px;
             }
-
             .mode-toggle {
                 width: 40px;
                 height: 40px;
@@ -657,25 +621,20 @@
                 margin-top: 10px;
             }
 
-
             .question-text {
                 font-size: 1rem;
             }
-
             .options label {
                 padding: 12px;
                 font-size: 0.9rem;
             }
-
             .quiz-navigation {
                 flex-direction: column;
             }
-
             .quiz-navigation button {
                 width: 100%;
                 margin: 5px 0;
             }
-
             .question-palette-panel {
                 padding: 10px 0;
             }
@@ -708,12 +667,18 @@
         }
         /* For Print Media */
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
             body {
                 background: white !important;
                 color: black !important;
                 display: block;
                 padding: 0;
                 margin: 0;
+                font-size: 11pt;
+                line-height: 1.4;
             }
             .container, .password-overlay, .quiz-section, .question-palette-panel,
             .mode-toggle, .quiz-navigation, .progress-bar-container,
@@ -725,7 +690,7 @@
                 position: static !important;
                 width: auto !important;
                 max-width: none !important;
-                padding: 20mm !important;
+                padding: 15mm !important;
                 box-shadow: none !important;
                 backdrop-filter: none !important;
                 border: none !important;
@@ -737,41 +702,76 @@
             }
             .review-item .correct-answer {
                 color: #28a745 !important;
+                font-weight: bold !important;
             }
             .review-item .your-answer {
                 color: #dc3545 !important;
+                font-weight: bold !important;
             }
             .review-item .your-answer.correct {
                 color: #28a745 !important;
+                font-weight: bold !important;
             }
             /* Print style for Not Attempted */
             .review-item .your-answer.not-attempted {
-                color: #555 !important; /* A darker grey for clarity in print */
+                color: #666 !important;
                 font-style: italic !important;
             }
-
             .review-item {
-                background: #f8f8f8 !important;
-                border: 1px solid #eee !important;
+                background: #f8f9fa !important;
+                border: 1px solid #dee2e6 !important;
                 box-shadow: none !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 8mm !important;
+                padding: 8mm !important;
+                border-radius: 0 !important;
             }
-            /* Ensure results-actions are visible for print, but styled appropriately */
+            /* Ensure results-actions are hidden for print */
             .results-actions {
-                display: flex !important; /* Make sure they display */
-                justify-content: center !important;
-                margin-top: 15px !important; /* Adjust margin for print */
-                margin-bottom: 20px !important; /* Adjust margin for print */
-                padding-bottom: 10px !important;
-                border-bottom: 1px dashed #ccc !important; /* Visual separator */
+                display: none !important;
             }
-            .results-actions .btn {
-                background-color: #f0f0f0 !important; /* Lighter background for print */
-                color: #333 !important; /* Darker text */
-                border: 1px solid #ccc !important;
-                box-shadow: none !important;
-                transform: none !important;
-                opacity: 1 !important;
-                cursor: default !important;
+            .score-summary {
+                background: #f0f2f5 !important;
+                border: 2px solid #333 !important;
+                margin-bottom: 8mm !important;
+                padding: 8mm !important;
+                border-radius: 0 !important;
+            }
+            .score-summary h2 {
+                color: black !important;
+                font-size: 16pt !important;
+                margin-bottom: 10px !important;
+            }
+            .answer-review-panel {
+                border-top: 2px solid #333 !important;
+                margin-top: 8mm !important;
+                padding-top: 8mm !important;
+            }
+            .answer-review-panel h3 {
+                color: black !important;
+                font-size: 14pt !important;
+                margin-bottom: 15px !important;
+            }
+            /* Status badges for print */
+            .status-badge {
+                background: #e9ecef !important;
+                color: black !important;
+                border: 1px solid #333 !important;
+                padding: 2px 6px !important;
+                border-radius: 0 !important;
+                font-size: 9pt !important;
+            }
+            .status-badge.correct {
+                background: #d4edda !important;
+                border-color: #28a745 !important;
+            }
+            .status-badge.incorrect {
+                background: #f8d7da !important;
+                border-color: #dc3545 !important;
+            }
+            .status-badge.not-attempted {
+                background: #f1f3f4 !important;
+                border-color: #6c757d !important;
             }
         }
         .quiz-footer {
@@ -784,13 +784,11 @@
             background: var(--card-background); /* Match container background */
             border-radius: 0 0 20px 20px; /* Match bottom border radius of container */
         }
-
         .quiz-footer a {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
         }
-
         .quiz-footer a:hover {
             text-decoration: underline;
         }
@@ -805,10 +803,8 @@
             <p class="error-message" id="passwordError"></p>
         </div>
     </div>
-
     <div class="container">
         <h1>IBA STS Junior Science Teacher Mock Test 1</h1>
-
         <div class="quiz-section" id="quizSection">
             <div class="progress-bar-container">
                 <div class="progress-bar-fill" id="progressBarFill"></div>
@@ -816,7 +812,6 @@
             <div class="quiz-header">
                 <div class="timer"><i class="far fa-clock"></i> Time Left: <span id="timeLeft">60:00</span></div>
             </div>
-
             <div class="question-container">
                 <div class="question-meta">
                     <p class="question-number">Question <span id="currentQuestionNumber">1</span> of <span id="totalQuestions">100</span></p>
@@ -832,13 +827,11 @@
                     <label for="markForReviewCheckbox">Mark for Review</label>
                 </div>
             </div>
-
             <div class="quiz-navigation">
                 <button class="btn" id="prevBtn">Previous</button>
                 <button class="btn" id="nextBtn">Next</button>
                 <button class="submit-quiz-final-btn" id="submitQuizFinalBtn">Submit Quiz</button>
             </div>
-
             <div class="question-palette-panel" id="questionPalettePanel">
                 <h3><i class="fas fa-palette"></i> Question Palette</h3>
                 <div class="question-grid" id="questionGrid">
@@ -852,7 +845,6 @@
                 </div>
             </div>
         </div>
-
         <div class="results-section" id="resultsSection">
             <h2>Mock Test Results</h2>
             <div class="score-summary">
@@ -862,12 +854,10 @@
                 <p>Incorrect Answers: <strong id="resIncorrectAnswers"></strong></p>
                 <p>Your Score: <strong id="resScore"></strong>%</p>
             </div>
-
             <div class="results-actions" id="resultsActions">
                 <button class="btn print-save-btn" id="printSaveBtn">Print / Save as PDF</button>
                 <button class="btn restart-btn" id="restartQuizBtn">Restart Quiz</button>
             </div>
-
             <div class="answer-review-panel">
                 <h3>Answer Review</h3>
                 <div id="reviewItemsContainer">
@@ -879,22 +869,17 @@
         </footer>
     </div>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         // Simple obfuscation: XOR cipher with a key
         const passwordKey = 123; // A simple numeric key for XOR
-
         function obfuscate(str) {
             return str.split('').map(char => String.fromCharCode(char.charCodeAt(0) ^ passwordKey)).join('');
         }
-
         const actualEncryptedPassword = obfuscate('ibajst2025');
-
         // Note: For real security, this is NOT sufficient. This only prevents casual inspection.
         // A determined user can still find the de-obfuscation logic in client-side JS.
         // Server-side authentication is required for true security.
-
        const questions = [
 // =======================
 // SCIENCE – BIOLOGY (Q1–20)
@@ -1520,14 +1505,12 @@
   section: "General Knowledge"
 }
         ];
-
         let currentQuestionIndex = 0;
         let userAnswers = [];
         let timeLeft = 3600; // 60 minutes in seconds
         let timerInterval;
         const totalQuestions = questions.length;
         let quizStarted = false;
-
         // Elements
         const passwordOverlay = document.getElementById('passwordOverlay');
         const passwordInput = document.getElementById('passwordInput');
@@ -1557,7 +1540,6 @@
         const restartQuizBtn = document.getElementById('restartQuizBtn');
         const modeToggle = document.getElementById('modeToggle');
         const modeToggleIcon = modeToggle.querySelector('.icon');
-
         // Initialize userAnswers array
         for (let i = 0; i < totalQuestions; i++) {
             userAnswers.push({
@@ -1566,13 +1548,11 @@
                 attempted: false
             });
         }
-
         function formatTime(seconds) {
             const minutes = Math.floor(seconds / 60);
             const remainingSeconds = seconds % 60;
             return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
         }
-
         function updateTimer() {
             timeLeft--;
             timeLeftSpan.textContent = formatTime(timeLeft);
@@ -1581,12 +1561,10 @@
                 submitQuiz();
             }
         }
-
         function loadQuestion() {
             const questionData = questions[currentQuestionIndex];
             questionText.innerHTML = questionData.question;
             optionsContainer.innerHTML = ''; // Clear previous options
-
             questionData.options.forEach((option, index) => {
                 const label = document.createElement('label');
                 const radioInput = document.createElement('input');
@@ -1594,48 +1572,39 @@
                 radioInput.name = 'quizOption';
                 radioInput.value = option;
                 radioInput.id = `option${index}`;
-
                 label.appendChild(radioInput);
                 label.appendChild(document.createTextNode(option));
                 optionsContainer.appendChild(label);
-
                 // Pre-select if answer exists
                 if (userAnswers[currentQuestionIndex].answer === option) {
                     radioInput.checked = true;
                 }
-
                 radioInput.addEventListener('change', (event) => {
                     userAnswers[currentQuestionIndex].answer = event.target.value;
                     userAnswers[currentQuestionIndex].attempted = true;
                     updatePaletteItemStatus(currentQuestionIndex);
                 });
             });
-
             // Update Mark for Review checkbox
             markForReviewCheckbox.checked = userAnswers[currentQuestionIndex].markedForReview;
             markForReviewCheckbox.removeEventListener('change', handleMarkForReviewChange); // Remove old listener
             markForReviewCheckbox.addEventListener('change', handleMarkForReviewChange); // Add new listener
-
             currentQuestionNumberSpan.textContent = currentQuestionIndex + 1;
             totalQuestionsSpan.textContent = totalQuestions;
             updateProgressBar();
             updateNavigationButtons();
             updatePaletteActiveStatus();
         }
-
         function handleMarkForReviewChange() {
             userAnswers[currentQuestionIndex].markedForReview = markForReviewCheckbox.checked;
             updatePaletteItemStatus(currentQuestionIndex);
         }
-
         function updateProgressBar() {
             const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
             progressBarFill.style.width = `${progress}%`;
         }
-
         function updateNavigationButtons() {
             prevBtn.disabled = currentQuestionIndex === 0;
-
             // Show/hide Next and Submit buttons based on current question index
             if (currentQuestionIndex === totalQuestions - 1) {
                 nextBtn.style.display = 'none'; // Hide next button on the last question
@@ -1645,21 +1614,18 @@
                 submitQuizFinalBtn.style.display = 'none'; // Hide submit button
             }
         }
-
         function showNextQuestion() {
             if (currentQuestionIndex < totalQuestions - 1) {
                 currentQuestionIndex++;
                 loadQuestion();
             }
         }
-
         function showPreviousQuestion() {
             if (currentQuestionIndex > 0) {
                 currentQuestionIndex--;
                 loadQuestion();
             }
         }
-
         function submitQuiz() {
             clearInterval(timerInterval);
             quizSection.style.display = 'none';
@@ -1667,11 +1633,9 @@
             calculateResults();
             displayReview();
         }
-
         function calculateResults() {
             let correctAnswersCount = 0;
             let attemptedQuestionsCount = 0;
-
             userAnswers.forEach((userAnswer, index) => {
                 if (userAnswer.attempted) {
                     attemptedQuestionsCount++;
@@ -1680,51 +1644,59 @@
                     }
                 }
             });
-
             const incorrectAnswersCount = attemptedQuestionsCount - correctAnswersCount;
             const score = (correctAnswersCount / totalQuestions) * 100;
-
             resTotalQuestions.textContent = totalQuestions;
             resAttempted.textContent = attemptedQuestionsCount;
             resCorrectAnswers.textContent = correctAnswersCount;
             resIncorrectAnswers.textContent = incorrectAnswersCount;
             resScore.textContent = score.toFixed(2);
         }
-
         function displayReview() {
             reviewItemsContainer.innerHTML = ''; // Clear previous review items
-
             questions.forEach((question, index) => {
                 const reviewItem = document.createElement('div');
                 reviewItem.classList.add('review-item');
-
                 const userAnswerData = userAnswers[index];
                 const attempted = userAnswerData.attempted;
                 const yourAnswer = userAnswerData.answer;
                 const correctAnswer = question.answer;
-
-                let answerStatusClass = 'not-attempted'; // Default for unattempted
+                
+                // Clean question text to remove existing numbering
+                let cleanedQuestion = question.question;
+                // Remove patterns like "1. ", "73. ", etc. from the beginning
+                cleanedQuestion = cleanedQuestion.replace(/^\d+\.\s*/, '');
+                
+                let answerStatusClass = 'not-attempted';
                 let answerText = 'Not Attempted';
-
+                let statusBadge = '';
+                
                 if (attempted) {
                     if (yourAnswer === correctAnswer) {
                         answerStatusClass = 'correct';
-                        answerText = `Your Answer: <strong class="your-answer correct">${yourAnswer}</strong>`;
+                        answerText = yourAnswer;
+                        statusBadge = '<span style="background: var(--success-color); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: 10px;">✓ Correct</span>';
                     } else {
                         answerStatusClass = 'incorrect';
-                        answerText = `Your Answer: <strong class="your-answer">${yourAnswer}</strong>`;
+                        answerText = yourAnswer;
+                        statusBadge = '<span style="background: var(--danger-color); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: 10px;">✗ Incorrect</span>';
                     }
+                } else {
+                    statusBadge = '<span style="background: var(--unattempted-color); color: var(--text-color); padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: 10px;">⚬ Not Attempted</span>';
                 }
-
+                
                 reviewItem.innerHTML = `
-                    <p><strong>Q${index + 1}:</strong> ${question.question}</p>
-                    <p class="your-answer ${answerStatusClass}">${answerText}</p>
-                    <p>Correct Answer: <strong class="correct-answer">${correctAnswer}</strong></p>
+                    <p style="margin-bottom: 12px;"><strong>Q${index + 1}:</strong> ${cleanedQuestion}</p>
+                    <div style="margin-left: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>Available Options:</strong> ${question.options.join(', ')}</p>
+                        <p style="margin-bottom: 8px;">Your Answer: <strong class="your-answer ${answerStatusClass}">${answerText}</strong>${statusBadge}</p>
+                        <p style="margin-bottom: 8px;">Correct Answer: <strong class="correct-answer">${correctAnswer}</strong></p>
+                        ${userAnswerData.markedForReview ? '<p style="font-style: italic; color: var(--secondary-color); margin-bottom: 0;">📌 Marked for Review</p>' : ''}
+                    </div>
                 `;
                 reviewItemsContainer.appendChild(reviewItem);
             });
         }
-
         function generateQuestionPalette() {
             questionGrid.innerHTML = '';
             questions.forEach((_, index) => {
@@ -1740,12 +1712,10 @@
             });
             updatePaletteAllStatus();
         }
-
         function updatePaletteItemStatus(index) {
             const item = questionGrid.querySelector(`[data-question-index="${index}"]`);
             if (item) {
                 item.classList.remove('current', 'answered', 'reviewed', 'unattempted', 'answered-reviewed');
-
                 const userAnswer = userAnswers[index];
                 if (userAnswer.attempted && userAnswer.markedForReview) {
                     item.classList.add('answered-reviewed');
@@ -1756,18 +1726,15 @@
                 } else {
                     item.classList.add('unattempted');
                 }
-
                 // Ensure current question is always highlighted after updating status
                 updatePaletteActiveStatus();
             }
         }
-
         function updatePaletteAllStatus() {
             userAnswers.forEach((_, index) => {
                 updatePaletteItemStatus(index);
             });
         }
-
         function updatePaletteActiveStatus() {
             // Remove 'current' from all items first
             questionGrid.querySelectorAll('.question-grid-item').forEach(item => {
@@ -1779,7 +1746,6 @@
                 currentItem.classList.add('current');
             }
         }
-
         function restartQuiz() {
             if (confirm("Are you sure you want to restart the quiz? Your current progress will be lost.")) {
                 currentQuestionIndex = 0;
@@ -1800,21 +1766,198 @@
                 timerInterval = setInterval(updateTimer, 1000);
             }
         }
-
         // Print/Save as PDF functionality
         printSaveBtn.addEventListener('click', () => {
-            const element = document.getElementById('resultsSection');
+            // Create a comprehensive PDF content
+            const pdfContent = document.createElement('div');
+            pdfContent.style.cssText = `
+                padding: 20px;
+                font-family: 'Poppins', sans-serif;
+                background-color: white !important;
+                color: black !important;
+                width: 100%;
+                max-width: none;
+                font-size: 12pt;
+                line-height: 1.4;
+            `;
+            
+            // Add title
+            const title = document.createElement('h1');
+            title.textContent = 'IBA STS Junior Science Teacher Mock Test 1 - Results';
+            title.style.cssText = `
+                text-align: center;
+                color: black !important;
+                margin-bottom: 30px;
+                font-size: 24pt;
+                border-bottom: 2px solid #333;
+                padding-bottom: 10px;
+            `;
+            pdfContent.appendChild(title);
+            
+            // Add score summary
+            const scoreSummary = document.createElement('div');
+            scoreSummary.style.cssText = `
+                background: #f8f9fa !important;
+                padding: 20px;
+                margin-bottom: 30px;
+                border: 2px solid #dee2e6;
+                border-radius: 8px;
+            `;
+            
+            const summaryTitle = document.createElement('h2');
+            summaryTitle.textContent = 'Score Summary';
+            summaryTitle.style.cssText = 'color: black !important; margin-bottom: 15px; font-size: 18pt;';
+            scoreSummary.appendChild(summaryTitle);
+            
+            // Calculate and display results
+            let correctAnswersCount = 0;
+            let attemptedQuestionsCount = 0;
+            userAnswers.forEach((userAnswer, index) => {
+                if (userAnswer.attempted) {
+                    attemptedQuestionsCount++;
+                    if (userAnswer.answer === questions[index].answer) {
+                        correctAnswersCount++;
+                    }
+                }
+            });
+            const incorrectAnswersCount = attemptedQuestionsCount - correctAnswersCount;
+            const notAttemptedCount = totalQuestions - attemptedQuestionsCount;
+            const score = (correctAnswersCount / totalQuestions) * 100;
+            
+            const summaryStats = document.createElement('div');
+            summaryStats.innerHTML = `
+                <p><strong>Total Questions:</strong> ${totalQuestions}</p>
+                <p><strong>Attempted:</strong> ${attemptedQuestionsCount}</p>
+                <p><strong>Not Attempted:</strong> ${notAttemptedCount}</p>
+                <p><strong>Correct Answers:</strong> ${correctAnswersCount}</p>
+                <p><strong>Incorrect Answers:</strong> ${incorrectAnswersCount}</p>
+                <p style="font-size: 14pt; color: #007bff !important;"><strong>Your Score: ${score.toFixed(2)}%</strong></p>
+            `;
+            summaryStats.style.cssText = 'color: black !important; font-size: 12pt;';
+            scoreSummary.appendChild(summaryStats);
+            pdfContent.appendChild(scoreSummary);
+            
+            // Add detailed answer review
+            const reviewTitle = document.createElement('h2');
+            reviewTitle.textContent = 'Detailed Answer Review';
+            reviewTitle.style.cssText = `
+                color: black !important;
+                margin: 30px 0 20px 0;
+                font-size: 18pt;
+                border-bottom: 1px solid #333;
+                padding-bottom: 5px;
+            `;
+            pdfContent.appendChild(reviewTitle);
+            
+            // Add all questions with answers
+            questions.forEach((question, index) => {
+                const reviewItem = document.createElement('div');
+                reviewItem.style.cssText = `
+                    background: #f8f9fa !important;
+                    border: 1px solid #dee2e6 !important;
+                    padding: 15px;
+                    margin-bottom: 15px;
+                    border-radius: 5px;
+                    page-break-inside: avoid;
+                `;
+                
+                const userAnswerData = userAnswers[index];
+                const attempted = userAnswerData.attempted;
+                const yourAnswer = userAnswerData.answer;
+                const correctAnswer = question.answer;
+                
+                // Clean question text to remove existing numbering
+                let cleanedQuestion = question.question;
+                // Remove patterns like "1. ", "73. ", etc. from the beginning
+                cleanedQuestion = cleanedQuestion.replace(/^\d+\.\s*/, '');
+                
+                let statusColor = '#6c757d'; // Default gray for not attempted
+                let statusText = 'Not Attempted';
+                let yourAnswerText = 'Not Attempted';
+                
+                if (attempted) {
+                    if (yourAnswer === correctAnswer) {
+                        statusColor = '#28a745'; // Green for correct
+                        statusText = 'Correct';
+                        yourAnswerText = yourAnswer;
+                    } else {
+                        statusColor = '#dc3545'; // Red for incorrect
+                        statusText = 'Incorrect';
+                        yourAnswerText = yourAnswer;
+                    }
+                }
+                
+                reviewItem.innerHTML = `
+                    <p style="color: black !important; font-weight: bold; margin-bottom: 10px;">
+                        <strong>Question ${index + 1}:</strong> ${cleanedQuestion}
+                    </p>
+                    <div style="margin-left: 20px;">
+                        <p style="color: black !important; margin-bottom: 5px;">
+                            <strong>Options:</strong> ${question.options.join(', ')}
+                        </p>
+                        <p style="color: ${statusColor} !important; margin-bottom: 5px;">
+                            <strong>Your Answer:</strong> ${yourAnswerText}
+                        </p>
+                        <p style="color: #28a745 !important; margin-bottom: 5px;">
+                            <strong>Correct Answer:</strong> ${correctAnswer}
+                        </p>
+                        <p style="color: ${statusColor} !important; font-weight: bold;">
+                            <strong>Status:</strong> ${statusText}
+                        </p>
+                    </div>
+                `;
+                
+                pdfContent.appendChild(reviewItem);
+            });
+            
+            // Add footer
+            const footer = document.createElement('div');
+            footer.style.cssText = `
+                margin-top: 30px;
+                padding-top: 20px;
+                border-top: 1px solid #333;
+                text-align: center;
+                color: black !important;
+                font-size: 10pt;
+            `;
+            footer.innerHTML = '<p>JST Mock Test Series Created By Mukesh Kumar</p>';
+            pdfContent.appendChild(footer);
+            
+            // Set PDF options
             const opt = {
-                margin: 10,
-                filename: 'Quiz_Results.pdf',
+                margin: [10, 10, 10, 10],
+                filename: `JST_Mock_Test_1_Results_${new Date().toISOString().split('T')[0]}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                pagebreak: { mode: 'avoid-all', after: '.review-item' } // Avoid breaking review items
+                html2canvas: { 
+                    scale: 2,
+                    logging: false,
+                    dpi: 192,
+                    letterRendering: true,
+                    useCORS: true,
+                    backgroundColor: 'white'
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                },
+                pagebreak: { 
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.page-break'
+                }
             };
-            html2pdf().set(opt).from(element).save();
+            
+            // Show loading message
+            printSaveBtn.disabled = true;
+            printSaveBtn.textContent = 'Generating PDF...';
+            
+            // Generate and save PDF
+            html2pdf().set(opt).from(pdfContent).save().finally(() => {
+                printSaveBtn.disabled = false;
+                printSaveBtn.textContent = 'Print / Save as PDF';
+            });
         });
-
 
         // Dark Mode Toggle
         modeToggle.addEventListener('click', () => {
@@ -1827,16 +1970,13 @@
             // Recalculate legend colors when mode changes
             updateLegendColors();
         });
-
         // Function to apply colors to legend items based on current mode
         function updateLegendColors() {
             const rootStyle = getComputedStyle(document.documentElement);
-
             const legendItems = document.querySelectorAll('.palette-legend .legend-item .legend-color');
             legendItems.forEach(legendColorDiv => {
                 const colorType = legendColorDiv.dataset.colorType;
                 let colorToApply = '';
-
                 switch (colorType) {
                     case 'current':
                         colorToApply = rootStyle.getPropertyValue('--primary-color');
@@ -1861,12 +2001,10 @@
             });
         }
 
-
         // Event Listeners
         passwordSubmitBtn.addEventListener('click', () => {
             const enteredPassword = passwordInput.value;
             const encryptedEnteredPassword = obfuscate(enteredPassword);
-
             if (encryptedEnteredPassword === actualEncryptedPassword) {
                 passwordOverlay.style.display = 'none';
                 quizSection.style.display = 'block';
@@ -1878,19 +2016,16 @@
                 passwordError.textContent = 'Incorrect password. Please try again.';
             }
         });
-
         // Allow pressing Enter in password field
         passwordInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 passwordSubmitBtn.click();
             }
         });
-
         prevBtn.addEventListener('click', showPreviousQuestion);
         nextBtn.addEventListener('click', showNextQuestion);
         submitQuizFinalBtn.addEventListener('click', submitQuiz);
         restartQuizBtn.addEventListener('click', restartQuiz);
-
         // Initial setup
         updateLegendColors(); // Set initial legend colors based on default mode
     </script>

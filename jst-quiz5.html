@@ -408,37 +408,64 @@
 
         .review-item {
             background: var(--input-background);
-            padding: 15px;
+            padding: 20px;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border: 1px solid var(--border-color);
+            page-break-inside: avoid; /* Prevent review items from breaking across pages */
+            box-shadow: 0 2px 5px var(--shadow-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-
+        .review-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
         .review-item p {
-            margin-bottom: 8px;
-            line-height: 1.5;
+            margin-bottom: 10px;
+            line-height: 1.6;
             font-weight: 400;
         }
-
         .review-item strong {
             font-weight: 600;
         }
-
         .review-item .correct-answer {
             color: var(--success-color);
+            font-weight: 700;
         }
-
         .review-item .your-answer {
             color: var(--danger-color);
+            font-weight: 600;
         }
-
         .review-item .your-answer.correct {
             color: var(--success-color);
+            font-weight: 700;
         }
         /* Style for Not Attempted in review */
         .review-item .your-answer.not-attempted {
-            color: var(--text-color); /* Default text color for clarity */
+            color: var(--text-color);
             font-style: italic;
+            opacity: 0.8;
+        }
+        /* Status badges in review items */
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .status-badge.correct {
+            background: var(--success-color);
+            color: white;
+        }
+        .status-badge.incorrect {
+            background: var(--danger-color);
+            color: white;
+        }
+        .status-badge.not-attempted {
+            background: var(--unattempted-color);
+            color: var(--text-color);
         }
 
 
@@ -727,12 +754,18 @@
         }
         /* For Print Media */
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
             body {
                 background: white !important;
                 color: black !important;
                 display: block;
                 padding: 0;
                 margin: 0;
+                font-size: 11pt;
+                line-height: 1.4;
             }
             .container, .password-overlay, .quiz-section, .question-palette-panel,
             .mode-toggle, .quiz-navigation, .progress-bar-container,
@@ -744,7 +777,7 @@
                 position: static !important;
                 width: auto !important;
                 max-width: none !important;
-                padding: 20mm !important;
+                padding: 15mm !important;
                 box-shadow: none !important;
                 backdrop-filter: none !important;
                 border: none !important;
@@ -756,41 +789,76 @@
             }
             .review-item .correct-answer {
                 color: #28a745 !important;
+                font-weight: bold !important;
             }
             .review-item .your-answer {
                 color: #dc3545 !important;
+                font-weight: bold !important;
             }
             .review-item .your-answer.correct {
                 color: #28a745 !important;
+                font-weight: bold !important;
             }
             /* Print style for Not Attempted */
             .review-item .your-answer.not-attempted {
-                color: #555 !important; /* A darker grey for clarity in print */
+                color: #666 !important;
                 font-style: italic !important;
             }
-
             .review-item {
-                background: #f8f8f8 !important;
-                border: 1px solid #eee !important;
+                background: #f8f9fa !important;
+                border: 1px solid #dee2e6 !important;
                 box-shadow: none !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 8mm !important;
+                padding: 8mm !important;
+                border-radius: 0 !important;
             }
-            /* Ensure results-actions are visible for print, but styled appropriately */
+            /* Ensure results-actions are hidden for print */
             .results-actions {
-                display: flex !important; /* Make sure they display */
-                justify-content: center !important;
-                margin-top: 15px !important; /* Adjust margin for print */
-                margin-bottom: 20px !important; /* Adjust margin for print */
-                padding-bottom: 10px !important;
-                border-bottom: 1px dashed #ccc !important; /* Visual separator */
+                display: none !important;
             }
-            .results-actions .btn {
-                background-color: #f0f0f0 !important; /* Lighter background for print */
-                color: #333 !important; /* Darker text */
-                border: 1px solid #ccc !important;
-                box-shadow: none !important;
-                transform: none !important;
-                opacity: 1 !important;
-                cursor: default !important;
+            .score-summary {
+                background: #f0f2f5 !important;
+                border: 2px solid #333 !important;
+                margin-bottom: 8mm !important;
+                padding: 8mm !important;
+                border-radius: 0 !important;
+            }
+            .score-summary h2 {
+                color: black !important;
+                font-size: 16pt !important;
+                margin-bottom: 10px !important;
+            }
+            .answer-review-panel {
+                border-top: 2px solid #333 !important;
+                margin-top: 8mm !important;
+                padding-top: 8mm !important;
+            }
+            .answer-review-panel h3 {
+                color: black !important;
+                font-size: 14pt !important;
+                margin-bottom: 15px !important;
+            }
+            /* Status badges for print */
+            .status-badge {
+                background: #e9ecef !important;
+                color: black !important;
+                border: 1px solid #333 !important;
+                padding: 2px 6px !important;
+                border-radius: 0 !important;
+                font-size: 9pt !important;
+            }
+            .status-badge.correct {
+                background: #d4edda !important;
+                border-color: #28a745 !important;
+            }
+            .status-badge.incorrect {
+                background: #f8d7da !important;
+                border-color: #dc3545 !important;
+            }
+            .status-badge.not-attempted {
+                background: #f1f3f4 !important;
+                border-color: #6c757d !important;
             }
         }
         .quiz-footer {
@@ -1738,29 +1806,42 @@ const questions = [
             questions.forEach((question, index) => {
                 const reviewItem = document.createElement('div');
                 reviewItem.classList.add('review-item');
-
                 const userAnswerData = userAnswers[index];
                 const attempted = userAnswerData.attempted;
                 const yourAnswer = userAnswerData.answer;
                 const correctAnswer = question.answer;
-
-                let answerStatusClass = 'not-attempted'; // Default for unattempted
+                
+                // Clean question text to remove existing numbering
+                let cleanedQuestion = question.question;
+                // Remove patterns like "1. ", "73. ", etc. from the beginning
+                cleanedQuestion = cleanedQuestion.replace(/^\d+\.\s*/, '');
+                
+                let answerStatusClass = 'not-attempted';
                 let answerText = 'Not Attempted';
-
+                let statusBadge = '';
+                
                 if (attempted) {
                     if (yourAnswer === correctAnswer) {
                         answerStatusClass = 'correct';
-                        answerText = `Your Answer: <strong class="your-answer correct">${yourAnswer}</strong>`;
+                        answerText = yourAnswer;
+                        statusBadge = '<span style="background: var(--success-color); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: 10px;">✓ Correct</span>';
                     } else {
                         answerStatusClass = 'incorrect';
-                        answerText = `Your Answer: <strong class="your-answer">${yourAnswer}</strong>`;
+                        answerText = yourAnswer;
+                        statusBadge = '<span style="background: var(--danger-color); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: 10px;">✗ Incorrect</span>';
                     }
+                } else {
+                    statusBadge = '<span style="background: var(--unattempted-color); color: var(--text-color); padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: 10px;">⚬ Not Attempted</span>';
                 }
-
+                
                 reviewItem.innerHTML = `
-                    <p><strong>Q${index + 1}:</strong> ${question.question}</p>
-                    <p class="your-answer ${answerStatusClass}">${answerText}</p>
-                    <p>Correct Answer: <strong class="correct-answer">${correctAnswer}</strong></p>
+                    <p style="margin-bottom: 12px;"><strong>Q${index + 1}:</strong> ${cleanedQuestion}</p>
+                    <div style="margin-left: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>Available Options:</strong> ${question.options.join(', ')}</p>
+                        <p style="margin-bottom: 8px;">Your Answer: <strong class="your-answer ${answerStatusClass}">${answerText}</strong>${statusBadge}</p>
+                        <p style="margin-bottom: 8px;">Correct Answer: <strong class="correct-answer">${correctAnswer}</strong></p>
+                        ${userAnswerData.markedForReview ? '<p style="font-style: italic; color: var(--secondary-color); margin-bottom: 0;">📌 Marked for Review</p>' : ''}
+                    </div>
                 `;
                 reviewItemsContainer.appendChild(reviewItem);
             });
@@ -1865,16 +1946,195 @@ const questions = [
 
         // Print/Save as PDF functionality
         printSaveBtn.addEventListener('click', () => {
-            const element = document.getElementById('resultsSection');
+            // Create a comprehensive PDF content
+            const pdfContent = document.createElement('div');
+            pdfContent.style.cssText = `
+                padding: 20px;
+                font-family: 'Poppins', sans-serif;
+                background-color: white !important;
+                color: black !important;
+                width: 100%;
+                max-width: none;
+                font-size: 12pt;
+                line-height: 1.4;
+            `;
+            
+            // Add title
+            const title = document.createElement('h1');
+            title.textContent = 'IBA STS Junior Science Teacher Mock Test 5 - Results';
+            title.style.cssText = `
+                text-align: center;
+                color: black !important;
+                margin-bottom: 30px;
+                font-size: 24pt;
+                border-bottom: 2px solid #333;
+                padding-bottom: 10px;
+            `;
+            pdfContent.appendChild(title);
+            
+            // Add score summary
+            const scoreSummary = document.createElement('div');
+            scoreSummary.style.cssText = `
+                background: #f8f9fa !important;
+                padding: 20px;
+                margin-bottom: 30px;
+                border: 2px solid #dee2e6;
+                border-radius: 8px;
+            `;
+            
+            const summaryTitle = document.createElement('h2');
+            summaryTitle.textContent = 'Score Summary';
+            summaryTitle.style.cssText = 'color: black !important; margin-bottom: 15px; font-size: 18pt;';
+            scoreSummary.appendChild(summaryTitle);
+            
+            // Calculate and display results
+            let correctAnswersCount = 0;
+            let attemptedQuestionsCount = 0;
+            userAnswers.forEach((userAnswer, index) => {
+                if (userAnswer.attempted) {
+                    attemptedQuestionsCount++;
+                    if (userAnswer.answer === questions[index].answer) {
+                        correctAnswersCount++;
+                    }
+                }
+            });
+            const incorrectAnswersCount = attemptedQuestionsCount - correctAnswersCount;
+            const notAttemptedCount = totalQuestions - attemptedQuestionsCount;
+            const score = (correctAnswersCount / totalQuestions) * 100;
+            
+            const summaryStats = document.createElement('div');
+            summaryStats.innerHTML = `
+                <p><strong>Total Questions:</strong> ${totalQuestions}</p>
+                <p><strong>Attempted:</strong> ${attemptedQuestionsCount}</p>
+                <p><strong>Not Attempted:</strong> ${notAttemptedCount}</p>
+                <p><strong>Correct Answers:</strong> ${correctAnswersCount}</p>
+                <p><strong>Incorrect Answers:</strong> ${incorrectAnswersCount}</p>
+                <p style="font-size: 14pt; color: #007bff !important;"><strong>Your Score: ${score.toFixed(2)}%</strong></p>
+            `;
+            summaryStats.style.cssText = 'color: black !important; font-size: 12pt;';
+            scoreSummary.appendChild(summaryStats);
+            pdfContent.appendChild(scoreSummary);
+            
+            // Add detailed answer review
+            const reviewTitle = document.createElement('h2');
+            reviewTitle.textContent = 'Detailed Answer Review';
+            reviewTitle.style.cssText = `
+                color: black !important;
+                margin: 30px 0 20px 0;
+                font-size: 18pt;
+                border-bottom: 1px solid #333;
+                padding-bottom: 5px;
+            `;
+            pdfContent.appendChild(reviewTitle);
+            
+            // Add all questions with answers
+            questions.forEach((question, index) => {
+                const reviewItem = document.createElement('div');
+                reviewItem.style.cssText = `
+                    background: #f8f9fa !important;
+                    border: 1px solid #dee2e6 !important;
+                    padding: 15px;
+                    margin-bottom: 15px;
+                    border-radius: 5px;
+                    page-break-inside: avoid;
+                `;
+                
+                const userAnswerData = userAnswers[index];
+                const attempted = userAnswerData.attempted;
+                const yourAnswer = userAnswerData.answer;
+                const correctAnswer = question.answer;
+                
+                // Clean question text to remove existing numbering
+                let cleanedQuestion = question.question;
+                // Remove patterns like "1. ", "73. ", etc. from the beginning
+                cleanedQuestion = cleanedQuestion.replace(/^\d+\.\s*/, '');
+                
+                let statusColor = '#6c757d'; // Default gray for not attempted
+                let statusText = 'Not Attempted';
+                let yourAnswerText = 'Not Attempted';
+                
+                if (attempted) {
+                    if (yourAnswer === correctAnswer) {
+                        statusColor = '#28a745'; // Green for correct
+                        statusText = 'Correct';
+                        yourAnswerText = yourAnswer;
+                    } else {
+                        statusColor = '#dc3545'; // Red for incorrect
+                        statusText = 'Incorrect';
+                        yourAnswerText = yourAnswer;
+                    }
+                }
+                
+                reviewItem.innerHTML = `
+                    <p style="color: black !important; font-weight: bold; margin-bottom: 10px;">
+                        <strong>Question ${index + 1}:</strong> ${cleanedQuestion}
+                    </p>
+                    <div style="margin-left: 20px;">
+                        <p style="color: black !important; margin-bottom: 5px;">
+                            <strong>Options:</strong> ${question.options.join(', ')}
+                        </p>
+                        <p style="color: ${statusColor} !important; margin-bottom: 5px;">
+                            <strong>Your Answer:</strong> ${yourAnswerText}
+                        </p>
+                        <p style="color: #28a745 !important; margin-bottom: 5px;">
+                            <strong>Correct Answer:</strong> ${correctAnswer}
+                        </p>
+                        <p style="color: ${statusColor} !important; font-weight: bold;">
+                            <strong>Status:</strong> ${statusText}
+                        </p>
+                    </div>
+                `;
+                
+                pdfContent.appendChild(reviewItem);
+            });
+            
+            // Add footer
+            const footer = document.createElement('div');
+            footer.style.cssText = `
+                margin-top: 30px;
+                padding-top: 20px;
+                border-top: 1px solid #333;
+                text-align: center;
+                color: black !important;
+                font-size: 10pt;
+            `;
+            footer.innerHTML = '<p>JST Mock Test Series Created By Mukesh Kumar</p>';
+            pdfContent.appendChild(footer);
+            
+            // Set PDF options
             const opt = {
-                margin: 10,
-                filename: 'Quiz_Results.pdf',
+                margin: [10, 10, 10, 10],
+                filename: `JST_Mock_Test_5_Results_${new Date().toISOString().split('T')[0]}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                pagebreak: { mode: 'avoid-all', after: '.review-item' } // Avoid breaking review items
+                html2canvas: { 
+                    scale: 2,
+                    logging: false,
+                    dpi: 192,
+                    letterRendering: true,
+                    useCORS: true,
+                    backgroundColor: 'white'
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                },
+                pagebreak: { 
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.page-break'
+                }
             };
-            html2pdf().set(opt).from(element).save();
+            
+            // Show loading message
+            printSaveBtn.disabled = true;
+            printSaveBtn.textContent = 'Generating PDF...';
+            
+            // Generate and save PDF
+            html2pdf().set(opt).from(pdfContent).save().finally(() => {
+                printSaveBtn.disabled = false;
+                printSaveBtn.textContent = 'Print / Save as PDF';
+            });
         });
 
 
