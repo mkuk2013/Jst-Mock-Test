@@ -109,7 +109,6 @@
       z-index: 0;
     }
 
-
     .card::before {
       content: "";
       position: absolute;
@@ -124,7 +123,6 @@
       transition: opacity 0.3s ease;
       pointer-events: none;
     }
-
 
     .card:hover::before {
       opacity: 1;
@@ -132,31 +130,6 @@
 
     .card:hover {
       box-shadow: 0 0 16px rgba(0, 123, 255, 0.25), 0 0 30px rgba(0, 123, 255, 0.15);
-    }
-
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: inherit;
-      z-index: 0;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .card:hover {
-      box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
     }
 
     .card:hover {
@@ -222,14 +195,12 @@
       pointer-events: none;
     }
 
-
     .card h3,
     .card span {
       color: var(--text-dark) !important;
       position: relative !important;
       z-index: 2 !important;
     }
-
 
     .card:hover {
       transform: translateY(-6px) scale(1.02);
@@ -252,14 +223,12 @@
       border-top: 1px solid #dee2e6;
     }
 
-
     .card h3,
     .card span {
       color: var(--text-dark) !important;
       position: relative !important;
       z-index: 2 !important;
     }
-
 
     .card {
       background: var(--card-bg);
@@ -307,7 +276,6 @@
       animation-delay: 0.5s;
     }
 
-
     /* Social link hover animation */
     footer a {
       display: inline-flex;
@@ -329,7 +297,6 @@
       transform: rotate(8deg) scale(1.15);
     }
 
-
     /* Mock Test Container Border Styling */
     :root {
       --mock-border-color: #007bff;
@@ -338,19 +305,6 @@
     body.dark {
       --mock-border-color: #ffffff;
     }
-
-
-    :root {
-      --mock-border-color: #007bff;
-    }
-
-    body.dark {
-      --mock-border-color: #ffffff;
-    }
-
-
-
-
 
     body.dark .card::before {
       content: "";
@@ -367,7 +321,6 @@
       pointer-events: none;
     }
 
-
     body.dark .card:hover::before {
       opacity: 1;
     }
@@ -375,7 +328,6 @@
     body.dark .card:hover {
       box-shadow: 0 0 16px rgba(255, 255, 255, 0.25), 0 0 30px rgba(255, 255, 255, 0.15);
     }
-
 
     .card-icon {
       font-size: 1.8rem;
@@ -409,8 +361,6 @@
       }
     }
 
-
-
     .card.disabled {
       opacity: 0.6;
       position: relative;
@@ -420,7 +370,6 @@
     .card.disabled:hover {
       transform: translateY(-3px);
     }
-
 
     .typing-text {
       display: inline-block;
@@ -442,16 +391,29 @@
       text-decoration: none;
       color: inherit;
     }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 25px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
   </style>
-
-
 </head>
 
 <body>
   <header>
-
-
-
     <h1>IBA STS JST Mock Test</h1>
     <p>Daily Practice for Junior Science Teacher (BPS-14)</p>
     <p><span class="typing-text"></span></p>
@@ -460,6 +422,9 @@
   <div class="notice fade-up fade-delay-1">
     <strong>🔒 NOTICE:</strong> All mock tests are password protected. For password, please contact on WhatsApp:
     <a href="https://wa.me/923480358640" target="_blank">+92 348 0358640</a>
+    <br>
+    <strong>📱 Download Our App:</strong> You can also download our JST Mock Test Android application. Just download and install it to practice on the go! 
+    <a href="https://drive.usercontent.google.com/download?id=1TMiSRuVCRxbhAkCvxJ9SH8roOmmV9mio&authuser=0" class="download-btn"><i class="fas fa-download"></i> Download App</a>
   </div>
 
   <div style="text-align: center; margin-top: 20px;">
@@ -485,7 +450,7 @@
             <h3>Mock Test 2</h3><span>✅ Start Now</span>
           </div>
         </a>
-         <a href="jst-quiz3.html">
+        <a href="jst-quiz3.html">
           <div class="card fade-up fade-delay-1">
             <div class="card-icon">📝</div>
             <h3>Mock Test 3</h3><span>✅ Start Now</span>
@@ -497,7 +462,7 @@
             <h3>Mock Test 4</h3><span>✅ Start Now</span>
           </div>
         </a>
-       <a href="jst-quiz5.html">
+        <a href="jst-quiz5.html">
           <div class="card fade-up fade-delay-1">
             <div class="card-icon">📝</div>
             <h3>Mock Test 5</h3><span>✅ Start Now</span>
@@ -515,7 +480,7 @@
             <h3>Mock Test 7</h3><span>✅ Start Now</span>
           </div>
         </a>
-         <a href="jst-quiz8.html">
+        <a href="jst-quiz8.html">
           <div class="card fade-up fade-delay-1">
             <div class="card-icon">📝</div>
             <h3>Mock Test 8</h3><span>✅ Start Now</span>
@@ -533,7 +498,6 @@
   </section>
 
   <footer>
-
     <div style="margin: 20px 0;">
       <a href="https://chat.whatsapp.com/JsizrcizF4KBfprilR3EQP" target="_blank"
         style="margin: 0 10px; text-decoration: none; color: inherit;">
@@ -553,10 +517,8 @@
       </a>
     </div>
     <br>
-
     Prepared for IBA STS Screening Test (Junior Science Teacher JST)
     <strong>Keep practicing every day — success is closer than you think!</strong>
-
   </footer>
 
   <script>
@@ -573,7 +535,6 @@
       toggleBtn.textContent = '☀️ Light Mode';
     }
   </script>
-
 
   <script>
     const textArray = ["Prepare Smart", "Practice Daily", "Crack the JST!"];
@@ -606,7 +567,6 @@
       if (typingElement) typeText();
     });
   </script>
-
 </body>
 
-</html>
+  </html>
