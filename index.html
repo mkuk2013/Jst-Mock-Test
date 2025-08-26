@@ -13,7 +13,7 @@
       --secondary: #0056b3;
       --bg-light: #f4f6f8;
       --text-dark: #1d1f21;
-      --text-muted: #6c757d;
+      --text-muted SIX: #6c757d;
       --card-bg: #ffffff;
       --border-color: rgba(0, 0, 0, 0.06);
     }
@@ -75,6 +75,18 @@
       border-radius: 10px;
       font-size: 1rem;
       color: #00697d;
+    }
+
+    /* Center-align notice text for mobile devices */
+    @media (max-width: 768px) {
+      .notice {
+        text-align: center;
+      }
+      .notice a.download-btn {
+        display: inline-flex;
+        justify-content: center;
+        margin: 10px auto 0;
+      }
     }
 
     .section {
