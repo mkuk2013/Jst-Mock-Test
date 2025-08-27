@@ -4,581 +4,841 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IBA STS JST Mock Test</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <title>IBA STS JST Mock Test - New Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    /* CSS Custom Properties */
     :root {
-      --primary: #007bff;
-      --secondary: #0056b3;
-      --bg-light: #f4f6f8;
-      --text-dark: #1d1f21;
-      --text-muted : #6c757d;
-      --card-bg: #ffffff;
-      --border-color: rgba(0, 0, 0, 0.06);
+      /* New Vibrant Color Palette */
+      --electric-blue: #0066ff;
+      --deep-purple: #6366f1;
+      --emerald-green: #10b981;
+      --orange: #ff6b35;
+      --pink: #ec4899;
+      --teal: #14b8a6;
+      --red: #ef4444;
+      --indigo: #4f46e5;
+      
+      /* Gradients */
+      --primary-gradient: linear-gradient(135deg, var(--electric-blue) 0%, var(--deep-purple) 100%);
+      --card-gradient: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      
+      /* Backgrounds */
+      --bg-primary: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-dark: #0f172a;
+      --bg-card-dark: #1e293b;
+      
+      /* Text Colors */
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --text-muted: #94a3b8;
+      --text-white: #ffffff;
+      --text-dark-primary: #f1f5f9;
+      --text-dark-secondary: #cbd5e1;
+      
+      /* Spacing (Compact) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 0.75rem;
+      --space-lg: 1rem;
+      --space-xl: 1.25rem;
+      --space-2xl: 1.5rem;
+      --space-3xl: 2rem;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      
+      /* Border Radius */
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      
+      /* Transitions */
+      --transition: 0.2s ease;
     }
 
-    body.dark {
-      --primary: #4dabf7;
-      --secondary: #228be6;
-      --bg-light: #121212;
-      --text-dark: #e9ecef;
-      --text-muted: #b0b8c0;
-      --card-bg: #1e1e1e;
-      --border-color: rgba(255, 255, 255, 0.08);
-      background: var(--bg-light);
-      color: var(--text-dark);
+    /* Dark Mode */
+    [data-theme="dark"] {
+      --bg-primary: var(--bg-dark);
+      --bg-card: var(--bg-card-dark);
+      --text-primary: var(--text-dark-primary);
+      --text-secondary: var(--text-dark-secondary);
+      --text-muted: #94a3b8;
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
     }
 
-    :root {
-      --primary: #007bff;
-      --secondary: #0056b3;
-      --bg-light: #f5f7fa;
-      --text-dark: #212529;
-      --text-muted: #6c757d;
-      --card-bg: white;
-      --border-color: rgba(0, 0, 0, 0.05);
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: var(--bg-light);
-      color: var(--text-dark);
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: all var(--transition);
     }
 
-    header {
-      background: linear-gradient(120deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 60px 20px 40px;
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-lg);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 var(--space-2xl);
+      }
+    }
+
+    /* Header */
+    .header {
+      background: var(--primary-gradient);
+      color: var(--text-white);
+      padding: var(--space-3xl) 0;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    header h1 {
-      font-size: 2.8rem;
+    @media (min-width: 768px) {
+      .header {
+        height: 350px;
+      }
+    }
+
+    /* Animated Background Particles */
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.05) 3px, transparent 3px);
+      background-size: 100px 100px, 80px 80px, 120px 120px;
+      animation: float 20s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-20px) rotate(1deg); }
+      66% { transform: translateY(-10px) rotate(-1deg); }
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.02em;
     }
 
-    header p {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin: 0;
+    @media (min-width: 768px) {
+      .header h1 {
+        font-size: 3.5rem;
+      }
     }
 
-    .notice {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #e3f7fc;
-      border-left: 5px solid #00bcd4;
-      padding: 20px 25px;
-      border-radius: 10px;
+    .header .subtitle {
       font-size: 1rem;
-      color: #00697d;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-bottom: var(--space-lg);
     }
 
-    /* Center-align notice text for mobile devices */
+    @media (min-width: 768px) {
+      .header .subtitle {
+        font-size: 1.2rem;
+      }
+    }
+
+    .typing-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-right: 2px solid var(--text-white);
+      animation: blink 1s infinite;
+      min-height: 1.5rem;
+      display: inline-block;
+    }
+
+    @keyframes blink {
+      0%, 50% { border-right-color: var(--text-white); }
+      51%, 100% { border-right-color: transparent; }
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: var(--space-lg);
+      right: var(--space-lg);
+      z-index: 1000;
+      background: var(--bg-card);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 25px;
+      padding: var(--space-sm) var(--space-lg);
+      cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Notice Section */
+    .notice {
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      border-left: 4px solid var(--electric-blue);
+      border-radius: var(--radius-lg);
+      padding: var(--space-2xl);
+      margin: var(--space-2xl) 0;
+      color: #1e40af;
+      box-shadow: var(--shadow-sm);
+    }
+
+    [data-theme="dark"] .notice {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+      color: #dbeafe;
+    }
+
+    .notice-title {
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.95rem;
+    }
+
+    .notice-content {
+      margin-bottom: var(--space-md);
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    /* Mobile center alignment for notice section */
     @media (max-width: 768px) {
       .notice {
         text-align: center;
       }
-      .notice a.download-btn {
-        display: inline-flex;
+      
+      .notice-title {
         justify-content: center;
-        margin: 10px auto 0;
+      }
+      
+      .download-btn {
+        display: inline-flex;
+        margin: var(--space-md) auto 0;
       }
     }
 
-    .section {
-      max-width: 960px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    .section h2 {
-      font-size: 1.6rem;
-      margin-bottom: 25px;
-      text-align: center;
-      font-weight: 600;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      color: var(--text-dark);
-      border: 2px solid var(--mock-border-color) !important;
-      border-radius: 14px;
-      padding: 24px 20px;
-      text-align: center;
-      transition: all 0.4s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-      position: relative;
-      z-index: 0;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: inherit;
-      z-index: 0;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .card:hover {
-      box-shadow: 0 0 16px rgba(0, 123, 255, 0.25), 0 0 30px rgba(0, 123, 255, 0.15);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 123, 255, 0.12);
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin: 0 0 12px;
-      font-weight: 600;
-    }
-
-    .card span {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .card.disabled {
-      opacity: 0.6;
-      pointer-events: none;
-    }
-
-    footer {
-      background: #f0f0f0;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #555;
-      margin-top: 60px;
-    }
-
-    footer strong {
-      display: block;
-      margin-top: 10px;
-      color: #333;
-    }
-
-    a {
-      color: var(--primary);
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      background: var(--orange);
+      color: var(--text-white);
+      padding: var(--space-sm) var(--space-xl);
+      border-radius: 25px;
       text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-sm);
+      margin-top: var(--space-md);
     }
 
-    a:hover {
+    .download-btn:hover {
+      background: #e55a2b;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .whatsapp-link {
+      color: var(--emerald-green);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+
+    .whatsapp-link:hover {
+      color: #059669;
       text-decoration: underline;
     }
 
+    /* Main Content */
+    .main-content {
+      padding: var(--space-3xl) 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: var(--space-2xl);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-md);
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Compact Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+
+    @media (min-width: 640px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xl);
+      }
+    }
+
+    /* Compact Card Styles */
     .card {
+      background: var(--card-gradient);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      text-align: center;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-sm);
       position: relative;
       overflow: hidden;
-      background: linear-gradient(145deg, #ffffff, #f9f9f9);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      border-left: 3px solid;
     }
 
-    .card::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(0, 123, 255, 0.06), rgba(0, 0, 0, 0.02));
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .card h3,
-    .card span {
-      color: var(--text-dark) !important;
-      position: relative !important;
-      z-index: 2 !important;
-    }
+    /* Card Color Variants */
+    .card:nth-child(1) { border-left-color: var(--electric-blue); }
+    .card:nth-child(2) { border-left-color: var(--emerald-green); }
+    .card:nth-child(3) { border-left-color: var(--orange); }
+    .card:nth-child(4) { border-left-color: var(--pink); }
+    .card:nth-child(5) { border-left-color: var(--deep-purple); }
+    .card:nth-child(6) { border-left-color: var(--teal); }
+    .card:nth-child(7) { border-left-color: var(--red); }
+    .card:nth-child(8) { border-left-color: var(--indigo); }
 
     .card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 12px 30px rgba(0, 123, 255, 0.2);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
     }
 
-    .notice {
-      border-left: 5px solid #007bff;
-      background: #e7f3ff;
-      color: #004a75;
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: var(--space-md);
+      color: var(--electric-blue);
+      animation: pulse 2s ease-in-out infinite;
     }
 
-    .section h2::before {
-      content: "✨";
-      margin-right: 8px;
+    .card:nth-child(1) .card-icon { color: var(--electric-blue); }
+    .card:nth-child(2) .card-icon { color: var(--emerald-green); }
+    .card:nth-child(3) .card-icon { color: var(--orange); }
+    .card:nth-child(4) .card-icon { color: var(--pink); }
+    .card:nth-child(5) .card-icon { color: var(--deep-purple); }
+    .card:nth-child(6) .card-icon { color: var(--teal); }
+    .card:nth-child(7) .card-icon { color: var(--red); }
+    .card:nth-child(8) .card-icon { color: var(--indigo); }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
     }
 
-    footer {
-      background: linear-gradient(120deg, #f8f9fa, #e9ecef);
-      border-top: 1px solid #dee2e6;
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+      color: var(--text-primary);
     }
 
-    .card h3,
-    .card span {
-      color: var(--text-dark) !important;
-      position: relative !important;
-      z-index: 2 !important;
+    /* Dark mode text visibility fix */
+    [data-theme="dark"] .card-title {
+      color: var(--text-dark-primary) !important;
     }
 
-    .card {
-      background: var(--card-bg);
-      color: var(--text-dark);
-      border: 1px solid var(--border-color);
+    [data-theme="dark"] .card {
+      background: var(--bg-card);
+      color: var(--text-dark-primary);
     }
 
-    .card.disabled {
-      opacity: 0.5;
+    .card-status {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--emerald-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
     }
 
-    @keyframes fadeUp {
+    /* Footer with Social Links */
+    .footer {
+      background: var(--text-primary);
+      color: var(--text-white);
+      padding: var(--space-3xl) 0;
+      text-align: center;
+      margin-top: var(--space-3xl);
+    }
+
+    [data-theme="dark"] .footer {
+      background: #020617;
+    }
+
+    .footer-content {
+      margin-bottom: var(--space-2xl);
+    }
+
+    .footer-content p {
+      margin-bottom: var(--space-sm);
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-2xl);
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+      color: var(--text-white);
+      text-decoration: none;
+      transition: all var(--transition);
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .social-link i {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .social-link span {
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* WhatsApp specific styling */
+    .social-link.whatsapp:hover {
+      background: rgba(37, 211, 102, 0.2);
+    }
+
+    .social-link.facebook:hover {
+      background: rgba(24, 119, 242, 0.2);
+    }
+
+    .social-link.twitter:hover {
+      background: rgba(29, 161, 242, 0.2);
+    }
+
+    .social-link.instagram:hover {
+      background: rgba(225, 48, 108, 0.2);
+    }
+
+    .social-link.youtube:hover {
+      background: rgba(255, 0, 0, 0.2);
+    }
+
+    /* Animations */
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .fade-in-delay-1 { animation-delay: 0.1s; }
+    .fade-in-delay-2 { animation-delay: 0.2s; }
+    .fade-in-delay-3 { animation-delay: 0.3s; }
+    .fade-in-delay-4 { animation-delay: 0.4s; }
+
+    @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    .fade-up {
-      animation: fadeUp 0.8s ease-out both;
+    /* Focus States for Accessibility */
+    .card:focus,
+    .theme-toggle:focus,
+    .download-btn:focus,
+    .whatsapp-link:focus,
+    .social-link:focus {
+      outline: 2px solid var(--electric-blue);
+      outline-offset: 2px;
     }
 
-    .fade-delay-1 {
-      animation-delay: 0.1s;
-    }
-
-    .fade-delay-2 {
-      animation-delay: 0.2s;
-    }
-
-    .fade-delay-3 {
-      animation-delay: 0.3s;
-    }
-
-    .fade-delay-4 {
-      animation-delay: 0.4s;
-    }
-
-    .fade-delay-5 {
-      animation-delay: 0.5s;
-    }
-
-    /* Social link hover animation */
-    footer a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    footer a:hover {
-      transform: translateY(-4px) scale(1.05);
-      color: var(--primary);
-    }
-
-    footer a i {
-      transition: transform 0.3s ease;
-    }
-
-    footer a:hover i {
-      transform: rotate(8deg) scale(1.15);
-    }
-
-    /* Mock Test Container Border Styling */
-    :root {
-      --mock-border-color: #007bff;
-    }
-
-    body.dark {
-      --mock-border-color: #ffffff;
-    }
-
-    body.dark .card::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: inherit;
-      z-index: 0;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    body.dark .card:hover::before {
-      opacity: 1;
-    }
-
-    body.dark .card:hover {
-      box-shadow: 0 0 16px rgba(255, 255, 255, 0.25), 0 0 30px rgba(255, 255, 255, 0.15);
-    }
-
-    .card-icon {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      animation: pulse 1.8s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: 1;
+    /* Reduced Motion Support */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
-
-      50% {
-        transform: scale(1.2);
-        opacity: 0.75;
-      }
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .card.disabled {
-      opacity: 0.6;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-
-    .card.disabled:hover {
-      transform: translateY(-3px);
-    }
-
-    .typing-text {
-      display: inline-block;
-      font-weight: 700;
-      color: #ffffff;
-      white-space: nowrap;
-      overflow: hidden;
-      font-size: 1.5rem;
-      margin-top: 25px;
-      width: 240px;
-      min-height: 1.6em;
-    }
-
-    to {
-      border-right-color: transparent;
-    }
-
-    .grid a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--primary);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 25px;
-      text-decoration: none;
-      margin-top: 10px;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .download-btn:hover {
-      background: var(--secondary);
-      transform: translateY(-2px);
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>IBA STS JST Mock Test</h1>
-    <p>Daily Practice for Junior Science Teacher (BPS-14)</p>
-    <p><span class="typing-text"></span></p>
-  </header>
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon" id="themeIcon"></i>
+    <span id="themeText">Dark Mode</span>
+  </button>
 
-  <div class="notice fade-up fade-delay-1">
-    <strong>🔒 NOTICE:</strong> All mock tests are password protected. For password, please contact on WhatsApp:
-    <a href="https://wa.me/923480358640" target="_blank">+92 348 0358640</a>
-    <br>
-    <strong>📱 Download Our App:</strong> You can also download our JST Mock Test Android application. Just download and install it to practice on the go! 
-    <a href="https://drive.usercontent.google.com/download?id=1TMiSRuVCRxbhAkCvxJ9SH8roOmmV9mio&authuser=0&confirm=t&uuid=aaf4d4ac-b17c-4328-a96e-530f682f2d6f&at=AN8xHopxqZTTPaQ2TydNf2TBsPl0%3A1756306142509" class="download-btn"><i class="fas fa-download"></i> Download App</a>
-  </div>
-
-  <div style="text-align: center; margin-top: 20px;">
-    <div id="toggleMode" class="fade-up fade-delay-2"
-      style="display: inline-block; color: var(--text-dark); background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 25px; padding: 6px 16px; font-size: 0.9rem; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: background 0.3s ease;">
-      🌙 Dark Mode
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="mock-container">
-      <h2 class="fade-up fade-delay-2">📚 Choose a Mock Test</h2>
-      <div class="grid">
-        <a href="jst-quiz1.html">
-          <div class="card fade-up fade-delay-1">
-            <div class="card-icon">📝</div>
-            <h3>Mock Test 1</h3><span>✅ Start Now</span>
-          </div>
-        </a>
-        <a href="jst-quiz2.html">
-          <div class="card fade-up fade-delay-1">
-            <div class="card-icon">📝</div>
-            <h3>Mock Test 2</h3><span>✅ Start Now</span>
-          </div>
-        </a>
-        <a href="jst-quiz3.html">
-          <div class="card fade-up fade-delay-1">
-            <div class="card-icon">📝</div>
-            <h3>Mock Test 3</h3><span>✅ Start Now</span>
-          </div>
-        </a>
-        <a href="jst-quiz4.html">
-          <div class="card fade-up fade-delay-1">
-            <div class="card-icon">📝</div>
-            <h3>Mock Test 4</h3><span>✅ Start Now</span>
-          </div>
-        </a>
-        <a href="jst-quiz5.html">
-          <div class="card fade-up fade-delay-1">
-            <div class="card-icon">📝</div>
-            <h3>Mock Test 5</h3><span>✅ Start Now</span>
-          </div>
-        </a>
-        <a href="jst-quiz6.html">
-          <div class="card fade-up fade-delay-1">
-            <div class="card-icon">📝</div>
-            <h3>Mock Test 6</h3><span>✅ Start Now</span>
-          </div>
-        </a>
-        <a href="jst-quiz7.html">
-          <div class="card fade-up fade-delay-1">
-            <div class="card-icon">📝</div>
-            <h3>Mock Test 7</h3><span>✅ Start Now</span>
-          </div>
-        </a>
-        <a href="jst-quiz8.html">
-          <div class="card fade-up fade-delay-1">
-            <div class="card-icon">📝</div>
-            <h3>Mock Test 8</h3><span>✅ Start Now</span>
-          </div>
-        </a>
-        <div class="card disabled">
-          <div class="card-icon">📝</div>
-          <h3>Mock Test 9</h3><span>Coming Soon</span>
-        </div>
-        <div class="card disabled">
-          <div class="card-icon">📝</div>
-          <h3>Mock Test 10</h3><span>Coming Soon</span>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="fade-in">IBA STS JST Mock Test</h1>
+        <p class="subtitle fade-in fade-in-delay-1">Daily Practice for Junior Science Teacher (BPS-14)</p>
+        <div class="fade-in fade-in-delay-2">
+          <span class="typing-text" id="typingText"></span>
         </div>
       </div>
-  </section>
-
-  <footer>
-    <div style="margin: 20px 0;">
-      <a href="https://chat.whatsapp.com/JsizrcizF4KBfprilR3EQP" target="_blank"
-        style="margin: 0 10px; text-decoration: none; color: inherit;">
-        <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.5rem;"></i> WhatsApp Group
-      </a>
-      <a href="https://whatsapp.com/channel/0029VbAoVyXHwXbBQ8pjlc1o" target="_blank"
-        style="margin: 0 10px; text-decoration: none; color: inherit;">
-        <i class="fab fa-whatsapp-square" style="color: #25D366; font-size: 1.5rem;"></i> WhatsApp Channel
-      </a>
-      <a href="https://facebook.com/mocktesthub" target="_blank"
-        style="margin: 0 10px; text-decoration: none; color: inherit;">
-        <i class="fab fa-facebook-square" style="color: #1877F2; font-size: 1.5rem;"></i> Facebook Page
-      </a>
-      <a href="https://mock-test-hub.netlify.app/" target="_blank"
-        style="margin: 0 10px; text-decoration: none; color: inherit;">
-        <i class="fas fa-globe" style="color: #007bff; font-size: 1.5rem;"></i> Website
-      </a>
     </div>
-    <br>
-    Prepared for IBA STS Screening Test (Junior Science Teacher JST)
-    <strong>Keep practicing every day — success is closer than you think!</strong>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Notice Section -->
+      <section class="notice fade-in fade-in-delay-1" role="region" aria-labelledby="notice-title">
+        <div class="notice-title" id="notice-title">
+          <i class="fas fa-lock" aria-hidden="true"></i>
+          <strong>NOTICE</strong>
+        </div>
+        <div class="notice-content">
+          All mock tests are password protected. For password, please contact on WhatsApp:
+          <a href="https://wa.me/923480358640" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            +92 348 0358640
+          </a>
+        </div>
+        <div class="notice-content">
+          <strong><i class="fas fa-mobile-alt" aria-hidden="true"></i> Download Our App:</strong>
+          You can also download our JST Mock Test Android application. Just download and install it to practice on the go!
+        </div>
+        <a href="https://drive.usercontent.google.com/download?id=1TMiSRuVCRxbhAkCvxJ9SH8roOmmV9mio&authuser=0&confirm=t&uuid=aaf4d4ac-b17c-4328-a96e-530f682f2d6f&at=AN8xHopxqZTTPaQ2TydNf2TBsPl0%3A1756306142509" 
+           class="download-btn" 
+           target="_blank" 
+           rel="noopener noreferrer">
+          <i class="fas fa-download" aria-hidden="true"></i>
+          Download App
+        </a>
+      </section>
+
+      <!-- Mock Tests Section -->
+      <section aria-labelledby="mock-tests-title">
+        <h2 class="section-title fade-in fade-in-delay-2" id="mock-tests-title">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+          Choose a Mock Test
+        </h2>
+        
+        <div class="grid">
+          <a href="jst-quiz1.html" class="card fade-in fade-in-delay-1" aria-describedby="test1-desc">
+            <div class="card-icon">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Mock Test 1</h3>
+            <div class="card-status" id="test1-desc">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Start Now
+            </div>
+          </a>
+
+          <a href="jst-quiz2.html" class="card fade-in fade-in-delay-2" aria-describedby="test2-desc">
+            <div class="card-icon">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Mock Test 2</h3>
+            <div class="card-status" id="test2-desc">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Start Now
+            </div>
+          </a>
+
+          <a href="jst-quiz3.html" class="card fade-in fade-in-delay-3" aria-describedby="test3-desc">
+            <div class="card-icon">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Mock Test 3</h3>
+            <div class="card-status" id="test3-desc">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Start Now
+            </div>
+          </a>
+
+          <a href="jst-quiz4.html" class="card fade-in fade-in-delay-4" aria-describedby="test4-desc">
+            <div class="card-icon">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Mock Test 4</h3>
+            <div class="card-status" id="test4-desc">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Start Now
+            </div>
+          </a>
+
+          <a href="jst-quiz5.html" class="card fade-in fade-in-delay-1" aria-describedby="test5-desc">
+            <div class="card-icon">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Mock Test 5</h3>
+            <div class="card-status" id="test5-desc">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Start Now
+            </div>
+          </a>
+
+          <a href="jst-quiz6.html" class="card fade-in fade-in-delay-2" aria-describedby="test6-desc">
+            <div class="card-icon">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Mock Test 6</h3>
+            <div class="card-status" id="test6-desc">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Start Now
+            </div>
+          </a>
+
+          <a href="jst-quiz7.html" class="card fade-in fade-in-delay-3" aria-describedby="test7-desc">
+            <div class="card-icon">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Mock Test 7</h3>
+            <div class="card-status" id="test7-desc">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Start Now
+            </div>
+          </a>
+
+          <a href="jst-quiz8.html" class="card fade-in fade-in-delay-4" aria-describedby="test8-desc">
+            <div class="card-icon">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Mock Test 8</h3>
+            <div class="card-status" id="test8-desc">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Start Now
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer with Social Links -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content fade-in fade-in-delay-1">
+        <p>© 2024 IBA STS JST Mock Test Platform. All rights reserved.</p>
+        <p>Connect with us on social media for updates and support</p>
+      </div>
+      
+      <div class="social-links fade-in fade-in-delay-2">
+        <a href="https://wa.me/923480358640" target="_blank" rel="noopener noreferrer" class="social-link whatsapp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="social-link facebook">
+          <i class="fab fa-facebook" aria-hidden="true"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="social-link twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+          <span>Twitter</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="social-link instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="social-link youtube">
+          <i class="fab fa-youtube" aria-hidden="true"></i>
+          <span>YouTube</span>
+        </a>
+      </div>
+    </div>
   </footer>
 
+  <!-- JavaScript -->
   <script>
-    const toggleBtn = document.getElementById('toggleMode');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      const isDark = document.body.classList.contains('dark');
-      toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-      localStorage.setItem('mode', isDark ? 'dark' : 'light');
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    const body = document.body;
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', currentTheme);
+    updateThemeToggle(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeToggle(newTheme);
     });
 
-    if (localStorage.getItem('mode') === 'dark') {
-      document.body.classList.add('dark');
-      toggleBtn.textContent = '☀️ Light Mode';
+    function updateThemeToggle(theme) {
+      if (theme === 'dark') {
+        themeIcon.className = 'fas fa-sun';
+        themeText.textContent = 'Light Mode';
+      } else {
+        themeIcon.className = 'fas fa-moon';
+        themeText.textContent = 'Dark Mode';
+      }
     }
-  </script>
 
-  <script>
-    const textArray = ["Prepare Smart", "Practice Daily", "Crack the JST!"];
-    let typingIndex = 0;
+    // Typing Animation
+    const typingText = document.getElementById('typingText');
+    const phrases = [
+      'Practice Makes Perfect!',
+      'Achieve Your Dreams!',
+      'Excellence in Education!',
+      'Your Success Journey!',
+      'Master Your Skills!'
+    ];
+    
+    let phraseIndex = 0;
     let charIndex = 0;
-    const typingElement = document.querySelector('.typing-text');
+    let isDeleting = false;
+    let typingSpeed = 100;
 
-    function typeText() {
-      if (!typingElement) return;
-      if (charIndex <= textArray[typingIndex].length) {
-        typingElement.textContent = textArray[typingIndex].substring(0, charIndex++);
-        setTimeout(typeText, 100);
+    function typeWriter() {
+      const currentPhrase = phrases[phraseIndex];
+      
+      if (isDeleting) {
+        typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 50;
       } else {
-        setTimeout(() => eraseText(), 1200);
+        typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 100;
       }
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        setTimeout(() => {
+          isDeleting = true;
+        }, 2000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+
+      setTimeout(typeWriter, typingSpeed);
     }
 
-    function eraseText() {
-      if (!typingElement) return;
-      if (charIndex >= 0) {
-        typingElement.textContent = textArray[typingIndex].substring(0, charIndex--);
-        setTimeout(eraseText, 50);
-      } else {
-        typingIndex = (typingIndex + 1) % textArray.length;
-        setTimeout(typeText, 300);
-      }
-    }
+    // Start typing animation after page load
+    window.addEventListener('load', () => {
+      setTimeout(typeWriter, 1000);
+    });
 
-    document.addEventListener("DOMContentLoaded", () => {
-      if (typingElement) typeText();
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with loading class
+    document.querySelectorAll('.loading').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add keyboard navigation support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
+      }
+    });
+
+    document.addEventListener('mousedown', () => {
+      document.body.classList.remove('keyboard-navigation');
     });
   </script>
 </body>
 
-  </html>
+</html>
+
