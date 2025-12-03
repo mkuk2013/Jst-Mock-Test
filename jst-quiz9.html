@@ -208,7 +208,8 @@
                     class="text-xl md:text-2xl font-heading font-bold bg-gradient-to-r from-primary-600 to-pink-500 bg-clip-text text-transparent">
                     IBA STS JST Mock Test 9
                 </h1>
-                <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1">Science, Math, English, GK (MathJax Enabled)</p>
+                <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1">Science, Math, English, GK
+                    (MathJax Enabled)</p>
             </div>
 
             <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
@@ -259,7 +260,8 @@
                     </div>
 
                     <!-- Passage Container (Hidden by default) -->
-                    <div id="passageContainer" class="hidden mb-6 p-4 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-200 dark:border-slate-600 text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                    <div id="passageContainer"
+                        class="hidden mb-6 p-4 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-200 dark:border-slate-600 text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">
                         <!-- Passage content injected here -->
                     </div>
 
@@ -329,7 +331,8 @@
                     class="bg-white dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700 shadow-sm">
                     <div class="flex justify-between items-center mb-2">
                         <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Quick Nav</p>
-                        <span class="text-xs text-primary-600 font-medium"><span id="mobileCurrentQ">1</span>/<span id="mobileTotalQ">100</span></span>
+                        <span class="text-xs text-primary-600 font-medium"><span id="mobileCurrentQ">1</span>/<span
+                                id="mobileTotalQ">100</span></span>
                     </div>
 
                     <!-- Scroll Controls Container -->
@@ -385,7 +388,8 @@
                         <div
                             class="p-3 md:p-4 bg-primary-50 dark:bg-primary-900/20 rounded-2xl text-center border-2 border-primary-100 dark:border-primary-900/50">
                             <div class="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400 mb-1">
-                                <span id="resScore">0</span>%</div>
+                                <span id="resScore">0</span>%
+                            </div>
                             <div
                                 class="text-[10px] md:text-xs font-medium text-primary-600/70 uppercase tracking-wider">
                                 Score</div>
@@ -1120,7 +1124,7 @@
         const downloadPdfBtn = document.getElementById('downloadPdfBtn');
         const pdfOverlay = document.getElementById('pdf-overlay');
         const pdfContent = document.getElementById('pdf-content');
-        
+
         // Passage Container
         const passageContainer = document.getElementById('passageContainer');
 
@@ -1161,7 +1165,7 @@
             if (!questions || !questions[currentQuestionIndex]) return;
 
             const questionData = questions[currentQuestionIndex];
-            
+
             // Handle Passage Display Logic (Show for Q1-5)
             if (currentQuestionIndex >= 0 && currentQuestionIndex <= 4) {
                 passageContainer.innerHTML = passageText;
@@ -1171,14 +1175,17 @@
             }
 
             // Clean Question Text
-            questionText.innerHTML = questionData.question;
+            // Removing leading numbers using regex to fix double numbering
+            // This ensures "21. Question..." becomes just "Question..."
+            const cleanQuestion = questionData.question.replace(/^\d+\.\s*/, '');
+            questionText.innerHTML = cleanQuestion;
             optionsContainer.innerHTML = '';
 
             questionData.options.forEach((option, index) => {
                 const label = document.createElement('label');
                 label.className = `group relative flex items-center p-3 md:p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 hover:bg-slate-50 dark:hover:bg-slate-700/50 ${userAnswers[currentQuestionIndex].answer === option
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                        : 'border-slate-200 dark:border-slate-700'
+                    ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                    : 'border-slate-200 dark:border-slate-700'
                     }`;
 
                 const radioInput = document.createElement('input');
@@ -1189,8 +1196,8 @@
 
                 const customRadio = document.createElement('div');
                 customRadio.className = `w-5 h-5 min-w-[20px] rounded-full border-2 mr-3 md:mr-4 flex items-center justify-center transition-colors ${userAnswers[currentQuestionIndex].answer === option
-                        ? 'border-primary-500 bg-primary-500'
-                        : 'border-slate-400'
+                    ? 'border-primary-500 bg-primary-500'
+                    : 'border-slate-400'
                     }`;
 
                 const checkmark = document.createElement('div');
@@ -1223,8 +1230,8 @@
             // Mobile counters update
             const mobileCurrentQ = document.getElementById('mobileCurrentQ'); // Dynamically found
             const mobileTotalQ = document.getElementById('mobileTotalQ'); // Dynamically found
-            if(mobileCurrentQ) mobileCurrentQ.textContent = currentQuestionIndex + 1;
-            if(mobileTotalQ) mobileTotalQ.textContent = totalQuestions;
+            if (mobileCurrentQ) mobileCurrentQ.textContent = currentQuestionIndex + 1;
+            if (mobileTotalQ) mobileTotalQ.textContent = totalQuestions;
 
             const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
             progressBarFill.style.width = `${progress}%`;
@@ -1239,7 +1246,7 @@
             }
 
             updatePaletteActiveStatus();
-            
+
             // Re-render MathJax
             if (window.MathJax) {
                 MathJax.typesetPromise();
@@ -1295,7 +1302,7 @@
 
             if (index === currentQuestionIndex) {
                 colorClass += ' ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-slate-800';
-                
+
                 desktopItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 mobileItem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
             }
@@ -1415,6 +1422,9 @@
                 const isCorrect = userAnswer === q.answer;
                 const attempted = userAnswers[index].attempted;
 
+                // Clean Question Text for Review
+                const cleanQuestion = q.question.replace(/^\d+\.\s*/, '');
+
                 let statusBadgeHTML = '';
                 let borderClass = '';
 
@@ -1441,7 +1451,7 @@
                         ${statusBadgeHTML}
                     </div>
                     ${passageRef}
-                    <p class="text-sm md:text-base font-semibold text-slate-800 dark:text-slate-100 mb-3">${q.question}</p>
+                    <p class="text-sm md:text-base font-semibold text-slate-800 dark:text-slate-100 mb-3">${cleanQuestion}</p>
                     
                     <div class="space-y-1 text-sm">
                         <div class="flex flex-col sm:flex-row sm:gap-2">
@@ -1460,7 +1470,7 @@
                 `;
                 reviewContent.appendChild(card);
             });
-            
+
             // Re-render MathJax in review section
             if (window.MathJax) {
                 MathJax.typesetPromise();
@@ -1510,12 +1520,15 @@
                 const isCorrect = userAnswer === q.answer;
                 const attempted = userAnswers[index].attempted;
 
+                // Clean Question Text for PDF
+                const cleanQuestion = q.question.replace(/^\d+\.\s*/, '');
+
                 let statusClass = isCorrect ? "pdf-correct" : (attempted ? "pdf-wrong" : "pdf-skipped");
                 let statusText = isCorrect ? "Correct" : (attempted ? "Wrong" : "Skipped");
 
                 reportHTML += `
                     <div class="pdf-question">
-                        <div class="pdf-q-title">Q${index+1} (${q.section}): ${q.question}</div>
+                        <div class="pdf-q-title">Q${index + 1} (${q.section}): ${cleanQuestion}</div>
                         <div class="pdf-q-ans">Your Answer: <span class="${statusClass}">${userAnswer || 'Not Answered'}</span> (${statusText})</div>
                         ${!isCorrect ? `<div class="pdf-q-ans">Correct Answer: <span class="pdf-correct">${q.answer}</span></div>` : ''}
                     </div>
@@ -1523,10 +1536,10 @@
             });
 
             pdfContent.innerHTML = reportHTML;
-            
+
             // Re-render MathJax inside the PDF container before generating
             if (window.MathJax) {
-                 MathJax.typesetPromise([pdfContent]).then(() => {
+                MathJax.typesetPromise([pdfContent]).then(() => {
                     const opt = {
                         margin: [0.5, 0.5],
                         filename: 'JST_Mock_Test_9_Result.pdf',
@@ -1540,10 +1553,10 @@
                             pdfOverlay.style.display = 'none';
                         });
                     }, 500); // Give MathJax a moment
-                 });
+                });
             } else {
-                 // Fallback if MathJax fails
-                 const opt = {
+                // Fallback if MathJax fails
+                const opt = {
                     margin: [0.5, 0.5],
                     filename: 'JST_Mock_Test_9_Result.pdf',
                     image: { type: 'jpeg', quality: 0.98 },
