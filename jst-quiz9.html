@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IBA STS Junior Science Teacher Mock Test 7</title>
+    <title>IBA STS Junior Science Teacher Mock Test 9</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- HTML2PDF Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- MathJax for rendering math equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
         tailwind.config = {
@@ -27,11 +30,11 @@
                     },
                     colors: {
                         primary: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            500: '#8b5cf6', // Violet for Test 7
-                            600: '#7c3aed',
-                            700: '#6d28d9',
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            500: '#ec4899', // Pink theme
+                            600: '#db2777',
+                            700: '#be185d',
                         }
                     }
                 }
@@ -202,11 +205,10 @@
             class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 shrink-0">
             <div class="text-center md:text-left w-full md:w-auto">
                 <h1
-                    class="text-xl md:text-2xl font-heading font-bold bg-gradient-to-r from-primary-600 to-violet-500 bg-clip-text text-transparent">
-                    IBA STS JST Mock Test 7
+                    class="text-xl md:text-2xl font-heading font-bold bg-gradient-to-r from-primary-600 to-pink-500 bg-clip-text text-transparent">
+                    IBA STS JST Mock Test 9
                 </h1>
-                <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1">Science, English, GK, Islamic
-                    Studies</p>
+                <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1">Science, Math, English, GK (MathJax Enabled)</p>
             </div>
 
             <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
@@ -214,7 +216,7 @@
                 <div
                     class="flex items-center gap-3 px-4 py-2 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-xl font-mono font-bold text-lg border border-red-100 dark:border-red-900/30">
                     <i class="far fa-clock"></i>
-                    <span id="timeLeft">50:00</span>
+                    <span id="timeLeft">60:00</span>
                 </div>
 
                 <!-- Theme Toggle -->
@@ -234,7 +236,7 @@
                 <!-- Progress Bar -->
                 <div class="h-2 bg-slate-200 dark:bg-slate-700 rounded-full mb-4 lg:mb-6 overflow-hidden shrink-0">
                     <div id="progressBarFill"
-                        class="h-full bg-gradient-to-r from-primary-500 to-violet-500 w-0 transition-all duration-500">
+                        class="h-full bg-gradient-to-r from-primary-500 to-pink-500 w-0 transition-all duration-500">
                     </div>
                 </div>
 
@@ -257,8 +259,7 @@
                     </div>
 
                     <!-- Passage Container (Hidden by default) -->
-                    <div id="passageContainer"
-                        class="hidden mb-6 p-4 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-200 dark:border-slate-600 text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                    <div id="passageContainer" class="hidden mb-6 p-4 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-200 dark:border-slate-600 text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">
                         <!-- Passage content injected here -->
                     </div>
 
@@ -328,8 +329,7 @@
                     class="bg-white dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700 shadow-sm">
                     <div class="flex justify-between items-center mb-2">
                         <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Quick Nav</p>
-                        <span class="text-xs text-primary-600 font-medium"><span id="mobileCurrentQ">1</span>/<span
-                                id="mobileTotalQ">100</span></span>
+                        <span class="text-xs text-primary-600 font-medium"><span id="mobileCurrentQ">1</span>/<span id="mobileTotalQ">100</span></span>
                     </div>
 
                     <!-- Scroll Controls Container -->
@@ -357,8 +357,8 @@
         <div id="resultsSection" class="hidden flex-1 flex flex-col items-center justify-center p-4 overflow-y-auto">
             <div
                 class="max-w-3xl w-full bg-white dark:bg-slate-800 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden my-auto animate-fade-in">
-                <div class="bg-gradient-to-r from-primary-600 to-violet-600 p-6 md:p-8 text-center text-white">
-                    <h2 class="text-2xl md:text-3xl font-heading font-bold mb-2">Mock Test 7 Completed!</h2>
+                <div class="bg-gradient-to-r from-primary-600 to-pink-600 p-6 md:p-8 text-center text-white">
+                    <h2 class="text-2xl md:text-3xl font-heading font-bold mb-2">Mock Test 9 Completed!</h2>
                     <p class="opacity-90 text-sm md:text-base">Here is your performance summary.</p>
                 </div>
 
@@ -385,8 +385,7 @@
                         <div
                             class="p-3 md:p-4 bg-primary-50 dark:bg-primary-900/20 rounded-2xl text-center border-2 border-primary-100 dark:border-primary-900/50">
                             <div class="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400 mb-1">
-                                <span id="resScore">0</span>%
-                            </div>
+                                <span id="resScore">0</span>%</div>
                             <div
                                 class="text-[10px] md:text-xs font-medium text-primary-600/70 uppercase tracking-wider">
                                 Score</div>
@@ -450,628 +449,629 @@
 
         const actualEncryptedPassword = obfuscate('ibajst2025');
 
-        // Passage 1: Questions 1-5
-        const passage1 = `
+        // Passage
+        const passageText = `
             <p class="font-bold text-slate-700 dark:text-slate-200 mb-2 uppercase tracking-wide text-xs">Reading Comprehension (Q1-5)</p>
             <div class="italic text-slate-600 dark:text-slate-300 border-l-4 border-primary-500 pl-4 space-y-2 text-justify">
-                <p>“Under the crescent moon, the deserted alley lay silent except for distant footsteps. A cold wind wove through shattered shutters, carrying whispers of yesterday’s unrest. Faded posters clung to cracked walls, their messages half-erased by time. A single lantern guttered, fighting darkness. Each creak underfoot amplified the tension, as if the stones themselves remembered.”</p>
-            </div>
-        `;
-
-        // Passage 2: Questions 6-10
-        const passage2 = `
-            <p class="font-bold text-slate-700 dark:text-slate-200 mb-2 uppercase tracking-wide text-xs">Reading Comprehension (Q6-10)</p>
-            <div class="italic text-slate-600 dark:text-slate-300 border-l-4 border-primary-500 pl-4 space-y-2 text-justify">
-                <p>“Leela adjusted her spectacles and scanned the blueprint, heart racing. The bridge extended over turbulent waters, anchored precariously at rocky outcrops. Each measurement had to be precise—fractions of a millimeter mattered. Nearby, cranes groaned under steel beams. The sky threatened rain, hovering in shades of slate.”</p>
+                <p>Climate change refers to long-term shifts in temperatures and weather patterns. While such shifts can be natural, human activities have been the main driver of climate change since the 1800s, primarily due to the burning of fossil fuels like coal, oil, and gas. These activities increase the concentration of greenhouse gases in the atmosphere, leading to global warming. The effects of climate change include rising sea levels, more extreme weather events, and disruptions to ecosystems and biodiversity. Addressing climate change requires coordinated efforts at both global and local levels, including the reduction of emissions, use of renewable energy, and adoption of sustainable practices.</p>
             </div>
         `;
 
         const questions = [
+            // English Section
             {
-                question: "1. What is implied by \"stones themselves remembered\"?",
-                options: ["They are haunted", "Historical memory of conflict", "The stones are alive", "Physical vibration"],
-                answer: "Historical memory of conflict",
-                section: "English (Passage 1)"
+                question: "1. What is the primary cause of climate change in recent centuries?",
+                options: ["A. Volcanic eruptions", "B. Human activities", "C. Solar flares", "D. Ocean currents"],
+                answer: "B. Human activities",
+                section: "English",
+                passage: passageText
             },
             {
-                question: "2. The tone of this passage is:",
-                options: ["Reassuring", "Anxious and reflective", "Romantic", "Victorious"],
-                answer: "Anxious and reflective",
-                section: "English (Passage 1)"
+                question: "2. Which of the following is a consequence of climate change?",
+                options: ["A. Decreased global temperatures", "B. Stabilized weather patterns", "C. Rising sea levels", "D. Reduced biodiversity protection"],
+                answer: "C. Rising sea levels",
+                section: "English",
+                passage: passageText
             },
             {
-                question: "3. \"A cold wind wove through shattered shutters\" uses:",
-                options: ["Simile", "Personification", "Metaphor", "Alliteration"],
-                answer: "Personification",
-                section: "English (Passage 1)"
+                question: "3. What do human activities mainly release that contributes to global warming?",
+                options: ["A. Clean energy", "B. Oxygen", "C. Greenhouse gases", "D. Water vapor"],
+                answer: "C. Greenhouse gases",
+                section: "English",
+                passage: passageText
             },
             {
-                question: "4. The imagery of \"faded posters... half-erased by time\" suggests:",
-                options: ["Recently posted messages", "Cultural erosion", "Fresh propaganda", "New advertisements"],
-                answer: "Cultural erosion",
-                section: "English (Passage 1)"
+                question: "4. How can climate change be addressed effectively?",
+                options: ["A. By cutting down more forests", "B. By reducing fossil fuel usage and promoting sustainability", "C. By banning all industrial work", "D. By increasing greenhouse gas production"],
+                answer: "B. By reducing fossil fuel usage and promoting sustainability",
+                section: "English",
+                passage: passageText
             },
             {
-                question: "5. \"A single lantern guttered, fighting darkness\" conveys:",
-                options: ["Lantern was strong", "Idea of fragile hope", "Prosperity", "Heat generation"],
-                answer: "Idea of fragile hope",
-                section: "English (Passage 1)"
+                question: "5. What is the tone of the paragraph?",
+                options: ["A. Humorous", "B. Descriptive and informative", "C. Sarcastic", "D. Narrative"],
+                answer: "B. Descriptive and informative",
+                section: "English",
+                passage: passageText
             },
             {
-                question: "6. What challenge is Leela encountering?",
-                options: ["Artistic design", "High-stakes technical precision", "Gardening layout", "Cooking recipe"],
-                answer: "High-stakes technical precision",
-                section: "English (Passage 2)"
-            },
-            {
-                question: "7. \"Turbulent waters\" most likely symbolize:",
-                options: ["Calm environment", "Engineering difficulty", "Recreational area", "Clean water"],
-                answer: "Engineering difficulty",
-                section: "English (Passage 2)"
-            },
-            {
-                question: "8. The phrase \"cranes groaned under steel beams\" is an example of:",
-                options: ["Alliteration", "Onomatopoeia", "Personification", "Metaphor"],
-                answer: "Onomatopoeia",
-                section: "English (Passage 2)"
-            },
-            {
-                question: "9. Implied pressure in \"fractions of a millimeter mattered\" suggests:",
-                options: ["Carelessness acceptable", "No margin for error", "Money is cheap", "Artistic license"],
-                answer: "No margin for error",
-                section: "English (Passage 2)"
-            },
-            {
-                question: "10. The setting mood is:",
-                options: ["Relaxed", "Tense and urgent", "Jocund", "Festive"],
-                answer: "Tense and urgent",
-                section: "English (Passage 2)"
-            },
-            {
-                question: "11. Best synonym for \"meticulous\":",
-                options: ["Careless", "Through", "Ordinary", "Hasty"],
-                answer: "Through",
+                question: "6. \"Ambiguous\" most nearly means:",
+                options: ["A. Clear", "B. Vague", "C. Loud", "D. Firm"],
+                answer: "B. Vague",
                 section: "English"
             },
             {
-                question: "12. Idiom: \"to draw a line in the sand\" means:",
-                options: ["Build a boundary", "Establish a firm limit", "Write secretly", "Walk on beach"],
-                answer: "Establish a firm limit",
+                question: "7. \"Ubiquitous\" most nearly means:",
+                options: ["A. Rare", "B. Everywhere", "C. Hidden", "D. Unusual"],
+                answer: "B. Everywhere",
                 section: "English"
             },
             {
-                question: "13. Convert to Passive Voice: \"The committee will sanction the amendments next week.\"",
-                options: ["Amendments will be sanctioned by the committee next", "The committee sanctioned the amendments.", "Amendments were sanctioned next week.", "Next week the committee is sanctioning amendments."],
-                answer: "Amendments will be sanctioned by the committee next",
+                question: "8. \"Frugal\" most nearly means:",
+                options: ["A. Wasteful", "B. Expensive", "C. Thrifty", "D. Stingy"],
+                answer: "C. Thrifty",
                 section: "English"
             },
             {
-                question: "14. Direct to reported speech: Amina said, \"I have submitted the final draft\"",
-                options: ["Amina said she had submitted the final draft.", "Amina said I have submitted the final draft.", "Amina said she has submitted it.", "Amina has said she submitted the draft."],
-                answer: "Amina said she had submitted the final draft.",
+                question: "9. \"Reluctant\" most nearly means:",
+                options: ["A. Willing", "B. Hesitant", "C. Eager", "D. Active"],
+                answer: "B. Hesitant",
                 section: "English"
             },
             {
-                question: "15. Phrasal verb: \"scale down\" means:",
-                options: ["Paint larger", "Reduce size", "Climb up", "Walk downhill"],
-                answer: "Reduce size",
+                question: "10. Antonym of \"benevolent\":",
+                options: ["A. Kind", "B. Cruel", "C. Noble", "D. Generous"],
+                answer: "B. Cruel",
                 section: "English"
             },
             {
-                question: "16. Identify the simile:",
-                options: ["Her voice was velvet", "He ran as fast as lightning", "Shadows crept silently", "Light pierced darkness"],
-                answer: "He ran as fast as lightning",
+                question: "11. Antonym of \"optimistic\":",
+                options: ["A. Confident", "B. Cheerful", "C. Doubtful", "D. Pessimistic"],
+                answer: "D. Pessimistic",
                 section: "English"
             },
             {
-                question: "17. Alliteration example:",
-                options: ["Silent sands shifted slightly", "The moon shone faintly", "Waves caressed the shore", "Night fell gently"],
-                answer: "Silent sands shifted slightly",
+                question: "12. Idiom: \"Beat around the bush\" means:",
+                options: ["A. To avoid the main topic", "B. To fight verbally", "C. To tell a lie", "D. To shout at someone"],
+                answer: "A. To avoid the main topic",
                 section: "English"
             },
             {
-                question: "18. Change to Active Voice: \"The report had been finalized by the head of department.\"",
-                options: ["The head of department had finalized the report.", "The report finalized the head.", "The finalization was done by the head.", "The head finalize report."],
-                answer: "The head of department had finalized the report.",
+                question: "13. Analogy: Apple : Fruit :: Carrot : ?",
+                options: ["A. Fruit", "B. Tree", "C. Vegetable", "D. Herb"],
+                answer: "C. Vegetable",
                 section: "English"
             },
             {
-                question: "19. Idiom: \"to pass the buck\" means:",
-                options: ["Pay money", "Shift responsibility", "Freeze abruptly", "Bring joy"],
-                answer: "Shift responsibility",
+                question: "14. Choose the correct sentence:",
+                options: ["A. He go to school everyday.", "B. He goes to school every day.", "C. He going to school daily.", "D. He gone to school every day."],
+                answer: "B. He goes to school every day.",
                 section: "English"
             },
             {
-                question: "20. Clause type: \"Because she mastered grammar quickly, she taught others.\"",
-                options: ["Relative clause", "Noun clause", "Adverbial clause of reason", "Coordinate clause"],
-                answer: "Adverbial clause of reason",
+                question: "15. Identify the error: \"She don't want to come with us.\"",
+                options: ["A. don't → doesn't", "B. want → wants", "C. come → came", "D. No error"],
+                answer: "A. don't → doesn't",
                 section: "English"
             },
             {
-                question: "21. The Calvin cycle's CO2 fixation occurs in:",
-                options: ["Grana", "Stroma", "Cytosol", "Thylakoid lumen"],
-                answer: "Stroma",
-                section: "Biology"
+                question: "16. Correct sentence:",
+                options: ["A. The books is on the table.", "B. The books are on the table.", "C. The book are on the table.", "D. The book is on the tables."],
+                answer: "B. The books are on the table.",
+                section: "English"
             },
             {
-                question: "22. Myelin sheath increases nerve impulse speed by:",
-                options: ["Reducing resistance", "Saltatory conduction", "Thickening axon", "Increasing synapse count"],
-                answer: "Saltatory conduction",
-                section: "Biology"
+                question: "17. Choose the correct sentence:",
+                options: ["A. Each of the players are ready.", "B. Each of the players is ready.", "C. Each of the player is ready.", "D. Each players is ready."],
+                answer: "B. Each of the players is ready.",
+                section: "English"
             },
             {
-                question: "23. Hemoglobin's oxygen affinity decreases when:",
-                options: ["pH rises", "CO2 increases", "Temperature drops", "2,3-BPG level decreases"],
-                answer: "CO2 increases",
-                section: "Biology"
+                question: "18. Correct the sentence: \"Neither the boy nor his friends is ready.\"",
+                options: ["A. is → are", "B. his → their", "C. boy → boys", "D. friends → friend"],
+                answer: "A. is → are",
+                section: "English"
             },
             {
-                question: "24. In DNA replication, the enzyme that relieves supercoiling is:",
-                options: ["Helicase", "Topoisomerase", "Polymerase", "Ligase"],
-                answer: "Topoisomerase",
-                section: "Biology"
+                question: "19. Fire : Burn :: Ice : ?",
+                options: ["A. Freeze", "B. Melt", "C. Boil", "D. Water"],
+                answer: "B. Melt",
+                section: "English"
             },
             {
-                question: "25. Which cell structure is common to viruses?",
-                options: ["Ribosome", "Capsid", "Antibodies", "Insulin receptors"],
-                answer: "Capsid",
-                section: "Biology"
+                question: "20. Book : Reading :: Fork : ?",
+                options: ["A. Eat", "B. Cook", "C. Spoon", "D. Meal"],
+                answer: "A. Eat",
+                section: "English"
             },
+            // Math Section
             {
-                question: "26. Induced fit model applies to:",
-                options: ["Enzyme specificity", "Passive transport", "Osmosis", "Plasmolysis"],
-                answer: "Enzyme specificity",
-                section: "Biology"
-            },
-            {
-                question: "27. Antigen-presenting cells display peptides via:",
-                options: ["MHC I & II molecules", "Euchromatin/heterochromatin", "Sex chromosome / autosome", "Mitochondrial type"],
-                answer: "MHC I & II molecules",
-                section: "Biology"
-            },
-            {
-                question: "28. The centromere position determines chromosome type:",
-                options: ["Metacentric, submetacentric, acrocentric", "Euchromatin/heterochromatin", "Sex chromosome / autosome", "Mitochondrial type"],
-                answer: "Metacentric, submetacentric, acrocentric",
-                section: "Biology"
-            },
-            {
-                question: "29. CRISPR-Cas9 is used primarily for:",
-                options: ["Protein synthesis", "Gene editing", "Lipid degradation", "Polysaccharide breakdown"],
-                answer: "Gene editing",
-                section: "Biology"
-            },
-            {
-                question: "30. In kidneys, countercurrent multiplier is located in the:",
-                options: ["Bowman's capsule", "Loop of Henle", "Collecting duct", "Proximal tubule"],
-                answer: "Loop of Henle",
-                section: "Biology"
-            },
-            {
-                question: "31. In Gibb's free energy equation ΔG=ΔH-TΔS, a positive ΔS makes ΔG:",
-                options: ["More positive", "More negative", "Unchanged", "Zero"],
-                answer: "More negative",
-                section: "Chemistry"
-            },
-            {
-                question: "32. Which molecular geometry minimizes repulsion in SF6?",
-                options: ["Tetrahedral", "Octahedral", "Square planar", "Trigonal bipyramidal"],
-                answer: "Octahedral",
-                section: "Chemistry"
-            },
-            {
-                question: "33. A buffer resists pH change because it contains:",
-                options: ["Strong acid + strong base", "Weak acid + its conjugate base", "Salt + inert solution", "Pure water only"],
-                answer: "Weak acid + its conjugate base",
-                section: "Chemistry"
-            },
-            {
-                question: "34. In electrolysis of molten NaCl, the cathode product is:",
-                options: ["Na+ ions", "Cl2 gas", "Na metal", "NaCl solid"],
-                answer: "Na metal",
-                section: "Chemistry"
-            },
-            {
-                question: "35. Enthalpy of formation of elements in standard state is defined as:",
-                options: ["Zero", "Negative", "Positive", "Undefined"],
-                answer: "Zero",
-                section: "Chemistry"
-            },
-            {
-                question: "36. Aromatic compounds are unusually stable due to:",
-                options: ["σ-bonding", "Resonance delocalization", "Unsaturation", "Halogen substitution"],
-                answer: "Resonance delocalization",
-                section: "Chemistry"
-            },
-            {
-                question: "37. Rate of reaction depends on temperature because:",
-                options: ["Increased collisions", "More surface area", "Catalyst deactivation", "Lower activation energy"],
-                answer: "Increased collisions",
-                section: "Chemistry"
-            },
-            {
-                question: "38. A molecule with chiral center exhibits:",
-                options: ["Optically inactive behavior", "Racemic mixture only", "Optical isomerism", "No stereoisomers"],
-                answer: "Optical isomerism",
-                section: "Chemistry"
-            },
-            {
-                question: "39. The Le Chatelier principle predicts shift upon adding reactant:",
-                options: ["Towards products", "Left side", "Equilibrium unchanged", "Irreversible change"],
-                answer: "Towards products",
-                section: "Chemistry"
-            },
-            {
-                question: "40. Which form of carbon conducts electricity?",
-                options: ["Diamond", "Graphite", "Fullerene", "Amorphous carbon"],
-                answer: "Graphite",
-                section: "Chemistry"
-            },
-            {
-                question: "41. In Doppler radar, returning wave frequency increases if the target is:",
-                options: ["Stationary", "Approaching", "Receding", "Rotating"],
-                answer: "Approaching",
-                section: "Physics"
-            },
-            {
-                question: "42. The relativistic mass formula demonstrates that mass increases as velocity approaches:",
-                options: ["c (speed of light)", "Zero", "Speed of sound", "Electromagnetic threshold"],
-                answer: "c (speed of light)",
-                section: "Physics"
-            },
-            {
-                question: "43. Photon energy is proportional to frequency via equation:",
-                options: ["E=hf", "E=mv^2", "E=pc", "E=kT"],
-                answer: "E=hf",
-                section: "Physics"
-            },
-            {
-                question: "44. In Gauss's law, electric flux through closed surface is proportional to:",
-                options: ["Total enclosed charge", "Field direction", "Surface area only", "Field strength"],
-                answer: "Total enclosed charge",
-                section: "Physics"
-            },
-            {
-                question: "45. A black-body's peak emission shifts to shorter wavelength as:",
-                options: ["Temperature decreases", "Temperature increases", "Emissivity lowers", "Surface area increases"],
-                answer: "Temperature increases",
-                section: "Physics"
-            },
-            {
-                question: "46. Superposition principle applies to:",
-                options: ["Non-linear optics", "Interference of waves", "Thermal conduction", "Radioactive decay"],
-                answer: "Interference of waves",
-                section: "Physics"
-            },
-            {
-                question: "47. In an LC circuit, energy oscillates between:",
-                options: ["Magnetic & chemical", "Electric field & magnetic", "Heat & kinetic", "Potential & sound"],
-                answer: "Electric field & magnetic",
-                section: "Physics"
-            },
-            {
-                question: "48. A conductor's resistance increases with:",
-                options: ["Lower cross-sectional area", "Lower temperature", "Fewer impurities", "Shorter length"],
-                answer: "Lower cross-sectional area",
-                section: "Physics"
-            },
-            {
-                question: "49. When a beam of electrons passes near a large charge, they deflect. This is evidence of:",
-                options: ["Particle-wave duality", "Electric field force", "Quantum entanglement", "Magnetic monopoles"],
-                answer: "Electric field force",
-                section: "Physics"
-            },
-            {
-                question: "50. In photoelectric effect, increasing photon frequency above threshold causes:",
-                options: ["Higher current", "Greater kinetic energy of ejected electrons", "More photons emitted", "Delayed electron emission"],
-                answer: "Greater kinetic energy of ejected electrons",
-                section: "Physics"
-            },
-            {
-                question: "51. Why photovoltaic efficiency drops at high ambient temperatures:",
-                options: ["Bandgap widening", "Increased recombination", "Optical scattering", "Increased resistance"],
-                answer: "Increased recombination",
-                section: "Everyday Science"
-            },
-            {
-                question: "52. In smart agriculture, IoT sensors optimize irrigation by:",
-                options: ["Random timing", "Soil-moisture feedback", "Fixed schedule", "Manual survey"],
-                answer: "Soil-moisture feedback",
-                section: "Everyday Science"
-            },
-            {
-                question: "53. Bioreactors in wastewater treatment primarily use:",
-                options: ["Ultrafiltration", "Microbial metabolism", "Chemical precipitation", "Distillation"],
-                answer: "Microbial metabolism",
-                section: "Everyday Science"
-            },
-            {
-                question: "54. Radon hazard arises mainly because:",
-                options: ["Chemical toxicity", "Alpha radioactivity damaging lung tissue", "Greenhouse effect", "Corrosive gas"],
-                answer: "Alpha radioactivity damaging lung tissue",
-                section: "Everyday Science"
-            },
-            {
-                question: "55. Which greenhouse gas has highest global warming potential per molecule:",
-                options: ["CO2", "Methane", "Nitrous oxide", "SF6 (sulfur hexafluoride)"],
-                answer: "SF6 (sulfur hexafluoride)",
-                section: "Everyday Science"
-            },
-            {
-                question: "56. LED bulbs conserve electricity by:",
-                options: ["More watts", "Higher luminous efficacy", "Heat generation", "Voltage fluctuation"],
-                answer: "Higher luminous efficacy",
-                section: "Everyday Science"
-            },
-            {
-                question: "57. Ozone at ground level is harmful due to:",
-                options: ["UV absorption", "Respiratory irritant", "Heat reflective", "Antibacterial"],
-                answer: "Respiratory irritant",
-                section: "Everyday Science"
-            },
-            {
-                question: "58. Mercury in thermometers measures temperature via:",
-                options: ["Color change", "Thermal expansion", "Electrical resistance", "Pressure differential"],
-                answer: "Thermal expansion",
-                section: "Everyday Science"
-            },
-            {
-                question: "59. Which water treatment uses activated carbon adsorption for removal?",
-                options: ["Sedimentation", "Chlorination", "Carbon filtration", "UV sterilization"],
-                answer: "Carbon filtration",
-                section: "Everyday Science"
-            },
-            {
-                question: "60. Noise pollution beyond threshold can cause:",
-                options: ["Eye strain", "Hearing loss", "Respiratory issues", "Insomnia"],
-                answer: "Hearing loss",
-                section: "Everyday Science"
-            },
-            {
-                question: "61. If f(x)=x^3-6x^2+11x-6, its roots are:",
-                options: ["1,2,3", "Complex", "1,3,4", "-1,-2,-3"],
-                answer: "1,2,3",
+                question: "21. If 15 is 25% of a number, find number.",
+                options: ["A) 20", "B) 60", "C) 80", "D) 65"],
+                answer: "B) 60",
                 section: "Mathematics"
             },
             {
-                question: "62. If matrices A (2x2) and B (2x2) do not commute, then:",
-                options: ["AB=BA", "Determinants equal", "AB≠BA", "Both singular"],
-                answer: "AB≠BA",
+                question: "22. If a car travels 120 miles in 2 hours, how far will it travel in 3 hours?",
+                options: ["A) 180miles", "B) 160miles", "C) 140miles", "D) NOT"],
+                answer: "A) 180miles",
                 section: "Mathematics"
             },
             {
-                question: "63. The derivative of sin^(-1)(x) is:",
-                options: ["1/√(1-x^2)", "cos(x)", "-1/√(1-x^2)", "1/(1+x^2)"],
-                answer: "1/√(1-x^2)",
+                question: "23. What is one-third of \\(3^6\\) ?",
+                options: ["A) \\(3^4\\)", "B) \\(3^5\\)", "C) \\(3^7\\)", "D) NOT"],
+                answer: "B) \\(3^5\\)",
                 section: "Mathematics"
             },
             {
-                question: "64. The sum of infinite geometric series with |r|<1 is:",
-                options: ["a/(1-r)", "ar", "a(1-r)", "(1-r)/a"],
-                answer: "a/(1-r)",
+                question: "24. In 10 years, Ali will be twice as old as he was 5 years ago. What is Ali's present age?",
+                options: ["A) 14", "B) 15", "C) 20", "D) 10"],
+                answer: "C) 20",
                 section: "Mathematics"
             },
             {
-                question: "65. What is the rank of matrix [[1,2],[2,4]]?",
-                options: ["2", "1", "0", "Depends"],
-                answer: "1",
+                question: "25. Which point satisfy equation \\(2x+3y = 8\\)",
+                options: ["A) (1, 4)", "B) (2,2)", "C) (-1, 3)", "D) (-2, 4)"],
+                answer: "D) (-2, 4)",
                 section: "Mathematics"
             },
             {
-                question: "66. The value of limit limx→0 (sin x)/x is:",
-                options: ["1", "0", "∞", "-1"],
-                answer: "1",
+                question: "26. A business man brought a product for 5000 and sold it for 7500. Find percentage of profit.",
+                options: ["A) 25%", "B) 35%", "C) 50%", "D) 20%"],
+                answer: "C) 50%",
                 section: "Mathematics"
             },
             {
-                question: "67. For conic section y^2=4ax, the eccentricity is:",
-                options: ["0", "1", "√2", "<1"],
-                answer: "1",
+                question: "27. Sara bought a shirt and pair of jeans for 800 rupees. The shirt costs 200 more than jeans. How much does shirt cost?",
+                options: ["A) 300", "B) 350", "C) 400", "D) 500"],
+                answer: "D) 500",
                 section: "Mathematics"
             },
             {
-                question: "68. Euler's theorem for complex exponentials: e^(iπ)+1=:",
-                options: ["1", "0", "-1", "i"],
-                answer: "0",
+                question: "28. The value of 50% of 30 + 50% of 40 is .....",
+                options: ["A) 38", "B) 35", "C) 24", "D) 30"],
+                answer: "B) 35",
                 section: "Mathematics"
             },
             {
-                question: "69. If det(A)=5 and det(B)=3, then det(2AB)=",
-                options: ["30", "10", "40", "15"],
-                answer: "60",
+                question: "29. The expression \\(\\sqrt{8} - \\sqrt{32}\\) is equivalent to",
+                options: ["A) \\(-7\\sqrt{2}\\)", "B) \\(-\\sqrt{42}\\)", "C) \\(-2\\sqrt{2}\\)", "D) \\(5\\sqrt{2}\\)"],
+                answer: "C) \\(-2\\sqrt{2}\\)",
                 section: "Mathematics"
             },
             {
-                question: "70. Series Σn=1^∞(1/n^2) converges to:",
-                options: ["π^2/6", "e^2", "∞", "1"],
-                answer: "π^2/6",
+                question: "30. Which set contain number \\(\\pi\\) ?",
+                options: ["A) rational number", "B) Irrational number", "C) complex number", "D) NOT"],
+                answer: "B) Irrational number",
                 section: "Mathematics"
             },
             {
-                question: "71. According to Hadith, the Prophet Muhammad (PBUH) emphasised sincerity (ikhlas) as essential before deeds. That refers to:",
-                options: ["Public worship only", "Intention before action", "Zakat payment method", "Fasting routine"],
-                answer: "Intention before action",
+                question: "31. \\(7^3 = .....\\)",
+                options: ["A) 243", "B) 343", "C) 241", "D) NOT"],
+                answer: "B) 343",
+                section: "Mathematics"
+            },
+            {
+                question: "32. 25% is equal to ..........",
+                options: ["A) \\(\\frac{1}{4}\\)", "B) \\(\\frac{3}{4}\\)", "C) \\(\\frac{5}{4}\\)", "D) NOT"],
+                answer: "A) \\(\\frac{1}{4}\\)",
+                section: "Mathematics"
+            },
+            {
+                question: "33. Which one of following is proper fraction?",
+                options: ["A) \\(\\frac{11}{4}\\)", "B) \\(\\frac{3}{4}\\)", "C) \\(\\frac{5}{4}\\)", "D) NOT"],
+                answer: "B) \\(\\frac{3}{4}\\)",
+                section: "Mathematics"
+            },
+            {
+                question: "34. \\(3 \\times 0 = .......\\)",
+                options: ["A) 0", "B) 3", "C) 30", "D) NOT"],
+                answer: "A) 0",
+                section: "Mathematics"
+            },
+            {
+                question: "35. \\(1^{100} = ....\\)",
+                options: ["A) 100", "B) 1", "C) 0", "D) NOT"],
+                answer: "B) 1",
+                section: "Mathematics"
+            },
+            {
+                question: "36. If Ayaz bought a book for 100 rupee after 2 months its price is increased by 10% and after more two months its price is decreased by 10%. What is the new price of book?",
+                options: ["A) 110", "B) 100", "C) 99", "D) NOT"],
+                answer: "C) 99",
+                section: "Mathematics"
+            },
+            {
+                question: "37. Income of Ahmed is 30000, he bought shoes for 2700. How much percent of income he spent on shoes?",
+                options: ["A) 9%", "B) 10%", "C) 8%", "D) NOT"],
+                answer: "A) 9%",
+                section: "Mathematics"
+            },
+            {
+                question: "38. \\(\\sqrt{100\\%} = ......\\)",
+                options: ["A) 1", "B) 10", "C) 15", "D) NOT"],
+                answer: "A) 1",
+                section: "Mathematics"
+            },
+            {
+                question: "39. Coefficient of \\(4x^{22}\\) is ......",
+                options: ["A) X", "B) 22", "C) 4", "D) NOT"],
+                answer: "C) 4",
+                section: "Mathematics"
+            },
+            {
+                question: "40. Base of common logarithm is .....",
+                options: ["A) 10", "B) e", "C) x", "D) 0"],
+                answer: "A) 10",
+                section: "Mathematics"
+            },
+            // Science Section
+            {
+                question: "41. What is the role of stomata in plants?",
+                options: ["A. Transport water", "B. Absorb minerals", "C. Exchange gases", "D. Protect the stem"],
+                answer: "C. Exchange gases",
+                section: "Science"
+            },
+            {
+                question: "42. Which of the following is a conductor of electricity?",
+                options: ["A. Glass", "B. Rubber", "C. Copper", "D. Plastic"],
+                answer: "C. Copper",
+                section: "Science"
+            },
+            {
+                question: "43. The outermost layer of Earth is called:",
+                options: ["A. Mantle", "B. Core", "C. Crust", "D. Mesosphere"],
+                answer: "C. Crust",
+                section: "Science"
+            },
+            {
+                question: "44. What happens to the volume of a gas when its pressure is increased?",
+                options: ["A. Increases", "B. Decreases", "C. Remains same", "D. Becomes zero"],
+                answer: "B. Decreases",
+                section: "Science"
+            },
+            {
+                question: "45. The atomic number of an element is equal to:",
+                options: ["A. Number of protons", "B. Number of neutrons", "C. Electrons + protons", "D. Atomic mass"],
+                answer: "A. Number of protons",
+                section: "Science"
+            },
+            {
+                question: "46. Which of these statements about atoms is true?",
+                options: ["A. Atoms are created during chemical reactions", "B. Atoms can be seen with a microscope", "C. Atoms are indivisible by chemical means", "D. Atoms can be broken into molecules"],
+                answer: "C. Atoms are indivisible by chemical means",
+                section: "Science"
+            },
+            {
+                question: "47. Which law states that gas volume is inversely proportional to pressure?",
+                options: ["A. Boyle’s Law", "B. Charles’ Law", "C. Newton’s Law", "D. Ohm’s Law"],
+                answer: "A. Boyle’s Law",
+                section: "Science"
+            },
+            {
+                question: "48. Which organ in the human body produces bile?",
+                options: ["A. Liver", "B. Pancreas", "C. Stomach", "D. Gallbladder"],
+                answer: "A. Liver",
+                section: "Science"
+            },
+            {
+                question: "49. In NaCl, which molecule is the primary electron donor?",
+                options: ["A. Na", "B. Cl", "C. Electron Sharing", "D. NOT"],
+                answer: "A. Na",
+                section: "Science"
+            },
+            {
+                question: "50. The human skeleton is mainly made up of:",
+                options: ["A. Muscles", "B. Cartilage", "C. Ligaments", "D. Bones"],
+                answer: "D. Bones",
+                section: "Science"
+            },
+            {
+                question: "51. Which gas is used in the process of photosynthesis?",
+                options: ["A. Oxygen", "B. Carbon monoxide", "C. Nitrogen", "D. Carbon dioxide"],
+                answer: "D. Carbon dioxide",
+                section: "Science"
+            },
+            {
+                question: "52. What is the function of red blood cells?",
+                options: ["A. Fight diseases", "B. Carry oxygen", "C. Produce hormones", "D. Digest food"],
+                answer: "B. Carry oxygen",
+                section: "Science"
+            },
+            {
+                question: "53. What is the SI unit of pressure?",
+                options: ["A. Newton", "B. Pascal", "C. Watt", "D. Joule"],
+                answer: "B. Pascal",
+                section: "Science"
+            },
+            {
+                question: "54. Which of the following is not a greenhouse gas?",
+                options: ["A. Carbon dioxide", "B. Methane", "C. Oxygen", "D. Nitrous oxide"],
+                answer: "C. Oxygen",
+                section: "Science"
+            },
+            {
+                question: "55. A body has a mass of 10 kg. What is its weight on Earth?",
+                options: ["A. 98 N", "B. 10 N", "C. 9.8 N", "D. 980 N"],
+                answer: "A. 98 N",
+                section: "Science"
+            },
+            {
+                question: "56. Which of the following diseases is caused by a virus?",
+                options: ["A. Malaria", "B. Typhoid", "C. Tuberculosis", "D. Measles"],
+                answer: "D. Measles",
+                section: "Science"
+            },
+            {
+                question: "57. Which instrument is used to measure atmospheric pressure?",
+                options: ["A. Thermometer", "B. Barometer", "C. Hygrometer", "D. Altimeter"],
+                answer: "B. Barometer",
+                section: "Science"
+            },
+            {
+                question: "58. Which of the following gases causes acid rain?",
+                options: ["A. Carbon monoxide", "B. Sulfur dioxide", "C. Oxygen", "D. Nitrogen"],
+                answer: "B. Sulfur dioxide",
+                section: "Science"
+            },
+            {
+                question: "59. Which organ system transports nutrients and oxygen?",
+                options: ["A. Respiratory", "B. Digestive", "C. Circulatory", "D. Excretory"],
+                answer: "C. Circulatory",
+                section: "Science"
+            },
+            {
+                question: "60. The most reactive metal among the following is:",
+                options: ["A. Gold", "B. Copper", "C. Sodium", "D. Silver"],
+                answer: "C. Sodium",
+                section: "Science"
+            },
+            {
+                question: "61. Which hormone regulates blood sugar level?",
+                options: ["A. Insulin", "B. Estrogen", "C. Adrenaline", "D. Testosterone"],
+                answer: "A. Insulin",
+                section: "Science"
+            },
+            {
+                question: "62. DNA replication takes place in which part of the cell cycle?",
+                options: ["A. Mitosis", "B. S phase", "C. G1 phase", "D. G2 phase"],
+                answer: "B. S phase",
+                section: "Science"
+            },
+            {
+                question: "63. Which part of the plant absorbs water and minerals?",
+                options: ["A. Leaf", "B. Stem", "C. Root", "D. Flower"],
+                answer: "C. Root",
+                section: "Science"
+            },
+            {
+                question: "64. The deficiency of iodine causes:",
+                options: ["A. Anemia", "B. Rickets", "C. Goiter", "D. Night blindness"],
+                answer: "C. Goiter",
+                section: "Science"
+            },
+            {
+                question: "65. Which one is a renewable energy source?",
+                options: ["A. Natural gas", "B. Petrol", "C. Wind", "D. Coal"],
+                answer: "C. Wind",
+                section: "Science"
+            },
+            {
+                question: "66. What happens when light enters water from air?",
+                options: ["A. It speeds up", "B. It bends away from the normal", "C. It slows down and bends toward the normal", "D. It travels straight"],
+                answer: "C. It slows down and bends toward the normal",
+                section: "Science"
+            },
+            {
+                question: "67. Which blood component helps in clotting?",
+                options: ["A. Red blood cells", "B. White blood cells", "C. Platelets", "D. Plasma"],
+                answer: "C. Platelets",
+                section: "Science"
+            },
+            {
+                question: "68. Which particle causes electric current in metals?",
+                options: ["A. Protons", "B. Neutrons", "C. Electrons", "D. Ions"],
+                answer: "C. Electrons",
+                section: "Science"
+            },
+            {
+                question: "69. Which part of the brain controls balance and coordination?",
+                options: ["A. Cerebrum", "B. Medulla", "C. Cerebellum", "D. Hypothalamus"],
+                answer: "C. Cerebellum",
+                section: "Science"
+            },
+            {
+                question: "70. Which of the following is a strong electrolyte?",
+                options: ["A. Glucose", "B. NaCl", "C. Urea", "D. Ethanol"],
+                answer: "B. NaCl",
+                section: "Science"
+            },
+            {
+                question: "71. Why is water called a universal solvent?",
+                options: ["A. It dissolves gases", "B. It dissolves ionic and polar compounds", "C. It has high boiling point", "D. It is non-polar"],
+                answer: "B. It dissolves ionic and polar compounds",
+                section: "Science"
+            },
+            {
+                question: "72. Which of the following is a chemical change?",
+                options: ["A. Ice melting", "B. Water boiling", "C. Burning of wood", "D. Breaking of glass"],
+                answer: "C. Burning of wood",
+                section: "Science"
+            },
+            {
+                question: "73. Which vitamin is made by the skin in sunlight?",
+                options: ["A. Vitamin A", "B. Vitamin B", "C. Vitamin C", "D. Vitamin D"],
+                answer: "D. Vitamin D",
+                section: "Science"
+            },
+            {
+                question: "74. What do enzymes do in chemical reactions?",
+                options: ["A. Raise temperature", "B. Get consumed", "C. Lower activation energy", "D. Convert ATP to proteins"],
+                answer: "C. Lower activation energy",
+                section: "Science"
+            },
+            {
+                question: "75. Which process in plants uses sunlight to make food?",
+                options: ["A. Respiration", "B. Germination", "C. Photosynthesis", "D. Fermentation"],
+                answer: "C. Photosynthesis",
+                section: "Science"
+            },
+            {
+                question: "76. Which of these is not a property of metals?",
+                options: ["A. Good conductor", "B. Brittle", "C. Malleable", "D. Ductile"],
+                answer: "B. Brittle",
+                section: "Science"
+            },
+            {
+                question: "77. What is the main source of energy for life on Earth?",
+                options: ["A. Water", "B. Oxygen", "C. Sun", "D. Soil"],
+                answer: "C. Sun",
+                section: "Science"
+            },
+            {
+                question: "78. In a transformer, if the secondary coil has more turns:",
+                options: ["A. Step-down transformer", "B. Step-up transformer", "C. Rectifier", "D. Inductor"],
+                answer: "B. Step-up transformer",
+                section: "Science"
+            },
+            {
+                question: "79. Which organ helps in breathing?",
+                options: ["A. Brain", "B. Liver", "C. Heart", "D. Lungs"],
+                answer: "D. Lungs",
+                section: "Science"
+            },
+            {
+                question: "80. Which of the following is solid at room temperature?",
+                options: ["A. Oxygen", "B. Water", "C. Iron", "D. Alcohol"],
+                answer: "C. Iron",
+                section: "Science"
+            },
+            // GK/Computer Section
+            {
+                question: "81. What does CPU stand for?",
+                options: ["A. Central Processing Unit", "B. Central Peripheral Unit", "C. Computer Power Unit", "D. Control Program Unit"],
+                answer: "A. Central Processing Unit",
+                section: "Computer"
+            },
+            {
+                question: "82. Shortcut for \"Undo\" in MS Word is:",
+                options: ["A. Ctrl + U", "B. Ctrl + Z", "C. Ctrl + Y", "D. Ctrl + X"],
+                answer: "B. Ctrl + Z",
+                section: "Computer"
+            },
+            {
+                question: "83. A device that connects different networks is:",
+                options: ["A. Router", "B. Switch", "C. Modem", "D. Hub"],
+                answer: "A. Router",
+                section: "Computer"
+            },
+            {
+                question: "84. Which of these is a spreadsheet software?",
+                options: ["A. MS Word", "B. PowerPoint", "C. Excel", "D. Photoshop"],
+                answer: "C. Excel",
+                section: "Computer"
+            },
+            {
+                question: "85. Ghazwa-e-Badr was fought in which Hijri year?",
+                options: ["A. 2 AH", "B. 3 AH", "C. 5 AH", "D. 1 AH"],
+                answer: "A. 2 AH",
                 section: "Islamiat"
             },
             {
-                question: "72. Laylat al-Qadr falls in:",
-                options: ["First 10 nights of Ramadan", "Last 10 nights of Ramadan", "Mid-Ramadan", "Shawwal"],
-                answer: "Last 10 nights of Ramadan",
+                question: "86. Who was the first Khalifa of Islam?",
+                options: ["A. Hazrat Umar (RA)", "B. Hazrat Usman (RA)", "C. Hazrat Abu Bakr (RA)", "D. Hazrat Ali (RA)"],
+                answer: "C. Hazrat Abu Bakr (RA)",
                 section: "Islamiat"
             },
             {
-                question: "73. Zakat ul-fitr is paid in:",
-                options: ["Gold only", "Food staple", "Cash only", "Meat"],
-                answer: "Food staple",
+                question: "87. Which Prophet is called \"Kaleem Ullah\"?",
+                options: ["A. Musa (AS)", "B. Isa (AS)", "C. Dawood (AS)", "D. Ibrahim (AS)"],
+                answer: "A. Musa (AS)",
                 section: "Islamiat"
             },
             {
-                question: "74. The compilation of Sahih Bukhari was completed in:",
-                options: ["7th century AH", "9th century AH", "6th century AH", "8th century AH"],
-                answer: "9th century AH",
+                question: "88. How many Farz prayers are there daily in Islam?",
+                options: ["A. Three", "B. Four", "C. Five", "D. Six"],
+                answer: "C. Five",
                 section: "Islamiat"
             },
             {
-                question: "75. Hajj rituals remind believers primarily of:",
-                options: ["Death only", "Brotherhood, submission, history", "Trade", "Farming"],
-                answer: "Brotherhood, submission, history",
-                section: "Islamiat"
+                question: "89. Simla Agreement between Pakistan and India was signed in:",
+                options: ["A. 1965", "B. 1971", "C. 1972", "D. 1999"],
+                answer: "C. 1972",
+                section: "Pak Study"
             },
             {
-                question: "76. In object-oriented programming, polymorphism allows:",
-                options: ["Single form only", "Multiple methods in same interface", "Direct memory manipulation", "Code obfuscation"],
-                answer: "Multiple methods in same interface",
-                section: "Computer Science"
+                question: "90. Who wrote Now or Never proposing Pakistan's idea?",
+                options: ["A. Allama Iqbal", "B. Rehmat Ali", "C. Jinnah", "D. Liaquat Ali Khan"],
+                answer: "B. Rehmat Ali",
+                section: "Pak Study"
             },
             {
-                question: "77. Thread synchronization in operating systems avoids:",
-                options: ["Memory overflow", "Race conditions", "Disk errors", "UI lag"],
-                answer: "Race conditions",
-                section: "Computer Science"
+                question: "91. The Objectives Resolution was passed in which year?",
+                options: ["A. 1947", "B. 1948", "C. 1949", "D. 1956"],
+                answer: "C. 1949",
+                section: "Pak Study"
             },
             {
-                question: "78. In networking, TCP guarantees:",
-                options: ["Data sequence and reliability", "Broadcast only", "Speed over reliability", "Stateless communication"],
-                answer: "Data sequence and reliability",
-                section: "Computer Science"
+                question: "92. Islam is declared the state religion under which article?",
+                options: ["A. Article 1", "B. Article 2", "C. Article 9", "D. Article 20"],
+                answer: "B. Article 2",
+                section: "Pak Study"
             },
             {
-                question: "79. In relational databases, referential integrity ensures:",
-                options: ["Query speed", "No orphaned foreign keys", "Unique primary key only", "Denormalization"],
-                answer: "No orphaned foreign keys",
-                section: "Computer Science"
+                question: "93. Headquarters of the UN is in:",
+                options: ["A. Geneva", "B. Paris", "C. New York", "D. London"],
+                answer: "C. New York",
+                section: "General Knowledge"
             },
             {
-                question: "80. In cryptography, RSA relies on:",
-                options: ["Discrete logarithms", "Large prime factorization", "Hash collisions", "Symmetric keys"],
-                answer: "Large prime factorization",
-                section: "Computer Science"
+                question: "94. First woman PM of a Muslim country?",
+                options: ["A. Indira Gandhi", "B. Benazir Bhutto", "C. Sheikh Hasina", "D. Fatima Jinnah"],
+                answer: "B. Benazir Bhutto",
+                section: "General Knowledge"
             },
             {
-                question: "81. Under the 1935 Act, Sindh gained separate province status in:",
-                options: ["1937", "1947", "1930", "1940"],
-                answer: "1937",
-                section: "Social Studies"
+                question: "95. Strait connecting Mediterranean Sea to Atlantic?",
+                options: ["A. Gibraltar", "B. Hormuz", "C. Bering", "D. Malacca"],
+                answer: "A. Gibraltar",
+                section: "General Knowledge"
             },
             {
-                question: "82. Pakistan's first general elections under 1973 Constitution held in:",
-                options: ["1977", "1970", "1988", "1965"],
-                answer: "1977",
-                section: "Social Studies"
+                question: "96. What is the longest river in the world?",
+                options: ["A. Amazon", "B. Nile", "C. Indus", "D. Yangtze"],
+                answer: "B. Nile",
+                section: "General Knowledge"
             },
             {
-                question: "83. The 'Green Revolution' in Pakistan mainly impacted:",
-                options: ["Textile exports", "Wheat production", "Computer literacy", "Tourism"],
-                answer: "Wheat production",
-                section: "Social Studies"
+                question: "97. Who is Pakistan's PM (July 2025)?",
+                options: ["A. Anwaar-ul-Haq Kakar", "B. Mohsin Naqvi", "C. Bilawal Bhutto", "D. Shahbaz Sharif"],
+                answer: "D. Shahbaz Sharif",
+                section: "Current Affairs"
             },
             {
-                question: "84. The strategic China-Pakistan Economic Corridor (CPEC) includes port access at:",
-                options: ["Karachi", "Gwadar", "Lahore", "Islamabad"],
-                answer: "Gwadar",
-                section: "Social Studies"
+                question: "98. ICC T20 World Cup 2024 was co-hosted by:",
+                options: ["A. India & UAE", "B. USA & West Indies", "C. England & India", "D. Australia & NZ"],
+                answer: "B. USA & West Indies",
+                section: "Sports"
             },
             {
-                question: "85. Allama Iqbal's address in 1930 proposed:",
-                options: ["An independent India", "A separate homeland for Muslims", "A secular state", "Economic unity"],
-                answer: "A separate homeland for Muslims",
-                section: "Social Studies"
+                question: "99. Operation launched in 2024 by Pak Army:",
+                options: ["A. Zarb-e-Azb", "B. Azm-e-Istehkam", "C. Radd-ul-Fasaad", "D. Rah-e-Raast"],
+                answer: "B. Azm-e-Istehkam",
+                section: "Current Affairs"
             },
             {
-                question: "86. The Simla Agreement (1972) between Pakistan and India addressed:",
-                options: ["Kashmir settlement", "Water sharing", "Post-1971 ceasefire", "Trade routes"],
-                answer: "Post-1971 ceasefire",
-                section: "Social Studies"
-            },
-            {
-                question: "87. Pakistan joined the Commonwealth in:",
-                options: ["1947", "1950", "1960", "1972"],
-                answer: "1947",
-                section: "Social Studies"
-            },
-            {
-                question: "88. Bhutto's land reforms in Pakistan aimed at:",
-                options: ["Industrialization", "Land distribution", "Educational reform", "Water resource management"],
-                answer: "Land distribution",
-                section: "Social Studies"
-            },
-            {
-                question: "89. The literacy campaign of 21st century Pakistan prominently uses:",
-                options: ["SMS messages", "Mobile learning platforms", "Radio ads only", "Printed pamphlets"],
-                answer: "Mobile learning platforms",
-                section: "Social Studies"
-            },
-            {
-                question: "90. Provincial assembly of Sindh meets in:",
-                options: ["Karachi", "Hyderabad", "Islamabad", "Lahore"],
-                answer: "Karachi",
-                section: "Social Studies"
-            },
-            {
-                question: "91. COP27 (held in late 2022) introduced legally non-binding loss-and-damage fund primarily for:",
-                options: ["Industrial countries", "Vulnerable developing nations", "Oil producers", "European Union only"],
-                answer: "Vulnerable developing nations",
-                section: "Current Affairs & General Knowledge"
-            },
-            {
-                question: "92. The first country to land a mission near lunar south pole (Chandrayaan-3) was:",
-                options: ["USA", "China", "India", "UAE"],
-                answer: "India",
-                section: "Current Affairs & General Knowledge"
-            },
-            {
-                question: "93. By mid-2025, which company achieved the first trillion-transistor chip?",
-                options: ["Intel", "IBM", "Nvidia", "TSMC"],
-                answer: "TSMC",
-                section: "Current Affairs & General Knowledge"
-            },
-            {
-                question: "94. Which vaccine technology uses mRNA to code spike protein?",
-                options: ["Traditional attenuated", "mRNA (Pfizer, Moderna)", "Viral vector (AstraZeneca)", "Protein subunit"],
-                answer: "mRNA (Pfizer, Moderna)",
-                section: "Current Affairs & General Knowledge"
-            },
-            {
-                question: "95. The global AI regulation initiative begun by G7 in 2024 emphasizes:",
-                options: ["No oversight", "Risk-based regulatory frameworks", "Ban on AI entirely", "Self-certification only"],
-                answer: "Risk-based regulatory frameworks",
-                section: "Current Affairs & General Knowledge"
-            },
-            {
-                question: "96. As of 2025, world's leading steel producer is:",
-                options: ["India", "USA", "China", "Russia"],
-                answer: "China",
-                section: "Current Affairs & General Knowledge"
-            },
-            {
-                question: "97. The Nobel Prize for Literature in 2024 was awarded to an author writing in:",
-                options: ["English", "Arabic", "Korean", "French"],
-                answer: "Korean",
-                section: "Current Affairs & General Knowledge"
-            },
-            {
-                question: "98. Which country abolished monarchy in 2023?",
-                options: ["Bhutan", "Nepal", "Spain", "Cambodia"],
-                answer: "Nepal",
-                section: "Current Affairs & General Knowledge"
-            },
-            {
-                question: "99. The SAARC (South Asian) annual summit 2025 will be hosted by:",
-                options: ["Pakistan", "India", "Bangladesh", "Sri Lanka"],
-                answer: "India",
-                section: "Current Affairs & General Knowledge"
-            },
-            {
-                question: "100. The current Secretary-General of the UN in mid-2025 is:",
-                options: ["António Guterres", "Boutros Boutros-Ghali", "Ban Ki-moon", "Kofi Annan"],
-                answer: "António Guterres",
-                section: "Current Affairs & General Knowledge"
+                question: "100. Current COAS of Pakistan (2025):",
+                options: ["A. Gen. Faiz Hameed", "B. Gen. Asim Munir", "C. Gen. Sahir Shamshad", "D. Gen. Bajwa"],
+                answer: "B. Gen. Asim Munir",
+                section: "Current Affairs"
             }
         ];
 
         let currentQuestionIndex = 0;
         let userAnswers = [];
-        let timeLeft = 3600; // 60 minutes in seconds
+        let timeLeft = 3600; // 60 minutes
         let timerInterval;
 
         const totalQuestions = questions ? questions.length : 0;
@@ -1101,8 +1101,6 @@
         const mobileQuestionGrid = document.getElementById('mobileQuestionGrid');
         const scrollLeftBtn = document.getElementById('scrollLeftBtn');
         const scrollRightBtn = document.getElementById('scrollRightBtn');
-        const mobileCurrentQ = document.getElementById('mobileCurrentQ');
-        const mobileTotalQ = document.getElementById('mobileTotalQ');
 
         const resTotalQuestions = document.getElementById('resTotalQuestions');
         const resCorrectAnswers = document.getElementById('resCorrectAnswers');
@@ -1122,7 +1120,7 @@
         const downloadPdfBtn = document.getElementById('downloadPdfBtn');
         const pdfOverlay = document.getElementById('pdf-overlay');
         const pdfContent = document.getElementById('pdf-content');
-
+        
         // Passage Container
         const passageContainer = document.getElementById('passageContainer');
 
@@ -1163,28 +1161,24 @@
             if (!questions || !questions[currentQuestionIndex]) return;
 
             const questionData = questions[currentQuestionIndex];
-
-            // Handle Passage Display Logic (Two Passages)
+            
+            // Handle Passage Display Logic (Show for Q1-5)
             if (currentQuestionIndex >= 0 && currentQuestionIndex <= 4) {
-                passageContainer.innerHTML = passage1;
-                passageContainer.classList.remove('hidden');
-            } else if (currentQuestionIndex >= 5 && currentQuestionIndex <= 9) {
-                passageContainer.innerHTML = passage2;
+                passageContainer.innerHTML = passageText;
                 passageContainer.classList.remove('hidden');
             } else {
                 passageContainer.classList.add('hidden');
             }
 
-            // Remove existing numbering from question text
-            const cleanQuestion = questionData.question.replace(/^\d+\.\s*/, '');
-            questionText.innerHTML = cleanQuestion;
+            // Clean Question Text
+            questionText.innerHTML = questionData.question;
             optionsContainer.innerHTML = '';
 
             questionData.options.forEach((option, index) => {
                 const label = document.createElement('label');
                 label.className = `group relative flex items-center p-3 md:p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 hover:bg-slate-50 dark:hover:bg-slate-700/50 ${userAnswers[currentQuestionIndex].answer === option
-                    ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                    : 'border-slate-200 dark:border-slate-700'
+                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                        : 'border-slate-200 dark:border-slate-700'
                     }`;
 
                 const radioInput = document.createElement('input');
@@ -1195,8 +1189,8 @@
 
                 const customRadio = document.createElement('div');
                 customRadio.className = `w-5 h-5 min-w-[20px] rounded-full border-2 mr-3 md:mr-4 flex items-center justify-center transition-colors ${userAnswers[currentQuestionIndex].answer === option
-                    ? 'border-primary-500 bg-primary-500'
-                    : 'border-slate-400'
+                        ? 'border-primary-500 bg-primary-500'
+                        : 'border-slate-400'
                     }`;
 
                 const checkmark = document.createElement('div');
@@ -1226,8 +1220,11 @@
 
             currentQuestionNumberSpan.textContent = currentQuestionIndex + 1;
             totalQuestionsSpan.textContent = totalQuestions;
-            if (mobileCurrentQ) mobileCurrentQ.textContent = currentQuestionIndex + 1;
-            if (mobileTotalQ) mobileTotalQ.textContent = totalQuestions;
+            // Mobile counters update
+            const mobileCurrentQ = document.getElementById('mobileCurrentQ'); // Dynamically found
+            const mobileTotalQ = document.getElementById('mobileTotalQ'); // Dynamically found
+            if(mobileCurrentQ) mobileCurrentQ.textContent = currentQuestionIndex + 1;
+            if(mobileTotalQ) mobileTotalQ.textContent = totalQuestions;
 
             const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
             progressBarFill.style.width = `${progress}%`;
@@ -1242,6 +1239,11 @@
             }
 
             updatePaletteActiveStatus();
+            
+            // Re-render MathJax
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
         }
 
         function generateQuestionPalette() {
@@ -1293,7 +1295,7 @@
 
             if (index === currentQuestionIndex) {
                 colorClass += ' ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-slate-800';
-
+                
                 desktopItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 mobileItem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
             }
@@ -1413,9 +1415,6 @@
                 const isCorrect = userAnswer === q.answer;
                 const attempted = userAnswers[index].attempted;
 
-                // Clean Question Text (Remove Numbering)
-                const cleanQuestion = q.question.replace(/^\d+\.\s*/, '');
-
                 let statusBadgeHTML = '';
                 let borderClass = '';
 
@@ -1433,10 +1432,8 @@
                 const card = document.createElement('div');
                 card.className = `bg-white dark:bg-slate-700/50 p-4 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600 ${borderClass}`;
 
-                // Passage reference for first 10 questions
-                let passageRef = '';
-                if (index < 5) passageRef = `<div class="mb-3 p-3 bg-slate-50 dark:bg-slate-800/50 rounded text-xs italic text-slate-600 dark:text-slate-400 border-l-2 border-primary-500">Ref Passage 1: Under the crescent moon...</div>`;
-                else if (index < 10) passageRef = `<div class="mb-3 p-3 bg-slate-50 dark:bg-slate-800/50 rounded text-xs italic text-slate-600 dark:text-slate-400 border-l-2 border-primary-500">Ref Passage 2: Leela adjusted her...</div>`;
+                // Passage reference for first 5 questions
+                const passageRef = (index < 5) ? `<div class="mb-3 p-3 bg-slate-50 dark:bg-slate-800/50 rounded text-xs italic text-slate-600 dark:text-slate-400 border-l-2 border-primary-500">Ref Passage: Climate change...</div>` : '';
 
                 card.innerHTML = `
                     <div class="flex justify-between items-start mb-2">
@@ -1444,7 +1441,7 @@
                         ${statusBadgeHTML}
                     </div>
                     ${passageRef}
-                    <p class="text-sm md:text-base font-semibold text-slate-800 dark:text-slate-100 mb-3">${cleanQuestion}</p>
+                    <p class="text-sm md:text-base font-semibold text-slate-800 dark:text-slate-100 mb-3">${q.question}</p>
                     
                     <div class="space-y-1 text-sm">
                         <div class="flex flex-col sm:flex-row sm:gap-2">
@@ -1463,6 +1460,11 @@
                 `;
                 reviewContent.appendChild(card);
             });
+            
+            // Re-render MathJax in review section
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
         });
 
         closeReviewBtn.addEventListener('click', () => {
@@ -1477,7 +1479,7 @@
 
             let reportHTML = `
                 <div class="pdf-header">
-                    <h1 style="font-size: 24px; font-weight: bold; color: #8b5cf6;">JST Mock Test 7 Result</h1>
+                    <h1 style="font-size: 24px; font-weight: bold; color: #db2777;">JST Mock Test 9 Result</h1>
                     <p style="color: #666;">Generated on ${new Date().toLocaleDateString()}</p>
                 </div>
                 
@@ -1495,12 +1497,12 @@
                         <span class="pdf-stat-label">Wrong</span>
                     </div>
                     <div class="pdf-stat">
-                        <span class="pdf-stat-val" style="color:#8b5cf6">${resScore.textContent}%</span>
+                        <span class="pdf-stat-val" style="color:#db2777">${resScore.textContent}%</span>
                         <span class="pdf-stat-label">Score</span>
                     </div>
                 </div>
                 
-                <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #8b5cf6; display: inline-block;">Detailed Review</h3>
+                <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #db2777; display: inline-block;">Detailed Review</h3>
             `;
 
             questions.forEach((q, index) => {
@@ -1508,15 +1510,12 @@
                 const isCorrect = userAnswer === q.answer;
                 const attempted = userAnswers[index].attempted;
 
-                // Clean Question Text (Remove Numbering)
-                const cleanQuestion = q.question.replace(/^\d+\.\s*/, '');
-
                 let statusClass = isCorrect ? "pdf-correct" : (attempted ? "pdf-wrong" : "pdf-skipped");
                 let statusText = isCorrect ? "Correct" : (attempted ? "Wrong" : "Skipped");
 
                 reportHTML += `
                     <div class="pdf-question">
-                        <div class="pdf-q-title">Q${index + 1} (${q.section}): ${cleanQuestion}</div>
+                        <div class="pdf-q-title">Q${index+1} (${q.section}): ${q.question}</div>
                         <div class="pdf-q-ans">Your Answer: <span class="${statusClass}">${userAnswer || 'Not Answered'}</span> (${statusText})</div>
                         ${!isCorrect ? `<div class="pdf-q-ans">Correct Answer: <span class="pdf-correct">${q.answer}</span></div>` : ''}
                     </div>
@@ -1524,20 +1523,37 @@
             });
 
             pdfContent.innerHTML = reportHTML;
+            
+            // Re-render MathJax inside the PDF container before generating
+            if (window.MathJax) {
+                 MathJax.typesetPromise([pdfContent]).then(() => {
+                    const opt = {
+                        margin: [0.5, 0.5],
+                        filename: 'JST_Mock_Test_9_Result.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { scale: 2 },
+                        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                    };
 
-            const opt = {
-                margin: [0.5, 0.5],
-                filename: 'JST_Mock_Test_7_Result.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-            };
-
-            setTimeout(() => {
+                    setTimeout(() => {
+                        html2pdf().from(pdfContent).set(opt).save().then(() => {
+                            pdfOverlay.style.display = 'none';
+                        });
+                    }, 500); // Give MathJax a moment
+                 });
+            } else {
+                 // Fallback if MathJax fails
+                 const opt = {
+                    margin: [0.5, 0.5],
+                    filename: 'JST_Mock_Test_9_Result.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                };
                 html2pdf().from(pdfContent).set(opt).save().then(() => {
                     pdfOverlay.style.display = 'none';
                 });
-            }, 100);
+            }
         });
     </script>
 </body>

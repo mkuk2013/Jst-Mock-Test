@@ -1,1614 +1,1092 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IBA STS Junior Science Teacher Mock Test 4</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- HTML2PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1', // Indigo for Test 4
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            /* Global Colors (Light Mode Defaults) */
-            --background-color: #f0f2f5;
-            --text-color: #333;
-            --card-background: rgba(255, 255, 255, 0.9);
-            --input-background: rgba(240, 240, 240, 0.8);
-            --border-color: rgba(0, 0, 0, 0.1);
-            --shadow-color: rgba(0, 0, 0, 0.1);
-
-            /* Action & State Colors (Light Mode) */
-            --primary-color: #4A90E2; /* For current, buttons */
-            --primary-color-rgb: 74, 144, 226;
-            --success-color: #7ED321; /* For answered, correct */
-            --secondary-color: #50E3C2; /* For marked for review */
-            --danger-color: #D0021B; /* For incorrect */
-            --warning-color: #F8E71C; /* For warnings, restart */
-            --text-on-warning: #333;
-
-            /* Specific Palette/Legend Colors (Light Mode) */
-            --unattempted-color: #E0E6EB; /* Clearly distinct light grey */
-            --answered-reviewed-color: #9C27B0; /* Distinct purple */
-
-            /* Progress Bar */
-            --progress-bar-bg: #e0e0e0;
-            --progress-bar-fill: var(--primary-color);
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
         }
 
-        .dark-mode {
-            /* Global Colors (Dark Mode) */
-            --background-color: #2C3E50; /* Deep blue-grey */
-            --text-color: #ECF0F1; /* Light grey text */
-            --card-background: rgba(30, 40, 50, 0.9); /* Slightly transparent, darker card */
-            --input-background: rgba(50, 60, 70, 0.8); /* Darker input fields */
-            --border-color: rgba(255, 255, 255, 0.1); /* Subtle white border */
-            --shadow-color: rgba(0, 0, 0, 0.4);
-
-            /* Action & State Colors (Dark Mode) */
-            --primary-color: #4FC3F7; /* Brighter blue for current, buttons */
-            --primary-color-rgb: 79, 195, 247;
-            --success-color: #69F0AE; /* Brighter green for answered, correct */
-            --secondary-color: #00BCD4; /* Vibrant cyan for marked for review */
-            --danger-color: #FF5252; /* Bright red for incorrect */
-            --warning-color: #FFC107; /* Amber for warnings, restart */
-            --text-on-warning: #333;
-
-            /* Specific Palette/Legend Colors (Dark Mode) */
-            --unattempted-color: #B0BEC5; /* Light blue-grey, very visible */
-            --answered-reviewed-color: #E040FB; /* Striking purple */
-
-            /* Progress Bar */
-            --progress-bar-bg: #4A6572;
-            --progress-bar-fill: var(--primary-color);
+        ::-webkit-scrollbar-track {
+            background: transparent;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--background-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            transition: background 0.3s ease, color 0.3s ease;
-            overflow-y: auto;
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
 
-        .container {
-            background: var(--card-background);
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 8px 32px 0 var(--shadow-color);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 30px;
-            max-width: 900px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            margin: 20px 0;
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        h1 {
-            color: var(--text-color);
-            margin-bottom: 25px;
-            font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        .dark .glass-panel {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .password-overlay {
+        /* Hide scrollbar for mobile palette but keep functionality */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* PDF Overlay Styles */
+        #pdf-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .password-prompt {
-            background: var(--card-background);
-            border-radius: 15px;
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(15px);
+            height: 100vh;
+            background-color: white;
+            z-index: 10000;
+            overflow-y: auto;
             padding: 40px;
-            box-shadow: 0 8px 32px 0 var(--shadow-color);
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-        }
-
-        .password-prompt input[type="password"] {
-            width: calc(100% - 20px);
-            padding: 12px;
-            margin: 20px 0;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            background: var(--input-background);
-            color: var(--text-color);
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s ease, background-color 0.3s ease;
-        }
-
-        .password-prompt input[type="password"]:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
-        }
-
-        .btn {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
-            margin: 5px;
-            font-weight: 600;
-        }
-
-        .btn:hover:not(:disabled) {
-            background-color: color-mix(in srgb, var(--primary-color) 85%, black); /* Slightly darker */
-            transform: translateY(-2px);
-        }
-        .btn:active:not(:disabled) {
-            transform: translateY(0);
-        }
-
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            background-color: color-mix(in srgb, var(--primary-color) 60%, black);
-        }
-
-        .error-message {
-            color: var(--danger-color);
-            margin-top: 10px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .quiz-section {
             display: none;
-            animation: fadeIn 0.8s ease-out;
+            color: black;
+            font-family: 'Inter', sans-serif;
         }
 
-        .quiz-header {
+        #pdf-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pdf-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .pdf-summary {
             display: flex;
-            justify-content: center; /* Center its content */
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .timer {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--danger-color); /* Make timer red */
-            padding: 5px 15px;
-            background: var(--input-background);
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-            margin: 0 auto; /* Center horizontally */
-        }
-        .timer i {
-            margin-right: 8px;
-            font-size: 1.2em;
-        }
-
-        .progress-bar-container {
-            width: 100%;
-            height: 10px;
-            background-color: var(--progress-bar-bg);
-            border-radius: 5px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            width: 0%;
-            background-color: var(--progress-bar-fill);
-            border-radius: 5px;
-            transition: width 0.3s ease-in-out;
-        }
-
-        .question-container {
-            text-align: left;
+            justify-content: space-between;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 30px;
         }
 
-        .question-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            margin-bottom: 10px;
+        .pdf-stat {
+            text-align: center;
         }
 
-        .question-number {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0;
-        }
-
-        .question-text {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-
-        /* New style for the passage container */
-        .passage-container {
-            background: var(--input-background);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            text-align: left;
-            line-height: 1.6;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
-        }
-        .passage-container p {
-            margin-bottom: 10px;
-        }
-        .passage-container p:last-child {
-            margin-bottom: 0;
-        }
-
-
-        .options label {
+        .pdf-stat-val {
+            font-size: 24px;
+            font-weight: bold;
             display: block;
-            background: var(--input-background);
-            padding: 15px;
-            margin-bottom: 12px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid transparent;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            position: relative;
         }
 
-        .options label:hover {
-            background: rgba(var(--primary-color-rgb), 0.1);
-            border-color: var(--primary-color);
-            box-shadow: 0 2px 8px rgba(var(--primary-color-rgb), 0.1);
+        .pdf-stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
         }
 
-        .options input[type="radio"] {
-            margin-right: 15px;
-            transform: scale(1.2);
-            accent-color: var(--primary-color);
-        }
-
-        .mark-for-review {
-            display: flex;
-            align-items: center;
-            margin-top: 15px;
-            font-size: 0.95rem;
-            color: var(--text-color);
-        }
-        .mark-for-review input[type="checkbox"] {
-            margin-right: 10px;
-            transform: scale(1.1);
-            accent-color: var(--secondary-color);
-        }
-
-        .quiz-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .quiz-navigation button {
-            flex: 1;
-            margin: 5px;
-            min-width: 120px;
-        }
-
-        .submit-quiz-final-btn {
-            background-color: var(--success-color);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
-            margin: 5px;
-            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
-            display: none; /* Hidden by default */
-        }
-
-        .submit-quiz-final-btn:hover {
-            background-color: color-mix(in srgb, var(--success-color) 85%, black);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
-        }
-
-        .submit-quiz-final-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
-        }
-        .submit-quiz-final-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            background-color: color-mix(in srgb, var(--success-color) 60%, black);
-            box-shadow: none;
-        }
-
-
-        .results-section {
-            display: none;
-            text-align: left;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        .results-section h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        .score-summary {
-            margin-bottom: 30px; /* Add some space below summary */
-        }
-        .score-summary p {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 400;
-        }
-
-        .score-summary strong {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .answer-review-panel {
-            margin-top: 30px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-        }
-
-        .answer-review-panel h3 {
+        .pdf-question {
             margin-bottom: 20px;
-            text-align: center;
-            color: var(--primary-color);
-            font-weight: 600;
+            page-break-inside: avoid;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
         }
 
-        .review-item {
-            background: var(--input-background);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-            page-break-inside: avoid; /* Prevent review items from breaking across pages */
-            box-shadow: 0 2px 5px var(--shadow-color);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        .pdf-q-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
         }
-        .review-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px var(--shadow-color);
+
+        .pdf-q-ans {
+            font-size: 12px;
+            margin: 2px 0;
         }
-        .review-item p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-            font-weight: 400;
+
+        .pdf-correct {
+            color: #16a34a;
+            font-weight: bold;
         }
-        .review-item strong {
-            font-weight: 600;
+
+        .pdf-wrong {
+            color: #dc2626;
+            font-weight: bold;
         }
-        .review-item .correct-answer {
-            color: var(--success-color);
-            font-weight: 700;
-        }
-        .review-item .your-answer {
-            color: var(--danger-color);
-            font-weight: 600;
-        }
-        .review-item .your-answer.correct {
-            color: var(--success-color);
-            font-weight: 700;
-        }
-        /* Style for Not Attempted in review */
-        .review-item .your-answer.not-attempted {
-            color: var(--text-color);
+
+        .pdf-skipped {
+            color: #4b5563;
             font-style: italic;
-            opacity: 0.8;
-        }
-        /* Status badges in review items */
-        .status-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-        .status-badge.correct {
-            background: var(--success-color);
-            color: white;
-        }
-        .status-badge.incorrect {
-            background: var(--danger-color);
-            color: white;
-        }
-        .status-badge.not-attempted {
-            background: var(--unattempted-color);
-            color: var(--text-color);
-        }
-
-
-        /* Positioned after score summary, before review panel */
-        .results-actions { /* Renamed for clarity, combines top and bottom needs */
-            display: flex;
-            justify-content: center;
-            margin-top: 20px; /* Space above buttons */
-            margin-bottom: 30px; /* Space below buttons before review starts */
-            flex-wrap: wrap;
-            padding-bottom: 15px; /* Add padding at the bottom of the action block */
-            border-bottom: 1px dashed var(--border-color); /* Add a separator */
-        }
-        .results-actions .btn {
-            margin: 5px;
-        }
-
-
-        .print-save-btn {
-            background-color: var(--secondary-color);
-        }
-
-        .print-save-btn:hover:not(:disabled) {
-            background-color: color-mix(in srgb, var(--secondary-color) 85%, black);
-        }
-
-        .restart-btn {
-            background-color: var(--warning-color);
-            color: var(--text-on-warning);
-        }
-
-        .restart-btn:hover:not(:disabled) {
-            background-color: color-mix(in srgb, var(--warning-color) 85%, black);
-        }
-
-        .mode-toggle {
-            background: var(--input-background);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 2px 5px var(--shadow-color);
-            transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            z-index: 50;
-            flex-shrink: 0;
-        }
-
-        .mode-toggle .icon {
-            font-size: 1.5rem;
-            color: var(--text-color);
-            transition: color 0.3s ease;
-        }
-
-        /* Question Palette */
-        .question-palette-panel {
-            width: 100%;
-            padding: 15px 0;
-            background: var(--card-background);
-            border-top: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 -4px 15px var(--shadow-color);
-            margin-top: 30px;
-            border-radius: 0 0 20px 20px;
-        }
-        .question-palette-panel h3 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            font-weight: 700;
-            text-align: center;
-        }
-        .question-grid {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            padding: 0 10px;
-            gap: 8px;
-            justify-content: flex-start;
-            padding-bottom: 10px;
-        }
-        .question-grid-item {
-            flex-shrink: 0;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--unattempted-color); /* Default unattempted color */
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
-            color: var(--text-color); /* Default text color for unattempted */
-        }
-        .dark-mode .question-grid-item {
-            color: var(--text-color); /* Ensure text is visible on dark unattempted */
-        }
-
-        .question-grid-item:hover {
-            background-color: rgba(var(--primary-color-rgb), 0.15);
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-        /* Specific states for palette items */
-        .question-grid-item.current {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            transform: scale(1.05);
-            box-shadow: 0 2px 8px rgba(var(--primary-color-rgb), 0.3);
-        }
-        .question-grid-item.answered {
-            background-color: var(--success-color);
-            color: white;
-            border-color: var(--success-color);
-        }
-        .question-grid-item.reviewed {
-            background-color: var(--secondary-color);
-            color: white;
-            border-color: var(--secondary-color);
-        }
-        .question-grid-item.answered.reviewed {
-            background-color: var(--answered-reviewed-color);
-            color: white;
-            border-color: var(--answered-reviewed-color);
-        }
-
-        /* Custom Scrollbar for horizontal palette */
-        .question-grid::-webkit-scrollbar {
-            height: 8px;
-        }
-        .question-grid::-webkit-scrollbar-track {
-            background: var(--progress-bar-bg);
-            border-radius: 10px;
-        }
-        .question-grid::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 10px;
-        }
-        .question-grid::-webkit-scrollbar-thumb:hover {
-            background: color-mix(in srgb, var(--primary-color) 80%, black);
-        }
-
-
-        .palette-legend {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 0.9rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            padding: 0 10px;
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            color: var(--text-color);
-        }
-
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 5px;
-            margin-right: 8px;
-            border: 1px solid var(--border-color);
-        }
-        .dark-mode .legend-color {
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                margin: 10px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .password-prompt {
-                padding: 30px;
-            }
-
-            .password-prompt input[type="password"] {
-                font-size: 0.9rem;
-            }
-
-            .btn {
-                padding: 10px 15px;
-                font-size: 0.9rem;
-            }
-
-            .quiz-header {
-                flex-direction: column;
-                align-items: center;
-                padding-bottom: 15px;
-                margin-bottom: 20px;
-            }
-
-            .timer {
-                margin-top: 10px;
-                font-size: 1.3rem;
-            }
-
-            .question-meta {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .question-number {
-                margin-bottom: 10px;
-            }
-
-            .mode-toggle {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-                position: static;
-                transform: none;
-                align-self: flex-end;
-                margin-top: 10px;
-            }
-
-
-            .question-text {
-                font-size: 1rem;
-            }
-
-            .options label {
-                padding: 12px;
-                font-size: 0.9rem;
-            }
-
-            .quiz-navigation {
-                flex-direction: column;
-            }
-
-            .quiz-navigation button {
-                width: 100%;
-                margin: 5px 0;
-            }
-
-            .question-palette-panel {
-                padding: 10px 0;
-            }
-            .question-grid {
-                padding: 0 5px;
-                gap: 5px;
-            }
-            .question-grid-item {
-                width: 40px;
-                height: 40px;
-                font-size: 0.9rem;
-            }
-            .palette-legend {
-                gap: 10px;
-                padding: 0 5px;
-            }
-            .legend-item {
-                font-size: 0.85rem;
-            }
-            .legend-color {
-                width: 18px;
-                height: 18px;
-            }
-            .results-actions {
-                flex-direction: column; /* Stack buttons vertically on small screens */
-            }
-            .results-actions .btn {
-                width: 100%; /* Full width for buttons */
-            }
-        }
-        /* For Print Media */
-        @media print {
-            * {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-            body {
-                background: white !important;
-                color: black !important;
-                display: block;
-                padding: 0;
-                margin: 0;
-                font-size: 11pt;
-                line-height: 1.4;
-            }
-            .container, .password-overlay, .quiz-section, .question-palette-panel,
-            .mode-toggle, .quiz-navigation, .progress-bar-container,
-            .mark-for-review {
-                display: none !important;
-            }
-            .results-section {
-                display: block !important;
-                position: static !important;
-                width: auto !important;
-                max-width: none !important;
-                padding: 15mm !important;
-                box-shadow: none !important;
-                backdrop-filter: none !important;
-                border: none !important;
-                background: white !important;
-                color: black !important;
-            }
-            .results-section h2, .score-summary p, .answer-review-panel h3, .review-item p {
-                color: black !important;
-            }
-            .review-item .correct-answer {
-                color: #28a745 !important;
-                font-weight: bold !important;
-            }
-            .review-item .your-answer {
-                color: #dc3545 !important;
-                font-weight: bold !important;
-            }
-            .review-item .your-answer.correct {
-                color: #28a745 !important;
-                font-weight: bold !important;
-            }
-            /* Print style for Not Attempted */
-            .review-item .your-answer.not-attempted {
-                color: #666 !important;
-                font-style: italic !important;
-            }
-            .review-item {
-                background: #f8f9fa !important;
-                border: 1px solid #dee2e6 !important;
-                box-shadow: none !important;
-                page-break-inside: avoid !important;
-                margin-bottom: 8mm !important;
-                padding: 8mm !important;
-                border-radius: 0 !important;
-            }
-            /* Ensure results-actions are hidden for print */
-            .results-actions {
-                display: none !important;
-            }
-            .score-summary {
-                background: #f0f2f5 !important;
-                border: 2px solid #333 !important;
-                margin-bottom: 8mm !important;
-                padding: 8mm !important;
-                border-radius: 0 !important;
-            }
-            .score-summary h2 {
-                color: black !important;
-                font-size: 16pt !important;
-                margin-bottom: 10px !important;
-            }
-            .answer-review-panel {
-                border-top: 2px solid #333 !important;
-                margin-top: 8mm !important;
-                padding-top: 8mm !important;
-            }
-            .answer-review-panel h3 {
-                color: black !important;
-                font-size: 14pt !important;
-                margin-bottom: 15px !important;
-            }
-            /* Status badges for print */
-            .status-badge {
-                background: #e9ecef !important;
-                color: black !important;
-                border: 1px solid #333 !important;
-                padding: 2px 6px !important;
-                border-radius: 0 !important;
-                font-size: 9pt !important;
-            }
-            .status-badge.correct {
-                background: #d4edda !important;
-                border-color: #28a745 !important;
-            }
-            .status-badge.incorrect {
-                background: #f8d7da !important;
-                border-color: #dc3545 !important;
-            }
-            .status-badge.not-attempted {
-                background: #f1f3f4 !important;
-                border-color: #6c757d !important;
-            }
-        }
-        .quiz-footer {
-            margin-top: 40px;
-            padding: 20px;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-color);
-            background: var(--card-background); /* Match container background */
-            border-radius: 0 0 20px 20px; /* Match bottom border radius of container */
-        }
-
-        .quiz-footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .quiz-footer a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
-<body>
-    <div class="password-overlay" id="passwordOverlay">
-        <div class="password-prompt">
-            <h2>Enter Password to Start Mock Test</h2>
-            <input type="password" id="passwordInput" placeholder="Enter password">
-            <button class="btn" id="passwordSubmitBtn">Submit</button>
-            <p class="error-message" id="passwordError"></p>
+
+<body
+    class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300 relative">
+
+    <!-- Password Overlay -->
+    <div id="passwordOverlay"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/90 backdrop-blur-sm transition-opacity duration-300">
+        <div
+            class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-slate-200 dark:border-slate-700 text-center">
+            <div class="mb-6">
+                <div
+                    class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-600 dark:text-primary-500 text-2xl">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h2 class="text-2xl font-heading font-bold mb-2">Protected Exam</h2>
+                <p class="text-slate-500 dark:text-slate-400">Enter the access code to begin.</p>
+            </div>
+            <input type="password" id="passwordInput" placeholder="Enter password"
+                class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 mb-4 transition-all">
+            <button id="passwordSubmitBtn"
+                class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 rounded-xl transition-all shadow-lg shadow-primary-600/30">
+                Start Exam
+            </button>
+            <p id="passwordError" class="text-red-500 mt-3 text-sm font-medium min-h-[20px]"></p>
         </div>
     </div>
 
-    <div class="container">
-        <h1>IBA STS Junior Science Teacher Mock Test 4</h1>
+    <!-- Main App Layout -->
+    <div id="appContainer"
+        class="max-w-[1600px] mx-auto p-4 lg:p-6 h-screen flex flex-col hidden opacity-0 transition-opacity duration-500 relative z-10">
 
-        <div class="quiz-section" id="quizSection">
-            <div class="progress-bar-container">
-                <div class="progress-bar-fill" id="progressBarFill"></div>
-            </div>
-            <div class="quiz-header">
-                <div class="timer"><i class="far fa-clock"></i> Time Left: <span id="timeLeft">50:00</span></div>
+        <!-- Header -->
+        <header
+            class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 shrink-0">
+            <div class="text-center md:text-left w-full md:w-auto">
+                <h1
+                    class="text-xl md:text-2xl font-heading font-bold bg-gradient-to-r from-primary-600 to-indigo-500 bg-clip-text text-transparent">
+                    IBA STS JST Mock Test 4
+                </h1>
+                <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1">English, GK, Science, Math & More
+                </p>
             </div>
 
-            <div class="question-container">
-                <div class="question-meta">
-                    <p class="question-number">Question <span id="currentQuestionNumber">1</span> of <span id="totalQuestions"></span></p>
-                    <div class="mode-toggle" id="modeToggle">
-                        <span class="icon">☀️</span>
+            <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
+                <!-- Timer -->
+                <div
+                    class="flex items-center gap-3 px-4 py-2 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-xl font-mono font-bold text-lg border border-red-100 dark:border-red-900/30">
+                    <i class="far fa-clock"></i>
+                    <span id="timeLeft">60:00</span>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="modeToggle"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+                    <span class="icon">☀️</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Quiz Layout (Grid) -->
+        <div id="quizSection"
+            class="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_320px] grid-rows-[1fr_auto] lg:grid-rows-1 gap-4 lg:gap-6 overflow-hidden min-h-0">
+
+            <!-- Left: Question Area -->
+            <div class="flex flex-col h-full overflow-hidden order-1 lg:order-1">
+                <!-- Progress Bar -->
+                <div class="h-2 bg-slate-200 dark:bg-slate-700 rounded-full mb-4 lg:mb-6 overflow-hidden shrink-0">
+                    <div id="progressBarFill"
+                        class="h-full bg-gradient-to-r from-primary-500 to-indigo-500 w-0 transition-all duration-500">
                     </div>
                 </div>
-                <!-- Passage container will be inserted here dynamically for questions 1-5 -->
-                <div id="passageDisplay" class="passage-container" style="display: none;"></div>
-                <h2 class="question-text" id="questionText"></h2>
-                <div class="options" id="optionsContainer">
+
+                <!-- Question Card -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-5 md:p-8 flex-1 overflow-y-auto custom-scrollbar flex flex-col">
+
+                    <div class="flex flex-wrap justify-between items-start mb-6 gap-3">
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-semibold rounded-lg">
+                            Question <span id="currentQuestionNumber">1</span> / <span id="totalQuestions">100</span>
+                        </span>
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="markForReviewCheckbox"
+                                class="w-5 h-5 rounded text-primary-600 focus:ring-primary-500 border-slate-300 dark:border-slate-600">
+                            <label for="markForReviewCheckbox"
+                                class="text-sm font-medium text-slate-600 dark:text-slate-400 cursor-pointer select-none">Mark
+                                for Review</label>
+                        </div>
                     </div>
-                <div class="mark-for-review">
-                    <input type="checkbox" id="markForReviewCheckbox">
-                    <label for="markForReviewCheckbox">Mark for Review</label>
+
+                    <!-- Passage Container (Hidden by default) -->
+                    <div id="passageContainer"
+                        class="hidden mb-6 p-4 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-200 dark:border-slate-600 text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                        <!-- Passage content injected here -->
+                    </div>
+
+                    <h2 id="questionText"
+                        class="text-lg md:text-2xl font-heading font-semibold mb-6 leading-relaxed text-slate-800 dark:text-slate-100">
+                        <!-- Question text goes here -->
+                    </h2>
+
+                    <div id="optionsContainer" class="space-y-3 max-w-3xl">
+                        <!-- Options go here -->
+                    </div>
+
+                    <div class="mt-auto pt-8 flex gap-3 sm:gap-4 sm:justify-between items-center w-full">
+                        <button id="prevBtn"
+                            class="flex-1 sm:flex-none px-4 sm:px-6 py-3 sm:py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center">
+                            <i class="fas fa-arrow-left mr-2"></i> <span class="sm:inline">Prev</span>
+                        </button>
+
+                        <button id="nextBtn"
+                            class="flex-1 sm:flex-none px-4 sm:px-8 py-3 sm:py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-semibold shadow-lg shadow-primary-600/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center">
+                            <span class="sm:inline">Next</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+
+                        <button id="submitQuizFinalBtn"
+                            class="hidden flex-1 sm:flex-none px-4 sm:px-8 py-3 sm:py-2.5 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg shadow-green-600/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center">
+                            Submit Exam
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div class="quiz-navigation">
-                <button class="btn" id="prevBtn">Previous</button>
-                <button class="btn" id="nextBtn">Next</button>
-                <button class="submit-quiz-final-btn" id="submitQuizFinalBtn">Submit Quiz</button>
+            <!-- Right: Palette Sidebar -->
+            <div
+                class="hidden lg:flex flex-col bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden h-full order-2">
+                <div class="p-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+                    <h3 class="font-heading font-semibold flex items-center gap-2">
+                        <i class="fas fa-th-large text-primary-500"></i> Question Palette
+                    </h3>
+                </div>
+
+                <div class="p-4 overflow-y-auto flex-1 custom-scrollbar" id="paletteContainer">
+                    <div id="questionGrid" class="grid grid-cols-5 gap-2">
+                        <!-- Grid items go here -->
+                    </div>
+                </div>
+
+                <div
+                    class="p-4 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-xs space-y-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full border-2 border-primary-500"></div> Current
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div> Answered
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-amber-500"></div> Marked for Review
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600"></div> Not Visited
+                    </div>
+                </div>
             </div>
 
-            <div class="question-palette-panel" id="questionPalettePanel">
-                <h3><i class="fas fa-palette"></i> Question Palette</h3>
-                <div class="question-grid" id="questionGrid">
+            <!-- Mobile Palette -->
+            <div class="lg:hidden col-span-1 order-3">
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="flex justify-between items-center mb-2">
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Quick Nav</p>
+                        <span class="text-xs text-primary-600 font-medium"><span id="mobileCurrentQ">1</span>/<span
+                                id="mobileTotalQ">100</span></span>
                     </div>
-                <div class="palette-legend">
-                    <div class="legend-item"><span class="legend-color" data-color-type="current"></span> Current</div>
-                    <div class="legend-item"><span class="legend-color" data-color-type="answered"></span> Answered</div>
-                    <div class="legend-item"><span class="legend-color" data-color-type="marked"></span> Marked for Review</div>
-                    <div class="legend-item"><span class="legend-color" data-color-type="unattempted"></span> Unattempted</div>
-                    <div class="legend-item"><span class="legend-color" data-color-type="answered-reviewed"></span> Answered & Reviewed</div>
+
+                    <!-- Scroll Controls Container -->
+                    <div class="relative flex items-center">
+                        <button id="scrollLeftBtn"
+                            class="absolute left-0 z-10 p-2 bg-white/90 dark:bg-slate-800/90 shadow-md border border-slate-200 dark:border-slate-600 rounded-full h-8 w-8 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-primary-600 -ml-1">
+                            <i class="fas fa-chevron-left text-xs"></i>
+                        </button>
+
+                        <div id="mobileQuestionGrid"
+                            class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide w-full px-8 scroll-smooth">
+                            <!-- Mobile items injected here via JS -->
+                        </div>
+
+                        <button id="scrollRightBtn"
+                            class="absolute right-0 z-10 p-2 bg-white/90 dark:bg-slate-800/90 shadow-md border border-slate-200 dark:border-slate-600 rounded-full h-8 w-8 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-primary-600 -mr-1">
+                            <i class="fas fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="results-section" id="resultsSection">
-            <h2>Mock Test Results</h2>
-            <div class="score-summary">
-                <p>Total Questions: <strong id="resTotalQuestions"></strong></p>
-                <p>Attempted: <strong id="resAttempted"></strong></p>
-                <p>Correct Answers: <strong id="resCorrectAnswers"></strong></p>
-                <p>Incorrect Answers: <strong id="resIncorrectAnswers"></strong></p>
-                <p>Your Score: <strong id="resScore"></strong>%</p>
-            </div>
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden flex-1 flex flex-col items-center justify-center p-4 overflow-y-auto">
+            <div
+                class="max-w-3xl w-full bg-white dark:bg-slate-800 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden my-auto animate-fade-in">
+                <div class="bg-gradient-to-r from-primary-600 to-indigo-600 p-6 md:p-8 text-center text-white">
+                    <h2 class="text-2xl md:text-3xl font-heading font-bold mb-2">Mock Test 4 Completed!</h2>
+                    <p class="opacity-90 text-sm md:text-base">Here is your performance summary.</p>
+                </div>
 
-            <div class="results-actions" id="resultsActions">
-                <button class="btn print-save-btn" id="printSaveBtn">Print / Save as PDF</button>
-                <button class="btn restart-btn" id="restartQuizBtn">Restart Quiz</button>
-            </div>
-
-            <div class="answer-review-panel">
-                <h3>Answer Review</h3>
-                <div id="reviewItemsContainer">
+                <div class="p-6 md:p-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8">
+                        <div class="p-3 md:p-4 bg-slate-50 dark:bg-slate-700/50 rounded-2xl text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-1"
+                                id="resTotalQuestions">0</div>
+                            <div class="text-[10px] md:text-xs font-medium text-slate-500 uppercase tracking-wider">
+                                Total</div>
+                        </div>
+                        <div class="p-3 md:p-4 bg-green-50 dark:bg-green-900/20 rounded-2xl text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-green-600 dark:text-green-400 mb-1"
+                                id="resCorrectAnswers">0</div>
+                            <div class="text-[10px] md:text-xs font-medium text-green-600/70 uppercase tracking-wider">
+                                Correct</div>
+                        </div>
+                        <div class="p-3 md:p-4 bg-red-50 dark:bg-red-900/20 rounded-2xl text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-red-600 dark:text-red-400 mb-1"
+                                id="resIncorrectAnswers">0</div>
+                            <div class="text-[10px] md:text-xs font-medium text-red-600/70 uppercase tracking-wider">
+                                Wrong</div>
+                        </div>
+                        <div
+                            class="p-3 md:p-4 bg-primary-50 dark:bg-primary-900/20 rounded-2xl text-center border-2 border-primary-100 dark:border-primary-900/50">
+                            <div class="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400 mb-1">
+                                <span id="resScore">0</span>%
+                            </div>
+                            <div
+                                class="text-[10px] md:text-xs font-medium text-primary-600/70 uppercase tracking-wider">
+                                Score</div>
+                        </div>
                     </div>
+
+                    <!-- Button Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
+                        <button id="viewReviewBtn"
+                            class="w-full px-4 py-3.5 rounded-xl bg-slate-800 dark:bg-slate-700 text-white font-bold hover:bg-slate-900 transition-colors flex items-center justify-center gap-2 shadow-md text-sm">
+                            <i class="fas fa-clipboard-list"></i> Review Answers
+                        </button>
+
+                        <button id="downloadPdfBtn"
+                            class="w-full px-4 py-3.5 rounded-xl bg-primary-600 text-white font-bold hover:bg-primary-700 transition-colors flex items-center justify-center gap-2 shadow-md text-sm">
+                            <i class="fas fa-file-pdf"></i> Download PDF
+                        </button>
+
+                        <button id="restartQuizBtn"
+                            class="w-full px-4 py-3.5 rounded-xl border-2 border-primary-600 text-primary-600 dark:text-primary-400 font-bold hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex items-center justify-center gap-2 shadow-sm text-sm">
+                            <i class="fas fa-redo"></i> Restart Exam
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-        <footer class="quiz-footer">
-            <p>JST Mock Test Series Created By <a href="https://facebook.com/innoxent.mukesh">Mukesh Kumar</a></p>
+
+        <!-- Detailed Review Section -->
+        <div id="reviewSection" class="hidden flex-1 flex-col h-screen overflow-hidden">
+            <div
+                class="p-4 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between shrink-0">
+                <h2 class="text-lg md:text-xl font-heading font-bold text-slate-800 dark:text-white">Detailed Answer
+                    Review</h2>
+                <button id="closeReviewBtn"
+                    class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors font-medium border border-slate-300 dark:border-slate-600 text-sm">
+                    <i class="fas fa-arrow-left mr-1"></i> Back
+                </button>
+            </div>
+            <div id="reviewContent"
+                class="flex-1 overflow-y-auto p-4 max-w-4xl mx-auto w-full space-y-4 custom-scrollbar">
+                <!-- Review Items Injected Here -->
+            </div>
+        </div>
+
+        <!-- PDF Overlay Container -->
+        <div id="pdf-overlay">
+            <div id="pdf-content"></div>
+        </div>
+
+        <footer class="mt-4 text-center text-slate-400 text-xs md:text-sm pb-4 shrink-0">
+            JST Mock Test Series • Created by <a href="#" class="text-primary-500 hover:underline">Mukesh Kumar</a>
         </footer>
     </div>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-        // Simple obfuscation: XOR cipher with a key
-        const passwordKey = 123; // A simple numeric key for XOR
-
+        // Simple obfuscation: XOR cipher
+        const passwordKey = 123;
         function obfuscate(str) {
             return str.split('').map(char => String.fromCharCode(char.charCodeAt(0) ^ passwordKey)).join('');
         }
 
         const actualEncryptedPassword = obfuscate('ibajst2025');
 
-        // Note: For real security, this is NOT sufficient. This only prevents casual inspection.
-        // A determined user can still find the de-obfuscation logic in client-side JS.
-        // Server-side authentication is required for true security.
-
-        // Define the passage as a separate constant
-        const passageForFirstFiveQuestions = `
-            <p>Read the following passage carefully & answer the questions (1 – 5):</p>
-            <p>Floods in Pakistan are often seen as destructive events that cause loss of life and damage to property. Monsoon rains lead to flash floods every year, affecting homes, roads, and agriculture. However, floods can also be a blessing in disguise if managed properly.</p>
-            <p>Floodwaters deposit nutrient-rich soil on farmlands, improving soil fertility. In areas like Punjab and Sindh, better crop yields follow after floods, especially for wheat, rice, and sugarcane. Floods also help recharge underground water, which benefits dry regions like Tharparkar and Balochistan.</p>
-            <p>Ecologically, floods support wetlands and wildlife. Seasonal floodplains become habitats for birds and fish. Moreover, floods encourage the government to invest in disaster planning. These include building dams, early warning systems, and drainage systems. If managed well, floods can lead to long-term benefits.</p>
-            <p>In short, although floods cause immediate damage and hardship, they also offer hidden advantages when managed effectively. From enriching farmland and refilling water reserves to supporting biodiversity, floods can lead to long-term benefits. Despite their destruction, floods can bring positive change when handled wisely.</p>
+        // Passage Text Variable
+        const passageText = `
+            <p class="font-bold text-slate-700 dark:text-slate-200 mb-2 uppercase tracking-wide text-xs">Reading Comprehension</p>
+            <div class="italic text-slate-600 dark:text-slate-300 border-l-4 border-primary-500 pl-4 space-y-2">
+                <p>Floods in Pakistan are often seen as destructive events that cause loss of life and damage to property. Monsoon rains lead to flash floods every year, affecting homes, roads, and agriculture. However, floods can also be a blessing in disguise if managed properly.</p>
+                <p>Floodwaters deposit nutrient-rich soil on farmlands, improving soil fertility. In areas like Punjab and Sindh, better crop yields follow after floods, especially for wheat, rice, and sugarcane. Floods also help recharge underground water, which benefits dry regions like Tharparkar and Balochistan.</p>
+                <p>Ecologically, floods support wetlands and wildlife. Seasonal floodplains become habitats for birds and fish. Moreover, floods encourage the government to invest in disaster planning. These include building dams, early warning systems, and drainage systems. If managed well, floods can lead to long-term benefits.</p>
+                <p>In short, although floods cause immediate damage and hardship, they also offer hidden advantages when managed effectively. From enriching farmland and refilling water reserves to supporting biodiversity, floods can lead to long-term benefits. Despite their destruction, floods can bring positive change when handled wisely.</p>
+            </div>
         `;
 
-const questions = [
-{
-question: "1. What is the most suitable title for the passage?",
-options: ["The Dangers of Monsoon", "Floods: A National Emergency", "Floods: Blessing in Disguise", "Agriculture in Punjab and Sindh"],
-answer: "Floods: Blessing in Disguise",
-section: "Passage-Based Questions"
-},
-{
-question: "2. Which crops were mentioned as benefiting from floods?",
-options: ["Cotton and barley", "Mango and banana", "Wheat, rice, and sugarcane", "Tea and coffee"],
-answer: "Wheat, rice, and sugarcane",
-section: "Passage-Based Questions"
-},
-{
-question: "3. What ecological benefit do floods provide?",
-options: ["Desert expansion", "Habitat for birds and fish", "Forest fires", "Loss of biodiversity"],
-answer: "Habitat for birds and fish",
-section: "Passage-Based Questions"
-},
-{
-question: "4. What kind of tense is mostly used in the third paragraph?",
-options: ["Past continuous", "Future perfect", "Present simple", "Past perfect"],
-answer: "Present simple",
-section: "Passage-Based Questions"
-},
-{
-question: "5. The similar meaning of 'lead to' is:",
-options: ["connect", "result in", "guide", "effect"],
-answer: "result in",
-section: "Passage-Based Questions"
-},
-{
-question: "6. The cat jumped ___ the table and landed softly.",
-options: ["across", "over", "beneath", "along"],
-answer: "over",
-section: "Grammar"
-},
-{
-question: "7. The treasure was buried deep ___ the ground.",
-options: ["over", "across", "beneath", "along"],
-answer: "beneath",
-section: "Grammar"
-},
-{
-question: "8. The plane flew ___ the clouds.",
-options: ["beneath", "over", "through", "out of"],
-answer: "over",
-section: "Grammar"
-},
-{
-question: "9. We watched the match ___ television.",
-options: ["at", "by", "on", "in"],
-answer: "on",
-section: "Grammar"
-},
-{
-question: "10. He is junior ___ me in rank.",
-options: ["from", "to", "than", "with"],
-answer: "to",
-section: "Grammar"
-},
-{
-question: "11. Choose the correct sentence:",
-options: ["He has a six-years-old daughter.", "He has a six-year-old daughter.", "He has six-years-old daughter.", "He has daughter of six years old."],
-answer: "He has a six-year-old daughter.",
-section: "Grammar"
-},
-{
-question: "12. The teacher gives us ___ advice every day.",
-options: ["Many", "Some", "Much", "Few"],
-answer: "Some",
-section: "Grammar"
-},
-{
-question: "13. He ___ not ___ to the noise.",
-options: ["React", "Response", "Reply", "Mind"],
-answer: "React",
-section: "Grammar"
-},
-{
-question: "14. The company ___ rapidly due to global demand nowadays.",
-options: ["is expanding", "expands", "has expanded", "expanding"],
-answer: "is expanding",
-section: "Grammar"
-},
-{
-question: "15. They have travelled ___ far distance.",
-options: ["a", "much away", "further", "farther"],
-answer: "a",
-section: "Grammar"
-},
-{
-question: "16. Which is a noble gas?",
-options: ["Oxygen", "Nitrogen", "Helium", "Carbon"],
-answer: "Helium",
-section: "Vocabulary"
-},
-{
-question: "17. Who invented the printing press?",
-options: ["Isaac Newton", "Johannes Gutenberg", "Benjamin Franklin", "Graham Bell"],
-answer: "Johannes Gutenberg",
-section: "Vocabulary"
-},
-{
-question: "18. Which is a radioactive element?",
-options: ["Iron", "Copper", "Uranium", "Oxygen"],
-answer: "Uranium",
-section: "Vocabulary"
-},
-{
-question: "19. Washing soda is:",
-options: ["NaCl", "NaHCO₃", "CH₃-COOH", "Na₂CO₃"],
-answer: "Na₂CO₃",
-section: "Vocabulary"
-},
-{
-question: "20. Vinegar contains:",
-options: ["Acetic acid", "Citric acid", "Hydrochloric acid", "Sulphuric acid"],
-answer: "Acetic acid",
-section: "Vocabulary"
-},
-{
-question: "21. All worked very hard to earn the teacher’s praise.",
-options: ["take", "gain", "ask", "make money"],
-answer: "gain",
-section: "Synonyms & Antonyms"
-},
-{
-question: "22. Peace and stability bring prosperity to a nation.",
-options: ["trouble", "sadness", "affluence", "wealthy"],
-answer: "affluence",
-section: "Synonyms & Antonyms"
-},
-{
-question: "23. The contestants waited nervously for their turn to perform in the final round.",
-options: ["Judges", "Players", "Competitors", "Viewers"],
-answer: "Competitors",
-section: "Synonyms & Antonyms"
-},
-{
-question: "24. The child was sobbing in the corner.",
-options: ["shouting", "weeping", "smiling", "yelling"],
-answer: "weeping",
-section: "Synonyms & Antonyms"
-},
-{
-question: "25. The land was barren, so no crops could grow there.",
-options: ["empty", "green", "unproductive", "fertile"],
-answer: "green",
-section: "Antonyms"
-},
-{
-question: "26. The crops were destroyed by the heavy floods.",
-options: ["Burned", "Saved", "Covered", "Planted"],
-answer: "Saved",
-section: "Antonyms"
-},
-{
-question: "27. He has more grapes than me.",
-options: ["extra", "some", "less", "fewer"],
-answer: "less",
-section: "Antonyms"
-},
-{
-question: "28. A person who walks in sleep is called:",
-options: ["insomniac", "somnambulist", "narcissist", "pessimist"],
-answer: "somnambulist",
-section: "One-word Substitution"
-},
-{
-question: "29. A place where dead bodies are kept before burial:",
-options: ["dispensary", "mortuary", "sanctuary", "infirmary"],
-answer: "mortuary",
-section: "One-word Substitution"
-},
-{
-question: "30. Preliminary",
-options: ["Prelimenary", "Preliminery", "Preliminary", "Prelimenary"],
-answer: "Preliminary",
-section: "Spelling"
-},
-{
-question: "31. Tournament",
-options: ["Tournamant", "Torunament", "Tournament", "Tuorenament"],
-answer: "Tournament",
-section: "Spelling"
-},
-{
-question: "32. He jumped ___ the river to save the child.",
-options: ["into", "in", "at", "over"],
-answer: "into",
-section: "Prepositions"
-},
-{
-question: "33. He travels ___ bus every day.",
-options: ["by", "in", "with", "on"],
-answer: "by",
-section: "Prepositions"
-},
-{
-question: "34. He writes ___ pencil, not with a pen.",
-options: ["with", "in", "by", "on"],
-answer: "with",
-section: "Prepositions"
-},
-{
-question: "35. It is ___ o’clock.",
-options: ["on", "my watch", "in", "by"],
-answer: "my watch",
-section: "Prepositions"
-},
-{
-question: "36. What is the most abundant gas in Earth’s atmosphere?",
-options: ["Oxygen", "Nitrogen", "Hydrogen", "Carbon dioxide"],
-answer: "Nitrogen",
-section: "General Knowledge"
-},
-{
-question: "37. Which country is considered the best chemical disinfectant?",
-options: ["Alcohol", "Bleach", "Chlorine", "Ammonia"],
-answer: "Alcohol",
-section: "General Knowledge"
-},
-{
-question: "38. Who prepared Hydrochloric and Sulphuric acid?",
-options: ["Ibn Sina", "Jabir bin Hayyan", "Al-Khwarizmi", "Al-Farabi"],
-answer: "Jabir bin Hayyan",
-section: "General Knowledge"
-},
-{
-question: "39. Which animal is an example of a pouched mammal?",
-options: ["Lion", "Bat", "Kangaroo", "Whale"],
-answer: "Kangaroo",
-section: "General Knowledge"
-},
-{
-question: "40. Iron deficiency in the human body causes:",
-options: ["Diabetes", "Anemia", "Rickets", "Obesity"],
-answer: "Anemia",
-section: "General Knowledge"
-},
-{
-question: "41. The first artificial satellite was launched by:",
-options: ["USA", "Germany", "USSR", "France"],
-answer: "USSR",
-section: "General Knowledge"
-},
-{
-question: "42. Which vitamin is fat-soluble?",
-options: ["Vitamin B", "Vitamin C", "Vitamin D", "Vitamin H"],
-answer: "Vitamin D",
-section: "General Knowledge"
-},
-{
-question: "43. Amnesia refers to the loss of:",
-options: ["Sight", "Hearing", "Memory", "Speech"],
-answer: "Memory",
-section: "General Knowledge"
-},
-{
-question: "44. Typhoid primarily affects the:",
-options: ["Liver", "Brain", "Intestines", "Lungs"],
-answer: "Intestines",
-section: "General Knowledge"
-},
-{
-question: "45. Sonar is an instrument used to measure:",
-options: ["Air pollution", "Light speed", "Ocean depth", "Temperature"],
-answer: "Ocean depth",
-section: "General Knowledge"
-},
-{
-question: "46. Which vitamin and its deficiency disorder mismatch?",
-options: ["Vitamin K : Anemia", "Vitamin B : Beri Beri", "Vitamin C : Scurvy", "Vitamin A : Night blindness"],
-answer: "Vitamin K : Anemia",
-section: "General Knowledge"
-},
-{
-question: "47. Particles, atoms or molecules in solids remain in motion, and that motion is limited to:",
-options: ["Translational motion", "Vibrational motion", "Rotational motion", "Random motion"],
-answer: "Vibrational motion",
-section: "General Knowledge"
-},
-{
-question: "48. Who is considered ‘the head of state’ in Pakistan?",
-options: ["Chief Minister", "President", "Prime Minister", "Speaker"],
-answer: "President",
-section: "General Knowledge"
-},
-{
-question: "49. Which city is called the 'City of Roses and Nightingales'?",
-options: ["Islamabad", "Damascus", "Shiraz", "Bukhara"],
-answer: "Shiraz",
-section: "General Knowledge"
-},
-{
-question: "50. The Prime Minister of Pakistan is elected by:",
-options: ["Senate", "National Assembly", "Supreme Court", "Public vote"],
-answer: "National Assembly",
-section: "General Knowledge"
-},
-{
-question: "51. Senate elections in Pakistan are held after every:",
-options: ["3 years", "2 years", "4 years", "5 years"],
-answer: "3 years",
-section: "General Knowledge"
-},
-{
-question: "52. Who is the current Chairman of Senate (2025)?",
-options: ["Yusuf Raza Gilani", "Sadiq Sanjrani", "Shibli Faraz", "Wasim Sajjad"],
-answer: "Yusuf Raza Gilani",
-section: "General Knowledge"
-},
-{
-question: "53. Total number of seats in the National Assembly (2024-25) is:",
-options: ["336", "342", "350", "272"],
-answer: "342",
-section: "General Knowledge"
-},
-{
-question: "54. Which city in the UK is often referred to as 'Little Pakistan'?",
-options: ["London", "Birmingham", "Bradford", "Manchester"],
-answer: "Bradford",
-section: "General Knowledge"
-},
-{
-question: "55. Who is the current Foreign Minister of Pakistan (2025)?",
-options: ["Ishaq Dar", "Bilawal Bhutto Zardari", "Miftah Ismail", "Khawaja Asif"],
-answer: "Khawaja Asif",
-section: "General Knowledge"
-},
-{
-question: "56. Which capital and country is mismatched?",
-options: ["Portugal : Casablanca", "Morocco : Rabat", "Qatar : Doha", "Lebanon : Beirut"],
-answer: "Portugal : Casablanca",
-section: "General Knowledge"
-},
-{
-question: "57. What is the currency of Euro?",
-options: ["Euro", "Franc", "Krone", "Lira"],
-answer: "Euro",
-section: "General Knowledge"
-},
-{
-question: "58. Which is the largest island in the world?",
-options: ["Australia", "Madagascar", "Greenland", "Borneo"],
-answer: "Greenland",
-section: "General Knowledge"
-},
-{
-question: "59. Which country is the largest producer of cotton in the world?",
-options: ["USA", "China", "India", "Brazil"],
-answer: "China",
-section: "General Knowledge"
-},
-{
-question: "60. Which country is the largest producer of iron ore?",
-options: ["China", "Brazil", "India", "Australia"],
-answer: "Australia",
-section: "General Knowledge"
-},
-{
-question: "61. Which city is known as the 'City of Bazaars'?",
-options: ["Istanbul", "Cairo", "Tehran", "Delhi"],
-answer: "Istanbul",
-section: "General Knowledge"
-},
-{
-question: "62. Which city in Pakistan is called the 'City of Eagles'?",
-options: ["Lahore", "Sargodha", "Rawalpindi", "Peshawar"],
-answer: "Sargodha",
-section: "General Knowledge"
-},
-{
-question: "63. Who is the current Governor of Punjab (2025)?",
-options: ["Balighur Rehman", "Mohsin Naqvi", "Ch. Sarwar", "Rana Sanaullah"],
-answer: "Balighur Rehman",
-section: "General Knowledge"
-},
-{
-question: "64. Who was the president of first Constitutional Assembly of Pakistan?",
-options: ["Liaquat Ali Khan", "Nazimuddin", "Quaid-e-Azam", "Ayub Khan"],
-answer: "Nazimuddin",
-section: "General Knowledge"
-},
-{
-question: "65. Which of the following pairs is incorrectly matched?",
-options: ["Muhammad Aurangzeb - Finance Minister", "Rana Tanveer - Health Minister", "Mohsin Naqvi - Interior Minister", "Khawaja Asif - Defence Minister"],
-answer: "Rana Tanveer - Health Minister",
-section: "General Knowledge"
-},
-{
-question: "66. Which country is referred to as the 'Land of Kangaroos'?",
-options: ["New Zealand", "South Africa", "Australia", "Canada"],
-answer: "Australia",
-section: "General Knowledge"
-},
-{
-question: "67. Which is the largest gulf in the world?",
-options: ["Gulf of Mexico", "Persian Gulf", "Gulf of Oman", "Gulf of California"],
-answer: "Gulf of Mexico",
-section: "General Knowledge"
-},
-{
-question: "68. Which country is known as the 'Land of Silver Fiber'?",
-options: ["Egypt", "Pakistan", "Bangladesh", "China"],
-answer: "Pakistan",
-section: "General Knowledge"
-},
-{
-question: "69. Who founded the Mughal Empire in India?",
-options: ["Akbar", "Babar", "Humayun", "Aurangzeb"],
-answer: "Babar",
-section: "General Knowledge"
-},
-{
-question: "70. Which lake in Sindh is the largest freshwater lake in Pakistan?",
-options: ["Haleji", "Manchar", "Keenjhar", "Saif-ul-Maluk"],
-answer: "Manchar",
-section: "General Knowledge"
-},
-{
-question: "71. Who was the last Mughal emperor?",
-options: ["Akbar II", "Bahadur Shah Zafar", "Shah Alam", "Jahangir"],
-answer: "Bahadur Shah Zafar",
-section: "General Knowledge"
-},
-{
-question: "72. When did Pakistan become a member of the UNO?",
-options: ["15 August 1947", "30 September 1947", "14 August 1947", "1 October 1947"],
-answer: "1 October 1947",
-section: "General Knowledge"
-},
-{
-question: "73. Who founded the Dawn newspaper?",
-options: ["Sir Syed", "Shah Rafiuddin", "Sir Syed Ahmad Khan", "Shah Abdul Raheem"],
-answer: "Shah Rafiuddin",
-section: "General Knowledge"
-},
-{
-question: "74. Quaid-e-Azam joined the Muslim League in:",
-options: ["1910", "1911", "1912", "1913"],
-answer: "1911",
-section: "General Knowledge"
-},
-{
-question: "75. Which canal is located in Egypt?",
-options: ["Panama", "Suez", "Corinth", "Kiel"],
-answer: "Suez",
-section: "General Knowledge"
-},
-{
-question: "76. Which one is a metal?",
-options: ["Oxygen", "Sulphur", "Sodium", "Carbon"],
-answer: "Sodium",
-section: "Part-II General Science"
-},
-{
-question: "77. Which of the following is not a property of gases?",
-options: ["definite volume", "highly compressible", "exert pressure", "no fixed shape"],
-answer: "definite volume",
-section: "Part-II General Science"
-},
-{
-question: "78. Which elements have zero valency?",
-options: ["Alkali Metals", "Halogens", "Metals", "Noble Gases"],
-answer: "Noble Gases",
-section: "Part-II General Science"
-},
-{
-question: "79. Who invented dynamite?",
-options: ["Thomas Edison", "Alfred Nobel", "Marie Curie", "Galileo Galilei"],
-answer: "Alfred Nobel",
-section: "Part-II General Science"
-},
-{
-question: "80. Which state of matter has a definite volume but no definite shape?",
-options: ["Solid", "Liquid", "Gas", "Plasma"],
-answer: "Liquid",
-section: "Part-II General Science"
-},
-{
-question: "81. The study of human societies, cultures, and their development is called:",
-options: ["Sociology", "Anthropology", "Psychology", "Archaeology"],
-answer: "Anthropology",
-section: "Part-II General Science"
-},
-{
-question: "82. What is the study of the skeletal system and bones called?",
-options: ["Osteology", "Anatomy", "Neurology", "Myology"],
-answer: "Osteology",
-section: "Part-II General Science"
-},
-{
-question: "83. The process in which solids like iodine and camphor are directly converted into gas without becoming liquid is called:",
-options: ["Condensation", "Evaporation", "Sublimation", "Melting"],
-answer: "Sublimation",
-section: "Part-II General Science"
-},
-{
-question: "84. Which organ is responsible for breathing?",
-options: ["Kidney", "Lungs", "Brain", "Skin"],
-answer: "Lungs",
-section: "Part-II General Science"
-},
-{
-question: "85. Which organ regulates the water balance in the human body?",
-options: ["Liver", "Kidney", "Heart", "Lung"],
-answer: "Kidney",
-section: "Part-II General Science"
-},
-{
-question: "86. Which organ stores urine?",
-options: ["Bladder", "Kidney", "Liver", "Intestine"],
-answer: "Bladder",
-section: "Part-II General Science"
-},
-{
-question: "87. Clothes dry in the sun due to:",
-options: ["Boiling", "Sublimation", "Condensation", "Evaporation"],
-answer: "Evaporation",
-section: "Part-II General Science"
-},
-{
-question: "88. Which organ and its function mismatch?",
-options: ["Spleen : produces hormones", "Liver : makes bile", "Gall bladder : Stores bile", "Pancreas : produces insulin"],
-answer: "Spleen : produces hormones",
-section: "Part-II General Science"
-},
-{
-question: "89. Elements are made up of:",
-options: ["Different atoms", "Same atoms", "Same molecules", "Different molecules"],
-answer: "Different atoms",
-section: "Part-II General Science"
-},
-{
-question: "90. Which city is known as the 'City of Lights'?",
-options: ["City of Lights", "Pyramid City", "City of Bazaars", "Land of Pharaohs"],
-answer: "City of Lights",
-section: "Part-III General Knowledge"
-},
-{
-question: "91. Who was the second Prime Minister of Pakistan?",
-options: ["Ghulam Muhammad", "Liaquat Ali Khan", "Khawaja Nazimuddin", "Nazimuddin Khan"],
-answer: "Khawaja Nazimuddin",
-section: "Part-III General Knowledge"
-},
-{
-question: "92. Which instrument is used by doctors to hear heartbeat?",
-options: ["Microscope", "Thermometer", "Stethoscope", "Sphygmomanometer"],
-answer: "Stethoscope",
-section: "Part-III General Knowledge"
-},
-{
-question: "93. Who discovered the neutron?",
-options: ["J.J. Thomson", "Ernest Rutherford", "James Chadwick", "Niels Bohr"],
-answer: "James Chadwick",
-section: "Part-III General Knowledge"
-},
-{
-question: "94. What type of energy is stored in water held at height in a dam?",
-options: ["Kinetic", "Potential", "Electrical", "Thermal"],
-answer: "Potential",
-section: "Part-III General Knowledge"
-},
-{
-question: "95. The memory of a computer is expressed in:",
-options: ["ROM", "Amperes", "Bytes", "Hertz"],
-answer: "ROM",
-section: "Part-III General Knowledge"
-},
-{
-question: "96. Who invented the rail engine locomotive?",
-options: ["James Watt", "George Stephenson", "Michael Faraday", "Isaac Newton"],
-answer: "George Stephenson",
-section: "Part-III General Knowledge"
-},
-{
-question: "97. What is the scientific study of the kidneys called?",
-options: ["Cardiology", "Nephrology", "Urology", "Hepatology"],
-answer: "Nephrology",
-section: "Part-III General Knowledge"
-},
-{
-question: "98. When a person is in a state of fasting, what hormone does the pancreas primarily release?",
-options: ["Insulin", "Glucagon", "Thyroxin", "Estrogen"],
-answer: "Glucagon",
-section: "Part-III General Knowledge"
-},
-{
-question: "99. Which is the only non-metal that is liquid at room temperature?",
-options: ["Bromine", "Chlorine", "Iodine", "Mercury"],
-answer: "Bromine",
-section: "Part-III General Knowledge"
-},
-{
-question: "100. He is knowing the answer but doesn’t want to tell.",
-options: ["A", "B", "C", "D"],
-answer: "A",
-section: "Error Detection"
-}
-];
+        const questions = [
+            {
+                question: "1. What is the most suitable title for the passage?",
+                options: ["The Dangers of Monsoon", "Floods: A National Emergency", "Floods: Blessing in Disguise", "Agriculture in Punjab and Sindh"],
+                answer: "Floods: Blessing in Disguise",
+                section: "Passage-Based Questions",
+                passage: passageText
+            },
+            {
+                question: "2. Which crops were mentioned as benefiting from floods?",
+                options: ["Cotton and barley", "Mango and banana", "Wheat, rice, and sugarcane", "Tea and coffee"],
+                answer: "Wheat, rice, and sugarcane",
+                section: "Passage-Based Questions",
+                passage: passageText
+            },
+            {
+                question: "3. What ecological benefit do floods provide?",
+                options: ["Desert expansion", "Habitat for birds and fish", "Forest fires", "Loss of biodiversity"],
+                answer: "Habitat for birds and fish",
+                section: "Passage-Based Questions",
+                passage: passageText
+            },
+            {
+                question: "4. What kind of tense is mostly used in the third paragraph?",
+                options: ["Past continuous", "Future perfect", "Present simple", "Past perfect"],
+                answer: "Present simple",
+                section: "Passage-Based Questions",
+                passage: passageText
+            },
+            {
+                question: "5. The similar meaning of 'lead to' is:",
+                options: ["connect", "result in", "guide", "effect"],
+                answer: "result in",
+                section: "Passage-Based Questions",
+                passage: passageText
+            },
+            {
+                question: "6. The cat jumped ___ the table and landed softly.",
+                options: ["across", "over", "beneath", "along"],
+                answer: "over",
+                section: "Grammar"
+            },
+            {
+                question: "7. The treasure was buried deep ___ the ground.",
+                options: ["over", "across", "beneath", "along"],
+                answer: "beneath",
+                section: "Grammar"
+            },
+            {
+                question: "8. The plane flew ___ the clouds.",
+                options: ["beneath", "over", "through", "out of"],
+                answer: "over",
+                section: "Grammar"
+            },
+            {
+                question: "9. We watched the match ___ television.",
+                options: ["at", "by", "on", "in"],
+                answer: "on",
+                section: "Grammar"
+            },
+            {
+                question: "10. He is junior ___ me in rank.",
+                options: ["from", "to", "than", "with"],
+                answer: "to",
+                section: "Grammar"
+            },
+            {
+                question: "11. Choose the correct sentence:",
+                options: ["He has a six-years-old daughter.", "He has a six-year-old daughter.", "He has six-years-old daughter.", "He has daughter of six years old."],
+                answer: "He has a six-year-old daughter.",
+                section: "Grammar"
+            },
+            {
+                question: "12. The teacher gives us ___ advice every day.",
+                options: ["Many", "Some", "Much", "Few"],
+                answer: "Some",
+                section: "Grammar"
+            },
+            {
+                question: "13. He ___ not ___ to the noise.",
+                options: ["React", "Response", "Reply", "Mind"],
+                answer: "React",
+                section: "Grammar"
+            },
+            {
+                question: "14. The company ___ rapidly due to global demand nowadays.",
+                options: ["is expanding", "expands", "has expanded", "expanding"],
+                answer: "is expanding",
+                section: "Grammar"
+            },
+            {
+                question: "15. They have travelled ___ far distance.",
+                options: ["a", "much away", "further", "farther"],
+                answer: "a",
+                section: "Grammar"
+            },
+            {
+                question: "16. Which is a noble gas?",
+                options: ["Oxygen", "Nitrogen", "Helium", "Carbon"],
+                answer: "Helium",
+                section: "Vocabulary"
+            },
+            {
+                question: "17. Who invented the printing press?",
+                options: ["Isaac Newton", "Johannes Gutenberg", "Benjamin Franklin", "Graham Bell"],
+                answer: "Johannes Gutenberg",
+                section: "Vocabulary"
+            },
+            {
+                question: "18. Which is a radioactive element?",
+                options: ["Iron", "Copper", "Uranium", "Oxygen"],
+                answer: "Uranium",
+                section: "Vocabulary"
+            },
+            {
+                question: "19. Washing soda is:",
+                options: ["NaCl", "NaHCO₃", "CH₃-COOH", "Na₂CO₃"],
+                answer: "Na₂CO₃",
+                section: "Vocabulary"
+            },
+            {
+                question: "20. Vinegar contains:",
+                options: ["Acetic acid", "Citric acid", "Hydrochloric acid", "Sulphuric acid"],
+                answer: "Acetic acid",
+                section: "Vocabulary"
+            },
+            {
+                question: "21. All worked very hard to earn the teacher’s praise.",
+                options: ["take", "gain", "ask", "make money"],
+                answer: "gain",
+                section: "Synonyms & Antonyms"
+            },
+            {
+                question: "22. Peace and stability bring prosperity to a nation.",
+                options: ["trouble", "sadness", "affluence", "wealthy"],
+                answer: "affluence",
+                section: "Synonyms & Antonyms"
+            },
+            {
+                question: "23. The contestants waited nervously for their turn to perform in the final round.",
+                options: ["Judges", "Players", "Competitors", "Viewers"],
+                answer: "Competitors",
+                section: "Synonyms & Antonyms"
+            },
+            {
+                question: "24. The child was sobbing in the corner.",
+                options: ["shouting", "weeping", "smiling", "yelling"],
+                answer: "weeping",
+                section: "Synonyms & Antonyms"
+            },
+            {
+                question: "25. The land was barren, so no crops could grow there.",
+                options: ["empty", "green", "unproductive", "fertile"],
+                answer: "green",
+                section: "Antonyms"
+            },
+            {
+                question: "26. The crops were destroyed by the heavy floods.",
+                options: ["Burned", "Saved", "Covered", "Planted"],
+                answer: "Saved",
+                section: "Antonyms"
+            },
+            {
+                question: "27. He has more grapes than me.",
+                options: ["extra", "some", "less", "fewer"],
+                answer: "less",
+                section: "Antonyms"
+            },
+            {
+                question: "28. A person who walks in sleep is called:",
+                options: ["insomniac", "somnambulist", "narcissist", "pessimist"],
+                answer: "somnambulist",
+                section: "One-word Substitution"
+            },
+            {
+                question: "29. A place where dead bodies are kept before burial:",
+                options: ["dispensary", "mortuary", "sanctuary", "infirmary"],
+                answer: "mortuary",
+                section: "One-word Substitution"
+            },
+            {
+                question: "30. Preliminary",
+                options: ["Prelimenary", "Preliminery", "Preliminary", "Prelimenary"],
+                answer: "Preliminary",
+                section: "Spelling"
+            },
+            {
+                question: "31. Tournament",
+                options: ["Tournamant", "Torunament", "Tournament", "Tuorenament"],
+                answer: "Tournament",
+                section: "Spelling"
+            },
+            {
+                question: "32. He jumped ___ the river to save the child.",
+                options: ["into", "in", "at", "over"],
+                answer: "into",
+                section: "Prepositions"
+            },
+            {
+                question: "33. He travels ___ bus every day.",
+                options: ["by", "in", "with", "on"],
+                answer: "by",
+                section: "Prepositions"
+            },
+            {
+                question: "34. He writes ___ pencil, not with a pen.",
+                options: ["with", "in", "by", "on"],
+                answer: "with",
+                section: "Prepositions"
+            },
+            {
+                question: "35. It is ___ o’clock.",
+                options: ["on", "my watch", "in", "by"],
+                answer: "my watch",
+                section: "Prepositions"
+            },
+            {
+                question: "36. What is the most abundant gas in Earth’s atmosphere?",
+                options: ["Oxygen", "Nitrogen", "Hydrogen", "Carbon dioxide"],
+                answer: "Nitrogen",
+                section: "General Knowledge"
+            },
+            {
+                question: "37. Which country is considered the best chemical disinfectant?",
+                options: ["Alcohol", "Bleach", "Chlorine", "Ammonia"],
+                answer: "Alcohol",
+                section: "General Knowledge"
+            },
+            {
+                question: "38. Who prepared Hydrochloric and Sulphuric acid?",
+                options: ["Ibn Sina", "Jabir bin Hayyan", "Al-Khwarizmi", "Al-Farabi"],
+                answer: "Jabir bin Hayyan",
+                section: "General Knowledge"
+            },
+            {
+                question: "39. Which animal is an example of a pouched mammal?",
+                options: ["Lion", "Bat", "Kangaroo", "Whale"],
+                answer: "Kangaroo",
+                section: "General Knowledge"
+            },
+            {
+                question: "40. Iron deficiency in the human body causes:",
+                options: ["Diabetes", "Anemia", "Rickets", "Obesity"],
+                answer: "Anemia",
+                section: "General Knowledge"
+            },
+            {
+                question: "41. The first artificial satellite was launched by:",
+                options: ["USA", "Germany", "USSR", "France"],
+                answer: "USSR",
+                section: "General Knowledge"
+            },
+            {
+                question: "42. Which vitamin is fat-soluble?",
+                options: ["Vitamin B", "Vitamin C", "Vitamin D", "Vitamin H"],
+                answer: "Vitamin D",
+                section: "General Knowledge"
+            },
+            {
+                question: "43. Amnesia refers to the loss of:",
+                options: ["Sight", "Hearing", "Memory", "Speech"],
+                answer: "Memory",
+                section: "General Knowledge"
+            },
+            {
+                question: "44. Typhoid primarily affects the:",
+                options: ["Liver", "Brain", "Intestines", "Lungs"],
+                answer: "Intestines",
+                section: "General Knowledge"
+            },
+            {
+                question: "45. Sonar is an instrument used to measure:",
+                options: ["Air pollution", "Light speed", "Ocean depth", "Temperature"],
+                answer: "Ocean depth",
+                section: "General Knowledge"
+            },
+            {
+                question: "46. Which vitamin and its deficiency disorder mismatch?",
+                options: ["Vitamin K : Anemia", "Vitamin B : Beri Beri", "Vitamin C : Scurvy", "Vitamin A : Night blindness"],
+                answer: "Vitamin K : Anemia",
+                section: "General Knowledge"
+            },
+            {
+                question: "47. Particles, atoms or molecules in solids remain in motion, and that motion is limited to:",
+                options: ["Translational motion", "Vibrational motion", "Rotational motion", "Random motion"],
+                answer: "Vibrational motion",
+                section: "General Knowledge"
+            },
+            {
+                question: "48. Who is considered ‘the head of state’ in Pakistan?",
+                options: ["Chief Minister", "President", "Prime Minister", "Speaker"],
+                answer: "President",
+                section: "General Knowledge"
+            },
+            {
+                question: "49. Which city is called the 'City of Roses and Nightingales'?",
+                options: ["Islamabad", "Damascus", "Shiraz", "Bukhara"],
+                answer: "Shiraz",
+                section: "General Knowledge"
+            },
+            {
+                question: "50. The Prime Minister of Pakistan is elected by:",
+                options: ["Senate", "National Assembly", "Supreme Court", "Public vote"],
+                answer: "National Assembly",
+                section: "General Knowledge"
+            },
+            {
+                question: "51. Senate elections in Pakistan are held after every:",
+                options: ["3 years", "2 years", "4 years", "5 years"],
+                answer: "3 years",
+                section: "General Knowledge"
+            },
+            {
+                question: "52. Who is the current Chairman of Senate (2025)?",
+                options: ["Yusuf Raza Gilani", "Sadiq Sanjrani", "Shibli Faraz", "Wasim Sajjad"],
+                answer: "Yusuf Raza Gilani",
+                section: "General Knowledge"
+            },
+            {
+                question: "53. Total number of seats in the National Assembly (2024-25) is:",
+                options: ["336", "342", "350", "272"],
+                answer: "342",
+                section: "General Knowledge"
+            },
+            {
+                question: "54. Which city in the UK is often referred to as 'Little Pakistan'?",
+                options: ["London", "Birmingham", "Bradford", "Manchester"],
+                answer: "Bradford",
+                section: "General Knowledge"
+            },
+            {
+                question: "55. Who is the current Foreign Minister of Pakistan (2025)?",
+                options: ["Ishaq Dar", "Bilawal Bhutto Zardari", "Miftah Ismail", "Khawaja Asif"],
+                answer: "Khawaja Asif",
+                section: "General Knowledge"
+            },
+            {
+                question: "56. Which capital and country is mismatched?",
+                options: ["Portugal : Casablanca", "Morocco : Rabat", "Qatar : Doha", "Lebanon : Beirut"],
+                answer: "Portugal : Casablanca",
+                section: "General Knowledge"
+            },
+            {
+                question: "57. What is the currency of Euro?",
+                options: ["Euro", "Franc", "Krone", "Lira"],
+                answer: "Euro",
+                section: "General Knowledge"
+            },
+            {
+                question: "58. Which is the largest island in the world?",
+                options: ["Australia", "Madagascar", "Greenland", "Borneo"],
+                answer: "Greenland",
+                section: "General Knowledge"
+            },
+            {
+                question: "59. Which country is the largest producer of cotton in the world?",
+                options: ["USA", "China", "India", "Brazil"],
+                answer: "China",
+                section: "General Knowledge"
+            },
+            {
+                question: "60. Which country is the largest producer of iron ore?",
+                options: ["China", "Brazil", "India", "Australia"],
+                answer: "Australia",
+                section: "General Knowledge"
+            },
+            {
+                question: "61. Which city is known as the 'City of Bazaars'?",
+                options: ["Istanbul", "Cairo", "Tehran", "Delhi"],
+                answer: "Istanbul",
+                section: "General Knowledge"
+            },
+            {
+                question: "62. Which city in Pakistan is called the 'City of Eagles'?",
+                options: ["Lahore", "Sargodha", "Rawalpindi", "Peshawar"],
+                answer: "Sargodha",
+                section: "General Knowledge"
+            },
+            {
+                question: "63. Who is the current Governor of Punjab (2025)?",
+                options: ["Balighur Rehman", "Mohsin Naqvi", "Ch. Sarwar", "Rana Sanaullah"],
+                answer: "Balighur Rehman",
+                section: "General Knowledge"
+            },
+            {
+                question: "64. Who was the president of first Constitutional Assembly of Pakistan?",
+                options: ["Liaquat Ali Khan", "Nazimuddin", "Quaid-e-Azam", "Ayub Khan"],
+                answer: "Nazimuddin",
+                section: "General Knowledge"
+            },
+            {
+                question: "65. Which of the following pairs is incorrectly matched?",
+                options: ["Muhammad Aurangzeb - Finance Minister", "Rana Tanveer - Health Minister", "Mohsin Naqvi - Interior Minister", "Khawaja Asif - Defence Minister"],
+                answer: "Rana Tanveer - Health Minister",
+                section: "General Knowledge"
+            },
+            {
+                question: "66. Which country is referred to as the 'Land of Kangaroos'?",
+                options: ["New Zealand", "South Africa", "Australia", "Canada"],
+                answer: "Australia",
+                section: "General Knowledge"
+            },
+            {
+                question: "67. Which is the largest gulf in the world?",
+                options: ["Gulf of Mexico", "Persian Gulf", "Gulf of Oman", "Gulf of California"],
+                answer: "Gulf of Mexico",
+                section: "General Knowledge"
+            },
+            {
+                question: "68. Which country is known as the 'Land of Silver Fiber'?",
+                options: ["Egypt", "Pakistan", "Bangladesh", "China"],
+                answer: "Pakistan",
+                section: "General Knowledge"
+            },
+            {
+                question: "69. Who founded the Mughal Empire in India?",
+                options: ["Akbar", "Babar", "Humayun", "Aurangzeb"],
+                answer: "Babar",
+                section: "General Knowledge"
+            },
+            {
+                question: "70. Which lake in Sindh is the largest freshwater lake in Pakistan?",
+                options: ["Haleji", "Manchar", "Keenjhar", "Saif-ul-Maluk"],
+                answer: "Manchar",
+                section: "General Knowledge"
+            },
+            {
+                question: "71. Who was the last Mughal emperor?",
+                options: ["Akbar II", "Bahadur Shah Zafar", "Shah Alam", "Jahangir"],
+                answer: "Bahadur Shah Zafar",
+                section: "General Knowledge"
+            },
+            {
+                question: "72. When did Pakistan become a member of the UNO?",
+                options: ["15 August 1947", "30 September 1947", "14 August 1947", "1 October 1947"],
+                answer: "1 October 1947",
+                section: "General Knowledge"
+            },
+            {
+                question: "73. Who founded the Dawn newspaper?",
+                options: ["Sir Syed", "Shah Rafiuddin", "Sir Syed Ahmad Khan", "Shah Abdul Raheem"],
+                answer: "Shah Rafiuddin",
+                section: "General Knowledge"
+            },
+            {
+                question: "74. Quaid-e-Azam joined the Muslim League in:",
+                options: ["1910", "1911", "1912", "1913"],
+                answer: "1911",
+                section: "General Knowledge"
+            },
+            {
+                question: "75. Which canal is located in Egypt?",
+                options: ["Panama", "Suez", "Corinth", "Kiel"],
+                answer: "Suez",
+                section: "General Knowledge"
+            },
+            {
+                question: "76. Which one is a metal?",
+                options: ["Oxygen", "Sulphur", "Sodium", "Carbon"],
+                answer: "Sodium",
+                section: "Part-II General Science"
+            },
+            {
+                question: "77. Which of the following is not a property of gases?",
+                options: ["definite volume", "highly compressible", "exert pressure", "no fixed shape"],
+                answer: "definite volume",
+                section: "Part-II General Science"
+            },
+            {
+                question: "78. Which elements have zero valency?",
+                options: ["Alkali Metals", "Halogens", "Metals", "Noble Gases"],
+                answer: "Noble Gases",
+                section: "Part-II General Science"
+            },
+            {
+                question: "79. Who invented dynamite?",
+                options: ["Thomas Edison", "Alfred Nobel", "Marie Curie", "Galileo Galilei"],
+                answer: "Alfred Nobel",
+                section: "Part-II General Science"
+            },
+            {
+                question: "80. Which state of matter has a definite volume but no definite shape?",
+                options: ["Solid", "Liquid", "Gas", "Plasma"],
+                answer: "Liquid",
+                section: "Part-II General Science"
+            },
+            {
+                question: "81. The study of human societies, cultures, and their development is called:",
+                options: ["Sociology", "Anthropology", "Psychology", "Archaeology"],
+                answer: "Anthropology",
+                section: "Part-II General Science"
+            },
+            {
+                question: "82. What is the study of the skeletal system and bones called?",
+                options: ["Osteology", "Anatomy", "Neurology", "Myology"],
+                answer: "Osteology",
+                section: "Part-II General Science"
+            },
+            {
+                question: "83. The process in which solids like iodine and camphor are directly converted into gas without becoming liquid is called:",
+                options: ["Condensation", "Evaporation", "Sublimation", "Melting"],
+                answer: "Sublimation",
+                section: "Part-II General Science"
+            },
+            {
+                question: "84. Which organ is responsible for breathing?",
+                options: ["Kidney", "Lungs", "Brain", "Skin"],
+                answer: "Lungs",
+                section: "Part-II General Science"
+            },
+            {
+                question: "85. Which organ regulates the water balance in the human body?",
+                options: ["Liver", "Kidney", "Heart", "Lung"],
+                answer: "Kidney",
+                section: "Part-II General Science"
+            },
+            {
+                question: "86. Which organ stores urine?",
+                options: ["Bladder", "Kidney", "Liver", "Intestine"],
+                answer: "Bladder",
+                section: "Part-II General Science"
+            },
+            {
+                question: "87. Clothes dry in the sun due to:",
+                options: ["Boiling", "Sublimation", "Condensation", "Evaporation"],
+                answer: "Evaporation",
+                section: "Part-II General Science"
+            },
+            {
+                question: "88. Which organ and its function mismatch?",
+                options: ["Spleen : produces hormones", "Liver : makes bile", "Gall bladder : Stores bile", "Pancreas : produces insulin"],
+                answer: "Spleen : produces hormones",
+                section: "Part-II General Science"
+            },
+            {
+                question: "89. Elements are made up of:",
+                options: ["Different atoms", "Same atoms", "Same molecules", "Different molecules"],
+                answer: "Different atoms",
+                section: "Part-II General Science"
+            },
+            {
+                question: "90. Which city is known as the 'City of Lights'?",
+                options: ["City of Lights", "Pyramid City", "City of Bazaars", "Land of Pharaohs"],
+                answer: "City of Lights",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "91. Who was the second Prime Minister of Pakistan?",
+                options: ["Ghulam Muhammad", "Liaquat Ali Khan", "Khawaja Nazimuddin", "Nazimuddin Khan"],
+                answer: "Khawaja Nazimuddin",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "92. Which instrument is used by doctors to hear heartbeat?",
+                options: ["Microscope", "Thermometer", "Stethoscope", "Sphygmomanometer"],
+                answer: "Stethoscope",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "93. Who discovered the neutron?",
+                options: ["J.J. Thomson", "Ernest Rutherford", "James Chadwick", "Niels Bohr"],
+                answer: "James Chadwick",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "94. What type of energy is stored in water held at height in a dam?",
+                options: ["Kinetic", "Potential", "Electrical", "Thermal"],
+                answer: "Potential",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "95. The memory of a computer is expressed in:",
+                options: ["ROM", "Amperes", "Bytes", "Hertz"],
+                answer: "ROM",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "96. Who invented the rail engine locomotive?",
+                options: ["James Watt", "George Stephenson", "Michael Faraday", "Isaac Newton"],
+                answer: "George Stephenson",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "97. What is the scientific study of the kidneys called?",
+                options: ["Cardiology", "Nephrology", "Urology", "Hepatology"],
+                answer: "Nephrology",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "98. When a person is in a state of fasting, what hormone does the pancreas primarily release?",
+                options: ["Insulin", "Glucagon", "Thyroxin", "Estrogen"],
+                answer: "Glucagon",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "99. Which is the only non-metal that is liquid at room temperature?",
+                options: ["Bromine", "Chlorine", "Iodine", "Mercury"],
+                answer: "Bromine",
+                section: "Part-III General Knowledge"
+            },
+            {
+                question: "100. He is knowing the answer but doesn’t want to tell.",
+                options: ["A", "B", "C", "D"],
+                answer: "A",
+                section: "Error Detection"
+            }
+        ];
 
         let currentQuestionIndex = 0;
         let userAnswers = [];
-        let timeLeft = 3000; // 60 minutes in seconds
+        let timeLeft = 3600; // 60 minutes
         let timerInterval;
-        const totalQuestions = questions.length;
+
+        const totalQuestions = questions ? questions.length : 0;
         let quizStarted = false;
 
-        // Elements
+        // DOM Elements
         const passwordOverlay = document.getElementById('passwordOverlay');
         const passwordInput = document.getElementById('passwordInput');
         const passwordSubmitBtn = document.getElementById('passwordSubmitBtn');
         const passwordError = document.getElementById('passwordError');
+        const appContainer = document.getElementById('appContainer');
+
         const quizSection = document.getElementById('quizSection');
+        const resultsSection = document.getElementById('resultsSection');
+
         const questionText = document.getElementById('questionText');
         const optionsContainer = document.getElementById('optionsContainer');
         const currentQuestionNumberSpan = document.getElementById('currentQuestionNumber');
@@ -1619,29 +1097,47 @@ section: "Error Detection"
         const timeLeftSpan = document.getElementById('timeLeft');
         const progressBarFill = document.getElementById('progressBarFill');
         const markForReviewCheckbox = document.getElementById('markForReviewCheckbox');
-        const questionPalettePanel = document.getElementById('questionPalettePanel');
         const questionGrid = document.getElementById('questionGrid');
-        const resultsSection = document.getElementById('resultsSection');
+        const mobileQuestionGrid = document.getElementById('mobileQuestionGrid');
+        const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+        const scrollRightBtn = document.getElementById('scrollRightBtn');
+        const mobileCurrentQ = document.getElementById('mobileCurrentQ');
+        const mobileTotalQ = document.getElementById('mobileTotalQ');
+
         const resTotalQuestions = document.getElementById('resTotalQuestions');
-        const resAttempted = document.getElementById('resAttempted');
         const resCorrectAnswers = document.getElementById('resCorrectAnswers');
         const resIncorrectAnswers = document.getElementById('resIncorrectAnswers');
         const resScore = document.getElementById('resScore');
-        const reviewItemsContainer = document.getElementById('reviewItemsContainer');
-        const printSaveBtn = document.getElementById('printSaveBtn');
         const restartQuizBtn = document.getElementById('restartQuizBtn');
         const modeToggle = document.getElementById('modeToggle');
         const modeToggleIcon = modeToggle.querySelector('.icon');
-        const passageDisplay = document.getElementById('passageDisplay'); // New element for passage
 
-        // Initialize userAnswers array
-        for (let i = 0; i < totalQuestions; i++) {
-            userAnswers.push({
-                answer: null,
-                markedForReview: false,
-                attempted: false
-            });
+        // Detailed Review Elements
+        const viewReviewBtn = document.getElementById('viewReviewBtn');
+        const closeReviewBtn = document.getElementById('closeReviewBtn');
+        const reviewSection = document.getElementById('reviewSection');
+        const reviewContent = document.getElementById('reviewContent');
+
+        // PDF Elements
+        const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+        const pdfOverlay = document.getElementById('pdf-overlay');
+        const pdfContent = document.getElementById('pdf-content');
+
+        // Passage Container
+        const passageContainer = document.getElementById('passageContainer');
+
+        // Initialize userAnswers
+        function initUserAnswers() {
+            userAnswers = [];
+            for (let i = 0; i < totalQuestions; i++) {
+                userAnswers.push({
+                    answer: null,
+                    markedForReview: false,
+                    attempted: false
+                });
+            }
         }
+        initUserAnswers();
 
         function formatTime(seconds) {
             const minutes = Math.floor(seconds / 60);
@@ -1651,7 +1147,12 @@ section: "Error Detection"
 
         function updateTimer() {
             timeLeft--;
-            timeLeftSpan.textContent = formatTime(timeLeft);
+            if (timeLeftSpan) {
+                timeLeftSpan.textContent = formatTime(timeLeft);
+                if (timeLeft <= 300) { // Last 5 mins
+                    timeLeftSpan.parentElement.classList.add('animate-pulse', 'bg-red-100', 'text-red-700');
+                }
+            }
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
                 submitQuiz();
@@ -1659,539 +1160,376 @@ section: "Error Detection"
         }
 
         function loadQuestion() {
+            if (!questions || !questions[currentQuestionIndex]) return;
+
             const questionData = questions[currentQuestionIndex];
 
-            // Display passage only for the first 5 questions
-            if (currentQuestionIndex >= 0 && currentQuestionIndex <= 4) {
-                passageDisplay.innerHTML = passageForFirstFiveQuestions;
-                passageDisplay.style.display = 'block'; // Show the passage container
+            // Handle Passage Display
+            if (questionData.passage) {
+                passageContainer.innerHTML = questionData.passage;
+                passageContainer.classList.remove('hidden');
             } else {
-                passageDisplay.innerHTML = ''; // Clear passage for other questions
-                passageDisplay.style.display = 'none'; // Hide the passage container
+                passageContainer.classList.add('hidden');
             }
 
             questionText.innerHTML = questionData.question;
-            optionsContainer.innerHTML = ''; // Clear previous options
+            optionsContainer.innerHTML = '';
 
             questionData.options.forEach((option, index) => {
                 const label = document.createElement('label');
+                label.className = `group relative flex items-center p-3 md:p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 hover:bg-slate-50 dark:hover:bg-slate-700/50 ${userAnswers[currentQuestionIndex].answer === option
+                    ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                    : 'border-slate-200 dark:border-slate-700'
+                    }`;
+
                 const radioInput = document.createElement('input');
                 radioInput.type = 'radio';
                 radioInput.name = 'quizOption';
                 radioInput.value = option;
-                radioInput.id = `option${index}`;
+                radioInput.className = 'hidden';
+
+                const customRadio = document.createElement('div');
+                customRadio.className = `w-5 h-5 min-w-[20px] rounded-full border-2 mr-3 md:mr-4 flex items-center justify-center transition-colors ${userAnswers[currentQuestionIndex].answer === option
+                    ? 'border-primary-500 bg-primary-500'
+                    : 'border-slate-400'
+                    }`;
+
+                const checkmark = document.createElement('div');
+                checkmark.className = `w-2 h-2 bg-white rounded-full ${userAnswers[currentQuestionIndex].answer === option ? 'block' : 'hidden'
+                    }`;
+                customRadio.appendChild(checkmark);
+
+                const textSpan = document.createElement('span');
+                textSpan.className = 'text-sm md:text-base font-medium text-slate-700 dark:text-slate-200';
+                textSpan.textContent = option;
 
                 label.appendChild(radioInput);
-                label.appendChild(document.createTextNode(option));
-                optionsContainer.appendChild(label);
+                label.appendChild(customRadio);
+                label.appendChild(textSpan);
 
-                // Pre-select if answer exists
-                if (userAnswers[currentQuestionIndex].answer === option) {
-                    radioInput.checked = true;
-                }
-
-                radioInput.addEventListener('change', (event) => {
-                    userAnswers[currentQuestionIndex].answer = event.target.value;
+                label.addEventListener('click', () => {
+                    userAnswers[currentQuestionIndex].answer = option;
                     userAnswers[currentQuestionIndex].attempted = true;
                     updatePaletteItemStatus(currentQuestionIndex);
+                    loadQuestion();
                 });
+
+                optionsContainer.appendChild(label);
             });
 
-            // Update Mark for Review checkbox
             markForReviewCheckbox.checked = userAnswers[currentQuestionIndex].markedForReview;
-            markForReviewCheckbox.removeEventListener('change', handleMarkForReviewChange); // Remove old listener
-            markForReviewCheckbox.addEventListener('change', handleMarkForReviewChange); // Add new listener
 
             currentQuestionNumberSpan.textContent = currentQuestionIndex + 1;
             totalQuestionsSpan.textContent = totalQuestions;
-            updateProgressBar();
-            updateNavigationButtons();
-            updatePaletteActiveStatus();
-        }
+            if (mobileCurrentQ) mobileCurrentQ.textContent = currentQuestionIndex + 1;
+            if (mobileTotalQ) mobileTotalQ.textContent = totalQuestions;
 
-        function handleMarkForReviewChange() {
-            userAnswers[currentQuestionIndex].markedForReview = markForReviewCheckbox.checked;
-            updatePaletteItemStatus(currentQuestionIndex);
-        }
-
-        function updateProgressBar() {
             const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
             progressBarFill.style.width = `${progress}%`;
-        }
 
-        function updateNavigationButtons() {
             prevBtn.disabled = currentQuestionIndex === 0;
-
-            // Show/hide Next and Submit buttons based on current question index
             if (currentQuestionIndex === totalQuestions - 1) {
-                nextBtn.style.display = 'none'; // Hide next button on the last question
-                submitQuizFinalBtn.style.display = 'inline-block'; // Show submit button on the last question
+                nextBtn.classList.add('hidden');
+                submitQuizFinalBtn.classList.remove('hidden');
             } else {
-                nextBtn.style.display = 'inline-block'; // Show next button
-                submitQuizFinalBtn.style.display = 'none'; // Hide submit button
+                nextBtn.classList.remove('hidden');
+                submitQuizFinalBtn.classList.add('hidden');
             }
-        }
 
-        function showNextQuestion() {
-            if (currentQuestionIndex < totalQuestions - 1) {
-                currentQuestionIndex++;
-                loadQuestion();
-            }
-        }
-
-        function showPreviousQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                loadQuestion();
-            }
-        }
-
-        function submitQuiz() {
-            clearInterval(timerInterval);
-            quizSection.style.display = 'none';
-            resultsSection.style.display = 'block';
-            calculateResults();
-            displayReview();
-        }
-
-        function calculateResults() {
-            let correctAnswersCount = 0;
-            let attemptedQuestionsCount = 0;
-
-            userAnswers.forEach((userAnswer, index) => {
-                if (userAnswer.attempted) {
-                    attemptedQuestionsCount++;
-                    if (userAnswer.answer === questions[index].answer) {
-                        correctAnswersCount++;
-                    }
-                }
-            });
-
-            const incorrectAnswersCount = attemptedQuestionsCount - correctAnswersCount;
-            const score = (correctAnswersCount / totalQuestions) * 50
-
-            resTotalQuestions.textContent = totalQuestions;
-            resAttempted.textContent = attemptedQuestionsCount;
-            resCorrectAnswers.textContent = correctAnswersCount;
-            resIncorrectAnswers.textContent = incorrectAnswersCount;
-            resScore.textContent = score.toFixed(2);
-        }
-
-        function displayReview() {
-            reviewItemsContainer.innerHTML = ''; // Clear previous review items
-
-            questions.forEach((question, index) => {
-                const reviewItem = document.createElement('div');
-                reviewItem.classList.add('review-item');
-                const userAnswerData = userAnswers[index];
-                const attempted = userAnswerData.attempted;
-                const yourAnswer = userAnswerData.answer;
-                const correctAnswer = question.answer;
-                
-                // Clean question text to remove existing numbering
-                let cleanedQuestion = question.question;
-                // Remove patterns like "1. ", "73. ", etc. from the beginning
-                cleanedQuestion = cleanedQuestion.replace(/^\d+\.\s*/, '');
-                
-                let answerStatusClass = 'not-attempted';
-                let answerText = 'Not Attempted';
-                let statusBadge = '';
-                
-                if (attempted) {
-                    if (yourAnswer === correctAnswer) {
-                        answerStatusClass = 'correct';
-                        answerText = yourAnswer;
-                        statusBadge = '<span style="background: var(--success-color); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: 10px;">✓ Correct</span>';
-                    } else {
-                        answerStatusClass = 'incorrect';
-                        answerText = yourAnswer;
-                        statusBadge = '<span style="background: var(--danger-color); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: 10px;">✗ Incorrect</span>';
-                    }
-                } else {
-                    statusBadge = '<span style="background: var(--unattempted-color); color: var(--text-color); padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: 10px;">⚬ Not Attempted</span>';
-                }
-                
-                reviewItem.innerHTML = `
-                    <p style="margin-bottom: 12px;"><strong>Q${index + 1}:</strong> ${cleanedQuestion}</p>
-                    <div style="margin-left: 15px;">
-                        <p style="margin-bottom: 8px;"><strong>Available Options:</strong> ${question.options.join(', ')}</p>
-                        <p style="margin-bottom: 8px;">Your Answer: <strong class="your-answer ${answerStatusClass}">${answerText}</strong>${statusBadge}</p>
-                        <p style="margin-bottom: 8px;">Correct Answer: <strong class="correct-answer">${correctAnswer}</strong></p>
-                        ${userAnswerData.markedForReview ? '<p style="font-style: italic; color: var(--secondary-color); margin-bottom: 0;">📌 Marked for Review</p>' : ''}
-                    </div>
-                `;
-                reviewItemsContainer.appendChild(reviewItem);
-            });
+            updatePaletteActiveStatus();
         }
 
         function generateQuestionPalette() {
             questionGrid.innerHTML = '';
+            mobileQuestionGrid.innerHTML = '';
+
+            if (!questions || questions.length === 0) return;
+
             questions.forEach((_, index) => {
                 const item = document.createElement('div');
-                item.classList.add('question-grid-item');
+                item.className = 'h-9 w-full rounded-lg flex items-center justify-center text-xs md:text-sm font-bold cursor-pointer transition-all border border-transparent hover:border-slate-300 dark:hover:border-slate-600 bg-slate-200 dark:bg-slate-700 text-slate-800';
                 item.textContent = index + 1;
-                item.dataset.questionIndex = index;
-                item.addEventListener('click', () => {
+                item.dataset.index = index;
+                item.onclick = function () {
                     currentQuestionIndex = index;
                     loadQuestion();
-                });
+                };
                 questionGrid.appendChild(item);
+
+                const mobileItem = document.createElement('div');
+                mobileItem.className = 'flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-xs font-bold cursor-pointer bg-slate-200 dark:bg-slate-700 text-slate-800 border border-transparent';
+                mobileItem.textContent = index + 1;
+                mobileItem.onclick = function () {
+                    currentQuestionIndex = index;
+                    loadQuestion();
+                };
+                mobileQuestionGrid.appendChild(mobileItem);
             });
             updatePaletteAllStatus();
         }
 
         function updatePaletteItemStatus(index) {
-            const item = questionGrid.querySelector(`[data-question-index="${index}"]`);
-            if (item) {
-                item.classList.remove('current', 'answered', 'reviewed', 'unattempted', 'answered-reviewed');
+            if (!questionGrid.children[index] || !mobileQuestionGrid.children[index]) return;
 
-                const userAnswer = userAnswers[index];
-                if (userAnswer.attempted && userAnswer.markedForReview) {
-                    item.classList.add('answered-reviewed');
-                } else if (userAnswer.attempted) {
-                    item.classList.add('answered');
-                } else if (userAnswer.markedForReview) {
-                    item.classList.add('reviewed');
-                } else {
-                    item.classList.add('unattempted');
-                }
+            const status = userAnswers[index];
+            const desktopItem = questionGrid.children[index];
+            const mobileItem = mobileQuestionGrid.children[index];
 
-                // Ensure current question is always highlighted after updating status
-                updatePaletteActiveStatus();
+            let baseClass = 'h-9 w-full rounded-lg flex items-center justify-center text-xs md:text-sm font-bold cursor-pointer transition-all border ';
+            let colorClass = 'bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 border-transparent';
+
+            if (status.attempted && status.markedForReview) {
+                colorClass = 'bg-amber-100 text-amber-800 border-amber-500';
+            } else if (status.attempted) {
+                colorClass = 'bg-green-100 text-green-800 border-green-500';
+            } else if (status.markedForReview) {
+                colorClass = 'bg-amber-50 text-amber-700 border-amber-300';
             }
+
+            if (index === currentQuestionIndex) {
+                colorClass += ' ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-slate-800';
+
+                desktopItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                mobileItem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+
+            desktopItem.className = baseClass + colorClass;
+            mobileItem.className = `flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-xs font-bold cursor-pointer ${colorClass}`;
         }
 
         function updatePaletteAllStatus() {
-            userAnswers.forEach((_, index) => {
-                updatePaletteItemStatus(index);
-            });
+            if (userAnswers) {
+                userAnswers.forEach((_, index) => updatePaletteItemStatus(index));
+            }
         }
 
         function updatePaletteActiveStatus() {
-            // Remove 'current' from all items first
-            questionGrid.querySelectorAll('.question-grid-item').forEach(item => {
-                item.classList.remove('current');
-            });
-            // Add 'current' to the active question
-            const currentItem = questionGrid.querySelector(`[data-question-index="${currentQuestionIndex}"]`);
-            if (currentItem) {
-                currentItem.classList.add('current');
-            }
+            updatePaletteAllStatus();
         }
 
-        function restartQuiz() {
-            // Using a custom modal-like message instead of confirm()
-            const confirmRestart = document.createElement('div');
-            confirmRestart.style.cssText = `
-                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-                background: rgba(0,0,0,0.7); display: flex; justify-content: center;
-                align-items: center; z-index: 9999;
-            `;
-            confirmRestart.innerHTML = `
-                <div style="background: var(--card-background); padding: 30px; border-radius: 15px; text-align: center; max-width: 400px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <p style="font-size: 1.1rem; margin-bottom: 20px; color: var(--text-color);">Are you sure you want to restart the quiz? Your current progress will be lost.</p>
-                    <button id="confirmYes" class="btn" style="background-color: var(--danger-color); margin-right: 10px;">Yes, Restart</button>
-                    <button id="confirmNo" class="btn" style="background-color: var(--primary-color);">No, Cancel</button>
-                </div>
-            `;
-            document.body.appendChild(confirmRestart);
+        markForReviewCheckbox.addEventListener('change', () => {
+            userAnswers[currentQuestionIndex].markedForReview = markForReviewCheckbox.checked;
+            updatePaletteItemStatus(currentQuestionIndex);
+        });
 
-            document.getElementById('confirmYes').addEventListener('click', () => {
-                document.body.removeChild(confirmRestart);
-                currentQuestionIndex = 0;
-                timeLeft = 3000;
-                userAnswers = [];
-                for (let i = 0; i < totalQuestions; i++) {
-                    userAnswers.push({
-                        answer: null,
-                        markedForReview: false,
-                        attempted: false
-                    });
-                }
-                resultsSection.style.display = 'none';
-                quizSection.style.display = 'block';
+        prevBtn.addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
                 loadQuestion();
-                generateQuestionPalette(); // Re-initialize palette colors
-                clearInterval(timerInterval);
-                timerInterval = setInterval(updateTimer, 1000);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentQuestionIndex < totalQuestions - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            }
+        });
+
+        submitQuizFinalBtn.addEventListener('click', submitQuiz);
+
+        function submitQuiz() {
+            clearInterval(timerInterval);
+            quizSection.classList.add('hidden');
+            resultsSection.classList.remove('hidden');
+
+            let correct = 0;
+            let attempted = 0;
+            userAnswers.forEach((u, i) => {
+                if (u.attempted) attempted++;
+                if (u.attempted && u.answer === questions[i].answer) correct++;
             });
 
-            document.getElementById('confirmNo').addEventListener('click', () => {
-                document.body.removeChild(confirmRestart);
-            });
+            resTotalQuestions.textContent = totalQuestions;
+            resCorrectAnswers.textContent = correct;
+            resIncorrectAnswers.textContent = attempted - correct;
+            resScore.textContent = totalQuestions > 0 ? ((correct / totalQuestions) * 100).toFixed(2) : 0;
         }
 
-        // Print/Save as PDF functionality
-        printSaveBtn.addEventListener('click', () => {
-            // Create a comprehensive PDF content
-            const pdfContent = document.createElement('div');
-            pdfContent.style.cssText = `
-                padding: 20px;
-                font-family: 'Poppins', sans-serif;
-                background-color: white !important;
-                color: black !important;
-                width: 100%;
-                max-width: none;
-                font-size: 12pt;
-                line-height: 1.4;
-            `;
-            
-            // Add title
-            const title = document.createElement('h1');
-            title.textContent = 'IBA STS Junior Science Teacher Mock Test 4 - Results';
-            title.style.cssText = `
-                text-align: center;
-                color: black !important;
-                margin-bottom: 30px;
-                font-size: 24pt;
-                border-bottom: 2px solid #333;
-                padding-bottom: 10px;
-            `;
-            pdfContent.appendChild(title);
-            
-            // Add score summary
-            const scoreSummary = document.createElement('div');
-            scoreSummary.style.cssText = `
-                background: #f8f9fa !important;
-                padding: 20px;
-                margin-bottom: 30px;
-                border: 2px solid #dee2e6;
-                border-radius: 8px;
-            `;
-            
-            const summaryTitle = document.createElement('h2');
-            summaryTitle.textContent = 'Score Summary';
-            summaryTitle.style.cssText = 'color: black !important; margin-bottom: 15px; font-size: 18pt;';
-            scoreSummary.appendChild(summaryTitle);
-            
-            // Calculate and display results
-            let correctAnswersCount = 0;
-            let attemptedQuestionsCount = 0;
-            userAnswers.forEach((userAnswer, index) => {
-                if (userAnswer.attempted) {
-                    attemptedQuestionsCount++;
-                    if (userAnswer.answer === questions[index].answer) {
-                        correctAnswersCount++;
+        restartQuizBtn.addEventListener('click', () => {
+            if (confirm("Restart exam?")) {
+                location.reload();
+            }
+        });
+
+        modeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            modeToggleIcon.textContent = isDark ? '🌙' : '☀️';
+        });
+
+        scrollLeftBtn.addEventListener('click', () => {
+            mobileQuestionGrid.scrollLeft -= 100;
+        });
+
+        scrollRightBtn.addEventListener('click', () => {
+            mobileQuestionGrid.scrollLeft += 100;
+        });
+
+        passwordSubmitBtn.addEventListener('click', () => {
+            const entered = passwordInput.value;
+            if (obfuscate(entered) === actualEncryptedPassword) {
+                passwordOverlay.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => {
+                    passwordOverlay.style.display = 'none';
+                    appContainer.classList.remove('hidden');
+                    requestAnimationFrame(() => {
+                        appContainer.classList.remove('opacity-0');
+                    });
+
+                    if (timerInterval) clearInterval(timerInterval);
+                    timerInterval = setInterval(updateTimer, 1000);
+
+                    try {
+                        loadQuestion();
+                        generateQuestionPalette();
+                    } catch (e) {
+                        console.error("Error generating palette:", e);
                     }
+                }, 300);
+            } else {
+                passwordError.textContent = 'Incorrect password.';
+            }
+        });
+
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') passwordSubmitBtn.click();
+        });
+
+        // Review Functionality
+        viewReviewBtn.addEventListener('click', () => {
+            resultsSection.classList.add('hidden');
+            reviewSection.classList.remove('hidden');
+            reviewSection.classList.add('flex');
+            reviewContent.innerHTML = '';
+
+            questions.forEach((q, index) => {
+                const userAnswer = userAnswers[index].answer;
+                const isCorrect = userAnswer === q.answer;
+                const attempted = userAnswers[index].attempted;
+
+                // Clean Question Text (Remove Numbering)
+                const cleanQuestion = q.question.replace(/^\d+\.\s*/, '');
+
+                let statusBadgeHTML = '';
+                let borderClass = '';
+
+                if (!attempted) {
+                    statusBadgeHTML = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">Skipped</span>`;
+                    borderClass = 'border-l-4 border-gray-400 dark:border-gray-500';
+                } else if (isCorrect) {
+                    statusBadgeHTML = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">Correct</span>`;
+                    borderClass = 'border-l-4 border-green-500';
+                } else {
+                    statusBadgeHTML = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300">Incorrect</span>`;
+                    borderClass = 'border-l-4 border-red-500';
                 }
-            });
-            const incorrectAnswersCount = attemptedQuestionsCount - correctAnswersCount;
-            const notAttemptedCount = totalQuestions - attemptedQuestionsCount;
-            const score = (correctAnswersCount / totalQuestions) * 100;
-            
-            const summaryStats = document.createElement('div');
-            summaryStats.innerHTML = `
-                <p><strong>Total Questions:</strong> ${totalQuestions}</p>
-                <p><strong>Attempted:</strong> ${attemptedQuestionsCount}</p>
-                <p><strong>Not Attempted:</strong> ${notAttemptedCount}</p>
-                <p><strong>Correct Answers:</strong> ${correctAnswersCount}</p>
-                <p><strong>Incorrect Answers:</strong> ${incorrectAnswersCount}</p>
-                <p style="font-size: 14pt; color: #007bff !important;"><strong>Your Score: ${score.toFixed(2)}%</strong></p>
-            `;
-            summaryStats.style.cssText = 'color: black !important; font-size: 12pt;';
-            scoreSummary.appendChild(summaryStats);
-            pdfContent.appendChild(scoreSummary);
-            
-            // Add detailed answer review
-            const reviewTitle = document.createElement('h2');
-            reviewTitle.textContent = 'Detailed Answer Review';
-            reviewTitle.style.cssText = `
-                color: black !important;
-                margin: 30px 0 20px 0;
-                font-size: 18pt;
-                border-bottom: 1px solid #333;
-                padding-bottom: 5px;
-            `;
-            pdfContent.appendChild(reviewTitle);
-            
-            // Add all questions with answers
-            questions.forEach((question, index) => {
-                const reviewItem = document.createElement('div');
-                reviewItem.style.cssText = `
-                    background: #f8f9fa !important;
-                    border: 1px solid #dee2e6 !important;
-                    padding: 15px;
-                    margin-bottom: 15px;
-                    border-radius: 5px;
-                    page-break-inside: avoid;
-                `;
-                
-                const userAnswerData = userAnswers[index];
-                const attempted = userAnswerData.attempted;
-                const yourAnswer = userAnswerData.answer;
-                const correctAnswer = question.answer;
-                
-                // Clean question text to remove existing numbering
-                let cleanedQuestion = question.question;
-                // Remove patterns like "1. ", "73. ", etc. from the beginning
-                cleanedQuestion = cleanedQuestion.replace(/^\d+\.\s*/, '');
-                
-                let statusColor = '#6c757d'; // Default gray for not attempted
-                let statusText = 'Not Attempted';
-                let yourAnswerText = 'Not Attempted';
-                
-                if (attempted) {
-                    if (yourAnswer === correctAnswer) {
-                        statusColor = '#28a745'; // Green for correct
-                        statusText = 'Correct';
-                        yourAnswerText = yourAnswer;
-                    } else {
-                        statusColor = '#dc3545'; // Red for incorrect
-                        statusText = 'Incorrect';
-                        yourAnswerText = yourAnswer;
-                    }
-                }
-                
-                reviewItem.innerHTML = `
-                    <p style="color: black !important; font-weight: bold; margin-bottom: 10px;">
-                        <strong>Question ${index + 1}:</strong> ${cleanedQuestion}
-                    </p>
-                    <div style="margin-left: 20px;">
-                        <p style="color: black !important; margin-bottom: 5px;">
-                            <strong>Options:</strong> ${question.options.join(', ')}
-                        </p>
-                        <p style="color: ${statusColor} !important; margin-bottom: 5px;">
-                            <strong>Your Answer:</strong> ${yourAnswerText}
-                        </p>
-                        <p style="color: #28a745 !important; margin-bottom: 5px;">
-                            <strong>Correct Answer:</strong> ${correctAnswer}
-                        </p>
-                        <p style="color: ${statusColor} !important; font-weight: bold;">
-                            <strong>Status:</strong> ${statusText}
-                        </p>
+
+                const card = document.createElement('div');
+                card.className = `bg-white dark:bg-slate-700/50 p-4 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600 ${borderClass}`;
+
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-[10px] md:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Question ${index + 1} <span class="ml-2 font-normal opacity-70">(${q.section})</span></span>
+                        ${statusBadgeHTML}
+                    </div>
+                    ${q.passage ? `<div class="mb-3 p-3 bg-slate-50 dark:bg-slate-800/50 rounded text-xs italic text-slate-600 dark:text-slate-400 border-l-2 border-primary-500">Ref Passage: ${q.passage.substring(0, 80)}...</div>` : ''}
+                    <p class="text-sm md:text-base font-semibold text-slate-800 dark:text-slate-100 mb-3">${cleanQuestion}</p>
+                    
+                    <div class="space-y-1 text-sm">
+                        <div class="flex flex-col sm:flex-row sm:gap-2">
+                            <span class="font-medium text-slate-500 dark:text-slate-400 min-w-[100px]">Your Answer:</span>
+                            <span class="${isCorrect ? 'text-green-600 dark:text-green-400 font-bold' : (attempted ? 'text-red-600 dark:text-red-400 font-bold' : 'text-gray-500 italic')}">
+                                ${userAnswer || 'Not Answered'}
+                            </span>
+                        </div>
+                        ${!isCorrect ? `
+                        <div class="flex flex-col sm:flex-row sm:gap-2">
+                            <span class="font-medium text-slate-500 dark:text-slate-400 min-w-[100px]">Correct Answer:</span>
+                            <span class="text-green-600 dark:text-green-400 font-bold">${q.answer}</span>
+                        </div>
+                        ` : ''}
                     </div>
                 `;
+                reviewContent.appendChild(card);
+            });
+        });
+
+        closeReviewBtn.addEventListener('click', () => {
+            reviewSection.classList.add('hidden');
+            reviewSection.classList.remove('flex');
+            resultsSection.classList.remove('hidden');
+        });
+
+        // PDF Generation
+        downloadPdfBtn.addEventListener('click', () => {
+            pdfOverlay.style.display = 'block';
+
+            let reportHTML = `
+                <div class="pdf-header">
+                    <h1 style="font-size: 24px; font-weight: bold; color: #4338ca;">JST Mock Test 4 Result</h1>
+                    <p style="color: #666;">Generated on ${new Date().toLocaleDateString()}</p>
+                </div>
                 
-                pdfContent.appendChild(reviewItem);
-            });
-            
-            // Add footer
-            const footer = document.createElement('div');
-            footer.style.cssText = `
-                margin-top: 30px;
-                padding-top: 20px;
-                border-top: 1px solid #333;
-                text-align: center;
-                color: black !important;
-                font-size: 10pt;
+                <div class="pdf-summary">
+                    <div class="pdf-stat">
+                        <span class="pdf-stat-val" style="color:#1f2937">${resTotalQuestions.textContent}</span>
+                        <span class="pdf-stat-label">Total</span>
+                    </div>
+                    <div class="pdf-stat">
+                        <span class="pdf-stat-val" style="color:#16a34a">${resCorrectAnswers.textContent}</span>
+                        <span class="pdf-stat-label">Correct</span>
+                    </div>
+                    <div class="pdf-stat">
+                        <span class="pdf-stat-val" style="color:#dc2626">${resIncorrectAnswers.textContent}</span>
+                        <span class="pdf-stat-label">Wrong</span>
+                    </div>
+                    <div class="pdf-stat">
+                        <span class="pdf-stat-val" style="color:#4f46e5">${resScore.textContent}%</span>
+                        <span class="pdf-stat-label">Score</span>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #4f46e5; display: inline-block;">Detailed Review</h3>
             `;
-            footer.innerHTML = '<p>JST Mock Test Series Created By Mukesh Kumar</p>';
-            pdfContent.appendChild(footer);
-            
-            // Set PDF options
+
+            questions.forEach((q, index) => {
+                const userAnswer = userAnswers[index].answer;
+                const isCorrect = userAnswer === q.answer;
+                const attempted = userAnswers[index].attempted;
+
+                // Clean Question Text (Remove Numbering)
+                const cleanQuestion = q.question.replace(/^\d+\.\s*/, '');
+
+                let statusClass = isCorrect ? "pdf-correct" : (attempted ? "pdf-wrong" : "pdf-skipped");
+                let statusText = isCorrect ? "Correct" : (attempted ? "Wrong" : "Skipped");
+
+                reportHTML += `
+                    <div class="pdf-question">
+                        <div class="pdf-q-title">Q${index + 1} (${q.section}): ${cleanQuestion}</div>
+                        <div class="pdf-q-ans">Your Answer: <span class="${statusClass}">${userAnswer || 'Not Answered'}</span> (${statusText})</div>
+                        ${!isCorrect ? `<div class="pdf-q-ans">Correct Answer: <span class="pdf-correct">${q.answer}</span></div>` : ''}
+                    </div>
+                `;
+            });
+
+            pdfContent.innerHTML = reportHTML;
+
             const opt = {
-                margin: [10, 10, 10, 10],
-                filename: `JST_Mock_Test_4_Results_${new Date().toISOString().split('T')[0]}.pdf`,
+                margin: [0.5, 0.5],
+                filename: 'JST_Mock_Test_4_Result.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2,
-                    logging: false,
-                    dpi: 192,
-                    letterRendering: true,
-                    useCORS: true,
-                    backgroundColor: 'white'
-                },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait',
-                    compress: true
-                },
-                pagebreak: { 
-                    mode: ['avoid-all', 'css', 'legacy'],
-                    before: '.page-break'
-                }
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
-            
-            // Show loading message
-            printSaveBtn.disabled = true;
-            printSaveBtn.textContent = 'Generating PDF...';
-            
-            // Generate and save PDF
-            html2pdf().set(opt).from(pdfContent).save().finally(() => {
-                printSaveBtn.disabled = false;
-                printSaveBtn.textContent = 'Print / Save as PDF';
-            });
+
+            setTimeout(() => {
+                html2pdf().from(pdfContent).set(opt).save().then(() => {
+                    pdfOverlay.style.display = 'none';
+                });
+            }, 100);
         });
-
-
-        // Dark Mode Toggle
-        modeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                modeToggleIcon.textContent = '🌙'; // Moon icon for dark mode
-            } else {
-                modeToggleIcon.textContent = '☀️'; // Sun icon for light mode
-            }
-            // Recalculate legend colors when mode changes
-            updateLegendColors();
-        });
-
-        // Function to apply colors to legend items based on current mode
-        function updateLegendColors() {
-            const rootStyle = getComputedStyle(document.documentElement);
-
-            const legendItems = document.querySelectorAll('.palette-legend .legend-item .legend-color');
-            legendItems.forEach(legendColorDiv => {
-                const colorType = legendColorDiv.dataset.colorType;
-                let colorToApply = '';
-
-                switch (colorType) {
-                    case 'current':
-                        colorToApply = rootStyle.getPropertyValue('--primary-color');
-                        break;
-                    case 'answered':
-                        colorToApply = rootStyle.getPropertyValue('--success-color');
-                        break;
-                    case 'marked':
-                        colorToApply = rootStyle.getPropertyValue('--secondary-color');
-                        break;
-                    case 'unattempted':
-                        colorToApply = rootStyle.getPropertyValue('--unattempted-color');
-                        break;
-                    case 'answered-reviewed':
-                        colorToApply = rootStyle.getPropertyValue('--answered-reviewed-color');
-                        break;
-                    default:
-                        colorToApply = '#ccc'; // Fallback
-                }
-                legendColorDiv.style.backgroundColor = colorToApply;
-                legendColorDiv.style.border = `1px solid ${rootStyle.getPropertyValue('--border-color')}`;
-            });
-        }
-
-
-        // Event Listeners
-        passwordSubmitBtn.addEventListener('click', () => {
-            const enteredPassword = passwordInput.value;
-            const encryptedEnteredPassword = obfuscate(enteredPassword);
-
-            if (encryptedEnteredPassword === actualEncryptedPassword) {
-                passwordOverlay.style.display = 'none';
-                quizSection.style.display = 'block';
-                loadQuestion();
-                generateQuestionPalette();
-                timerInterval = setInterval(updateTimer, 1000);
-                quizStarted = true;
-            } else {
-                passwordError.textContent = 'Incorrect password. Please try again.';
-            }
-        });
-
-        // Allow pressing Enter in password field
-        passwordInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                passwordSubmitBtn.click();
-            }
-        });
-
-        prevBtn.addEventListener('click', showPreviousQuestion);
-        nextBtn.addEventListener('click', showNextQuestion);
-        submitQuizFinalBtn.addEventListener('click', submitQuiz);
-        restartQuizBtn.addEventListener('click', restartQuiz);
-
-        // Initial setup
-        updateLegendColors(); // Set initial legend colors based on default mode
     </script>
 </body>
+
 </html>
