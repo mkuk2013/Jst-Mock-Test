@@ -446,342 +446,1107 @@
 
         // Questions from JST Quiz 2
         const questions = [
-            // =======================
-            // SCIENCE – CHEMISTRY (Q1–10)
-            // =======================
-            {
-                question: "1. Sodium hydroxide is the ________?",
-                options: ["Strongest base", "Weakest base", "Weakest acid", "All"],
-                answer: "Strongest base",
-                section: "Chemistry"
-            },
-            {
-                question: "2. Ethyl alcohol was prepared by ...",
-                options: ["Alberuni", "Alrazi", "Jabir bin hayyan", "Al haitham"],
-                answer: "Jabir bin hayyan",
-                section: "Chemistry"
-            },
-            {
-                question: "3. There is Positive Charge on:",
-                options: ["Electron", "Proton", "Neutron", "All"],
-                answer: "Proton",
-                section: "Chemistry"
-            },
-            {
-                question: "4. What is mass number:",
-                options: ["Sum of Proton & Neutron", "Sum of Neutron & Electron", "Sum of Electron & Neutron", "All"],
-                answer: "Sum of Proton & Neutron",
-                section: "Chemistry"
-            },
-            {
-                question: "5. The unit of pressure is...",
-                options: ["Pascal", "Watt", "Coloumb", "Tesla"],
-                answer: "Pascal",
-                section: "Physics"
-            },
-            {
-                question: "6. Lightest form of matter is....",
-                options: ["Plasma state", "Solid state", "Liquid state", "Gases state"],
-                answer: "Plasma state",
-                section: "Chemistry"
-            },
-            {
-                question: "7. All of the following substances are crystalline except_____________?",
-                options: ["Ice", "Plastic", "Sucrose", "Diamond"],
-                answer: "Plastic",
-                section: "Chemistry"
-            },
-            {
-                question: "8. Symbol for Atomic Number:",
-                options: ["S", "Z", "A", "B"],
-                answer: "Z",
-                section: "Chemistry"
-            },
-            {
-                question: "9. A substance that doesn't turn into a new substance is called:",
-                options: ["Physical change", "Chemical Change", "Hybrid Change", "None"],
-                answer: "Physical change",
-                section: "Chemistry"
-            },
-            {
-                question: "10. Atomic number of potassium is...",
-                options: ["15", "16", "18", "19"],
-                answer: "19",
-                section: "Chemistry"
-            },
-            // =======================
-            // SCIENCE – BIOLOGY (Q11–20)
-            // =======================
-            {
-                question: "11. __________ cell carry oxygen around the body?",
-                options: ["Red blood cell", "Muscle cell", "Nerve cell", "NOT"],
-                answer: "Red blood cell",
-                section: "Biology"
-            },
-            {
-                question: "12. ________ cell carry messages around the body?",
-                options: ["Red blood cell", "Cardiovascular cell", "Muscle cell", "Nerve cell"],
-                answer: "Nerve cell",
-                section: "Biology"
-            },
-            {
-                question: "13. Amoeba is _________ organism",
-                options: ["Di cellular", "Unicellular", "Multicellular", "NOT"],
-                answer: "Unicellular",
-                section: "Biology"
-            },
-            {
-                question: "14. Air pollution causes a number of......... disorders",
-                options: ["Digestive", "Respiratory", "Transportation", "None"],
-                answer: "Respiratory",
-                section: "Biology"
-            },
-            {
-                question: "15. Mitochondria is______?",
-                options: ["Food house", "Power House", "Growth house", "NOT"],
-                answer: "Power House",
-                section: "Biology"
-            },
-            {
-                question: "16. Which is (are) part of skin?",
-                options: ["Hypodermis", "Epidermis", "Dermis", "A.O.T"],
-                answer: "A.O.T",
-                section: "Biology"
-            },
-            {
-                question: "17. ______ is Bacterial disease?",
-                options: ["Measles", "Mumps", "Athletes foot", "Typhoid"],
-                answer: "Typhoid",
-                section: "Biology"
-            },
-            {
-                question: "18. How many types of coordination?",
-                options: ["Five", "Two", "Three", "Four"],
-                answer: "Three",
-                section: "Biology"
-            },
-            {
-                question: "19. Most of the space filled with cytoplasm in ______ cell.",
-                options: ["Plant", "Nucleus", "Bacteria", "Fungi"],
-                answer: "Plant",
-                section: "Biology"
-            },
-            {
-                question: "20. _______ Perform gaseous Exchange?",
-                options: ["Bronchi", "Bronchoils", "Alveoli", "None"],
-                answer: "Alveoli",
-                section: "Biology"
-            },
-            // =======================
-            // SCIENCE – PHYSICS (Q21–30)
-            // =======================
-            {
-                question: "21. Lens used for the correction of short sightedness is called...",
-                options: ["Convex", "Biconvex", "Concave", "Biconcave"],
-                answer: "Concave",
-                section: "Physics"
-            },
-            {
-                question: "22. Form of heat transfer, where there is no need of any medium:",
-                options: ["Radiation", "Conduction", "Convection", "None of the above"],
-                answer: "Radiation",
-                section: "Physics"
-            },
-            {
-                question: "23. Change in the speed and direction of light rays due to change of medium is called:",
-                options: ["Refraction of light", "Reflection of Light", "Fraction of light", "All"],
-                answer: "Refraction of light",
-                section: "Physics"
-            },
-            {
-                question: "24. Frequencies less than 20 hertz are called..",
-                options: ["Ultra sonics", "Infra sonics", "Both A & B", "None"],
-                answer: "Infra sonics",
-                section: "Physics"
-            },
-            {
-                question: "25. The Refractive index of water is...",
-                options: ["1.52", "1.33", "1.85", "2.52"],
-                answer: "1.33",
-                section: "Physics"
-            },
-            {
-                question: "26. The band of seven color is:",
-                options: ["Prism", "Spectrum", "Dispersion", "All"],
-                answer: "Spectrum",
-                section: "Physics"
-            },
-            {
-                question: "27. Sound can not pass through:",
-                options: ["Vacuum", "Solid", "Liquid", "None of the above"],
-                answer: "Vacuum",
-                section: "Physics"
-            },
-            {
-                question: "28. A generator produces 30 pulses in 5 seconds. Its frequency is...",
-                options: ["150 hertz", "6 hertz", "60 hertz", "None"],
-                answer: "6 hertz",
-                section: "Physics"
-            },
-            {
-                question: "29. Two......charges repel each other",
-                options: ["Unlike", "Like", "Parallel", "None"],
-                answer: "Like",
-                section: "Physics"
-            },
-            {
-                question: "30. Sound is form of energy that is formed by:",
-                options: ["Vibration", "Momentum", "Force", "All"],
-                answer: "Vibration",
-                section: "Physics"
-            },
-            // =======================
-            // MATHEMATICS (Q31–40)
-            // =======================
-            {
-                question: "31. The product of √a x √b =",
-                options: ["ab", "√ab", "√a²b²", "None of These"],
-                answer: "√ab",
-                section: "Math"
-            },
-            {
-                question: "32. The form x + i y is _______?",
-                options: ["Real number", "Imaginary numbers", "Rational numbers", "Complex numbers"],
-                answer: "Complex numbers",
-                section: "Math"
-            },
-            {
-                question: "33. The average of first five multiples of 3 is ____?",
-                options: ["3", "9", "12", "15"],
-                answer: "9",
-                section: "Math"
-            },
-            {
-                question: "34. The numbers which are repeated after decimal point are _______:",
-                options: ["Reccuring", "Irrational", "Rational", "A&C"],
-                answer: "A&C",
-                section: "Math"
-            },
-            {
-                question: "35. Right angle means the angles of _____?",
-                options: ["90⁰", "60⁰", "120⁰", "180⁰"],
-                answer: "90⁰",
-                section: "Math"
-            },
-            {
-                question: "36. a³-b³ =",
-                options: ["(a+b)(a²-ab+b²)", "(a+b)(a²+ab+b²)", "(a-b)(a²-ab+b²)", "(a-b)(a²+ab+b²)"],
-                answer: "(a-b)(a²-ab+b²)",
-                section: "Math"
-            },
-            {
-                question: "37. x²-1 =",
-                options: ["x²", "(x+1)(x-1)", "1", "(x²+1)(x²-1)"],
-                answer: "(x+1)(x-1)",
-                section: "Math"
-            },
-            {
-                question: "38. (-4,+5) lies in ______ quadrant:",
-                options: ["1st", "2nd", "3rd", "4rth"],
-                answer: "2nd",
-                section: "Math"
-            },
-            {
-                question: "39. A solid has ______ dimensions",
-                options: ["1", "2", "3", "4"],
-                answer: "3",
-                section: "Math"
-            },
-            {
-                question: "40. The multiplicative inverse of 0 is",
-                options: ["1/0", "0", "-0", "Does not exist"],
-                answer: "Does not exist",
-                section: "Math"
-            },
-            // =======================
-            // COMPUTER SCIENCE (Q41–50)
-            // =======================
-            {
-                question: "41. To create clickable text that navigates to another page or section, we use:",
-                options: ["< tag >", "< input >", "< li >", "< a >"],
-                answer: "< a >",
-                section: "Computer"
-            },
-            {
-                question: "42. MSI stands for___________?",
-                options: [
-                    "Medium Scale Integrated Circuits",
-                    "Medium System Integrated Circuits",
-                    "Medium Scale Intelligent Circuit",
-                    "Medium System Intelligent Circuit"
-                ],
-                answer: "Medium Scale Integrated Circuits",
-                section: "Computer"
-            },
-            {
-                question: "43. A web browser will translate the codes on a web page if the extension of the document is:",
-                options: [".html", ".txt", ".doc", ".pdf"],
-                answer: ".html",
-                section: "Computer"
-            },
-            {
-                question: "44. An entertainment site specializes in delivering:",
-                options: [
-                    "News, weather, and current affairs",
-                    "Information about products and services of a business",
-                    "Personal information of a particular person",
-                    "Content like videos, images, and games for entertainment"
-                ],
-                answer: "Content like videos, images, and games for entertainment",
-                section: "Computer"
-            },
-            {
-                question: "45. The type of special website where different users can ask questions and give answers or discuss various topics is called:",
-                options: ["Social site", "Blogs site", "Forums site", "Informational site"],
-                answer: "Forums site",
-                section: "Computer"
-            },
-            {
-                question: "46. The service that is responsible for making websites publicly accessible through the internet is called:",
-                options: ["Web Server", "Web Hosting", "Web Site", "Web Browser"],
-                answer: "Web Hosting",
-                section: "Computer"
-            },
-            {
-                question: "47. Which of the following is a form of malware?",
-                options: ["Antiviruses", "Firewalls", "Spyware", "Keyloggers"],
-                answer: "Spyware",
-                section: "Computer"
-            },
-            {
-                question: "48. What does software piracy involve?",
-                options: [
-                    "The legal use of copyrighted software",
-                    "The illegal use, copying, or distribution of copyrighted software",
-                    "The distribution of open-source software",
-                    "The protection of computer hardware"
-                ],
-                answer: "The illegal use, copying, or distribution of copyrighted software",
-                section: "Computer"
-            },
-            {
-                question: "49. How is intellectual property protected?",
-                options: [
-                    "Through copyrights, patents, and trademarks",
-                    "Through regular data backups",
-                    "By avoiding the use of technology",
-                    "By reporting cyber-attacks to authorities"
-                ],
-                answer: "Through copyrights, patents, and trademarks",
-                section: "Computer"
-            },
-            {
-                question: "50. You can organize files by storing them in ____?",
-                options: ["archives", "folders", "indexes", "lists"],
-                answer: "folders",
-                section: "Computer"
-            }
-        ];
+    {
+        "question": "1. Fill in the blank: John are afraid ___ spiders.",
+        "options": [
+            "in",
+            "on",
+            "with",
+            "of"
+        ],
+        "answer": "of",
+        "section": "English"
+    },
+    {
+        "question": "2. Fill in the blank: Alice is interested ___ History.",
+        "options": [
+            "on",
+            "at",
+            "with",
+            "in"
+        ],
+        "answer": "in",
+        "section": "English"
+    },
+    {
+        "question": "3. Change to Passive Voice: \"The teacher painted the wall.\"",
+        "options": [
+            "\"The teacher is painted the wall.\"",
+            "\"the wall was painted.\"",
+            "\"the wall is painted The teacher.\"",
+            "\"the wall was painted by The teacher.\""
+        ],
+        "answer": "\"the wall was painted by The teacher.\"",
+        "section": "English"
+    },
+    {
+        "question": "4. Change to Passive Voice: \"Mary painted the wall.\"",
+        "options": [
+            "\"Mary is painted the wall.\"",
+            "\"the wall was painted.\"",
+            "\"the wall was painted by Mary.\"",
+            "\"the wall is painted Mary.\""
+        ],
+        "answer": "\"the wall was painted by Mary.\"",
+        "section": "English"
+    },
+    {
+        "question": "5. Change to Passive Voice: \"John eats the apple.\"",
+        "options": [
+            "\"the apple is eats John.\"",
+            "\"the apple was eats.\"",
+            "\"John is eats the apple.\"",
+            "\"the apple is eaten by John.\""
+        ],
+        "answer": "\"the apple is eaten by John.\"",
+        "section": "English"
+    },
+    {
+        "question": "6. Change to Passive Voice: \"The student writes a letter.\"",
+        "options": [
+            "\"a letter was writes.\"",
+            "\"a letter is written by The student.\"",
+            "\"The student is writes a letter.\"",
+            "\"a letter is writes The student.\""
+        ],
+        "answer": "\"a letter is written by The student.\"",
+        "section": "English"
+    },
+    {
+        "question": "7. Change to Passive Voice: \"John writes a letter.\"",
+        "options": [
+            "\"a letter is written by John.\"",
+            "\"John is writes a letter.\"",
+            "\"a letter is writes John.\"",
+            "\"a letter was writes.\""
+        ],
+        "answer": "\"a letter is written by John.\"",
+        "section": "English"
+    },
+    {
+        "question": "8. Change to Passive Voice: \"The dog painted the wall.\"",
+        "options": [
+            "\"the wall was painted.\"",
+            "\"The dog is painted the wall.\"",
+            "\"the wall is painted The dog.\"",
+            "\"the wall was painted by The dog.\""
+        ],
+        "answer": "\"the wall was painted by The dog.\"",
+        "section": "English"
+    },
+    {
+        "question": "9. Change to Passive Voice: \"The teacher eats the apple.\"",
+        "options": [
+            "\"The teacher is eats the apple.\"",
+            "\"the apple is eats The teacher.\"",
+            "\"the apple was eats.\"",
+            "\"the apple is eaten by The teacher.\""
+        ],
+        "answer": "\"the apple is eaten by The teacher.\"",
+        "section": "English"
+    },
+    {
+        "question": "10. Fill in the blank: The teacher is interested ___ History.",
+        "options": [
+            "in",
+            "with",
+            "at",
+            "on"
+        ],
+        "answer": "in",
+        "section": "English"
+    },
+    {
+        "question": "11. General Knowledge Quiz #22: Pakistan became an independent state in which year?",
+        "options": [
+            "1947",
+            "1956",
+            "1940",
+            "1973"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "12. General Knowledge Quiz #4: Pakistan became an independent state in which year?",
+        "options": [
+            "1956",
+            "1947",
+            "1973",
+            "1940"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "13. General Knowledge Quiz #78: Pakistan became an independent state in which year?",
+        "options": [
+            "1947",
+            "1973",
+            "1940",
+            "1956"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "14. General Knowledge Quiz #0: Pakistan became an independent state in which year?",
+        "options": [
+            "1940",
+            "1973",
+            "1947",
+            "1956"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "15. General Knowledge Quiz #20: Pakistan became an independent state in which year?",
+        "options": [
+            "1956",
+            "1947",
+            "1940",
+            "1973"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "16. General Knowledge Quiz #64: Pakistan became an independent state in which year?",
+        "options": [
+            "1947",
+            "1973",
+            "1940",
+            "1956"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "17. General Knowledge Quiz #71: Pakistan became an independent state in which year?",
+        "options": [
+            "1940",
+            "1947",
+            "1956",
+            "1973"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "18. General Knowledge Quiz #63: Pakistan became an independent state in which year?",
+        "options": [
+            "1973",
+            "1947",
+            "1940",
+            "1956"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "19. What is the capital of Gilgit-Baltistan?",
+        "options": [
+            "Karachi",
+            "Lahore",
+            "Quetta",
+            "Gilgit"
+        ],
+        "answer": "Gilgit",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "20. What is the capital of Balochistan?",
+        "options": [
+            "Karachi",
+            "Quetta",
+            "Peshawar",
+            "Lahore"
+        ],
+        "answer": "Quetta",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "21. Pedagogy Scenario #22: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Lecture Method",
+            "Rote Learning",
+            "Brainstorming"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "22. Pedagogy Scenario #30: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Brainstorming",
+            "Lecture Method",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "23. Pedagogy Scenario #32: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Brainstorming",
+            "Lecture Method",
+            "Demonstration",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "24. Pedagogy Scenario #23: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Lecture Method",
+            "Brainstorming",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "25. Pedagogy Scenario #55: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Rote Learning",
+            "Lecture Method",
+            "Brainstorming",
+            "Demonstration"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "26. Pedagogy Scenario #75: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Lecture Method",
+            "Brainstorming",
+            "Demonstration",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "27. According to Bloom's Taxonomy, 'Analyzing' involves:",
+        "options": [
+            "drawing connections among ideas",
+            "recalling facts and basic concepts",
+            "using information in new situations",
+            "explaining ideas or concepts"
+        ],
+        "answer": "drawing connections among ideas",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "28. Pedagogy Scenario #5: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Brainstorming",
+            "Lecture Method",
+            "Rote Learning",
+            "Demonstration"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "29. Pedagogy Scenario #20: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Lecture Method",
+            "Demonstration",
+            "Rote Learning",
+            "Brainstorming"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "30. Pedagogy Scenario #71: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Lecture Method",
+            "Demonstration",
+            "Brainstorming",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "31. Biology Fact Question Variant #56: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Nucleus",
+            "Chloroplast",
+            "Ribosome",
+            "Mitochondria"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "32. Biology Fact Question Variant #35: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Ribosome",
+            "Nucleus",
+            "Chloroplast"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "33. Biology Fact Question Variant #23: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Chloroplast",
+            "Ribosome",
+            "Mitochondria",
+            "Nucleus"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "34. Biology Fact Question Variant #44: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Chloroplast",
+            "Mitochondria",
+            "Ribosome",
+            "Nucleus"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "35. Biology Fact Question Variant #52: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Ribosome",
+            "Nucleus",
+            "Chloroplast",
+            "Mitochondria"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "36. Biology Fact Question Variant #24: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Nucleus",
+            "Ribosome",
+            "Chloroplast"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "37. Biology Fact Question Variant #0: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Nucleus",
+            "Chloroplast",
+            "Ribosome"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "38. Biology Fact Question Variant #2: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Nucleus",
+            "Chloroplast",
+            "Ribosome"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "39. Which system is primarily responsible to exchange oxygen and carbon dioxide?",
+        "options": [
+            "Digestive System",
+            "Nervous System",
+            "Circulatory System",
+            "Respiratory System"
+        ],
+        "answer": "Respiratory System",
+        "section": "Biology"
+    },
+    {
+        "question": "40. Biology Fact Question Variant #9: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Nucleus",
+            "Mitochondria",
+            "Chloroplast",
+            "Ribosome"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "41. What is the primary function of the Golgi Body?",
+        "options": [
+            "It is the control center of the cell and contains DNA",
+            "It is the packages and distributes proteins",
+            "It is the powerhouse of the cell and produces energy",
+            "It is the site of protein synthesis"
+        ],
+        "answer": "It is the packages and distributes proteins",
+        "section": "Biology"
+    },
+    {
+        "question": "42. What is the primary function of the Nucleus?",
+        "options": [
+            "It is the site of protein synthesis",
+            "It is the control center of the cell and contains DNA",
+            "It is the powerhouse of the cell and produces energy",
+            "It is the control center of the cell and contains DNA"
+        ],
+        "answer": "It is the control center of the cell and contains DNA",
+        "section": "Biology"
+    },
+    {
+        "question": "43. Which element has the atomic number 79?",
+        "options": [
+            "Helium",
+            "Gold",
+            "Lithium",
+            "Hydrogen"
+        ],
+        "answer": "Gold",
+        "section": "Chemistry"
+    },
+    {
+        "question": "44. Chemistry Review #23: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Red",
+            "Yellow",
+            "Blue",
+            "Green"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "45. Chemistry Review #12: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Red",
+            "Yellow",
+            "Blue",
+            "Green"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "46. Chemistry Review #44: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Red",
+            "Green",
+            "Yellow",
+            "Blue"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "47. Chemistry Review #21: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Yellow",
+            "Green",
+            "Blue",
+            "Red"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "48. Chemistry Review #13: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Blue",
+            "Red",
+            "Green",
+            "Yellow"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "49. Chemistry Review #39: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Red",
+            "Green",
+            "Blue",
+            "Yellow"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "50. What is the chemical symbol for Sodium?",
+        "options": [
+            "Na",
+            "na",
+            "S",
+            "Nax"
+        ],
+        "answer": "Na",
+        "section": "Chemistry"
+    },
+    {
+        "question": "51. Chemistry Review #74: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Yellow",
+            "Blue",
+            "Green",
+            "Red"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "52. Which element has the atomic number 1?",
+        "options": [
+            "Hydrogen",
+            "Helium",
+            "Carbon",
+            "Lithium"
+        ],
+        "answer": "Hydrogen",
+        "section": "Chemistry"
+    },
+    {
+        "question": "53. Which element has the atomic number 3?",
+        "options": [
+            "Hydrogen",
+            "Helium",
+            "Carbon",
+            "Lithium"
+        ],
+        "answer": "Lithium",
+        "section": "Chemistry"
+    },
+    {
+        "question": "54. What is the chemical symbol for Lithium?",
+        "options": [
+            "Lix",
+            "L",
+            "li",
+            "Li"
+        ],
+        "answer": "Li",
+        "section": "Chemistry"
+    },
+    {
+        "question": "55. A mass of 20 kg accelerates at 2 m/s². What is the net force?",
+        "options": [
+            "40 N",
+            "20 N",
+            "42 N",
+            "22 N"
+        ],
+        "answer": "40 N",
+        "section": "Physics"
+    },
+    {
+        "question": "56. A mass of 20 kg accelerates at 11 m/s². What is the net force?",
+        "options": [
+            "220 N",
+            "200 N",
+            "231 N",
+            "31 N"
+        ],
+        "answer": "220 N",
+        "section": "Physics"
+    },
+    {
+        "question": "57. A mass of 12 kg accelerates at 14 m/s². What is the net force?",
+        "options": [
+            "168 N",
+            "156 N",
+            "182 N",
+            "26 N"
+        ],
+        "answer": "168 N",
+        "section": "Physics"
+    },
+    {
+        "question": "58. A mass of 20 kg accelerates at 13 m/s². What is the net force?",
+        "options": [
+            "260 N",
+            "240 N",
+            "273 N",
+            "33 N"
+        ],
+        "answer": "260 N",
+        "section": "Physics"
+    },
+    {
+        "question": "59. What is the SI unit of force?",
+        "options": [
+            "Newton",
+            "Joule",
+            "Watt",
+            "Pascal"
+        ],
+        "answer": "Newton",
+        "section": "Physics"
+    },
+    {
+        "question": "60. A mass of 14 kg accelerates at 13 m/s². What is the net force?",
+        "options": [
+            "182 N",
+            "168 N",
+            "195 N",
+            "27 N"
+        ],
+        "answer": "182 N",
+        "section": "Physics"
+    },
+    {
+        "question": "61. An object travels 500 meters in 4 seconds. What is its average speed?",
+        "options": [
+            "125 m/s",
+            "130 m/s",
+            "120 m/s",
+            "2000 m/s"
+        ],
+        "answer": "125 m/s",
+        "section": "Physics"
+    },
+    {
+        "question": "62. A mass of 10 kg accelerates at 3 m/s². What is the net force?",
+        "options": [
+            "30 N",
+            "20 N",
+            "33 N",
+            "13 N"
+        ],
+        "answer": "30 N",
+        "section": "Physics"
+    },
+    {
+        "question": "63. An object travels 1000 meters in 2 seconds. What is its average speed?",
+        "options": [
+            "500 m/s",
+            "505 m/s",
+            "495 m/s",
+            "2000 m/s"
+        ],
+        "answer": "500 m/s",
+        "section": "Physics"
+    },
+    {
+        "question": "64. A mass of 16 kg accelerates at 4 m/s². What is the net force?",
+        "options": [
+            "64 N",
+            "48 N",
+            "68 N",
+            "20 N"
+        ],
+        "answer": "64 N",
+        "section": "Physics"
+    },
+    {
+        "question": "65. A mass of 16 kg accelerates at 9 m/s². What is the net force?",
+        "options": [
+            "144 N",
+            "128 N",
+            "153 N",
+            "25 N"
+        ],
+        "answer": "144 N",
+        "section": "Physics"
+    },
+    {
+        "question": "66. A mass of 16 kg accelerates at 7 m/s². What is the net force?",
+        "options": [
+            "112 N",
+            "96 N",
+            "119 N",
+            "23 N"
+        ],
+        "answer": "112 N",
+        "section": "Physics"
+    },
+    {
+        "question": "67. Solve for x: 6x + 7 = 31",
+        "options": [
+            "4",
+            "5",
+            "3",
+            "6"
+        ],
+        "answer": "4",
+        "section": "Mathematics"
+    },
+    {
+        "question": "68. What is the area of a rectangle with length 19 and width 10?",
+        "options": [
+            "190",
+            "192",
+            "29",
+            "58"
+        ],
+        "answer": "190",
+        "section": "Mathematics"
+    },
+    {
+        "question": "69. Solve for x: 7x + 7 = 28",
+        "options": [
+            "3",
+            "4",
+            "2",
+            "5"
+        ],
+        "answer": "3",
+        "section": "Mathematics"
+    },
+    {
+        "question": "70. Solve for x: 14x + 1 = 29",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "71. What is 60% of 800?",
+        "options": [
+            "480",
+            "490",
+            "470",
+            "485"
+        ],
+        "answer": "480",
+        "section": "Mathematics"
+    },
+    {
+        "question": "72. What is the area of a rectangle with length 10 and width 6?",
+        "options": [
+            "60",
+            "62",
+            "16",
+            "32"
+        ],
+        "answer": "60",
+        "section": "Mathematics"
+    },
+    {
+        "question": "73. Solve for x: 9x + 6 = 42",
+        "options": [
+            "4",
+            "5",
+            "3",
+            "6"
+        ],
+        "answer": "4",
+        "section": "Mathematics"
+    },
+    {
+        "question": "74. Solve for x: 14x + 2 = 16",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "75. What is the area of a rectangle with length 20 and width 15?",
+        "options": [
+            "300",
+            "302",
+            "35",
+            "70"
+        ],
+        "answer": "300",
+        "section": "Mathematics"
+    },
+    {
+        "question": "76. What is the area of a rectangle with length 18 and width 5?",
+        "options": [
+            "90",
+            "92",
+            "23",
+            "46"
+        ],
+        "answer": "90",
+        "section": "Mathematics"
+    },
+    {
+        "question": "77. Solve for x: 4x + 2 = 18",
+        "options": [
+            "4",
+            "5",
+            "3",
+            "6"
+        ],
+        "answer": "4",
+        "section": "Mathematics"
+    },
+    {
+        "question": "78. Solve for x: 6x + 3 = 9",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "79. What is the area of a rectangle with length 5 and width 4?",
+        "options": [
+            "20",
+            "22",
+            "9",
+            "18"
+        ],
+        "answer": "20",
+        "section": "Mathematics"
+    },
+    {
+        "question": "80. What is 25% of 350?",
+        "options": [
+            "87.5",
+            "97.5",
+            "77.5",
+            "92.5"
+        ],
+        "answer": "87.5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "81. Solve for x: 12x + 6 = 18",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "82. What is the area of a rectangle with length 8 and width 2?",
+        "options": [
+            "16",
+            "18",
+            "10",
+            "20"
+        ],
+        "answer": "16",
+        "section": "Mathematics"
+    },
+    {
+        "question": "83. What is 50% of 650?",
+        "options": [
+            "325",
+            "335",
+            "315",
+            "330"
+        ],
+        "answer": "325",
+        "section": "Mathematics"
+    },
+    {
+        "question": "84. Solve for x: 15x + 8 = 53",
+        "options": [
+            "3",
+            "4",
+            "2",
+            "5"
+        ],
+        "answer": "3",
+        "section": "Mathematics"
+    },
+    {
+        "question": "85. What is 60% of 200?",
+        "options": [
+            "120",
+            "130",
+            "110",
+            "125"
+        ],
+        "answer": "120",
+        "section": "Mathematics"
+    },
+    {
+        "question": "86. Solve for x: 2x + 6 = 16",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "87. Solve for x: 10x + 10 = 60",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "88. Solve for x: 10x + 8 = 28",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "89. Computer Concept #85: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Web Browser",
+            "Compiler",
+            "Application Software"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "90. Which of the following describes the ROM?",
+        "options": [
+            "volatile memory for short-term data",
+            "non-volatile memory containing boot instructions",
+            "brain of the computer",
+            "network connecting computers in a small area"
+        ],
+        "answer": "non-volatile memory containing boot instructions",
+        "section": "Computer"
+    },
+    {
+        "question": "91. Computer Concept #55: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Web Browser",
+            "Operating System",
+            "Application Software",
+            "Compiler"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "92. Which of the following describes the LAN?",
+        "options": [
+            "non-volatile memory containing boot instructions",
+            "network connecting computers in a small area",
+            "volatile memory for short-term data",
+            "brain of the computer"
+        ],
+        "answer": "network connecting computers in a small area",
+        "section": "Computer"
+    },
+    {
+        "question": "93. Computer Concept #74: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Web Browser",
+            "Application Software",
+            "Operating System",
+            "Compiler"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "94. Which of the following describes the WAN?",
+        "options": [
+            "network covering a large geographic area",
+            "brain of the computer",
+            "non-volatile memory containing boot instructions",
+            "volatile memory for short-term data"
+        ],
+        "answer": "network covering a large geographic area",
+        "section": "Computer"
+    },
+    {
+        "question": "95. Computer Concept #26: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Compiler",
+            "Web Browser",
+            "Application Software"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "96. Computer Concept #70: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Application Software",
+            "Compiler",
+            "Web Browser"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "97. Computer Concept #16: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Application Software",
+            "Operating System",
+            "Web Browser",
+            "Compiler"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "98. Computer Concept #57: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Compiler",
+            "Web Browser",
+            "Application Software"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "99. What does URL stand for?",
+        "options": [
+            "Random Access Memory",
+            "Uniform Resource Locator",
+            "Read-Only Memory",
+            "Central Processing Unit"
+        ],
+        "answer": "Uniform Resource Locator",
+        "section": "Computer"
+    },
+    {
+        "question": "100. Computer Concept #47: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Compiler",
+            "Application Software",
+            "Web Browser",
+            "Operating System"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    }
+];
 
         let currentQuestionIndex = 0;
         let userAnswers = [];

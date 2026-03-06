@@ -462,616 +462,997 @@
         `;
 
         const questions = [
-            // English Section
-            {
-                question: "1. What is the primary cause of climate change in recent centuries?",
-                options: ["A. Volcanic eruptions", "B. Human activities", "C. Solar flares", "D. Ocean currents"],
-                answer: "B. Human activities",
-                section: "English",
-                passage: passageText
-            },
-            {
-                question: "2. Which of the following is a consequence of climate change?",
-                options: ["A. Decreased global temperatures", "B. Stabilized weather patterns", "C. Rising sea levels", "D. Reduced biodiversity protection"],
-                answer: "C. Rising sea levels",
-                section: "English",
-                passage: passageText
-            },
-            {
-                question: "3. What do human activities mainly release that contributes to global warming?",
-                options: ["A. Clean energy", "B. Oxygen", "C. Greenhouse gases", "D. Water vapor"],
-                answer: "C. Greenhouse gases",
-                section: "English",
-                passage: passageText
-            },
-            {
-                question: "4. How can climate change be addressed effectively?",
-                options: ["A. By cutting down more forests", "B. By reducing fossil fuel usage and promoting sustainability", "C. By banning all industrial work", "D. By increasing greenhouse gas production"],
-                answer: "B. By reducing fossil fuel usage and promoting sustainability",
-                section: "English",
-                passage: passageText
-            },
-            {
-                question: "5. What is the tone of the paragraph?",
-                options: ["A. Humorous", "B. Descriptive and informative", "C. Sarcastic", "D. Narrative"],
-                answer: "B. Descriptive and informative",
-                section: "English",
-                passage: passageText
-            },
-            {
-                question: "6. \"Ambiguous\" most nearly means:",
-                options: ["A. Clear", "B. Vague", "C. Loud", "D. Firm"],
-                answer: "B. Vague",
-                section: "English"
-            },
-            {
-                question: "7. \"Ubiquitous\" most nearly means:",
-                options: ["A. Rare", "B. Everywhere", "C. Hidden", "D. Unusual"],
-                answer: "B. Everywhere",
-                section: "English"
-            },
-            {
-                question: "8. \"Frugal\" most nearly means:",
-                options: ["A. Wasteful", "B. Expensive", "C. Thrifty", "D. Stingy"],
-                answer: "C. Thrifty",
-                section: "English"
-            },
-            {
-                question: "9. \"Reluctant\" most nearly means:",
-                options: ["A. Willing", "B. Hesitant", "C. Eager", "D. Active"],
-                answer: "B. Hesitant",
-                section: "English"
-            },
-            {
-                question: "10. Antonym of \"benevolent\":",
-                options: ["A. Kind", "B. Cruel", "C. Noble", "D. Generous"],
-                answer: "B. Cruel",
-                section: "English"
-            },
-            {
-                question: "11. Antonym of \"optimistic\":",
-                options: ["A. Confident", "B. Cheerful", "C. Doubtful", "D. Pessimistic"],
-                answer: "D. Pessimistic",
-                section: "English"
-            },
-            {
-                question: "12. Idiom: \"Beat around the bush\" means:",
-                options: ["A. To avoid the main topic", "B. To fight verbally", "C. To tell a lie", "D. To shout at someone"],
-                answer: "A. To avoid the main topic",
-                section: "English"
-            },
-            {
-                question: "13. Analogy: Apple : Fruit :: Carrot : ?",
-                options: ["A. Fruit", "B. Tree", "C. Vegetable", "D. Herb"],
-                answer: "C. Vegetable",
-                section: "English"
-            },
-            {
-                question: "14. Choose the correct sentence:",
-                options: ["A. He go to school everyday.", "B. He goes to school every day.", "C. He going to school daily.", "D. He gone to school every day."],
-                answer: "B. He goes to school every day.",
-                section: "English"
-            },
-            {
-                question: "15. Identify the error: \"She don't want to come with us.\"",
-                options: ["A. don't → doesn't", "B. want → wants", "C. come → came", "D. No error"],
-                answer: "A. don't → doesn't",
-                section: "English"
-            },
-            {
-                question: "16. Correct sentence:",
-                options: ["A. The books is on the table.", "B. The books are on the table.", "C. The book are on the table.", "D. The book is on the tables."],
-                answer: "B. The books are on the table.",
-                section: "English"
-            },
-            {
-                question: "17. Choose the correct sentence:",
-                options: ["A. Each of the players are ready.", "B. Each of the players is ready.", "C. Each of the player is ready.", "D. Each players is ready."],
-                answer: "B. Each of the players is ready.",
-                section: "English"
-            },
-            {
-                question: "18. Correct the sentence: \"Neither the boy nor his friends is ready.\"",
-                options: ["A. is → are", "B. his → their", "C. boy → boys", "D. friends → friend"],
-                answer: "A. is → are",
-                section: "English"
-            },
-            {
-                question: "19. Fire : Burn :: Ice : ?",
-                options: ["A. Freeze", "B. Melt", "C. Boil", "D. Water"],
-                answer: "B. Melt",
-                section: "English"
-            },
-            {
-                question: "20. Book : Reading :: Fork : ?",
-                options: ["A. Eat", "B. Cook", "C. Spoon", "D. Meal"],
-                answer: "A. Eat",
-                section: "English"
-            },
-            // Math Section
-            {
-                question: "21. If 15 is 25% of a number, find number.",
-                options: ["A) 20", "B) 60", "C) 80", "D) 65"],
-                answer: "B) 60",
-                section: "Mathematics"
-            },
-            {
-                question: "22. If a car travels 120 miles in 2 hours, how far will it travel in 3 hours?",
-                options: ["A) 180miles", "B) 160miles", "C) 140miles", "D) NOT"],
-                answer: "A) 180miles",
-                section: "Mathematics"
-            },
-            {
-                question: "23. What is one-third of \\(3^6\\) ?",
-                options: ["A) \\(3^4\\)", "B) \\(3^5\\)", "C) \\(3^7\\)", "D) NOT"],
-                answer: "B) \\(3^5\\)",
-                section: "Mathematics"
-            },
-            {
-                question: "24. In 10 years, Ali will be twice as old as he was 5 years ago. What is Ali's present age?",
-                options: ["A) 14", "B) 15", "C) 20", "D) 10"],
-                answer: "C) 20",
-                section: "Mathematics"
-            },
-            {
-                question: "25. Which point satisfy equation \\(2x+3y = 8\\)",
-                options: ["A) (1, 4)", "B) (2,2)", "C) (-1, 3)", "D) (-2, 4)"],
-                answer: "D) (-2, 4)",
-                section: "Mathematics"
-            },
-            {
-                question: "26. A business man brought a product for 5000 and sold it for 7500. Find percentage of profit.",
-                options: ["A) 25%", "B) 35%", "C) 50%", "D) 20%"],
-                answer: "C) 50%",
-                section: "Mathematics"
-            },
-            {
-                question: "27. Sara bought a shirt and pair of jeans for 800 rupees. The shirt costs 200 more than jeans. How much does shirt cost?",
-                options: ["A) 300", "B) 350", "C) 400", "D) 500"],
-                answer: "D) 500",
-                section: "Mathematics"
-            },
-            {
-                question: "28. The value of 50% of 30 + 50% of 40 is .....",
-                options: ["A) 38", "B) 35", "C) 24", "D) 30"],
-                answer: "B) 35",
-                section: "Mathematics"
-            },
-            {
-                question: "29. The expression \\(\\sqrt{8} - \\sqrt{32}\\) is equivalent to",
-                options: ["A) \\(-7\\sqrt{2}\\)", "B) \\(-\\sqrt{42}\\)", "C) \\(-2\\sqrt{2}\\)", "D) \\(5\\sqrt{2}\\)"],
-                answer: "C) \\(-2\\sqrt{2}\\)",
-                section: "Mathematics"
-            },
-            {
-                question: "30. Which set contain number \\(\\pi\\) ?",
-                options: ["A) rational number", "B) Irrational number", "C) complex number", "D) NOT"],
-                answer: "B) Irrational number",
-                section: "Mathematics"
-            },
-            {
-                question: "31. \\(7^3 = .....\\)",
-                options: ["A) 243", "B) 343", "C) 241", "D) NOT"],
-                answer: "B) 343",
-                section: "Mathematics"
-            },
-            {
-                question: "32. 25% is equal to ..........",
-                options: ["A) \\(\\frac{1}{4}\\)", "B) \\(\\frac{3}{4}\\)", "C) \\(\\frac{5}{4}\\)", "D) NOT"],
-                answer: "A) \\(\\frac{1}{4}\\)",
-                section: "Mathematics"
-            },
-            {
-                question: "33. Which one of following is proper fraction?",
-                options: ["A) \\(\\frac{11}{4}\\)", "B) \\(\\frac{3}{4}\\)", "C) \\(\\frac{5}{4}\\)", "D) NOT"],
-                answer: "B) \\(\\frac{3}{4}\\)",
-                section: "Mathematics"
-            },
-            {
-                question: "34. \\(3 \\times 0 = .......\\)",
-                options: ["A) 0", "B) 3", "C) 30", "D) NOT"],
-                answer: "A) 0",
-                section: "Mathematics"
-            },
-            {
-                question: "35. \\(1^{100} = ....\\)",
-                options: ["A) 100", "B) 1", "C) 0", "D) NOT"],
-                answer: "B) 1",
-                section: "Mathematics"
-            },
-            {
-                question: "36. If Ayaz bought a book for 100 rupee after 2 months its price is increased by 10% and after more two months its price is decreased by 10%. What is the new price of book?",
-                options: ["A) 110", "B) 100", "C) 99", "D) NOT"],
-                answer: "C) 99",
-                section: "Mathematics"
-            },
-            {
-                question: "37. Income of Ahmed is 30000, he bought shoes for 2700. How much percent of income he spent on shoes?",
-                options: ["A) 9%", "B) 10%", "C) 8%", "D) NOT"],
-                answer: "A) 9%",
-                section: "Mathematics"
-            },
-            {
-                question: "38. \\(\\sqrt{100\\%} = ......\\)",
-                options: ["A) 1", "B) 10", "C) 15", "D) NOT"],
-                answer: "A) 1",
-                section: "Mathematics"
-            },
-            {
-                question: "39. Coefficient of \\(4x^{22}\\) is ......",
-                options: ["A) X", "B) 22", "C) 4", "D) NOT"],
-                answer: "C) 4",
-                section: "Mathematics"
-            },
-            {
-                question: "40. Base of common logarithm is .....",
-                options: ["A) 10", "B) e", "C) x", "D) 0"],
-                answer: "A) 10",
-                section: "Mathematics"
-            },
-            // Science Section
-            {
-                question: "41. What is the role of stomata in plants?",
-                options: ["A. Transport water", "B. Absorb minerals", "C. Exchange gases", "D. Protect the stem"],
-                answer: "C. Exchange gases",
-                section: "Science"
-            },
-            {
-                question: "42. Which of the following is a conductor of electricity?",
-                options: ["A. Glass", "B. Rubber", "C. Copper", "D. Plastic"],
-                answer: "C. Copper",
-                section: "Science"
-            },
-            {
-                question: "43. The outermost layer of Earth is called:",
-                options: ["A. Mantle", "B. Core", "C. Crust", "D. Mesosphere"],
-                answer: "C. Crust",
-                section: "Science"
-            },
-            {
-                question: "44. What happens to the volume of a gas when its pressure is increased?",
-                options: ["A. Increases", "B. Decreases", "C. Remains same", "D. Becomes zero"],
-                answer: "B. Decreases",
-                section: "Science"
-            },
-            {
-                question: "45. The atomic number of an element is equal to:",
-                options: ["A. Number of protons", "B. Number of neutrons", "C. Electrons + protons", "D. Atomic mass"],
-                answer: "A. Number of protons",
-                section: "Science"
-            },
-            {
-                question: "46. Which of these statements about atoms is true?",
-                options: ["A. Atoms are created during chemical reactions", "B. Atoms can be seen with a microscope", "C. Atoms are indivisible by chemical means", "D. Atoms can be broken into molecules"],
-                answer: "C. Atoms are indivisible by chemical means",
-                section: "Science"
-            },
-            {
-                question: "47. Which law states that gas volume is inversely proportional to pressure?",
-                options: ["A. Boyle’s Law", "B. Charles’ Law", "C. Newton’s Law", "D. Ohm’s Law"],
-                answer: "A. Boyle’s Law",
-                section: "Science"
-            },
-            {
-                question: "48. Which organ in the human body produces bile?",
-                options: ["A. Liver", "B. Pancreas", "C. Stomach", "D. Gallbladder"],
-                answer: "A. Liver",
-                section: "Science"
-            },
-            {
-                question: "49. In NaCl, which molecule is the primary electron donor?",
-                options: ["A. Na", "B. Cl", "C. Electron Sharing", "D. NOT"],
-                answer: "A. Na",
-                section: "Science"
-            },
-            {
-                question: "50. The human skeleton is mainly made up of:",
-                options: ["A. Muscles", "B. Cartilage", "C. Ligaments", "D. Bones"],
-                answer: "D. Bones",
-                section: "Science"
-            },
-            {
-                question: "51. Which gas is used in the process of photosynthesis?",
-                options: ["A. Oxygen", "B. Carbon monoxide", "C. Nitrogen", "D. Carbon dioxide"],
-                answer: "D. Carbon dioxide",
-                section: "Science"
-            },
-            {
-                question: "52. What is the function of red blood cells?",
-                options: ["A. Fight diseases", "B. Carry oxygen", "C. Produce hormones", "D. Digest food"],
-                answer: "B. Carry oxygen",
-                section: "Science"
-            },
-            {
-                question: "53. What is the SI unit of pressure?",
-                options: ["A. Newton", "B. Pascal", "C. Watt", "D. Joule"],
-                answer: "B. Pascal",
-                section: "Science"
-            },
-            {
-                question: "54. Which of the following is not a greenhouse gas?",
-                options: ["A. Carbon dioxide", "B. Methane", "C. Oxygen", "D. Nitrous oxide"],
-                answer: "C. Oxygen",
-                section: "Science"
-            },
-            {
-                question: "55. A body has a mass of 10 kg. What is its weight on Earth?",
-                options: ["A. 98 N", "B. 10 N", "C. 9.8 N", "D. 980 N"],
-                answer: "A. 98 N",
-                section: "Science"
-            },
-            {
-                question: "56. Which of the following diseases is caused by a virus?",
-                options: ["A. Malaria", "B. Typhoid", "C. Tuberculosis", "D. Measles"],
-                answer: "D. Measles",
-                section: "Science"
-            },
-            {
-                question: "57. Which instrument is used to measure atmospheric pressure?",
-                options: ["A. Thermometer", "B. Barometer", "C. Hygrometer", "D. Altimeter"],
-                answer: "B. Barometer",
-                section: "Science"
-            },
-            {
-                question: "58. Which of the following gases causes acid rain?",
-                options: ["A. Carbon monoxide", "B. Sulfur dioxide", "C. Oxygen", "D. Nitrogen"],
-                answer: "B. Sulfur dioxide",
-                section: "Science"
-            },
-            {
-                question: "59. Which organ system transports nutrients and oxygen?",
-                options: ["A. Respiratory", "B. Digestive", "C. Circulatory", "D. Excretory"],
-                answer: "C. Circulatory",
-                section: "Science"
-            },
-            {
-                question: "60. The most reactive metal among the following is:",
-                options: ["A. Gold", "B. Copper", "C. Sodium", "D. Silver"],
-                answer: "C. Sodium",
-                section: "Science"
-            },
-            {
-                question: "61. Which hormone regulates blood sugar level?",
-                options: ["A. Insulin", "B. Estrogen", "C. Adrenaline", "D. Testosterone"],
-                answer: "A. Insulin",
-                section: "Science"
-            },
-            {
-                question: "62. DNA replication takes place in which part of the cell cycle?",
-                options: ["A. Mitosis", "B. S phase", "C. G1 phase", "D. G2 phase"],
-                answer: "B. S phase",
-                section: "Science"
-            },
-            {
-                question: "63. Which part of the plant absorbs water and minerals?",
-                options: ["A. Leaf", "B. Stem", "C. Root", "D. Flower"],
-                answer: "C. Root",
-                section: "Science"
-            },
-            {
-                question: "64. The deficiency of iodine causes:",
-                options: ["A. Anemia", "B. Rickets", "C. Goiter", "D. Night blindness"],
-                answer: "C. Goiter",
-                section: "Science"
-            },
-            {
-                question: "65. Which one is a renewable energy source?",
-                options: ["A. Natural gas", "B. Petrol", "C. Wind", "D. Coal"],
-                answer: "C. Wind",
-                section: "Science"
-            },
-            {
-                question: "66. What happens when light enters water from air?",
-                options: ["A. It speeds up", "B. It bends away from the normal", "C. It slows down and bends toward the normal", "D. It travels straight"],
-                answer: "C. It slows down and bends toward the normal",
-                section: "Science"
-            },
-            {
-                question: "67. Which blood component helps in clotting?",
-                options: ["A. Red blood cells", "B. White blood cells", "C. Platelets", "D. Plasma"],
-                answer: "C. Platelets",
-                section: "Science"
-            },
-            {
-                question: "68. Which particle causes electric current in metals?",
-                options: ["A. Protons", "B. Neutrons", "C. Electrons", "D. Ions"],
-                answer: "C. Electrons",
-                section: "Science"
-            },
-            {
-                question: "69. Which part of the brain controls balance and coordination?",
-                options: ["A. Cerebrum", "B. Medulla", "C. Cerebellum", "D. Hypothalamus"],
-                answer: "C. Cerebellum",
-                section: "Science"
-            },
-            {
-                question: "70. Which of the following is a strong electrolyte?",
-                options: ["A. Glucose", "B. NaCl", "C. Urea", "D. Ethanol"],
-                answer: "B. NaCl",
-                section: "Science"
-            },
-            {
-                question: "71. Why is water called a universal solvent?",
-                options: ["A. It dissolves gases", "B. It dissolves ionic and polar compounds", "C. It has high boiling point", "D. It is non-polar"],
-                answer: "B. It dissolves ionic and polar compounds",
-                section: "Science"
-            },
-            {
-                question: "72. Which of the following is a chemical change?",
-                options: ["A. Ice melting", "B. Water boiling", "C. Burning of wood", "D. Breaking of glass"],
-                answer: "C. Burning of wood",
-                section: "Science"
-            },
-            {
-                question: "73. Which vitamin is made by the skin in sunlight?",
-                options: ["A. Vitamin A", "B. Vitamin B", "C. Vitamin C", "D. Vitamin D"],
-                answer: "D. Vitamin D",
-                section: "Science"
-            },
-            {
-                question: "74. What do enzymes do in chemical reactions?",
-                options: ["A. Raise temperature", "B. Get consumed", "C. Lower activation energy", "D. Convert ATP to proteins"],
-                answer: "C. Lower activation energy",
-                section: "Science"
-            },
-            {
-                question: "75. Which process in plants uses sunlight to make food?",
-                options: ["A. Respiration", "B. Germination", "C. Photosynthesis", "D. Fermentation"],
-                answer: "C. Photosynthesis",
-                section: "Science"
-            },
-            {
-                question: "76. Which of these is not a property of metals?",
-                options: ["A. Good conductor", "B. Brittle", "C. Malleable", "D. Ductile"],
-                answer: "B. Brittle",
-                section: "Science"
-            },
-            {
-                question: "77. What is the main source of energy for life on Earth?",
-                options: ["A. Water", "B. Oxygen", "C. Sun", "D. Soil"],
-                answer: "C. Sun",
-                section: "Science"
-            },
-            {
-                question: "78. In a transformer, if the secondary coil has more turns:",
-                options: ["A. Step-down transformer", "B. Step-up transformer", "C. Rectifier", "D. Inductor"],
-                answer: "B. Step-up transformer",
-                section: "Science"
-            },
-            {
-                question: "79. Which organ helps in breathing?",
-                options: ["A. Brain", "B. Liver", "C. Heart", "D. Lungs"],
-                answer: "D. Lungs",
-                section: "Science"
-            },
-            {
-                question: "80. Which of the following is solid at room temperature?",
-                options: ["A. Oxygen", "B. Water", "C. Iron", "D. Alcohol"],
-                answer: "C. Iron",
-                section: "Science"
-            },
-            // GK/Computer Section
-            {
-                question: "81. What does CPU stand for?",
-                options: ["A. Central Processing Unit", "B. Central Peripheral Unit", "C. Computer Power Unit", "D. Control Program Unit"],
-                answer: "A. Central Processing Unit",
-                section: "Computer"
-            },
-            {
-                question: "82. Shortcut for \"Undo\" in MS Word is:",
-                options: ["A. Ctrl + U", "B. Ctrl + Z", "C. Ctrl + Y", "D. Ctrl + X"],
-                answer: "B. Ctrl + Z",
-                section: "Computer"
-            },
-            {
-                question: "83. A device that connects different networks is:",
-                options: ["A. Router", "B. Switch", "C. Modem", "D. Hub"],
-                answer: "A. Router",
-                section: "Computer"
-            },
-            {
-                question: "84. Which of these is a spreadsheet software?",
-                options: ["A. MS Word", "B. PowerPoint", "C. Excel", "D. Photoshop"],
-                answer: "C. Excel",
-                section: "Computer"
-            },
-            {
-                question: "85. Ghazwa-e-Badr was fought in which Hijri year?",
-                options: ["A. 2 AH", "B. 3 AH", "C. 5 AH", "D. 1 AH"],
-                answer: "A. 2 AH",
-                section: "Islamiat"
-            },
-            {
-                question: "86. Who was the first Khalifa of Islam?",
-                options: ["A. Hazrat Umar (RA)", "B. Hazrat Usman (RA)", "C. Hazrat Abu Bakr (RA)", "D. Hazrat Ali (RA)"],
-                answer: "C. Hazrat Abu Bakr (RA)",
-                section: "Islamiat"
-            },
-            {
-                question: "87. Which Prophet is called \"Kaleem Ullah\"?",
-                options: ["A. Musa (AS)", "B. Isa (AS)", "C. Dawood (AS)", "D. Ibrahim (AS)"],
-                answer: "A. Musa (AS)",
-                section: "Islamiat"
-            },
-            {
-                question: "88. How many Farz prayers are there daily in Islam?",
-                options: ["A. Three", "B. Four", "C. Five", "D. Six"],
-                answer: "C. Five",
-                section: "Islamiat"
-            },
-            {
-                question: "89. Simla Agreement between Pakistan and India was signed in:",
-                options: ["A. 1965", "B. 1971", "C. 1972", "D. 1999"],
-                answer: "C. 1972",
-                section: "Pak Study"
-            },
-            {
-                question: "90. Who wrote Now or Never proposing Pakistan's idea?",
-                options: ["A. Allama Iqbal", "B. Rehmat Ali", "C. Jinnah", "D. Liaquat Ali Khan"],
-                answer: "B. Rehmat Ali",
-                section: "Pak Study"
-            },
-            {
-                question: "91. The Objectives Resolution was passed in which year?",
-                options: ["A. 1947", "B. 1948", "C. 1949", "D. 1956"],
-                answer: "C. 1949",
-                section: "Pak Study"
-            },
-            {
-                question: "92. Islam is declared the state religion under which article?",
-                options: ["A. Article 1", "B. Article 2", "C. Article 9", "D. Article 20"],
-                answer: "B. Article 2",
-                section: "Pak Study"
-            },
-            {
-                question: "93. Headquarters of the UN is in:",
-                options: ["A. Geneva", "B. Paris", "C. New York", "D. London"],
-                answer: "C. New York",
-                section: "General Knowledge"
-            },
-            {
-                question: "94. First woman PM of a Muslim country?",
-                options: ["A. Indira Gandhi", "B. Benazir Bhutto", "C. Sheikh Hasina", "D. Fatima Jinnah"],
-                answer: "B. Benazir Bhutto",
-                section: "General Knowledge"
-            },
-            {
-                question: "95. Strait connecting Mediterranean Sea to Atlantic?",
-                options: ["A. Gibraltar", "B. Hormuz", "C. Bering", "D. Malacca"],
-                answer: "A. Gibraltar",
-                section: "General Knowledge"
-            },
-            {
-                question: "96. What is the longest river in the world?",
-                options: ["A. Amazon", "B. Nile", "C. Indus", "D. Yangtze"],
-                answer: "B. Nile",
-                section: "General Knowledge"
-            },
-            {
-                question: "97. Who is Pakistan's PM (July 2025)?",
-                options: ["A. Anwaar-ul-Haq Kakar", "B. Mohsin Naqvi", "C. Bilawal Bhutto", "D. Shahbaz Sharif"],
-                answer: "D. Shahbaz Sharif",
-                section: "Current Affairs"
-            },
-            {
-                question: "98. ICC T20 World Cup 2024 was co-hosted by:",
-                options: ["A. India & UAE", "B. USA & West Indies", "C. England & India", "D. Australia & NZ"],
-                answer: "B. USA & West Indies",
-                section: "Sports"
-            },
-            {
-                question: "99. Operation launched in 2024 by Pak Army:",
-                options: ["A. Zarb-e-Azb", "B. Azm-e-Istehkam", "C. Radd-ul-Fasaad", "D. Rah-e-Raast"],
-                answer: "B. Azm-e-Istehkam",
-                section: "Current Affairs"
-            },
-            {
-                question: "100. Current COAS of Pakistan (2025):",
-                options: ["A. Gen. Faiz Hameed", "B. Gen. Asim Munir", "C. Gen. Sahir Shamshad", "D. Gen. Bajwa"],
-                answer: "B. Gen. Asim Munir",
-                section: "Current Affairs"
-            }
-        ];
+    {
+        "question": "1. General Knowledge Quiz #84: Pakistan became an independent state in which year?",
+        "options": [
+            "1973",
+            "1940",
+            "1956",
+            "1947"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "2. General Knowledge Quiz #18: Pakistan became an independent state in which year?",
+        "options": [
+            "1947",
+            "1956",
+            "1940",
+            "1973"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "3. General Knowledge Quiz #25: Pakistan became an independent state in which year?",
+        "options": [
+            "1956",
+            "1940",
+            "1973",
+            "1947"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "4. General Knowledge Quiz #57: Pakistan became an independent state in which year?",
+        "options": [
+            "1956",
+            "1940",
+            "1947",
+            "1973"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "5. General Knowledge Quiz #58: Pakistan became an independent state in which year?",
+        "options": [
+            "1956",
+            "1973",
+            "1947",
+            "1940"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "6. General Knowledge Quiz #24: Pakistan became an independent state in which year?",
+        "options": [
+            "1940",
+            "1956",
+            "1973",
+            "1947"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "7. General Knowledge Quiz #47: Pakistan became an independent state in which year?",
+        "options": [
+            "1956",
+            "1940",
+            "1973",
+            "1947"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "8. General Knowledge Quiz #65: Pakistan became an independent state in which year?",
+        "options": [
+            "1956",
+            "1947",
+            "1973",
+            "1940"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "9. General Knowledge Quiz #80: Pakistan became an independent state in which year?",
+        "options": [
+            "1956",
+            "1947",
+            "1973",
+            "1940"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "10. General Knowledge Quiz #13: Pakistan became an independent state in which year?",
+        "options": [
+            "1973",
+            "1947",
+            "1940",
+            "1956"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "11. Pedagogy Scenario #63: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Brainstorming",
+            "Demonstration",
+            "Lecture Method",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "12. Pedagogy Scenario #57: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Brainstorming",
+            "Rote Learning",
+            "Lecture Method"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "13. According to Bloom's Taxonomy, 'Evaluating' involves:",
+        "options": [
+            "using information in new situations",
+            "justifying a stand or decision",
+            "recalling facts and basic concepts",
+            "explaining ideas or concepts"
+        ],
+        "answer": "justifying a stand or decision",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "14. Pedagogy Scenario #67: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Rote Learning",
+            "Brainstorming",
+            "Lecture Method"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "15. Pedagogy Scenario #69: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Lecture Method",
+            "Rote Learning",
+            "Brainstorming",
+            "Demonstration"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "16. Pedagogy Scenario #65: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Rote Learning",
+            "Brainstorming",
+            "Lecture Method"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "17. Pedagogy Scenario #45: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Brainstorming",
+            "Lecture Method",
+            "Demonstration",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "18. Pedagogy Scenario #80: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Lecture Method",
+            "Brainstorming",
+            "Rote Learning",
+            "Demonstration"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "19. Pedagogy Scenario #73: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Lecture Method",
+            "Rote Learning",
+            "Brainstorming",
+            "Demonstration"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "20. Pedagogy Scenario #48: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Lecture Method",
+            "Rote Learning",
+            "Brainstorming"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "21. Biology Fact Question Variant #5: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Ribosome",
+            "Nucleus",
+            "Chloroplast"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "22. Biology Fact Question Variant #46: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Chloroplast",
+            "Ribosome",
+            "Nucleus"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "23. Biology Fact Question Variant #33: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Nucleus",
+            "Chloroplast",
+            "Ribosome"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "24. Biology Fact Question Variant #25: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Chloroplast",
+            "Ribosome",
+            "Mitochondria",
+            "Nucleus"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "25. Biology Fact Question Variant #81: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Chloroplast",
+            "Nucleus",
+            "Ribosome"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "26. What is the primary function of the Cell Membrane?",
+        "options": [
+            "It is the semi-permeable boundary of the cell",
+            "It is the powerhouse of the cell and produces energy",
+            "It is the control center of the cell and contains DNA",
+            "It is the site of protein synthesis"
+        ],
+        "answer": "It is the semi-permeable boundary of the cell",
+        "section": "Biology"
+    },
+    {
+        "question": "27. Biology Fact Question Variant #4: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Ribosome",
+            "Nucleus",
+            "Chloroplast"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "28. Biology Fact Question Variant #14: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Chloroplast",
+            "Mitochondria",
+            "Nucleus",
+            "Ribosome"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "29. Biology Fact Question Variant #40: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Ribosome",
+            "Mitochondria",
+            "Nucleus",
+            "Chloroplast"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "30. Biology Fact Question Variant #54: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Mitochondria",
+            "Chloroplast",
+            "Nucleus",
+            "Ribosome"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "31. Biology Fact Question Variant #34: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Nucleus",
+            "Ribosome",
+            "Mitochondria",
+            "Chloroplast"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "32. Biology Fact Question Variant #80: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Nucleus",
+            "Mitochondria",
+            "Chloroplast",
+            "Ribosome"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "33. Chemistry Review #77: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Blue",
+            "Red",
+            "Green",
+            "Yellow"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "34. What is the chemical symbol for Carbon?",
+        "options": [
+            "c",
+            "Cx",
+            "C",
+            "C"
+        ],
+        "answer": "C",
+        "section": "Chemistry"
+    },
+    {
+        "question": "35. Chemistry Review #47: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Blue",
+            "Green",
+            "Yellow",
+            "Red"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "36. What is the chemical symbol for Helium?",
+        "options": [
+            "he",
+            "He",
+            "H",
+            "Hex"
+        ],
+        "answer": "He",
+        "section": "Chemistry"
+    },
+    {
+        "question": "37. Chemistry Review #40: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Blue",
+            "Green",
+            "Yellow",
+            "Red"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "38. Chemistry Review #69: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Red",
+            "Yellow",
+            "Green",
+            "Blue"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "39. Chemistry Review #62: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Green",
+            "Yellow",
+            "Red",
+            "Blue"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "40. Which element has the atomic number 17?",
+        "options": [
+            "Helium",
+            "Lithium",
+            "Chlorine",
+            "Hydrogen"
+        ],
+        "answer": "Chlorine",
+        "section": "Chemistry"
+    },
+    {
+        "question": "41. Chemistry Review #17: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Yellow",
+            "Green",
+            "Red",
+            "Blue"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "42. What is the chemical formula for Sodium Chloride (Table Salt)?",
+        "options": [
+            "H2O",
+            "NaCl",
+            "HCl",
+            "CO2"
+        ],
+        "answer": "NaCl",
+        "section": "Chemistry"
+    },
+    {
+        "question": "43. Which element has the atomic number 2?",
+        "options": [
+            "Helium",
+            "Hydrogen",
+            "Carbon",
+            "Lithium"
+        ],
+        "answer": "Helium",
+        "section": "Chemistry"
+    },
+    {
+        "question": "44. Chemistry Review #0: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Red",
+            "Green",
+            "Blue",
+            "Yellow"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "45. An object travels 900 meters in 2 seconds. What is its average speed?",
+        "options": [
+            "450 m/s",
+            "455 m/s",
+            "445 m/s",
+            "1800 m/s"
+        ],
+        "answer": "450 m/s",
+        "section": "Physics"
+    },
+    {
+        "question": "46. An object travels 900 meters in 8 seconds. What is its average speed?",
+        "options": [
+            "112.5 m/s",
+            "117.5 m/s",
+            "107.5 m/s",
+            "7200 m/s"
+        ],
+        "answer": "112.5 m/s",
+        "section": "Physics"
+    },
+    {
+        "question": "47. A mass of 16 kg accelerates at 5 m/s². What is the net force?",
+        "options": [
+            "80 N",
+            "64 N",
+            "85 N",
+            "21 N"
+        ],
+        "answer": "80 N",
+        "section": "Physics"
+    },
+    {
+        "question": "48. An object travels 400 meters in 6 seconds. What is its average speed?",
+        "options": [
+            "66.66666666666667 m/s",
+            "71.66666666666667 m/s",
+            "61.66666666666667 m/s",
+            "2400 m/s"
+        ],
+        "answer": "66.66666666666667 m/s",
+        "section": "Physics"
+    },
+    {
+        "question": "49. A mass of 24 kg accelerates at 14 m/s². What is the net force?",
+        "options": [
+            "336 N",
+            "312 N",
+            "350 N",
+            "38 N"
+        ],
+        "answer": "336 N",
+        "section": "Physics"
+    },
+    {
+        "question": "50. An object travels 800 meters in 8 seconds. What is its average speed?",
+        "options": [
+            "100 m/s",
+            "105 m/s",
+            "95 m/s",
+            "6400 m/s"
+        ],
+        "answer": "100 m/s",
+        "section": "Physics"
+    },
+    {
+        "question": "51. A mass of 10 kg accelerates at 8 m/s². What is the net force?",
+        "options": [
+            "80 N",
+            "70 N",
+            "88 N",
+            "18 N"
+        ],
+        "answer": "80 N",
+        "section": "Physics"
+    },
+    {
+        "question": "52. A mass of 22 kg accelerates at 3 m/s². What is the net force?",
+        "options": [
+            "66 N",
+            "44 N",
+            "69 N",
+            "25 N"
+        ],
+        "answer": "66 N",
+        "section": "Physics"
+    },
+    {
+        "question": "53. A mass of 4 kg accelerates at 14 m/s². What is the net force?",
+        "options": [
+            "56 N",
+            "52 N",
+            "70 N",
+            "18 N"
+        ],
+        "answer": "56 N",
+        "section": "Physics"
+    },
+    {
+        "question": "54. An object travels 100 meters in 8 seconds. What is its average speed?",
+        "options": [
+            "12.5 m/s",
+            "17.5 m/s",
+            "7.5 m/s",
+            "800 m/s"
+        ],
+        "answer": "12.5 m/s",
+        "section": "Physics"
+    },
+    {
+        "question": "55. A mass of 4 kg accelerates at 9 m/s². What is the net force?",
+        "options": [
+            "36 N",
+            "32 N",
+            "45 N",
+            "13 N"
+        ],
+        "answer": "36 N",
+        "section": "Physics"
+    },
+    {
+        "question": "56. A mass of 22 kg accelerates at 5 m/s². What is the net force?",
+        "options": [
+            "110 N",
+            "88 N",
+            "115 N",
+            "27 N"
+        ],
+        "answer": "110 N",
+        "section": "Physics"
+    },
+    {
+        "question": "57. Solve for x: 15x + 6 = 81",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "58. What is the area of a rectangle with length 14 and width 2?",
+        "options": [
+            "28",
+            "30",
+            "16",
+            "32"
+        ],
+        "answer": "28",
+        "section": "Mathematics"
+    },
+    {
+        "question": "59. Solve for x: 2x + 9 = 11",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "60. Solve for x: 10x + 5 = 35",
+        "options": [
+            "3",
+            "4",
+            "2",
+            "5"
+        ],
+        "answer": "3",
+        "section": "Mathematics"
+    },
+    {
+        "question": "61. Solve for x: 6x + 1 = 13",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "62. What is the area of a rectangle with length 12 and width 2?",
+        "options": [
+            "24",
+            "26",
+            "14",
+            "28"
+        ],
+        "answer": "24",
+        "section": "Mathematics"
+    },
+    {
+        "question": "63. Solve for x: 13x + 3 = 68",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "64. Solve for x: 8x + 4 = 20",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "65. Solve for x: 14x + 9 = 23",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "66. What is 30% of 450?",
+        "options": [
+            "135",
+            "145",
+            "125",
+            "140"
+        ],
+        "answer": "135",
+        "section": "Mathematics"
+    },
+    {
+        "question": "67. Solve for x: 6x + 6 = 30",
+        "options": [
+            "4",
+            "5",
+            "3",
+            "6"
+        ],
+        "answer": "4",
+        "section": "Mathematics"
+    },
+    {
+        "question": "68. Solve for x: 11x + 10 = 32",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "69. Solve for x: 8x + 3 = 43",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "70. Solve for x: 15x + 1 = 16",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "71. Solve for x: 14x + 3 = 31",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "72. What is 20% of 800?",
+        "options": [
+            "160",
+            "170",
+            "150",
+            "165"
+        ],
+        "answer": "160",
+        "section": "Mathematics"
+    },
+    {
+        "question": "73. What is 40% of 900?",
+        "options": [
+            "360",
+            "370",
+            "350",
+            "365"
+        ],
+        "answer": "360",
+        "section": "Mathematics"
+    },
+    {
+        "question": "74. Solve for x: 13x + 5 = 18",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "75. Solve for x: 13x + 10 = 49",
+        "options": [
+            "3",
+            "4",
+            "2",
+            "5"
+        ],
+        "answer": "3",
+        "section": "Mathematics"
+    },
+    {
+        "question": "76. Solve for x: 4x + 7 = 15",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "77. Solve for x: 8x + 9 = 49",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "78. Solve for x: 6x + 9 = 39",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "79. Computer Concept #53: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Application Software",
+            "Compiler",
+            "Web Browser"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "80. Computer Concept #10: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Web Browser",
+            "Application Software",
+            "Compiler"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "81. Computer Concept #43: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Web Browser",
+            "Application Software",
+            "Compiler"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "82. Computer Concept #42: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Web Browser",
+            "Operating System",
+            "Application Software",
+            "Compiler"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "83. Computer Concept #60: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Application Software",
+            "Operating System",
+            "Compiler",
+            "Web Browser"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "84. Computer Concept #4: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Application Software",
+            "Operating System",
+            "Compiler",
+            "Web Browser"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "85. Computer Concept #13: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Compiler",
+            "Web Browser",
+            "Application Software"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "86. Computer Concept #69: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Compiler",
+            "Web Browser",
+            "Operating System",
+            "Application Software"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "87. Computer Concept #76: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Application Software",
+            "Compiler",
+            "Web Browser"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "88. Computer Concept #58: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Application Software",
+            "Web Browser",
+            "Compiler",
+            "Operating System"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "89. Computer Concept #50: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Compiler",
+            "Web Browser",
+            "Application Software",
+            "Operating System"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "90. Computer Concept #88: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Web Browser",
+            "Compiler",
+            "Application Software"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    }
+];
 
         let currentQuestionIndex = 0;
         let userAnswers = [];

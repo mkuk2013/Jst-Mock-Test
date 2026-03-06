@@ -462,612 +462,1107 @@
         `;
 
         const questions = [
-            {
-                question: "1. What is the most suitable title for the passage?",
-                options: ["The Dangers of Monsoon", "Floods: A National Emergency", "Floods: Blessing in Disguise", "Agriculture in Punjab and Sindh"],
-                answer: "Floods: Blessing in Disguise",
-                section: "Passage-Based Questions",
-                passage: passageText
-            },
-            {
-                question: "2. Which crops were mentioned as benefiting from floods?",
-                options: ["Cotton and barley", "Mango and banana", "Wheat, rice, and sugarcane", "Tea and coffee"],
-                answer: "Wheat, rice, and sugarcane",
-                section: "Passage-Based Questions",
-                passage: passageText
-            },
-            {
-                question: "3. What ecological benefit do floods provide?",
-                options: ["Desert expansion", "Habitat for birds and fish", "Forest fires", "Loss of biodiversity"],
-                answer: "Habitat for birds and fish",
-                section: "Passage-Based Questions",
-                passage: passageText
-            },
-            {
-                question: "4. What kind of tense is mostly used in the third paragraph?",
-                options: ["Past continuous", "Future perfect", "Present simple", "Past perfect"],
-                answer: "Present simple",
-                section: "Passage-Based Questions",
-                passage: passageText
-            },
-            {
-                question: "5. The similar meaning of 'lead to' is:",
-                options: ["connect", "result in", "guide", "effect"],
-                answer: "result in",
-                section: "Passage-Based Questions",
-                passage: passageText
-            },
-            {
-                question: "6. The cat jumped ___ the table and landed softly.",
-                options: ["across", "over", "beneath", "along"],
-                answer: "over",
-                section: "Grammar"
-            },
-            {
-                question: "7. The treasure was buried deep ___ the ground.",
-                options: ["over", "across", "beneath", "along"],
-                answer: "beneath",
-                section: "Grammar"
-            },
-            {
-                question: "8. The plane flew ___ the clouds.",
-                options: ["beneath", "over", "through", "out of"],
-                answer: "over",
-                section: "Grammar"
-            },
-            {
-                question: "9. We watched the match ___ television.",
-                options: ["at", "by", "on", "in"],
-                answer: "on",
-                section: "Grammar"
-            },
-            {
-                question: "10. He is junior ___ me in rank.",
-                options: ["from", "to", "than", "with"],
-                answer: "to",
-                section: "Grammar"
-            },
-            {
-                question: "11. Choose the correct sentence:",
-                options: ["He has a six-years-old daughter.", "He has a six-year-old daughter.", "He has six-years-old daughter.", "He has daughter of six years old."],
-                answer: "He has a six-year-old daughter.",
-                section: "Grammar"
-            },
-            {
-                question: "12. The teacher gives us ___ advice every day.",
-                options: ["Many", "Some", "Much", "Few"],
-                answer: "Some",
-                section: "Grammar"
-            },
-            {
-                question: "13. He ___ not ___ to the noise.",
-                options: ["React", "Response", "Reply", "Mind"],
-                answer: "React",
-                section: "Grammar"
-            },
-            {
-                question: "14. The company ___ rapidly due to global demand nowadays.",
-                options: ["is expanding", "expands", "has expanded", "expanding"],
-                answer: "is expanding",
-                section: "Grammar"
-            },
-            {
-                question: "15. They have travelled ___ far distance.",
-                options: ["a", "much away", "further", "farther"],
-                answer: "a",
-                section: "Grammar"
-            },
-            {
-                question: "16. Which is a noble gas?",
-                options: ["Oxygen", "Nitrogen", "Helium", "Carbon"],
-                answer: "Helium",
-                section: "Vocabulary"
-            },
-            {
-                question: "17. Who invented the printing press?",
-                options: ["Isaac Newton", "Johannes Gutenberg", "Benjamin Franklin", "Graham Bell"],
-                answer: "Johannes Gutenberg",
-                section: "Vocabulary"
-            },
-            {
-                question: "18. Which is a radioactive element?",
-                options: ["Iron", "Copper", "Uranium", "Oxygen"],
-                answer: "Uranium",
-                section: "Vocabulary"
-            },
-            {
-                question: "19. Washing soda is:",
-                options: ["NaCl", "NaHCO₃", "CH₃-COOH", "Na₂CO₃"],
-                answer: "Na₂CO₃",
-                section: "Vocabulary"
-            },
-            {
-                question: "20. Vinegar contains:",
-                options: ["Acetic acid", "Citric acid", "Hydrochloric acid", "Sulphuric acid"],
-                answer: "Acetic acid",
-                section: "Vocabulary"
-            },
-            {
-                question: "21. All worked very hard to earn the teacher’s praise.",
-                options: ["take", "gain", "ask", "make money"],
-                answer: "gain",
-                section: "Synonyms & Antonyms"
-            },
-            {
-                question: "22. Peace and stability bring prosperity to a nation.",
-                options: ["trouble", "sadness", "affluence", "wealthy"],
-                answer: "affluence",
-                section: "Synonyms & Antonyms"
-            },
-            {
-                question: "23. The contestants waited nervously for their turn to perform in the final round.",
-                options: ["Judges", "Players", "Competitors", "Viewers"],
-                answer: "Competitors",
-                section: "Synonyms & Antonyms"
-            },
-            {
-                question: "24. The child was sobbing in the corner.",
-                options: ["shouting", "weeping", "smiling", "yelling"],
-                answer: "weeping",
-                section: "Synonyms & Antonyms"
-            },
-            {
-                question: "25. The land was barren, so no crops could grow there.",
-                options: ["empty", "green", "unproductive", "fertile"],
-                answer: "green",
-                section: "Antonyms"
-            },
-            {
-                question: "26. The crops were destroyed by the heavy floods.",
-                options: ["Burned", "Saved", "Covered", "Planted"],
-                answer: "Saved",
-                section: "Antonyms"
-            },
-            {
-                question: "27. He has more grapes than me.",
-                options: ["extra", "some", "less", "fewer"],
-                answer: "less",
-                section: "Antonyms"
-            },
-            {
-                question: "28. A person who walks in sleep is called:",
-                options: ["insomniac", "somnambulist", "narcissist", "pessimist"],
-                answer: "somnambulist",
-                section: "One-word Substitution"
-            },
-            {
-                question: "29. A place where dead bodies are kept before burial:",
-                options: ["dispensary", "mortuary", "sanctuary", "infirmary"],
-                answer: "mortuary",
-                section: "One-word Substitution"
-            },
-            {
-                question: "30. Preliminary",
-                options: ["Prelimenary", "Preliminery", "Preliminary", "Prelimenary"],
-                answer: "Preliminary",
-                section: "Spelling"
-            },
-            {
-                question: "31. Tournament",
-                options: ["Tournamant", "Torunament", "Tournament", "Tuorenament"],
-                answer: "Tournament",
-                section: "Spelling"
-            },
-            {
-                question: "32. He jumped ___ the river to save the child.",
-                options: ["into", "in", "at", "over"],
-                answer: "into",
-                section: "Prepositions"
-            },
-            {
-                question: "33. He travels ___ bus every day.",
-                options: ["by", "in", "with", "on"],
-                answer: "by",
-                section: "Prepositions"
-            },
-            {
-                question: "34. He writes ___ pencil, not with a pen.",
-                options: ["with", "in", "by", "on"],
-                answer: "with",
-                section: "Prepositions"
-            },
-            {
-                question: "35. It is ___ o’clock.",
-                options: ["on", "my watch", "in", "by"],
-                answer: "my watch",
-                section: "Prepositions"
-            },
-            {
-                question: "36. What is the most abundant gas in Earth’s atmosphere?",
-                options: ["Oxygen", "Nitrogen", "Hydrogen", "Carbon dioxide"],
-                answer: "Nitrogen",
-                section: "General Knowledge"
-            },
-            {
-                question: "37. Which country is considered the best chemical disinfectant?",
-                options: ["Alcohol", "Bleach", "Chlorine", "Ammonia"],
-                answer: "Alcohol",
-                section: "General Knowledge"
-            },
-            {
-                question: "38. Who prepared Hydrochloric and Sulphuric acid?",
-                options: ["Ibn Sina", "Jabir bin Hayyan", "Al-Khwarizmi", "Al-Farabi"],
-                answer: "Jabir bin Hayyan",
-                section: "General Knowledge"
-            },
-            {
-                question: "39. Which animal is an example of a pouched mammal?",
-                options: ["Lion", "Bat", "Kangaroo", "Whale"],
-                answer: "Kangaroo",
-                section: "General Knowledge"
-            },
-            {
-                question: "40. Iron deficiency in the human body causes:",
-                options: ["Diabetes", "Anemia", "Rickets", "Obesity"],
-                answer: "Anemia",
-                section: "General Knowledge"
-            },
-            {
-                question: "41. The first artificial satellite was launched by:",
-                options: ["USA", "Germany", "USSR", "France"],
-                answer: "USSR",
-                section: "General Knowledge"
-            },
-            {
-                question: "42. Which vitamin is fat-soluble?",
-                options: ["Vitamin B", "Vitamin C", "Vitamin D", "Vitamin H"],
-                answer: "Vitamin D",
-                section: "General Knowledge"
-            },
-            {
-                question: "43. Amnesia refers to the loss of:",
-                options: ["Sight", "Hearing", "Memory", "Speech"],
-                answer: "Memory",
-                section: "General Knowledge"
-            },
-            {
-                question: "44. Typhoid primarily affects the:",
-                options: ["Liver", "Brain", "Intestines", "Lungs"],
-                answer: "Intestines",
-                section: "General Knowledge"
-            },
-            {
-                question: "45. Sonar is an instrument used to measure:",
-                options: ["Air pollution", "Light speed", "Ocean depth", "Temperature"],
-                answer: "Ocean depth",
-                section: "General Knowledge"
-            },
-            {
-                question: "46. Which vitamin and its deficiency disorder mismatch?",
-                options: ["Vitamin K : Anemia", "Vitamin B : Beri Beri", "Vitamin C : Scurvy", "Vitamin A : Night blindness"],
-                answer: "Vitamin K : Anemia",
-                section: "General Knowledge"
-            },
-            {
-                question: "47. Particles, atoms or molecules in solids remain in motion, and that motion is limited to:",
-                options: ["Translational motion", "Vibrational motion", "Rotational motion", "Random motion"],
-                answer: "Vibrational motion",
-                section: "General Knowledge"
-            },
-            {
-                question: "48. Who is considered ‘the head of state’ in Pakistan?",
-                options: ["Chief Minister", "President", "Prime Minister", "Speaker"],
-                answer: "President",
-                section: "General Knowledge"
-            },
-            {
-                question: "49. Which city is called the 'City of Roses and Nightingales'?",
-                options: ["Islamabad", "Damascus", "Shiraz", "Bukhara"],
-                answer: "Shiraz",
-                section: "General Knowledge"
-            },
-            {
-                question: "50. The Prime Minister of Pakistan is elected by:",
-                options: ["Senate", "National Assembly", "Supreme Court", "Public vote"],
-                answer: "National Assembly",
-                section: "General Knowledge"
-            },
-            {
-                question: "51. Senate elections in Pakistan are held after every:",
-                options: ["3 years", "2 years", "4 years", "5 years"],
-                answer: "3 years",
-                section: "General Knowledge"
-            },
-            {
-                question: "52. Who is the current Chairman of Senate (2025)?",
-                options: ["Yusuf Raza Gilani", "Sadiq Sanjrani", "Shibli Faraz", "Wasim Sajjad"],
-                answer: "Yusuf Raza Gilani",
-                section: "General Knowledge"
-            },
-            {
-                question: "53. Total number of seats in the National Assembly (2024-25) is:",
-                options: ["336", "342", "350", "272"],
-                answer: "342",
-                section: "General Knowledge"
-            },
-            {
-                question: "54. Which city in the UK is often referred to as 'Little Pakistan'?",
-                options: ["London", "Birmingham", "Bradford", "Manchester"],
-                answer: "Bradford",
-                section: "General Knowledge"
-            },
-            {
-                question: "55. Who is the current Foreign Minister of Pakistan (2025)?",
-                options: ["Ishaq Dar", "Bilawal Bhutto Zardari", "Miftah Ismail", "Khawaja Asif"],
-                answer: "Khawaja Asif",
-                section: "General Knowledge"
-            },
-            {
-                question: "56. Which capital and country is mismatched?",
-                options: ["Portugal : Casablanca", "Morocco : Rabat", "Qatar : Doha", "Lebanon : Beirut"],
-                answer: "Portugal : Casablanca",
-                section: "General Knowledge"
-            },
-            {
-                question: "57. What is the currency of Euro?",
-                options: ["Euro", "Franc", "Krone", "Lira"],
-                answer: "Euro",
-                section: "General Knowledge"
-            },
-            {
-                question: "58. Which is the largest island in the world?",
-                options: ["Australia", "Madagascar", "Greenland", "Borneo"],
-                answer: "Greenland",
-                section: "General Knowledge"
-            },
-            {
-                question: "59. Which country is the largest producer of cotton in the world?",
-                options: ["USA", "China", "India", "Brazil"],
-                answer: "China",
-                section: "General Knowledge"
-            },
-            {
-                question: "60. Which country is the largest producer of iron ore?",
-                options: ["China", "Brazil", "India", "Australia"],
-                answer: "Australia",
-                section: "General Knowledge"
-            },
-            {
-                question: "61. Which city is known as the 'City of Bazaars'?",
-                options: ["Istanbul", "Cairo", "Tehran", "Delhi"],
-                answer: "Istanbul",
-                section: "General Knowledge"
-            },
-            {
-                question: "62. Which city in Pakistan is called the 'City of Eagles'?",
-                options: ["Lahore", "Sargodha", "Rawalpindi", "Peshawar"],
-                answer: "Sargodha",
-                section: "General Knowledge"
-            },
-            {
-                question: "63. Who is the current Governor of Punjab (2025)?",
-                options: ["Balighur Rehman", "Mohsin Naqvi", "Ch. Sarwar", "Rana Sanaullah"],
-                answer: "Balighur Rehman",
-                section: "General Knowledge"
-            },
-            {
-                question: "64. Who was the president of first Constitutional Assembly of Pakistan?",
-                options: ["Liaquat Ali Khan", "Nazimuddin", "Quaid-e-Azam", "Ayub Khan"],
-                answer: "Nazimuddin",
-                section: "General Knowledge"
-            },
-            {
-                question: "65. Which of the following pairs is incorrectly matched?",
-                options: ["Muhammad Aurangzeb - Finance Minister", "Rana Tanveer - Health Minister", "Mohsin Naqvi - Interior Minister", "Khawaja Asif - Defence Minister"],
-                answer: "Rana Tanveer - Health Minister",
-                section: "General Knowledge"
-            },
-            {
-                question: "66. Which country is referred to as the 'Land of Kangaroos'?",
-                options: ["New Zealand", "South Africa", "Australia", "Canada"],
-                answer: "Australia",
-                section: "General Knowledge"
-            },
-            {
-                question: "67. Which is the largest gulf in the world?",
-                options: ["Gulf of Mexico", "Persian Gulf", "Gulf of Oman", "Gulf of California"],
-                answer: "Gulf of Mexico",
-                section: "General Knowledge"
-            },
-            {
-                question: "68. Which country is known as the 'Land of Silver Fiber'?",
-                options: ["Egypt", "Pakistan", "Bangladesh", "China"],
-                answer: "Pakistan",
-                section: "General Knowledge"
-            },
-            {
-                question: "69. Who founded the Mughal Empire in India?",
-                options: ["Akbar", "Babar", "Humayun", "Aurangzeb"],
-                answer: "Babar",
-                section: "General Knowledge"
-            },
-            {
-                question: "70. Which lake in Sindh is the largest freshwater lake in Pakistan?",
-                options: ["Haleji", "Manchar", "Keenjhar", "Saif-ul-Maluk"],
-                answer: "Manchar",
-                section: "General Knowledge"
-            },
-            {
-                question: "71. Who was the last Mughal emperor?",
-                options: ["Akbar II", "Bahadur Shah Zafar", "Shah Alam", "Jahangir"],
-                answer: "Bahadur Shah Zafar",
-                section: "General Knowledge"
-            },
-            {
-                question: "72. When did Pakistan become a member of the UNO?",
-                options: ["15 August 1947", "30 September 1947", "14 August 1947", "1 October 1947"],
-                answer: "1 October 1947",
-                section: "General Knowledge"
-            },
-            {
-                question: "73. Who founded the Dawn newspaper?",
-                options: ["Sir Syed", "Shah Rafiuddin", "Sir Syed Ahmad Khan", "Shah Abdul Raheem"],
-                answer: "Shah Rafiuddin",
-                section: "General Knowledge"
-            },
-            {
-                question: "74. Quaid-e-Azam joined the Muslim League in:",
-                options: ["1910", "1911", "1912", "1913"],
-                answer: "1911",
-                section: "General Knowledge"
-            },
-            {
-                question: "75. Which canal is located in Egypt?",
-                options: ["Panama", "Suez", "Corinth", "Kiel"],
-                answer: "Suez",
-                section: "General Knowledge"
-            },
-            {
-                question: "76. Which one is a metal?",
-                options: ["Oxygen", "Sulphur", "Sodium", "Carbon"],
-                answer: "Sodium",
-                section: "Part-II General Science"
-            },
-            {
-                question: "77. Which of the following is not a property of gases?",
-                options: ["definite volume", "highly compressible", "exert pressure", "no fixed shape"],
-                answer: "definite volume",
-                section: "Part-II General Science"
-            },
-            {
-                question: "78. Which elements have zero valency?",
-                options: ["Alkali Metals", "Halogens", "Metals", "Noble Gases"],
-                answer: "Noble Gases",
-                section: "Part-II General Science"
-            },
-            {
-                question: "79. Who invented dynamite?",
-                options: ["Thomas Edison", "Alfred Nobel", "Marie Curie", "Galileo Galilei"],
-                answer: "Alfred Nobel",
-                section: "Part-II General Science"
-            },
-            {
-                question: "80. Which state of matter has a definite volume but no definite shape?",
-                options: ["Solid", "Liquid", "Gas", "Plasma"],
-                answer: "Liquid",
-                section: "Part-II General Science"
-            },
-            {
-                question: "81. The study of human societies, cultures, and their development is called:",
-                options: ["Sociology", "Anthropology", "Psychology", "Archaeology"],
-                answer: "Anthropology",
-                section: "Part-II General Science"
-            },
-            {
-                question: "82. What is the study of the skeletal system and bones called?",
-                options: ["Osteology", "Anatomy", "Neurology", "Myology"],
-                answer: "Osteology",
-                section: "Part-II General Science"
-            },
-            {
-                question: "83. The process in which solids like iodine and camphor are directly converted into gas without becoming liquid is called:",
-                options: ["Condensation", "Evaporation", "Sublimation", "Melting"],
-                answer: "Sublimation",
-                section: "Part-II General Science"
-            },
-            {
-                question: "84. Which organ is responsible for breathing?",
-                options: ["Kidney", "Lungs", "Brain", "Skin"],
-                answer: "Lungs",
-                section: "Part-II General Science"
-            },
-            {
-                question: "85. Which organ regulates the water balance in the human body?",
-                options: ["Liver", "Kidney", "Heart", "Lung"],
-                answer: "Kidney",
-                section: "Part-II General Science"
-            },
-            {
-                question: "86. Which organ stores urine?",
-                options: ["Bladder", "Kidney", "Liver", "Intestine"],
-                answer: "Bladder",
-                section: "Part-II General Science"
-            },
-            {
-                question: "87. Clothes dry in the sun due to:",
-                options: ["Boiling", "Sublimation", "Condensation", "Evaporation"],
-                answer: "Evaporation",
-                section: "Part-II General Science"
-            },
-            {
-                question: "88. Which organ and its function mismatch?",
-                options: ["Spleen : produces hormones", "Liver : makes bile", "Gall bladder : Stores bile", "Pancreas : produces insulin"],
-                answer: "Spleen : produces hormones",
-                section: "Part-II General Science"
-            },
-            {
-                question: "89. Elements are made up of:",
-                options: ["Different atoms", "Same atoms", "Same molecules", "Different molecules"],
-                answer: "Different atoms",
-                section: "Part-II General Science"
-            },
-            {
-                question: "90. Which city is known as the 'City of Lights'?",
-                options: ["City of Lights", "Pyramid City", "City of Bazaars", "Land of Pharaohs"],
-                answer: "City of Lights",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "91. Who was the second Prime Minister of Pakistan?",
-                options: ["Ghulam Muhammad", "Liaquat Ali Khan", "Khawaja Nazimuddin", "Nazimuddin Khan"],
-                answer: "Khawaja Nazimuddin",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "92. Which instrument is used by doctors to hear heartbeat?",
-                options: ["Microscope", "Thermometer", "Stethoscope", "Sphygmomanometer"],
-                answer: "Stethoscope",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "93. Who discovered the neutron?",
-                options: ["J.J. Thomson", "Ernest Rutherford", "James Chadwick", "Niels Bohr"],
-                answer: "James Chadwick",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "94. What type of energy is stored in water held at height in a dam?",
-                options: ["Kinetic", "Potential", "Electrical", "Thermal"],
-                answer: "Potential",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "95. The memory of a computer is expressed in:",
-                options: ["ROM", "Amperes", "Bytes", "Hertz"],
-                answer: "ROM",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "96. Who invented the rail engine locomotive?",
-                options: ["James Watt", "George Stephenson", "Michael Faraday", "Isaac Newton"],
-                answer: "George Stephenson",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "97. What is the scientific study of the kidneys called?",
-                options: ["Cardiology", "Nephrology", "Urology", "Hepatology"],
-                answer: "Nephrology",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "98. When a person is in a state of fasting, what hormone does the pancreas primarily release?",
-                options: ["Insulin", "Glucagon", "Thyroxin", "Estrogen"],
-                answer: "Glucagon",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "99. Which is the only non-metal that is liquid at room temperature?",
-                options: ["Bromine", "Chlorine", "Iodine", "Mercury"],
-                answer: "Bromine",
-                section: "Part-III General Knowledge"
-            },
-            {
-                question: "100. He is knowing the answer but doesn’t want to tell.",
-                options: ["A", "B", "C", "D"],
-                answer: "A",
-                section: "Error Detection"
-            }
-        ];
+    {
+        "question": "1. Change to Passive Voice: \"Mary reads the book.\"",
+        "options": [
+            "\"Mary is reads the book.\"",
+            "\"the book is reads Mary.\"",
+            "\"the book was reads.\"",
+            "\"the book is read by Mary.\""
+        ],
+        "answer": "\"the book is read by Mary.\"",
+        "section": "English"
+    },
+    {
+        "question": "2. Change to Passive Voice: \"The student reads the book.\"",
+        "options": [
+            "\"the book is reads The student.\"",
+            "\"the book is read by The student.\"",
+            "\"the book was reads.\"",
+            "\"The student is reads the book.\""
+        ],
+        "answer": "\"the book is read by The student.\"",
+        "section": "English"
+    },
+    {
+        "question": "3. Fill in the blank: Bob is good ___ Math.",
+        "options": [
+            "on",
+            "in",
+            "at",
+            "with"
+        ],
+        "answer": "at",
+        "section": "English"
+    },
+    {
+        "question": "4. Change to Passive Voice: \"Mary caught the ball.\"",
+        "options": [
+            "\"the ball is caught Mary.\"",
+            "\"the ball was caught by Mary.\"",
+            "\"the ball was caught.\"",
+            "\"Mary is caught the ball.\""
+        ],
+        "answer": "\"the ball was caught by Mary.\"",
+        "section": "English"
+    },
+    {
+        "question": "5. Change to Passive Voice: \"Alice painted the wall.\"",
+        "options": [
+            "\"the wall is painted Alice.\"",
+            "\"the wall was painted.\"",
+            "\"Alice is painted the wall.\"",
+            "\"the wall was painted by Alice.\""
+        ],
+        "answer": "\"the wall was painted by Alice.\"",
+        "section": "English"
+    },
+    {
+        "question": "6. Fill in the blank: The student is good ___ Math.",
+        "options": [
+            "with",
+            "on",
+            "at",
+            "in"
+        ],
+        "answer": "at",
+        "section": "English"
+    },
+    {
+        "question": "7. Fill in the blank: Mary are afraid ___ spiders.",
+        "options": [
+            "on",
+            "in",
+            "of",
+            "with"
+        ],
+        "answer": "of",
+        "section": "English"
+    },
+    {
+        "question": "8. Change to Passive Voice: \"Alice eats the apple.\"",
+        "options": [
+            "\"Alice is eats the apple.\"",
+            "\"the apple was eats.\"",
+            "\"the apple is eats Alice.\"",
+            "\"the apple is eaten by Alice.\""
+        ],
+        "answer": "\"the apple is eaten by Alice.\"",
+        "section": "English"
+    },
+    {
+        "question": "9. Change to Passive Voice: \"The dog eats the apple.\"",
+        "options": [
+            "\"the apple is eats The dog.\"",
+            "\"The dog is eats the apple.\"",
+            "\"the apple was eats.\"",
+            "\"the apple is eaten by The dog.\""
+        ],
+        "answer": "\"the apple is eaten by The dog.\"",
+        "section": "English"
+    },
+    {
+        "question": "10. Fill in the blank: The book is ___ the table.",
+        "options": [
+            "with",
+            "at",
+            "in",
+            "on"
+        ],
+        "answer": "on",
+        "section": "English"
+    },
+    {
+        "question": "11. General Knowledge Quiz #30: Pakistan became an independent state in which year?",
+        "options": [
+            "1973",
+            "1956",
+            "1947",
+            "1940"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "12. General Knowledge Quiz #62: Pakistan became an independent state in which year?",
+        "options": [
+            "1956",
+            "1973",
+            "1947",
+            "1940"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "13. General Knowledge Quiz #67: Pakistan became an independent state in which year?",
+        "options": [
+            "1973",
+            "1956",
+            "1947",
+            "1940"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "14. General Knowledge Quiz #38: Pakistan became an independent state in which year?",
+        "options": [
+            "1973",
+            "1947",
+            "1940",
+            "1956"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "15. General Knowledge Quiz #77: Pakistan became an independent state in which year?",
+        "options": [
+            "1940",
+            "1956",
+            "1973",
+            "1947"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "16. General Knowledge Quiz #43: Pakistan became an independent state in which year?",
+        "options": [
+            "1947",
+            "1973",
+            "1940",
+            "1956"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "17. What is the capital of Khyber Pakhtunkhwa?",
+        "options": [
+            "Peshawar",
+            "Lahore",
+            "Quetta",
+            "Karachi"
+        ],
+        "answer": "Peshawar",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "18. General Knowledge Quiz #49: Pakistan became an independent state in which year?",
+        "options": [
+            "1947",
+            "1973",
+            "1956",
+            "1940"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "19. General Knowledge Quiz #37: Pakistan became an independent state in which year?",
+        "options": [
+            "1973",
+            "1940",
+            "1947",
+            "1956"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "20. General Knowledge Quiz #69: Pakistan became an independent state in which year?",
+        "options": [
+            "1973",
+            "1947",
+            "1940",
+            "1956"
+        ],
+        "answer": "1947",
+        "section": "General Knowledge"
+    },
+    {
+        "question": "21. Pedagogy Scenario #70: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Rote Learning",
+            "Brainstorming",
+            "Lecture Method"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "22. Pedagogy Scenario #36: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Brainstorming",
+            "Lecture Method",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "23. Pedagogy Scenario #35: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Brainstorming",
+            "Lecture Method",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "24. Pedagogy Scenario #58: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Rote Learning",
+            "Lecture Method",
+            "Demonstration",
+            "Brainstorming"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "25. Pedagogy Scenario #62: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Brainstorming",
+            "Demonstration",
+            "Lecture Method",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "26. Pedagogy Scenario #47: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Demonstration",
+            "Brainstorming",
+            "Lecture Method",
+            "Rote Learning"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "27. Pedagogy Scenario #76: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Rote Learning",
+            "Lecture Method",
+            "Brainstorming",
+            "Demonstration"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "28. Pedagogy Scenario #27: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Rote Learning",
+            "Lecture Method",
+            "Brainstorming",
+            "Demonstration"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "29. Pedagogy Scenario #19: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Lecture Method",
+            "Demonstration",
+            "Rote Learning",
+            "Brainstorming"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "30. Pedagogy Scenario #64: Which teaching method emphasizes generating many ideas quickly without judgment?",
+        "options": [
+            "Lecture Method",
+            "Rote Learning",
+            "Demonstration",
+            "Brainstorming"
+        ],
+        "answer": "Brainstorming",
+        "section": "Teaching and Learning Pedagogies"
+    },
+    {
+        "question": "31. Biology Fact Question Variant #60: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Ribosome",
+            "Mitochondria",
+            "Chloroplast",
+            "Nucleus"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "32. What is the primary function of the Ribosome?",
+        "options": [
+            "It is the site of protein synthesis",
+            "It is the powerhouse of the cell and produces energy",
+            "It is the site of protein synthesis",
+            "It is the control center of the cell and contains DNA"
+        ],
+        "answer": "It is the site of protein synthesis",
+        "section": "Biology"
+    },
+    {
+        "question": "33. Biology Fact Question Variant #55: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Nucleus",
+            "Mitochondria",
+            "Chloroplast",
+            "Ribosome"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "34. Biology Fact Question Variant #8: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Nucleus",
+            "Ribosome",
+            "Chloroplast",
+            "Mitochondria"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "35. What is the primary function of the Mitochondria?",
+        "options": [
+            "It is the control center of the cell and contains DNA",
+            "It is the site of protein synthesis",
+            "It is the powerhouse of the cell and produces energy",
+            "It is the powerhouse of the cell and produces energy"
+        ],
+        "answer": "It is the powerhouse of the cell and produces energy",
+        "section": "Biology"
+    },
+    {
+        "question": "36. Biology Fact Question Variant #17: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Chloroplast",
+            "Mitochondria",
+            "Ribosome",
+            "Nucleus"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "37. Biology Fact Question Variant #15: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Chloroplast",
+            "Ribosome",
+            "Mitochondria",
+            "Nucleus"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "38. Biology Fact Question Variant #38: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Nucleus",
+            "Mitochondria",
+            "Ribosome",
+            "Chloroplast"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "39. Biology Fact Question Variant #78: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Ribosome",
+            "Nucleus",
+            "Chloroplast",
+            "Mitochondria"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "40. Biology Fact Question Variant #57: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Chloroplast",
+            "Ribosome",
+            "Nucleus",
+            "Mitochondria"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "41. Which organelle is known as the powerhouse of the cell and produces energy?",
+        "options": [
+            "Nucleus",
+            "Ribosome",
+            "Mitochondria",
+            "Chloroplast"
+        ],
+        "answer": "Mitochondria",
+        "section": "Biology"
+    },
+    {
+        "question": "42. Biology Fact Question Variant #63: Photosynthesis occurs in which organelle?",
+        "options": [
+            "Chloroplast",
+            "Ribosome",
+            "Mitochondria",
+            "Nucleus"
+        ],
+        "answer": "Chloroplast",
+        "section": "Biology"
+    },
+    {
+        "question": "43. What is the chemical formula for Sulfuric Acid?",
+        "options": [
+            "CO2",
+            "NaCl",
+            "H2O",
+            "H2SO4"
+        ],
+        "answer": "H2SO4",
+        "section": "Chemistry"
+    },
+    {
+        "question": "44. Chemistry Review #49: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Yellow",
+            "Blue",
+            "Red",
+            "Green"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "45. What is the chemical symbol for Hydrogen?",
+        "options": [
+            "H",
+            "Hx",
+            "h",
+            "H"
+        ],
+        "answer": "H",
+        "section": "Chemistry"
+    },
+    {
+        "question": "46. What is the chemical symbol for Gold?",
+        "options": [
+            "Au",
+            "G",
+            "au",
+            "Aux"
+        ],
+        "answer": "Au",
+        "section": "Chemistry"
+    },
+    {
+        "question": "47. Chemistry Review #70: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Yellow",
+            "Red",
+            "Green",
+            "Blue"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "48. Chemistry Review #7: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Red",
+            "Green",
+            "Blue",
+            "Yellow"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "49. Which element has the atomic number 8?",
+        "options": [
+            "Oxygen",
+            "Lithium",
+            "Helium",
+            "Hydrogen"
+        ],
+        "answer": "Oxygen",
+        "section": "Chemistry"
+    },
+    {
+        "question": "50. Chemistry Review #2: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Green",
+            "Red",
+            "Blue",
+            "Yellow"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "51. What is the chemical symbol for Chlorine?",
+        "options": [
+            "Cl",
+            "cl",
+            "C",
+            "Clx"
+        ],
+        "answer": "Cl",
+        "section": "Chemistry"
+    },
+    {
+        "question": "52. Chemistry Review #52: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Yellow",
+            "Green",
+            "Blue",
+            "Red"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "53. What is the chemical symbol for Oxygen?",
+        "options": [
+            "O",
+            "Ox",
+            "O",
+            "o"
+        ],
+        "answer": "O",
+        "section": "Chemistry"
+    },
+    {
+        "question": "54. Chemistry Review #68: An acid turns blue litmus paper into what color?",
+        "options": [
+            "Blue",
+            "Yellow",
+            "Red",
+            "Green"
+        ],
+        "answer": "Red",
+        "section": "Chemistry"
+    },
+    {
+        "question": "55. An object travels 500 meters in 10 seconds. What is its average speed?",
+        "options": [
+            "50 m/s",
+            "55 m/s",
+            "45 m/s",
+            "5000 m/s"
+        ],
+        "answer": "50 m/s",
+        "section": "Physics"
+    },
+    {
+        "question": "56. An object travels 100 meters in 4 seconds. What is its average speed?",
+        "options": [
+            "25 m/s",
+            "30 m/s",
+            "20 m/s",
+            "400 m/s"
+        ],
+        "answer": "25 m/s",
+        "section": "Physics"
+    },
+    {
+        "question": "57. A mass of 22 kg accelerates at 13 m/s². What is the net force?",
+        "options": [
+            "286 N",
+            "264 N",
+            "299 N",
+            "35 N"
+        ],
+        "answer": "286 N",
+        "section": "Physics"
+    },
+    {
+        "question": "58. A mass of 4 kg accelerates at 5 m/s². What is the net force?",
+        "options": [
+            "20 N",
+            "16 N",
+            "25 N",
+            "9 N"
+        ],
+        "answer": "20 N",
+        "section": "Physics"
+    },
+    {
+        "question": "59. A mass of 12 kg accelerates at 10 m/s². What is the net force?",
+        "options": [
+            "120 N",
+            "108 N",
+            "130 N",
+            "22 N"
+        ],
+        "answer": "120 N",
+        "section": "Physics"
+    },
+    {
+        "question": "60. A mass of 14 kg accelerates at 6 m/s². What is the net force?",
+        "options": [
+            "84 N",
+            "70 N",
+            "90 N",
+            "20 N"
+        ],
+        "answer": "84 N",
+        "section": "Physics"
+    },
+    {
+        "question": "61. A mass of 14 kg accelerates at 11 m/s². What is the net force?",
+        "options": [
+            "154 N",
+            "140 N",
+            "165 N",
+            "25 N"
+        ],
+        "answer": "154 N",
+        "section": "Physics"
+    },
+    {
+        "question": "62. A mass of 2 kg accelerates at 11 m/s². What is the net force?",
+        "options": [
+            "22 N",
+            "20 N",
+            "33 N",
+            "13 N"
+        ],
+        "answer": "22 N",
+        "section": "Physics"
+    },
+    {
+        "question": "63. A mass of 2 kg accelerates at 7 m/s². What is the net force?",
+        "options": [
+            "14 N",
+            "12 N",
+            "21 N",
+            "9 N"
+        ],
+        "answer": "14 N",
+        "section": "Physics"
+    },
+    {
+        "question": "64. A mass of 16 kg accelerates at 12 m/s². What is the net force?",
+        "options": [
+            "192 N",
+            "176 N",
+            "204 N",
+            "28 N"
+        ],
+        "answer": "192 N",
+        "section": "Physics"
+    },
+    {
+        "question": "65. A mass of 4 kg accelerates at 12 m/s². What is the net force?",
+        "options": [
+            "48 N",
+            "44 N",
+            "60 N",
+            "16 N"
+        ],
+        "answer": "48 N",
+        "section": "Physics"
+    },
+    {
+        "question": "66. A mass of 8 kg accelerates at 13 m/s². What is the net force?",
+        "options": [
+            "104 N",
+            "96 N",
+            "117 N",
+            "21 N"
+        ],
+        "answer": "104 N",
+        "section": "Physics"
+    },
+    {
+        "question": "67. Solve for x: 14x + 5 = 33",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "68. Solve for x: 7x + 2 = 9",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "69. Solve for x: 5x + 10 = 30",
+        "options": [
+            "4",
+            "5",
+            "3",
+            "6"
+        ],
+        "answer": "4",
+        "section": "Mathematics"
+    },
+    {
+        "question": "70. What is 20% of 100?",
+        "options": [
+            "20",
+            "30",
+            "10",
+            "25"
+        ],
+        "answer": "20",
+        "section": "Mathematics"
+    },
+    {
+        "question": "71. Solve for x: 2x + 5 = 7",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "72. What is 20% of 200?",
+        "options": [
+            "40",
+            "50",
+            "30",
+            "45"
+        ],
+        "answer": "40",
+        "section": "Mathematics"
+    },
+    {
+        "question": "73. Solve for x: 11x + 4 = 26",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "74. Solve for x: 2x + 1 = 11",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "75. Solve for x: 9x + 4 = 22",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "76. Solve for x: 4x + 4 = 20",
+        "options": [
+            "4",
+            "5",
+            "3",
+            "6"
+        ],
+        "answer": "4",
+        "section": "Mathematics"
+    },
+    {
+        "question": "77. Solve for x: 2x + 5 = 9",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "78. Solve for x: 11x + 8 = 63",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "79. Solve for x: 3x + 1 = 4",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "80. Solve for x: 8x + 6 = 46",
+        "options": [
+            "5",
+            "6",
+            "4",
+            "7"
+        ],
+        "answer": "5",
+        "section": "Mathematics"
+    },
+    {
+        "question": "81. Solve for x: 7x + 8 = 15",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "82. What is 10% of 300?",
+        "options": [
+            "30",
+            "40",
+            "20",
+            "35"
+        ],
+        "answer": "30",
+        "section": "Mathematics"
+    },
+    {
+        "question": "83. Solve for x: 4x + 4 = 12",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "84. Solve for x: 6x + 5 = 11",
+        "options": [
+            "1",
+            "2",
+            "5",
+            "3"
+        ],
+        "answer": "1",
+        "section": "Mathematics"
+    },
+    {
+        "question": "85. Solve for x: 9x + 8 = 44",
+        "options": [
+            "4",
+            "5",
+            "3",
+            "6"
+        ],
+        "answer": "4",
+        "section": "Mathematics"
+    },
+    {
+        "question": "86. Solve for x: 4x + 1 = 13",
+        "options": [
+            "3",
+            "4",
+            "2",
+            "5"
+        ],
+        "answer": "3",
+        "section": "Mathematics"
+    },
+    {
+        "question": "87. Solve for x: 5x + 10 = 20",
+        "options": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ],
+        "answer": "2",
+        "section": "Mathematics"
+    },
+    {
+        "question": "88. Solve for x: 8x + 8 = 40",
+        "options": [
+            "4",
+            "5",
+            "3",
+            "6"
+        ],
+        "answer": "4",
+        "section": "Mathematics"
+    },
+    {
+        "question": "89. Computer Concept #80: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Compiler",
+            "Application Software",
+            "Web Browser",
+            "Operating System"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "90. What does HTML stand for?",
+        "options": [
+            "Central Processing Unit",
+            "Read-Only Memory",
+            "Random Access Memory",
+            "Hyper Text Markup Language"
+        ],
+        "answer": "Hyper Text Markup Language",
+        "section": "Computer"
+    },
+    {
+        "question": "91. Computer Concept #41: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Web Browser",
+            "Application Software",
+            "Compiler"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "92. Computer Concept #30: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Application Software",
+            "Web Browser",
+            "Compiler",
+            "Operating System"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "93. Computer Concept #32: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Operating System",
+            "Application Software",
+            "Compiler",
+            "Web Browser"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "94. Computer Concept #5: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Web Browser",
+            "Operating System",
+            "Application Software",
+            "Compiler"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "95. Computer Concept #87: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Web Browser",
+            "Compiler",
+            "Operating System",
+            "Application Software"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "96. Computer Concept #24: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Application Software",
+            "Operating System",
+            "Web Browser",
+            "Compiler"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "97. What does RAM stand for?",
+        "options": [
+            "Random Access Memory",
+            "Central Processing Unit",
+            "Read-Only Memory",
+            "Local Area Network"
+        ],
+        "answer": "Random Access Memory",
+        "section": "Computer"
+    },
+    {
+        "question": "98. Computer Concept #64: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Application Software",
+            "Operating System",
+            "Compiler",
+            "Web Browser"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "99. Computer Concept #54: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Application Software",
+            "Compiler",
+            "Web Browser",
+            "Operating System"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    },
+    {
+        "question": "100. Computer Concept #25: Which software manages hardware resources and provides common services?",
+        "options": [
+            "Compiler",
+            "Application Software",
+            "Web Browser",
+            "Operating System"
+        ],
+        "answer": "Operating System",
+        "section": "Computer"
+    }
+];
 
         let currentQuestionIndex = 0;
         let userAnswers = [];
