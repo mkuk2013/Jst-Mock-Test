@@ -203,7 +203,7 @@ def generate_test_questions():
 
 import os
 
-for i in range(1, 10):
+for i in range(1, 11):
     filename = f"jst-quiz{i}.html"
     filepath = os.path.join(r"C:\Users\Hon3y Chauhan\Desktop\Jst-Mock-Test", filename)
     
